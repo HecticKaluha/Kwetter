@@ -6,7 +6,8 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Posting;
+
+import model.Kweet;
 import service.BlogService;
 
 public class AddComment extends Command {
@@ -21,13 +22,15 @@ public class AddComment extends Command {
     public void execute() throws ServletException, IOException {
         Long postId = Long.parseLong(request.getParameter("id"));
         String message = request.getParameter("message");
+        String profile = request.getParameter("author");
 
         if (message != null) {
-            Posting posting = service.getPosting(postId);
-            posting.addComment(message);
+            Kweet kweet = service.getPosting(postId);
+
+            kweet.addComment(message, profile);
 
             response.setContentType("application/json");
-            response.getWriter().write(new Gson().toJson(posting.getComments()));
+            response.getWriter().write(new Gson().toJson(kweet.getComments()));
         }
     }
 }

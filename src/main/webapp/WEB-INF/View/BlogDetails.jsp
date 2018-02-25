@@ -12,18 +12,17 @@
     <body>               
         <div class="content-box middle-box">
             <div class="middle-head">
-                <h1><c:out value="${posting.getTitle()}"/></h1>
                 <span class="placedBy">
-                    by <c:out value="${posting.getAuthor()}"/> on <fmt:formatDate value="${posting.getDate()}" pattern="d-M-yyyy HH:mm:ss" />
+                    by <c:out value="${kweet.getOwner()}"/> on <fmt:formatDate value="${kweet.getDate()}" pattern="d-M-yyyy HH:mm:ss" />
                 </span>
             </div>
             <div class="middle-content">
-                <c:out value="${posting.getContent()}"/>
+                <c:out value="${kweet.getMessage()}"/>
             </div>
         </div>        
         <div class="middle-head"><h2>Comments</h2></div>
         <div id="Comments">
-            <c:forEach var="comment" items="${posting.getComments()}">
+            <c:forEach var="comment" items="${kweet.getComments()}">
                 <div class="content-box middle-box">
                     <div class="middle-head">
                         By Anonymous on <fmt:formatDate value="${comment.getDate()}" pattern="d-M-yyyy HH:mm:ss" />
@@ -37,7 +36,7 @@
         <div class="middle-head"><h2>New comment</h2></div>
         <div class="middle-box">
             <textarea id="Comment" name="Comment"></textarea>
-            <input id="AddComment" type="submit" value="Add Comment" onclick="AddComment(${posting.getId()})"/>
+            <input id="AddComment" type="submit" value="Add Comment" onclick="AddComment(${kweet.getId()})"/>
         </div>
     </body>
 </html>

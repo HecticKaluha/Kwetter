@@ -8,25 +8,26 @@
         <title>Blog</title>
     </head>
     <body>
+    <h1>Aangekomen bij blog.jsp</h1>
+    <!--
         <div>
-            <c:forEach var="posting" items="${postings}">
+            <c:forEach var="kweet" items="${postings}">
                 <div class="content-box middle-box">
                     <div class="middle-head">
-                        <h1><c:out value="${posting.getTitle()}"/></h1>
                         <span class="placedBy">
-                            by <c:out value="${posting.getAuthor()}"/> on <fmt:formatDate value="${posting.getDate()}" pattern="d-M-yyyy HH:mm:ss" />
+                            by <c:out value="${kweet.getOwner()}"/> on <fmt:formatDate value="${kweet.getDate()}" pattern="d-M-yyyy HH:mm:ss" />
                         </span>
                     </div>
                     <div class="middle-content">
-                        <c:out value="${posting.getContent()}"/>
+                        <c:out value="${kweet.getMessage()}"/>
                         <div class="comments">
                             <a href="<c:url value="/BlogDetails">
-                                   <c:param name="id" value="${posting.getId()}"/>
-                                </c:url>">Comments(<c:out value="${posting.getComments().size()}"/>)</a>
+                                   <c:param name="id" value="${kweet.getId()}"/>
+                                </c:url>">Comments(<c:out value="${kweet.getComments().size()}"/>)</a>
                         </div>
                     </div>
                 </div>
             </c:forEach>
-        </div>
+        </div>-->
     </body>
 </html>

@@ -6,7 +6,8 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Posting;
+
+import model.Kweet;
 import service.BlogService;
 
 public class GetPost extends Command {
@@ -21,9 +22,9 @@ public class GetPost extends Command {
     public void execute() throws ServletException, IOException {
         Long postId = Long.parseLong(request.getParameter("id"));
 
-        Posting posting = service.getPosting(postId);
+        Kweet kweet = service.getPosting(postId);
 
         response.setContentType("application/json");
-        response.getWriter().write(new Gson().toJson(posting));
+        response.getWriter().write(new Gson().toJson(kweet));
     }
 }

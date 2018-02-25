@@ -3,10 +3,11 @@ package controller.command.admin;
 import com.google.gson.Gson;
 import controller.command.Command;
 import java.io.IOException;
+import java.util.Date;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Posting;
+import model.Kweet;
 import service.BlogService;
 
 public class AddPost extends Command {
@@ -24,10 +25,10 @@ public class AddPost extends Command {
         String content = request.getParameter("content");
 
         if (author != null && title != null && content != null) {
-            Posting posting = service.addPosting(new Posting(author, title, content));
+            Kweet kweet = service.addPosting(new Kweet(author, content, new Date()));
 
             response.setContentType("application/json");
-            response.getWriter().write(new Gson().toJson(posting));
+            response.getWriter().write(new Gson().toJson(kweet));
         }
     }
 }

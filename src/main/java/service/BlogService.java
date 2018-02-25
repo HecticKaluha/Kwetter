@@ -1,35 +1,36 @@
 package service;
 
-import dao.PostingDao;
-import dao.PostingDaoImp;
 import java.util.List;
-import model.Posting;
+
+import dao.KwetterManager;
+import dao.KwetterManagerDao;
+import model.Kweet;
 
 public class BlogService {
 
-    private final PostingDao postingDao;
+    private final KwetterManagerDao kwetterManagerDao;
 
     public BlogService() {
-        postingDao = PostingDaoImp.getPostingDao();
+        kwetterManagerDao = KwetterManager.getPostingDao();
     }
 
-    public Posting addPosting(Posting p) {
-        return postingDao.create(p);
+    public Kweet addPosting(Kweet p) {
+        return kwetterManagerDao.post(p);
     }
     
-    public Posting editPosting(Long id, String author, String title, String content) {
-        return postingDao.update(id, author, title, content);
+    public Kweet editPosting(Long id, String author, String title, String content) {
+        return kwetterManagerDao.update(id, author, content);
     }
     
     public void removePosting(Long id) {
-        postingDao.delete(id);
+        kwetterManagerDao.delete(id);
     }
 
-    public List<Posting> getPostings() {
-        return postingDao.findAll();
+    public List<Kweet> getPostings() {
+        return kwetterManagerDao.findAll();
     }
     
-    public Posting getPosting(Long id) {
-        return postingDao.find(id);
+    public Kweet getPosting(Long id) {
+        return kwetterManagerDao.find(id);
     }
 }

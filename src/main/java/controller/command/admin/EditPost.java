@@ -6,7 +6,8 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Posting;
+
+import model.Kweet;
 import service.BlogService;
 
 public class EditPost extends Command {
@@ -25,10 +26,10 @@ public class EditPost extends Command {
         String content = request.getParameter("content");
 
         if (title != null && content != null) {
-            Posting posting = service.editPosting(postId, author, title, content);
+            Kweet kweet = service.editPosting(postId, author, title, content);
 
             response.setContentType("application/json");
-            response.getWriter().write(new Gson().toJson(posting));
+            response.getWriter().write(new Gson().toJson(kweet));
         }
     }
 }
