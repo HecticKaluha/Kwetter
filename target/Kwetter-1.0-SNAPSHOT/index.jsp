@@ -6,6 +6,6 @@
     <title>My Blog</title>
 </head>
 <body>
-<meta HTTP-EQUIV="REFRESH" content="0; url=/Kwetter/Test">
+<meta HTTP-EQUIV="REFRESH" content="0; url=/Kwetter-1.0-SNAPSHOT/Blog">
 </body>
 </html>

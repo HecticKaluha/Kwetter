@@ -9,7 +9,6 @@
         <title>My Blog</title>
     </head>
     <body>
-    <!--
         <div id="header">
             <div id="logo">My Blog</div>
             <div id="menu">
@@ -36,6 +35,6 @@
             <c:import url="${content}" />
         </div>
         <div id="footer">
-        </div>-->
+        </div>
     </body>
 </html>

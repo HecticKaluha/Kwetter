@@ -20,7 +20,7 @@
                 <c:out value="${kweet.getMessage()}"/>
             </div>
         </div>        
-        <!--<div class="middle-head"><h2>Comments</h2></div>
+        <div class="middle-head"><h2>Comments</h2></div>
         <div id="Comments">
             <c:forEach var="comment" items="${kweet.getComments()}">
                 <div class="content-box middle-box">
@@ -32,7 +32,7 @@
                     </div>
                 </div>
             </c:forEach>
-        </div>-->
+        </div>
         <div class="middle-head"><h2>New comment</h2></div>
         <div class="middle-box">
             <textarea id="Comment" name="Comment"></textarea>

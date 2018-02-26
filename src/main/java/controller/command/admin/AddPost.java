@@ -21,10 +21,9 @@ public class AddPost extends Command {
     @Override
     public void execute() throws ServletException, IOException {
         String author = request.getParameter("author");
-        String title = request.getParameter("title");
         String content = request.getParameter("content");
 
-        if (author != null && title != null && content != null) {
+        if (author != null && content != null) {
             Kweet kweet = service.addPosting(new Kweet(author, content, new Date()));
 
             response.setContentType("application/json");

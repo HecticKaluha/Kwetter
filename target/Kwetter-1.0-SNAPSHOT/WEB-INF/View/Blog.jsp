@@ -8,8 +8,6 @@
         <title>Blog</title>
     </head>
     <body>
-    <h1>Aangekomen bij blog.jsp</h1>
-    <!--
         <div>
             <c:forEach var="kweet" items="${postings}">
                 <div class="content-box middle-box">
@@ -28,6 +26,6 @@
                     </div>
                 </div>
             </c:forEach>
-        </div>-->
+        </div>
     </body>
 </html>
