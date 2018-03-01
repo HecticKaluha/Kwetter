@@ -23,10 +23,20 @@ public class Kweet
     private List<String> likes;
     private List<String> mentions;
     private List<String> trends;
-    private List<Kweet> comments;
 
     public Kweet(String owner, String message, Date postDate, List<String> likes, List<String> mentions, List<String> trends)
     {
+        this.owner = owner;
+        this.message = message;
+        this.postDate = postDate;
+        this.likes = likes;
+        this.mentions = mentions;
+        this.trends = trends;
+    }
+
+    public Kweet(Long id, String owner, String message, Date postDate, List<String> likes, List<String> mentions, List<String> trends)
+    {
+        this.id = id;
         this.owner = owner;
         this.message = message;
         this.postDate = postDate;
@@ -44,7 +54,8 @@ public class Kweet
 
     public List<Kweet> getComments()
     {
-        return comments;
+        //return comments;
+        return new ArrayList<>();
     }
 
     public String getOwner()

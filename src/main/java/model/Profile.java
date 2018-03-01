@@ -18,12 +18,6 @@ public class Profile
         this.username = username;
     }
 
-    public Profile()
-    {
-        this.username = username;
-        this.role = role;
-    }
-
     public Profile(String username, Role role)
     {
         this.username = username;
