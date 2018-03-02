@@ -7,18 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb6ac029-7f1f-4911-b8ca-8ceabf8efb41" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/KweetDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/KweetDaoImp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/ProfileDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/ProfileDaoImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/model/KweetTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/model/KweetTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/model/MentionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/model/MentionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/model/TrendTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/model/TrendTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/KwetterManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/KwetterManagerDaoImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/KwetterManagerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/KwetterManagerDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Kweet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Kweet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/BlogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/BlogService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/KwetterManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/KwetterManagerDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/KwetterManagerDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Kweet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Kweet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/service/BlogService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/service/BlogService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/model/KweetTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/model/KweetTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/model/MentionTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/model/MentionTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/model/TrendTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/model/TrendTest.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -57,36 +52,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Trend.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/model/Trend.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RoleTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Test/model/RoleTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="413">
-              <caret line="47" column="5" lean-forward="true" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Kweet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/model/Kweet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1207">
-              <caret line="111" lean-forward="true" selection-start-line="111" selection-end-line="111" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Mention.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/model/Mention.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -96,38 +61,66 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="KwetterManagerDaoImp.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/dao/KwetterManagerDaoImp.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="15" column="35" lean-forward="true" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
-              <folding>
-                <element signature="e#319#320#0" expanded="true" />
-                <element signature="e#350#351#0" expanded="true" />
-                <element signature="e#465#466#0" expanded="true" />
-                <element signature="e#505#506#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="KweetDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/dao/KweetDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="12" lean-forward="true" selection-start-column="12" selection-end-column="12" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TrendTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TrendTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Test/model/TrendTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
               <caret line="21" column="31" lean-forward="true" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Kweet.class" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/target/classes/model/Kweet.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#2457#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KweetTest.class" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/target/test-classes/model/KweetTest.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#3538#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KwetterManagerDao.class" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/target/classes/dao/KwetterManagerDao.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#372#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MentionTest.class" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/target/test-classes/model/MentionTest.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#2194#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TrendTest.class" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/target/test-classes/model/TrendTest.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#1968#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -680,14 +673,19 @@
       <workItem from="1519717821654" duration="10435000" />
       <workItem from="1519896660200" duration="237000" />
       <workItem from="1519936311912" duration="2609000" />
-      <workItem from="1519980262442" duration="9950000" />
+      <workItem from="1519980262442" duration="10207000" />
     </task>
+    <task id="LOCAL-00001" summary="Implemented KweetDao and cleaned KwetterManagerDao&#10;Fixed UnitTests">
+      <created>1519991535088</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1519991535089</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="KweetTest - 2018.02.27 at 13h 20m 55s.xml">
-      <configuration name="KweetTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="KweetTest - 2018.02.27 at 13h 21m 14s.xml">
       <configuration name="KweetTest" configurationId="JUnit" />
     </history-entry>
@@ -715,16 +713,18 @@
     <history-entry file="MentionTest - 2018.03.01 at 22h 15m 17s.xml">
       <configuration name="MentionTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="model_in_Kwetter - 2018.03.02 at 12h 50m 43s.xml">
+      <configuration name="model in Kwetter" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46078000" />
+    <option name="totallyTimeSpent" value="46335000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5087248" side_tool="true" visible="true" weight="0.32905984" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.504698" side_tool="true" visible="true" weight="0.32763532" />
       <window_info anchor="bottom" id="Application Servers" order="0" weight="0.32905984" />
       <window_info anchor="right" id="Maven Projects" order="0" />
       <window_info anchor="right" id="CDI" order="6" weight="0.3295302" />
@@ -737,14 +737,14 @@
       <window_info id="UI Designer" order="2" />
       <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="12" />
-      <window_info active="true" anchor="bottom" id="Messages" order="2" sideWeight="0.49127516" visible="true" weight="0.32905984" />
+      <window_info anchor="bottom" id="Messages" order="2" sideWeight="0.49127516" weight="0.32905984" />
       <window_info anchor="right" id="Palette&#9;" order="4" />
       <window_info id="Image Layers" order="1" />
       <window_info anchor="bottom" id="Java Enterprise" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
-      <window_info anchor="bottom" id="Version Control" order="4" sideWeight="0.49924356" weight="0.32838285" />
-      <window_info anchor="bottom" id="Run" order="8" sideWeight="0.49394855" weight="0.32838285" />
-      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.4966443" weight="0.32763532" />
+      <window_info anchor="bottom" id="Version Control" order="4" sideWeight="0.49798658" weight="0.32763532" />
+      <window_info anchor="bottom" id="Run" order="8" sideWeight="0.49328858" weight="0.32763532" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="1" sideWeight="0.49530202" visible="true" weight="0.32763532" />
       <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.26107383" />
       <window_info anchor="right" id="Bean Validation" order="7" />
       <window_info id="Web" order="4" side_tool="true" />
@@ -761,8 +761,38 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Implemented KweetDao and cleaned KwetterManagerDao&#10;Fixed UnitTests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented KweetDao and cleaned KwetterManagerDao&#10;Fixed UnitTests" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -770,51 +800,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/WebBLogServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1717">
-          <caret line="101" column="4" selection-start-line="101" selection-start-column="4" selection-end-line="112" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/command/blog/ListBlogs.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" selection-start-line="18" selection-end-line="24" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Kwetter.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/View/Blog.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="55" lean-forward="true" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controller/WebBLogServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
@@ -1134,6 +1119,60 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="21" column="31" lean-forward="true" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/classes/model/Kweet.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#2457#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/classes/dao/KwetterManager.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#3140#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/test-classes/model/KweetTest.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#3538#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/classes/dao/KwetterManagerDao.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#372#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/test-classes/model/MentionTest.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#2194#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/test-classes/model/TrendTest.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#1968#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
