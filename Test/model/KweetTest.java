@@ -15,8 +15,8 @@ public class KweetTest
 {
     private Kweet kweet;
     private List<String> likes;
-    private List<String> mentions;
-    private List<String> trends;
+    private List<Mention> mentions;
+    private List<Trend> trends;
     @Before
     public void setUp() throws Exception
     {
@@ -27,8 +27,8 @@ public class KweetTest
         mentions = new ArrayList<>();
         trends = new ArrayList<>();
         likes.add("Hans");
-        mentions.add("Hans");
-        trends.add("Hans");
+        mentions.add(new Mention(kweet, new Profile("Hans")));
+        trends.add(new Trend("trend", kweet));
     }
 
     @After
@@ -112,8 +112,8 @@ public class KweetTest
     public void getMentions()
     {
         kweet = new Kweet( 1L, "Hans", "Dit is een kweet", new Date(), likes, mentions, trends);
-        List<String> expected = mentions;
-        List<String> actual = kweet.getMentions();
+        List<Mention> expected = mentions;
+        List<Mention> actual = kweet.getMentions();
         assertThat(expected, is(actual));
     }
 
@@ -126,8 +126,8 @@ public class KweetTest
     public void getTrends()
     {
         kweet = new Kweet( 1L, "Hans", "Dit is een kweet", new Date(), likes, mentions, trends);
-        List<String> expected = trends;
-        List<String> actual = kweet.getTrends();
+        List<Trend> expected = trends;
+        List<Trend> actual = kweet.getTrends();
         assertThat(expected, is(actual));
     }
 

@@ -2,35 +2,37 @@ package service;
 
 import java.util.List;
 
-import dao.KwetterManager;
+import dao.KweetDao;
+import dao.KweetDaoImp;
+import dao.KwetterManagerDaoImp;
 import dao.KwetterManagerDao;
 import model.Kweet;
 
 public class BlogService {
 
-    private final KwetterManagerDao kwetterManagerDao;
+    private final KweetDao KweetDao;
 
     public BlogService() {
-        kwetterManagerDao = KwetterManager.getPostingDao();
+        KweetDao = KweetDaoImp.getKweetDao();
     }
 
     public Kweet addPosting(Kweet p) {
-        return kwetterManagerDao.post(p);
+        return KweetDao.post(p);
     }
     
     public Kweet editPosting(Long id, String author, String title, String content) {
-        return kwetterManagerDao.update(id, author, content);
+        return KweetDao.update(id, author, content);
     }
     
     public void removePosting(Long id) {
-        kwetterManagerDao.delete(id);
+        KweetDao.delete(id);
     }
 
     public List<Kweet> getPostings() {
-        return kwetterManagerDao.findAll();
+        return KweetDao.findAll();
     }
     
     public Kweet getPosting(Long id) {
-        return kwetterManagerDao.find(id);
+        return KweetDao.find(id);
     }
 }

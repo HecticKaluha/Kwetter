@@ -18,8 +18,8 @@ public class TrendTest
     private Trend trend;
     private Kweet kweet;
     private List<String> likes;
-    private List<String> mentions;
-    private List<String> trends;
+    private List<Mention> mentions;
+    private List<Trend> trends;
     @Before
     public void setUp() throws Exception
     {
@@ -31,8 +31,8 @@ public class TrendTest
         mentions = new ArrayList<>();
         trends = new ArrayList<>();
         likes.add("Hans");
-        mentions.add("Hans");
-        trends.add("Hans");
+        mentions.add(new Mention(kweet, new Profile("Hans")));
+        trends.add(new Trend("trend", kweet));
     }
 
     @After

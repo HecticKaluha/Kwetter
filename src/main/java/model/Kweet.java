@@ -1,5 +1,7 @@
 package model;
 
+import dao.KweetDao;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -21,10 +23,10 @@ public class Kweet
     private String message;
     private Date postDate;
     private List<String> likes;
-    private List<String> mentions;
-    private List<String> trends;
+    private List<Mention> mentions;
+    private List<Trend> trends;
 
-    public Kweet(String owner, String message, Date postDate, List<String> likes, List<String> mentions, List<String> trends)
+    public Kweet(String owner, String message, Date postDate, List<String> likes, List<Mention> mentions, List<Trend> trends)
     {
         this.owner = owner;
         this.message = message;
@@ -34,7 +36,7 @@ public class Kweet
         this.trends = trends;
     }
 
-    public Kweet(Long id, String owner, String message, Date postDate, List<String> likes, List<String> mentions, List<String> trends)
+    public Kweet(Long id, String owner, String message, Date postDate, List<String> likes, List<Mention> mentions, List<Trend> trends)
     {
         this.id = id;
         this.owner = owner;
@@ -98,22 +100,22 @@ public class Kweet
         this.likes = likes;
     }
 
-    public List<String> getMentions()
+    public List<Mention> getMentions()
     {
         return mentions;
     }
 
-    public void setMentions(List<String> mentions)
+    public void setMentions(List<Mention> mentions)
     {
         this.mentions = mentions;
     }
 
-    public List<String> getTrends()
+    public List<Trend> getTrends()
     {
         return trends;
     }
 
-    public void setTrends(List<String> trends)
+    public void setTrends(List<Trend> trends)
     {
         this.trends = trends;
     }
