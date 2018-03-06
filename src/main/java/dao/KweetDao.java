@@ -1,10 +1,6 @@
 package dao;
 
 import model.Kweet;
-import model.Mention;
-import model.Trend;
-
-import java.util.Date;
 import java.util.List;
 
 public interface KweetDao

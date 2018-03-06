@@ -1,6 +1,8 @@
 package model;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Profile
 {
@@ -75,7 +77,30 @@ public class Profile
     {
         this.web = web;
     }
+    public void addFollower(String profileName)
+    {
+        if(!this.following.contains(profileName))
+        {
+            this.followers.add(profileName);
+        }
+    }
 
+    public void addFollowing(String profileName)
+    {
+        if(!this.following.contains(profileName))
+        {
+            this.following.add(profileName);
+        }
+    }
+
+    public void removeFollowing(String profileName)
+    {
+        this.following.remove(profileName);
+    }
+    public void removeFollower(String profileName)
+    {
+        this.following.remove(profileName);
+    }
     public List<String> getFollowing()
     {
         return following;
