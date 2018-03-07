@@ -1,6 +1,7 @@
 package dao;
 
 import model.Profile;
+import model.Role;
 
 public interface ProfileDao
 {
@@ -10,11 +11,11 @@ public interface ProfileDao
 
     Profile findProfile(String username);
 
-    void createProfile();
+    void createProfile(String username, Role role);
 
-    void deleteProfile();
+    void deleteProfile(String username);
 
-    void updateProfile();
+    void updateProfile(String username, String bio, String location, String web);
 
 }
 

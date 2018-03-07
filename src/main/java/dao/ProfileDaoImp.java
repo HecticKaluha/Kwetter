@@ -1,13 +1,13 @@
 package dao;
 
-import model.Kweet;
 import model.Profile;
+import model.Role;
 
 import java.util.concurrent.ConcurrentHashMap;
 
 public class ProfileDaoImp implements ProfileDao
 {
-    private ConcurrentHashMap<Long, Profile> profiles;
+    private ConcurrentHashMap<String, Profile> profiles;
 
     @Override
     public void followUser(Profile followThisProfile, Profile initialProfile)
@@ -26,26 +26,28 @@ public class ProfileDaoImp implements ProfileDao
     @Override
     public Profile findProfile(String username)
     {
-
-        return null;
+        return profiles.get(username);
     }
 
     @Override
-    public void createProfile()
+    public void createProfile(String username, Role role)
     {
-
+        profiles.put(username, new Profile(username, role));
     }
 
     @Override
-    public void deleteProfile()
+    public void deleteProfile(String username)
     {
-
+        profiles.remove(username);
     }
 
     @Override
-    public void updateProfile()
+    public void updateProfile(String username, String bio, String location, String web)
     {
-
+        Profile profile = profiles.get(username);
+        profile.setBio(bio);
+        profile.setLocation(location);
+        profile.setWeb(web);
     }
 }
 
