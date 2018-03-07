@@ -1,7 +1,11 @@
 package dao;
 
+import model.Kweet;
 import model.Profile;
 import model.Role;
+
+import java.util.HashMap;
+import java.util.List;
 
 public interface ProfileDao
 {
@@ -16,6 +20,7 @@ public interface ProfileDao
     void deleteProfile(String username);
 
     void updateProfile(String username, String bio, String location, String web);
+    List<Long> getLatest(Long profileId);
 
 }
 

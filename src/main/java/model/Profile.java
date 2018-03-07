@@ -107,6 +107,10 @@ public class Profile
     {
         this.following.remove(profileName);
     }
+    public List<Long> getLatest(){
+        List<Long> latestKweetsById = ownKweetsById.subList(Math.max(ownKweetsById.size() - 10, 0), ownKweetsById.size());
+        return latestKweetsById;
+    }
     public List<String> getFollowing()
     {
         return following;
@@ -156,5 +160,6 @@ public class Profile
     {
         this.ownKweetsById = ownKweetsById;
     }
+
 
 }

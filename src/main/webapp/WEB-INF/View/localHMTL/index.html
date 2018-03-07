@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+      <!-- title variable met profielnaam -->
+    <title>Kwetter - Profielpagina</title>
+    <link rel="stylesheet" href="css/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--<link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png">-->
+	<link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
+  </head>
+  <body jsf:id="body">
+  <header>
+      <!--add jsf imgrenderer-->
+      <img src="img/logo.png" alt="The Kwetter Logo"/>
+      <h1>Kwetter</h1>
+      <p><a href="#">Logout</a></p>
+  </header>
+    <main class="flexbox row">
+        <div id="column-left" class="flexbox column">
+            <div id="user" class="section"><h1>Userinformation goes here</h1></div>
+            <div id="tweets" class="section"><h1>Tweets go here</h1></div>
+        </div>
+        <div id="column-right" class="flexbox column">
+            <div id="details" class="section"><h1>Details go here</h1></div>
+            <div id="activity" class="section"><h1>Activity goes here</h1></div>
+            <div id="following" class="section"><h1>Following goes here</h1></div>
+        </div>
+    </main>
+
+
+
+
+
+
+  <!--<form jsf:id="form">
+      <input type="text" jsf:id="name"
+             placeholder="Enter name"
+             jsf:value="#{bean.name}"/>
+      <button jsf:action="#{bean.save}">Save</button>
+  </form>-->
+  </body>
+</html>

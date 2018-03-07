@@ -1,8 +1,11 @@
 package dao;
 
+import model.Kweet;
 import model.Profile;
 import model.Role;
 
+import java.util.HashMap;
+import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class ProfileDaoImp implements ProfileDao
@@ -56,6 +59,11 @@ public class ProfileDaoImp implements ProfileDao
         profile.setBio(bio);
         profile.setLocation(location);
         profile.setWeb(web);
+    }
+    @Override
+    public List<Long> getLatest(Long profileId)
+    {
+        return profiles.get(profileId).getLatest();
     }
 }
 

@@ -14,7 +14,7 @@ public class KweetService {
     public KweetService() {
         kweetDao = KweetDaoImp.getKweetDao();
     }
-    
+
     public void post(String kweetmessage, Profile profile){
         //get profile from id
 

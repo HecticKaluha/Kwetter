@@ -1,18 +1,26 @@
 package service;
 
+import dao.KweetDao;
+import dao.KweetDaoImp;
 import dao.ProfileDao;
 import dao.ProfileDaoImp;
+import model.Kweet;
 import model.Profile;
 import model.Role;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class ProfileService
 {
     private final ProfileDao profileDao;
+    //mag ik hier opnieuw instantieren?
+    private final KweetDao kweetDao;
 
     public ProfileService() {
         profileDao = ProfileDaoImp.getProfileDao();
+        kweetDao = KweetDaoImp.getKweetDao();
     }
 
     public void followUser(Profile followThisProfile, Profile initialProfile)
@@ -38,5 +46,18 @@ public class ProfileService
     public void updateProfile(String username, String bio, String location, String web)
     {
         profileDao.updateProfile(username, bio, location, web);
+    }
+
+    //wellicht moet dit in de profiledaoImp??
+    public List<Kweet> getLatest(Long profileid)
+    {
+        List<Kweet> latestsKweets = new ArrayList<>();
+        List<Long> latestKweetIds = profileDao.getLatest(profileid);
+        for (Long id : latestKweetIds)
+        {
+            latestsKweets.add(kweetDao.find(id));
+        }
+
+        return latestsKweets;
     }
 }
