@@ -7,7 +7,15 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class ProfileDaoImp implements ProfileDao
 {
+    private static ProfileDaoImp instance;
     private ConcurrentHashMap<String, Profile> profiles;
+
+    public static synchronized ProfileDao getProfileDao() {
+        if (instance == null) {
+            instance = new ProfileDaoImp();
+        }
+        return instance;
+    }
 
     @Override
     public void followUser(Profile followThisProfile, Profile initialProfile)
