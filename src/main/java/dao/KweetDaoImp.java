@@ -2,6 +2,7 @@ package dao;
 
 import model.*;
 
+import javax.validation.constraints.Null;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -12,15 +13,6 @@ public class KweetDaoImp implements KweetDao
 {
     private static KweetDao instance = null;
     private ConcurrentHashMap<Long, Kweet> kweets;
-
-    @Override
-    public void addComment(
-            String message,
-            String profile)
-    {
-
-    }
-
     private AtomicLong nextId = new AtomicLong(0L);
 
     public static synchronized KweetDao getKweetDao() {
@@ -31,36 +23,52 @@ public class KweetDaoImp implements KweetDao
     }
 
     private KweetDaoImp() {
-        this.initWebBlog();
+        this.initKweetDaoImp();
     }
 
-    public void initWebBlog() {
-        post(new Kweet("Admin", "Bericht 1", new Date()));
-        post(new Kweet("Admin", "Bericht 2", new Date()));
-        post(new Kweet("Admin", "Bericht 3", new Date()));
+    public void initKweetDaoImp() {
+        kweets = new ConcurrentHashMap<>();
+        post("Bericht 1", new Profile("Hans"));
+        post("Bericht 2", new Profile("Piet"));
+        post("Bericht 3", new Profile("Klaartje"));
     }
 
     @Override
-    public Kweet post(Kweet k)
+    public void post(String kweetMessage, Profile profile)
     {
-        if (k == null) {
-            throw new IllegalArgumentException("Kweet is null");
+        if (!kweetMessage.isEmpty() && profile != null) {
+
+            Kweet kweet = new Kweet(profile.getUsername(), kweetMessage, new Date());
+            kweet.setId(nextId.getAndIncrement());
+            kweets.put(kweet.getId(), kweet);
+            //add kweet to profile
+            //possibly return kweet to kweetservice and pass it to profiledao to add it there
+            profile.addKweet(kweet.getId());
         }
-        k.setId(nextId.getAndIncrement());
-        kweets.put(k.getId(), k);
-        return k;
+        else
+        {
+            throw new IllegalArgumentException("Kweetmessage is empty");
+        }
+        //return k;
     }
 
     @Override
-    public Kweet update(Long id, String author, String content) {
-        if (author == null || content == null) {
+    public void update(Long id, String content) {
+
+        if (content == null && !content.isEmpty()) {
             throw new IllegalArgumentException("Author, Title or Content is null");
         }
-        Kweet k = kweets.get(id);
-        k.setOwner(author);
-        k.setMessage(content);
-
-        return k;
+        for (Long kweetId : kweets.keySet())
+        {
+            if(kweetId.equals(id))
+            {
+                Kweet kweetToUpdate = kweets.get(id);
+                kweetToUpdate.setMessage(content);
+                kweetToUpdate.setPostDate(new Date());
+                kweets.put(id, kweetToUpdate);
+            }
+        }
+        //return k;
     }
 
     @Override

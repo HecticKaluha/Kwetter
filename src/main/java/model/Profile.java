@@ -14,6 +14,7 @@ public class Profile
     private List<String> followers;
     private String profilePictureUrl;
     private Role role;
+    private List<Long> ownKweetsById;
 
     public Profile(String username)
     {
@@ -93,6 +94,11 @@ public class Profile
         }
     }
 
+    public void addKweet(Long kweetId)
+    {
+        ownKweetsById.add(kweetId);
+    }
+
     public void removeFollowing(String profileName)
     {
         this.following.remove(profileName);
@@ -140,4 +146,15 @@ public class Profile
     {
         this.role = role;
     }
+
+    public List<Long> getOwnKweetsById()
+    {
+        return ownKweetsById;
+    }
+
+    public void setOwnKweetsById(List<Long> ownKweetsById)
+    {
+        this.ownKweetsById = ownKweetsById;
+    }
+
 }

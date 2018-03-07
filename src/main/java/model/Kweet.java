@@ -8,16 +8,6 @@ import java.util.List;
 
 public class Kweet
 {
-    public Long getId()
-    {
-        return id;
-    }
-
-    public void setId(Long id)
-    {
-        this.id = id;
-    }
-
     private Long id;
     private String owner;
     private String message;
@@ -25,6 +15,7 @@ public class Kweet
     private List<String> likes;
     private List<Mention> mentions;
     private List<Trend> trends;
+
 
     public Kweet(String owner, String message, Date postDate, List<String> likes, List<Mention> mentions, List<Trend> trends)
     {
@@ -118,6 +109,16 @@ public class Kweet
     public void setTrends(List<Trend> trends)
     {
         this.trends = trends;
+    }
+
+    public Long getId()
+    {
+        return id;
+    }
+
+    public void setId(Long id)
+    {
+        this.id = id;
     }
 
     public void addComment(String message, String profile)
