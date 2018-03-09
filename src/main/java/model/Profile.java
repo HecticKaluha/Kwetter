@@ -3,6 +3,7 @@ package model;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class Profile
 {
@@ -14,7 +15,7 @@ public class Profile
     private List<String> followers;
     private String profilePictureUrl;
     private Role role;
-    private List<Long> ownKweetsById;
+    private List<Kweet> ownKweets;
 
     public Profile(String username)
     {
@@ -94,9 +95,14 @@ public class Profile
         }
     }
 
-    public void addKweet(Long kweetId)
+    public boolean addKweet(Kweet kweet)
     {
-        ownKweetsById.add(kweetId);
+        return ownKweets.add(kweet);
+    }
+
+    public boolean removeKweet(Kweet kweet)
+    {
+        return ownKweets.remove(kweet);
     }
 
     public void removeFollowing(String profileName)
@@ -107,9 +113,9 @@ public class Profile
     {
         this.following.remove(profileName);
     }
-    public List<Long> getLatest(){
-        List<Long> latestKweetsById = ownKweetsById.subList(Math.max(ownKweetsById.size() - 10, 0), ownKweetsById.size());
-        return latestKweetsById;
+
+    public List<Kweet> getLatest(){
+        return ownKweets.subList(Math.max(ownKweets.size() - 10, 0), ownKweets.size());
     }
     public List<String> getFollowing()
     {
@@ -151,14 +157,14 @@ public class Profile
         this.role = role;
     }
 
-    public List<Long> getOwnKweetsById()
+    public List<Kweet> getOwnKweetsById()
     {
-        return ownKweetsById;
+        return ownKweets;
     }
 
-    public void setOwnKweetsById(List<Long> ownKweetsById)
+    public void setOwnKweetsById(List<Kweet> ownKweets)
     {
-        this.ownKweetsById = ownKweetsById;
+        this.ownKweets = ownKweets;
     }
 
 

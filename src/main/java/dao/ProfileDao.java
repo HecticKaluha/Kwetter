@@ -21,11 +21,18 @@ public interface ProfileDao
 
     void updateProfile(String username, String bio, String location, String web);
 
-    List<Long> getLatest(Long profileId);
+    List<Kweet> getLatest(Long profileId);
 
     boolean addRole(String rolename, boolean candelete, boolean canpost, boolean canblacklist, boolean canlike);
 
     void updateRole(String username, String roleName);
 
+    boolean addKweetToProfile(
+            String username,
+            Kweet kweet);
+
+    boolean removeKweetFromProfile(
+            String username,
+            Kweet kweet);
 }
 

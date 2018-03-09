@@ -4,24 +4,28 @@ import java.util.List;
 
 import dao.KweetDao;
 import dao.KweetDaoImp;
+import dao.ProfileDao;
 import model.Kweet;
 import model.Profile;
 
+import javax.ejb.Stateless;
+import javax.faces.bean.ApplicationScoped;
+import javax.inject.Inject;
+import javax.inject.Singleton;
+
+@ApplicationScoped
 public class KweetService {
+    @Inject
+    private KweetDao kweetDao;
+    @Inject
+    private ProfileDao profileDao;
 
-
-    private final KweetDao kweetDao;
-    public KweetService() {
-        kweetDao = KweetDaoImp.getKweetDao();
+    public Kweet post(String kweetmessage, String profile){
+        Kweet kweet = kweetDao.post(kweetmessage, profileDao.findProfile(profile));
+        profileDao.addKweetToProfile(profile, kweet);
+        return kweet;
     }
 
-    public void post(String kweetmessage, Profile profile){
-        //get profile from id
-
-        kweetDao.post(kweetmessage, profile);
-        //eventueel add kweet to profile it's kweets
-        //return null;
-    }
     public void update(Long id, String updatedContent){
         kweetDao.update(id, updatedContent);
         //return null;

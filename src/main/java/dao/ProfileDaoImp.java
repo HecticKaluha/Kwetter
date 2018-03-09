@@ -1,23 +1,19 @@
 package dao;
 
+import model.Kweet;
 import model.Profile;
 import model.Role;
 
+import javax.ejb.Stateless;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
+@Stateless
 public class ProfileDaoImp implements ProfileDao
 {
-    private static ProfileDaoImp instance;
     private ConcurrentHashMap<String, Profile> profiles;
     private ConcurrentHashMap<String, Role> roles;
 
-    public static synchronized ProfileDao getProfileDao() {
-        if (instance == null) {
-            instance = new ProfileDaoImp();
-        }
-        return instance;
-    }
 
     private ProfileDaoImp() {
         this.initProfileDaoImp();
@@ -74,10 +70,11 @@ public class ProfileDaoImp implements ProfileDao
         profile.setWeb(web);
     }
     @Override
-    public List<Long> getLatest(Long profileId)
+    public List<Kweet> getLatest(Long profileId)
     {
         return profiles.get(profileId).getLatest();
     }
+
     @Override
     public boolean addRole(String rolename, boolean candelete, boolean canpost, boolean canblacklist, boolean canlike)
     {
@@ -105,6 +102,17 @@ public class ProfileDaoImp implements ProfileDao
         {
             throw new IllegalArgumentException("No role by that name found!");
         }
+    }
+    @Override
+    public boolean addKweetToProfile(
+            String username,
+            Kweet kweet){
+        return findProfile(username).addKweet(kweet);
+    }
+    @Override
+    public boolean removeKweetFromProfile(String username, Kweet kweet)
+    {
+        return findProfile(username).removeKweet(kweet);
     }
 }
 

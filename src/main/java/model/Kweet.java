@@ -9,7 +9,7 @@ import java.util.List;
 public class Kweet
 {
     private Long id;
-    private String owner;
+    private Profile owner;
     private String message;
     private Date postDate;
     private List<String> likes;
@@ -17,7 +17,7 @@ public class Kweet
     private List<Trend> trends;
 
 
-    public Kweet(String owner, String message, Date postDate, List<String> likes, List<Mention> mentions, List<Trend> trends)
+    public Kweet(Profile owner, String message, Date postDate, List<String> likes, List<Mention> mentions, List<Trend> trends)
     {
         this.owner = owner;
         this.message = message;
@@ -27,7 +27,7 @@ public class Kweet
         this.trends = trends;
     }
 
-    public Kweet(Long id, String owner, String message, Date postDate, List<String> likes, List<Mention> mentions, List<Trend> trends)
+    public Kweet(Long id, Profile owner, String message, Date postDate, List<String> likes, List<Mention> mentions, List<Trend> trends)
     {
         this.id = id;
         this.owner = owner;
@@ -38,7 +38,7 @@ public class Kweet
         this.trends = trends;
     }
 
-    public Kweet(String owner, String message, Date postDate)
+    public Kweet(Profile owner, String message, Date postDate)
     {
         this.owner = owner;
         this.message = message;
@@ -51,12 +51,12 @@ public class Kweet
         return new ArrayList<>();
     }
 
-    public String getOwner()
+    public Profile getOwner()
     {
         return owner;
     }
 
-    public void setOwner(String owner)
+    public void setOwner(Profile owner)
     {
         this.owner = owner;
     }

@@ -2,6 +2,7 @@ package dao;
 
 import model.*;
 
+import javax.ejb.Stateless;
 import javax.validation.constraints.Null;
 import java.util.ArrayList;
 import java.util.Date;
@@ -9,22 +10,18 @@ import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
 
+@Stateless
 public class KweetDaoImp implements KweetDao
 {
-    private static KweetDao instance = null;
     private ConcurrentHashMap<Long, Kweet> kweets;
+
     private AtomicLong nextId = new AtomicLong(0L);
 
-    public static synchronized KweetDao getKweetDao() {
-        if (instance == null) {
-            instance = new KweetDaoImp();
-        }
-        return instance;
-    }
-
+    //verplaatsen naar initclasse (singleresponsibilty)
     private KweetDaoImp() {
         this.initKweetDaoImp();
     }
+
 
     public void initKweetDaoImp() {
         kweets = new ConcurrentHashMap<>();
@@ -34,28 +31,27 @@ public class KweetDaoImp implements KweetDao
     }
 
     @Override
-    public void post(String kweetMessage, Profile profile)
+    public Kweet post(String kweetMessage, Profile profile)
     {
+        Kweet kweet;
         if (!kweetMessage.isEmpty() && profile != null) {
 
-            Kweet kweet = new Kweet(profile.getUsername(), kweetMessage, new Date());
+            kweet = new Kweet(profile, kweetMessage, new Date());
             kweet.setId(nextId.getAndIncrement());
             kweets.put(kweet.getId(), kweet);
-            //add kweet to profile
-            //possibly return kweet to kweetservice and pass it to profiledao to add it there
-            profile.addKweet(kweet.getId());
+            return kweet;
         }
         else
         {
             throw new IllegalArgumentException("Kweetmessage is empty");
         }
-        //return k;
     }
 
     @Override
     public void update(Long id, String content) {
 
-        if (content == null && !content.isEmpty()) {
+        if (content != null && !content.isEmpty())
+        {
             throw new IllegalArgumentException("Author, Title or Content is null");
         }
         for (Long kweetId : kweets.keySet())

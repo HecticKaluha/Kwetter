@@ -6,45 +6,68 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb6ac029-7f1f-4911-b8ca-8ceabf8efb41" name="Default" comment="Implemented KweetDao and cleaned KwetterManagerDao&#10;Fixed UnitTests">
+    <list default="true" id="cb6ac029-7f1f-4911-b8ca-8ceabf8efb41" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/JaxApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/KweetController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/KweetDaoJPAImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/KweetBody.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/beans.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Kwetter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Kwetter.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/WebBLogServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/command/Command.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/command/CommandFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/command/NotFound.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/command/admin/AddPost.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/command/admin/DeletePost.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/command/admin/EditPost.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/command/admin/GetPost.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/command/admin/ShowAdmin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/command/admin/ToggleAdvanced.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/command/blog/ListBlogs.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/command/blogDetails/AddComment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/command/blogDetails/BlogDetails.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/model/KweetTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/model/KweetTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/model/MentionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/model/MentionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/model/RoleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/model/RoleTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/model/TrendTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/model/TrendTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/KweetDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/KweetDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/KweetDaoImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/KweetDaoImp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/ProfileDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ProfileDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/ProfileDaoImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ProfileDaoImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Kweet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Kweet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Profile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/KweetService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/KweetService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/ProfileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/ProfileService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/WebBLogServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/command/Command.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/command/CommandFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/command/NotFound.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/command/admin/AddPost.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/command/admin/DeletePost.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/command/admin/EditPost.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/command/admin/GetPost.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/command/admin/ShowAdmin.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/command/admin/ToggleAdvanced.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/command/blog/ListBlogs.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/command/blogDetails/AddComment.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/command/blogDetails/BlogDetails.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/View/Admin.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/View/Blog.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/View/BlogDetails.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/Css/Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/Css/Style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/WEB-INF/View/Admin.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/WEB-INF/View/Blog.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/WEB-INF/View/BlogDetails.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/WEB-INF/classes/controller/WebBLogServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/WEB-INF/classes/controller/command/Command.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/WEB-INF/classes/controller/command/CommandFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/WEB-INF/classes/controller/command/NotFound.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/WEB-INF/classes/controller/command/admin/AddPost.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/WEB-INF/classes/controller/command/admin/DeletePost.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/WEB-INF/classes/controller/command/admin/EditPost.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/WEB-INF/classes/controller/command/admin/GetPost.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/WEB-INF/classes/controller/command/admin/ShowAdmin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/WEB-INF/classes/controller/command/admin/ToggleAdvanced.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/WEB-INF/classes/controller/command/blog/ListBlogs.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/WEB-INF/classes/controller/command/blogDetails/AddComment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/WEB-INF/classes/controller/command/blogDetails/BlogDetails.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/WEB-INF/classes/dao/KwetterManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/WEB-INF/classes/dao/KwetterManagerDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/WEB-INF/classes/dao/KwetterManagerDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/WEB-INF/classes/model/Kweet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/WEB-INF/classes/model/Kweet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/WEB-INF/classes/model/Profile.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/WEB-INF/classes/model/Profile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/WEB-INF/classes/service/BlogService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/WEB-INF/lib/gson-2.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/dao/KweetDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/KweetDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/dao/KweetDaoImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/KweetDaoImp.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/dao/ProfileDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/ProfileDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/dao/ProfileDaoImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/ProfileDaoImp.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/model/Kweet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Kweet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/model/Profile.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Profile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/service/BlogService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/model/KweetTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/model/MentionTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/model/RoleTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/model/TrendTest.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -55,35 +78,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="ProfileService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/service/ProfileService.java">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="KweetController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/controller/KweetController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="39" lean-forward="true" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1417#1418#0" expanded="true" />
-                <element signature="e#1475#1476#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Mention.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/model/Mention.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="172">
-              <caret line="13" column="35" lean-forward="true" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProfileDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/dao/ProfileDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="112" selection-start-line="25" selection-start-column="112" selection-end-line="25" selection-end-column="112" />
+            <state relative-caret-position="210">
+              <caret line="26" selection-start-line="26" selection-end-line="26" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -91,15 +91,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProfileDaoImp.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/dao/ProfileDaoImp.java">
+      <file leaf-file-name="KweetBody.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/model/KweetBody.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="61" column="13" lean-forward="true" selection-start-line="61" selection-start-column="13" selection-end-line="61" selection-end-column="13" />
+            <state relative-caret-position="85">
+              <caret line="6" column="22" lean-forward="true" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+              <folding>
+                <element signature="e#133#134#0" expanded="true" />
+                <element signature="e#163#164#0" expanded="true" />
+                <element signature="e#213#214#0" expanded="true" />
+                <element signature="e#251#252#0" expanded="true" />
+                <element signature="e#290#291#0" expanded="true" />
+                <element signature="e#321#322#0" expanded="true" />
+                <element signature="e#373#374#0" expanded="true" />
+                <element signature="e#413#414#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JaxApi.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/controller/JaxApi.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1701#1702#0" expanded="true" />
-                <element signature="e#1759#1760#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -114,8 +131,9 @@
         <option value="JUnit5 Test Class" />
         <option value="JUnit4 Test Class" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="jsf" />
+        <option value="cdi.beans_1_1" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -139,6 +157,9 @@
       <find>createprofile</find>
       <find>initWeb</find>
       <find>role</find>
+      <find>/blog</find>
+      <find>remove</find>
+      <find>plugin</find>
     </findStrings>
     <replaceStrings>
       <replace>k</replace>
@@ -174,33 +195,41 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/View/BlogDetails.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/View/MasterView.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/controller/command/admin/AddPost.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/View/Blog.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/model/KweetTest.java" />
         <option value="$PROJECT_DIR$/Test/KweetTest.java" />
-        <option value="$PROJECT_DIR$/Test/model/RoleTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/dao/KwetterManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/dao/KwetterManagerDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/dao/KwetterManagerDaoImp.java" />
-        <option value="$PROJECT_DIR$/Test/model/MentionTest.java" />
-        <option value="$PROJECT_DIR$/Test/model/KweetTest.java" />
-        <option value="$PROJECT_DIR$/Test/model/TrendTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/service/BlogService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/model/Kweet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dao/KweetDaoImp.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dao/KweetDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/service/KweetService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/model/Profile.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/View/index.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/Css/Style.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/View/localHMTL/index.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/View/localHMTL/css/style.css" />
-        <option value="$PROJECT_DIR$/src/main/java/dao/ProfileDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dao/ProfileDaoImp.java" />
-        <option value="$PROJECT_DIR$/src/main/java/service/ProfileService.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/command/admin/EditPost.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/WebBLogServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/beans.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
+        <option value="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/dao/KweetDaoJPAImp.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/JAXRSApplication.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dao/KweetDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/Kweet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dao/ProfileDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/service/KweetService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/service/ProfileService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/Profile.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dao/KweetDaoImp.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dao/ProfileDaoImp.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/Test/model/KweetTest.java" />
+        <option value="$PROJECT_DIR$/Test/model/MentionTest.java" />
+        <option value="$PROJECT_DIR$/Test/model/RoleTest.java" />
+        <option value="$PROJECT_DIR$/Test/model/TrendTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/JaxApi.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/KweetBody.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/KweetController.java" />
       </list>
     </option>
   </component>
@@ -213,21 +242,21 @@
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
-    <option name="FILTER_INFO" value="true" />
-    <option name="FILTER_DEBUG" value="true" />
+    <option name="FILTER_INFO" value="false" />
+    <option name="FILTER_DEBUG" value="false" />
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="825" />
-    <option name="width" value="925" />
-    <option name="height" value="1050" />
+    <option name="x" value="660" />
+    <option name="width" value="740" />
+    <option name="height" value="840" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
@@ -253,6 +282,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kwetter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kwetter" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Kwetter" type="b2602c69:ProjectViewProjectNode" />
@@ -313,16 +350,6 @@
             <path>
               <item name="Kwetter" type="b2602c69:ProjectViewProjectNode" />
               <item name="Kwetter" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="View" type="462c0819:PsiDirectoryNode" />
-              <item name="localHMTL" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Kwetter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Kwetter" type="462c0819:PsiDirectoryNode" />
               <item name="Test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -335,7 +362,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -359,13 +386,13 @@
       <recent name="C:\Users\Stefan\Documents\GitHub\Kwetter\Test" />
       <recent name="C:\Users\Stefan\Documents\GitHub\Kwetter\src\main\webapp" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="service" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Stefan\Documents\GitHub\Kwetter" />
       <recent name="C:\Users\Stefan\Documents\GitHub\Kwetter\src\main\webapp\WEB-INF" />
       <recent name="C:\Users\Stefan\Documents\GitHub\Kwetter\src\main" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="service" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="dao" />
@@ -383,7 +410,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.All in Kwetter">
+  <component name="RunManager" selected="GlassFish Server.KwetterLauncher">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
     </configuration>
@@ -391,10 +418,14 @@
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
     <configuration name="KwetterLauncher" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="Payara 4.1.2.174" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/kwetter/" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="Kwetter:war">
-          <settings />
+          <settings>
+            <option name="contextRoot" value="/kwetter" />
+            <option name="defaultContextRoot" value="false" />
+          </settings>
         </artifact>
       </deployment>
       <server-settings>
@@ -661,7 +692,11 @@
       <workItem from="1520410695293" duration="2640000" />
       <workItem from="1520420163526" duration="3268000" />
       <workItem from="1520436408145" duration="14577000" />
-      <workItem from="1520586513342" duration="2631000" />
+      <workItem from="1520586513342" duration="5869000" />
+      <workItem from="1520592861939" duration="458000" />
+      <workItem from="1520593548067" duration="1841000" />
+      <workItem from="1520596464998" duration="377000" />
+      <workItem from="1520597866788" duration="9960000" />
     </task>
     <task id="LOCAL-00001" summary="Implemented KweetDao and cleaned KwetterManagerDao&#10;Fixed UnitTests">
       <created>1519991535088</created>
@@ -670,7 +705,14 @@
       <option name="project" value="LOCAL" />
       <updated>1519991535089</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Implemented KweetDao and cleaned KwetterManagerDao&#10;Fixed UnitTests">
+      <created>1520589318089</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1520589318089</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -706,82 +748,46 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80635000" />
+    <option name="totallyTimeSpent" value="96605000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1040" height="744" extended-state="6" />
     <layout>
       <window_info anchor="right" id="Palette" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5053691" side_tool="true" weight="0.32763532" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5073826" side_tool="true" weight="0.519943" />
       <window_info anchor="bottom" id="Application Servers" order="0" weight="0.32838285" />
       <window_info anchor="right" id="Maven Projects" order="0" />
       <window_info anchor="right" id="CDI" order="6" weight="0.3295302" />
       <window_info id="Capture Tool" order="7" />
       <window_info id="Designer" order="0" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="JSF" order="2" />
+      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="10" weight="0.25" />
       <window_info id="UI Designer" order="2" />
-      <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Debug" order="9" visible="true" weight="0.4620462" />
       <window_info anchor="bottom" id="TODO" order="12" />
       <window_info anchor="bottom" id="Messages" order="2" sideWeight="0.49127516" weight="0.32905984" />
       <window_info anchor="right" id="Palette&#9;" order="4" />
       <window_info id="Image Layers" order="1" />
       <window_info anchor="bottom" id="Java Enterprise" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
-      <window_info anchor="right" x="0" y="0" width="337" height="638" id="Documentation" order="12" side_tool="true" visible="true" weight="0.2033557" />
-      <window_info anchor="bottom" id="Version Control" order="4" sideWeight="0.49597314" weight="0.32673267" />
-      <window_info active="true" anchor="bottom" id="Run" order="8" sideWeight="0.49261746" visible="true" weight="0.32763532" />
+      <window_info anchor="right" x="0" y="0" width="337" height="638" id="Documentation" order="12" side_tool="true" weight="0.3091837" />
+      <window_info anchor="bottom" id="Version Control" order="4" sideWeight="0.49597314" weight="0.32621083" />
+      <window_info anchor="bottom" id="Run" order="8" sideWeight="0.49261746" weight="0.38319087" />
       <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.49463087" weight="0.32763532" />
-      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.4987715" visible="true" weight="0.28053692" />
+      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.49554896" visible="true" weight="0.2897959" />
       <window_info anchor="right" id="Bean Validation" order="7" />
-      <window_info id="Web" order="4" sideWeight="0.5012285" side_tool="true" weight="0.27685326" />
+      <window_info id="Web" order="4" sideWeight="0.50445104" side_tool="true" weight="0.2885906" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info anchor="right" id="Commander" order="9" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="11" weight="0.24966443" />
+      <window_info anchor="right" id="Commander" order="9" weight="0.4" />
       <window_info anchor="bottom" id="Find" order="6" sideWeight="0.8632353" weight="0.32673267" />
-    </layout>
-    <layout-to-restore>
-      <window_info anchor="bottom" id="Application Servers" order="0" weight="0.32905984" />
-      <window_info id="Designer" order="0" />
-      <window_info anchor="right" id="Palette" order="8" />
-      <window_info id="Image Layers" order="1" />
-      <window_info anchor="bottom" id="Run" order="8" sideWeight="0.49261746" weight="0.32763532" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="10" weight="0.25" />
-      <window_info anchor="right" id="JSF" order="2" />
-      <window_info id="UI Designer" order="2" />
-      <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.49463087" visible="true" weight="0.32763532" />
-      <window_info id="Capture Tool" order="7" />
-      <window_info anchor="right" id="Capture Analysis" order="1" />
-      <window_info anchor="right" id="Commander" order="9" weight="0.4" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5053691" side_tool="true" visible="true" weight="0.32763532" />
-      <window_info anchor="bottom" id="Messages" order="2" sideWeight="0.49127516" weight="0.32905984" />
-      <window_info anchor="bottom" id="TODO" order="12" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="11" weight="0.24966443" />
-      <window_info anchor="bottom" id="Java Enterprise" order="3" />
-      <window_info anchor="bottom" id="Version Control" order="4" sideWeight="0.49597314" weight="0.32763532" />
-      <window_info anchor="right" id="Maven Projects" order="0" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.26107383" />
-      <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Message" order="5" />
-      <window_info id="Web" order="4" side_tool="true" />
-      <window_info anchor="right" id="Palette&#9;" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="CDI" order="6" weight="0.3295302" />
-      <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
-      <window_info anchor="bottom" id="Find" order="6" sideWeight="0.8632353" weight="0.328125" />
-      <window_info anchor="right" id="Bean Validation" order="7" />
-      <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
-    </layout-to-restore>
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="11" weight="0.24966443" />
+    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -821,56 +827,22 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/controller/KweetController.java</url>
+          <line>26</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="2" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="11" lean-forward="true" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/View/Blog.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="62" lean-forward="true" selection-start-line="2" selection-start-column="62" selection-end-line="2" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/Kwetter/WEB-INF/classes/controller/command/blog/ListBlogs.class" />
-    <entry file="file://$PROJECT_DIR$/target/Kwetter/WEB-INF/View/MasterView.jsp" />
-    <entry file="file://$PROJECT_DIR$/target/Kwetter/index.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/command/admin/ShowAdmin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="36" column="45" lean-forward="true" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/command/admin/ShowAdmin.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/controller/command/test/Test.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/command/blogDetails/BlogDetails.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/View/BlogDetails.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="34" column="14" lean-forward="true" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="6" lean-forward="true" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/command/blogDetails/BlogDetails.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/View/BlogDetails.jsp" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/View/Test.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -878,69 +850,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/command/NotFound.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/command/Command.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/View/MasterView.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-34">
-          <caret line="1" column="63" lean-forward="true" selection-start-line="1" selection-start-column="63" selection-end-line="1" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/command/blog/ListBlogs.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Kwetter.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/command/blogDetails/AddComment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="32" column="62" selection-start-line="32" selection-start-column="62" selection-end-line="32" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="16" column="16" lean-forward="true" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/command/NotFound.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/command/Command.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/command/blog/ListBlogs.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/command/blogDetails/AddComment.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/model/Comment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-86">
@@ -948,13 +861,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/View/Blog.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="86" selection-start-line="23" selection-start-column="73" selection-end-line="23" selection-end-column="86" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/View/Blog.jsp" />
     <entry file="file://$PROJECT_DIR$/src/main/java/model/Role.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -962,34 +869,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_73/src.zip!/java/util/concurrent/ConcurrentHashMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1251" column="25" selection-start-line="1251" selection-start-column="25" selection-end-line="1251" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/command/admin/AddPost.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Test/model/RoleTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="47" column="5" lean-forward="true" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/Trend.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/command/admin/AddPost.java" />
     <entry file="file://$PROJECT_DIR$/target/classes/dao/KwetterManager.class" />
     <entry file="file://$PROJECT_DIR$/target/classes/model/Kweet.class">
       <provider selected="true" editor-type-id="text-editor">
@@ -998,86 +878,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Test/model/TrendTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="21" column="31" lean-forward="true" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Test/model/KweetTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="29" column="59" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Test/model/MentionTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="36" column="8" lean-forward="true" selection-start-line="36" selection-start-column="8" selection-end-line="37" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/KwetterManagerDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="8" column="45" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/KwetterManagerDaoImp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="29" column="27" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/Kweet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1428">
-          <caret line="121" column="5" lean-forward="true" selection-start-line="121" selection-start-column="5" selection-end-line="121" selection-end-column="5" />
-          <folding>
-            <element signature="e#2331#2332#0" expanded="true" />
-            <element signature="e#2367#2368#0" expanded="true" />
-            <element signature="e#2276#2277#0" expanded="true" />
-            <element signature="e#2301#2302#0" expanded="true" />
-            <element signature="e#2339#2340#0" expanded="true" />
-            <element signature="e#2367#2368#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/service/RegisterService.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/KweetDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/Profile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="111" column="32" selection-start-line="111" selection-start-column="32" selection-end-line="111" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2016#2017#0" expanded="true" />
-            <element signature="e#2058#2059#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/View/index.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="7" lean-forward="true" selection-start-line="2" selection-end-line="19" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/Css/Style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -1099,88 +900,247 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/KweetService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/command/admin/DeletePost.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/command/admin/EditPost.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/WebBLogServlet.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/Mention.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="507">
-          <caret line="34" column="5" lean-forward="true" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="323">
+          <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/KweetDaoImp.java">
+    <entry file="file://$PROJECT_DIR$/Kwetter.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="33" column="5" lean-forward="true" selection-start-line="24" selection-start-column="4" selection-end-line="33" selection-end-column="5" />
+        <state relative-caret-position="238">
+          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/View/MasterView.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="26" column="81" selection-start-line="26" selection-start-column="81" selection-end-line="26" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/View/index.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="7" lean-forward="true" selection-start-line="2" selection-end-line="19" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/Trend.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dao/KwetterManagerDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="8" column="45" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dao/KwetterManagerDaoImp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="29" column="27" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="26" lean-forward="true" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/beans.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="8" lean-forward="true" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/Kweet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="11" column="25" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_73/src.zip!/java/util/concurrent/ConcurrentHashMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="933" column="13" selection-start-line="933" selection-start-column="13" selection-end-line="933" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="10" lean-forward="true" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dao/KweetDaoJPAImp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dao/KweetDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/KweetService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="25" column="21" lean-forward="true" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/ProfileService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="63" column="32" selection-start-line="63" selection-start-column="32" selection-end-line="63" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1682#1683#0" expanded="true" />
+            <element signature="e#1736#1737#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dao/ProfileDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="112" selection-start-line="25" selection-start-column="112" selection-end-line="25" selection-end-column="112" />
+        <state relative-caret-position="141">
+          <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test/model/RoleTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="47" column="7" lean-forward="true" selection-start-column="2" selection-end-line="81" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test/model/MentionTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="48" column="33" selection-start-column="2" selection-end-line="76" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test/model/TrendTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test/model/KweetTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="29" column="61" selection-start-column="2" selection-end-line="138" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="51" column="38" selection-start-line="51" selection-start-column="38" selection-end-line="51" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dao/ProfileDaoImp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="61" column="13" lean-forward="true" selection-start-line="61" selection-start-column="13" selection-end-line="61" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1701#1702#0" expanded="true" />
-            <element signature="e#1759#1760#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/ProfileService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="39" lean-forward="true" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1417#1418#0" expanded="true" />
-            <element signature="e#1475#1476#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/command/admin/DeletePost.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/command/admin/EditPost.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/WebBLogServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="141">
-          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+          <caret line="74" column="51" lean-forward="true" selection-start-line="74" selection-start-column="51" selection-end-line="74" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2009#2010#0" expanded="true" />
+            <element signature="e#2067#2068#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/Profile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="116" column="28" selection-start-line="116" selection-start-column="28" selection-end-line="116" selection-end-column="28" />
+          <folding>
+            <element signature="e#2156#2157#0" expanded="true" />
+            <element signature="e#2202#2203#0" expanded="true" />
+            <element signature="e#2454#2455#0" expanded="true" />
+            <element signature="e#2548#2549#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dao/KweetDaoImp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="49">
+          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/Mention.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/JaxApi.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="13" column="35" lean-forward="true" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
+        <state relative-caret-position="85">
+          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/KweetBody.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="6" column="22" lean-forward="true" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+          <folding>
+            <element signature="e#133#134#0" expanded="true" />
+            <element signature="e#163#164#0" expanded="true" />
+            <element signature="e#213#214#0" expanded="true" />
+            <element signature="e#251#252#0" expanded="true" />
+            <element signature="e#290#291#0" expanded="true" />
+            <element signature="e#321#322#0" expanded="true" />
+            <element signature="e#373#374#0" expanded="true" />
+            <element signature="e#413#414#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/KweetController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

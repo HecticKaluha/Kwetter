@@ -8,20 +8,22 @@ import model.Kweet;
 import model.Profile;
 import model.Role;
 
+import javax.faces.bean.ApplicationScoped;
+import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+@ApplicationScoped
 public class ProfileService
 {
-    private final ProfileDao profileDao;
-    //mag ik hier opnieuw instantieren?
-    private final KweetDao kweetDao;
+    @Inject
+    private ProfileDao profileDao;
 
-    public ProfileService() {
-        profileDao = ProfileDaoImp.getProfileDao();
-        kweetDao = KweetDaoImp.getKweetDao();
-    }
+    @Inject
+    private KweetDao kweetDao;
+
+
 
     public void followUser(Profile followThisProfile, Profile initialProfile)
     {
@@ -56,16 +58,9 @@ public class ProfileService
         return profileDao.addRole(rolename, canDelete, canPost, canBlacklist, canLike);
     }
 
-    //wellicht moet dit in de profiledaoImp??
-    public List<Kweet> getLatest(Long profileid)
-    {
-        List<Kweet> latestsKweets = new ArrayList<>();
-        List<Long> latestKweetIds = profileDao.getLatest(profileid);
-        for (Long id : latestKweetIds)
-        {
-            latestsKweets.add(kweetDao.find(id));
-        }
 
-        return latestsKweets;
+    public List<Kweet> getLatest(Long profileId)
+    {
+        return profileDao.getLatest(profileId);
     }
 }
