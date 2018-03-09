@@ -47,6 +47,14 @@ public class ProfileService
     {
         profileDao.updateProfile(username, bio, location, web);
     }
+    public void updateRole(String username, String rolename)
+    {
+        profileDao.updateRole("Klaartje", "admin");
+    }
+    public boolean addRole(String rolename, boolean canDelete, boolean canPost, boolean  canBlacklist, boolean canLike)
+    {
+        return profileDao.addRole(rolename, canDelete, canPost, canBlacklist, canLike);
+    }
 
     //wellicht moet dit in de profiledaoImp??
     public List<Kweet> getLatest(Long profileid)
