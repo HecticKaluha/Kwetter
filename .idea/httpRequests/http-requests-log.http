@@ -1,0 +1,346 @@
+POST http://localhost:8080/kwetter/api/kweet
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+  "message":"Hallo, ik ben Klaartje, een spontane jonge meid, ik houd van zeilen en aardappelen. Hook me up",
+  "username":"Klaartje"
+}
+
+<> 2018-03-11T070931.500.html
+
+###
+
+POST http://localhost:8080/kwetter/api/kweet
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+  "message":"Hallo, ik ben Klaartje, een spontane jonge meid, ik houd van zeilen en aardappelen. Hook me up",
+  "username":"Klaartje"
+}
+
+<> 2018-03-11T070427.500.html
+
+###
+
+POST http://localhost:8080/kwetter/api/kweet
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+  "message":"Hallo, ik ben Klaartje, een spontane jonge meid, ik houd van zeilen en aardappelen. Hook me up",
+  "username":"Klaartje"
+}
+
+<> 2018-03-11T070036.500.html
+
+###
+
+POST http://localhost:8080/kwetter/api/kweet
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+  "message":"Hallo, ik ben Klaartje, een spontane jonge meid, ik houd van zeilen en aardappelen. Hook me up",
+  "username":"Klaartje"
+}
+
+<> 2018-03-11T065615.500.html
+
+###
+
+POST http://localhost:8080/kwetter/api/kweet
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+  "message":"Hallo, ik ben Klaartje, een spontane jonge meid, ik houd van zeilen en aardappelen. Hook me up",
+  "username":"Klaartje"
+}
+
+<> 2018-03-11T065154.500.html
+
+###
+
+POST http://localhost:8080/kwetter/api/kweet
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+  "message":"Hallo, ik ben Klaartje, een spontane jonge meid, ik houd van zeilen en aardappelen. Hook me up",
+  "username":"Klaartje"
+}
+
+<> 2018-03-11T062710.500.html
+
+###
+
+POST http://localhost:8080/kwetter/api/kweet
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+  "message":"Hallo, ik ben Klaartje, een spontane jonge meid, ik houd van zeilen en aardappelen. Hook me up",
+  "username":"Klaartje"
+}
+
+<> 2018-03-11T061544.500.html
+
+###
+
+POST http://localhost:8080/kwetter/api/kweet
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+  "message":"Hallo, ik ben Klaartje, een spontane jonge meid, ik houd van zeilen en aardappelen. Hook me up",
+  "username":"Klaartje"
+}
+
+<> 2018-03-11T055522.500.html
+
+###
+
+POST http://localhost:8080/kwetter/api/kweet
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+  "message":"Hallo, ik ben Klaartje, een spontane jonge meid, ik houd van zeilen en aardappelen. Hook me up",
+  "username":"Klaartje"
+}
+
+<> 2018-03-11T055152.200.json
+
+###
+
+POST http://localhost:8080/kwetter/api/kweet
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+  "message":"Hallo, ik ben Klaartje, een spontane jonge meid, ik houd van zeilen en aardappelen. Hook me up",
+  "username":"Klaartje"
+}
+
+<> 2018-03-11T055117.200.json
+
+###
+
+POST http://localhost:8080/kwetter/api/kweet
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+  "message":"Hallo, ik ben Klaartje, een spontane jonge meid, ik houd van zeilen en aardappelen. Hook me up",
+  "username":"Klaartje"
+}
+
+<> 2018-03-11T054130.500.html
+
+###
+
+POST http://localhost:8080/kwetter/api/kweet
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+  "message":"Hallo, ik ben Klaartje, een spontane jonge meid, ik houd van zeilen en aardappelen. Hook me up",
+  "username":"Klaartje"
+}
+
+<> 2018-03-11T053927.500.html
+
+###
+
+POST http://localhost:8080/kwetter/api/kweet
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+  "message":"Hallo, ik ben Klaartje, een spontane jonge meid, ik houd van zeilen en aardappelen. Hook me up",
+  "username":"Klaartje"
+}
+
+<> 2018-03-11T053218.500.html
+
+###
+
+POST http://localhost:8080/kwetter/api/kweet
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+  "message":"Hallo, ik ben Klaartje, een spontane jonge meid, ik houd van zeilen en aardappelen. Hook me up",
+  "username":"Klaartje"
+}
+
+<> 2018-03-11T052833.500.html
+
+###
+
+POST http://localhost:8080/kwetter/api/kweet
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+  "message":"Hallo, ik ben Klaartje, een spontane jonge meid, ik houd van zeilen en aardappelen. Hook me up",
+  "username":"Klaartje"
+}
+
+<> 2018-03-11T052452.500.html
+
+###
+
+POST http://localhost:8080/kwetter/api/kweet
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+  "message":"Hallo, ik ben Klaartje, een spontane jonge meid, ik houd van zeilen en aardappelen. Hook me up",
+  "username":"Klaartje"
+}
+
+<> 2018-03-11T052133.500.html
+
+###
+
+POST http://localhost:8080/kwetter/api/kweet
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+  "message":"Hallo, ik ben Klaartje, een spontane jonge meid, ik houd van zeilen en aardappelen. Hook me up",
+  "username":"Klaartje"
+}
+
+<> 2018-03-11T051600.500.html
+
+###
+
+POST http://localhost:8080/kwetter/api/kweet
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-03-11T051238.404.json
+
+###
+
+POST http://localhost:8080/kwetter/api/kweet
+Accept: */*
+Cache-Control: no-cache
+{"message": "Hallo, ik ben Klaartje, een spontane jonge meid, ik houd van zeilen en aardappelen. Hook me up",
+"username": "Klaartje"
+}:
+
+<> 2018-03-11T050929.404.json
+
+###
+
+POST http://localhost:8080/kwetter/api/kweet
+Accept: */*
+Cache-Control: no-cache
+{"message": "Hallo, ik ben Klaartje, een spontane jonge meid, ik houd van zeilen en aardappelen. Hook me up",
+"username": "Klaartje" }
+/post:
+
+<> 2018-03-11T050737.404.json
+
+###
+
+POST http://localhost:8080/kwetter/api/kweet
+Accept: */*
+Cache-Control: no-cache
+{"message": "Hallo, ik ben Klaartje, een spontane jonge meid, ik houd van zeilen en aardappelen. Hook me up",
+"username": "Klaartje" }
+
+<> 2018-03-11T050618.404.json
+
+###
+
+POST http://localhost:8080/kwetter/api/kweet
+Accept: */*
+Cache-Control: no-cache
+Body: "message":"Hallo, ik ben Klaartje, een spontane jonge meid, ik houd van zeilen en aardappelen. Hook me up ;)",     "username":"Klaartje"
+
+<> 2018-03-11T045901.404.json
+
+###
+
+POST http://localhost:8080/kwetter/api/kweet
+Accept: */*
+Cache-Control: no-cache
+Body: "message":"Hallo, ik ben Klaartje, een spontane jonge meid, ik houd van zeilen en aardappelen. Hook me up ;)",     "username":"Klaartje"
+
+<> 2018-03-11T045348.404.html
+
+###
+
+POST http://localhost:8080/kwetter/api/kweet
+Accept: */*
+Cache-Control: no-cache
+
+{     "message":"Hallo, ik ben Klaartje, een spontane jonge meid, ik houd van zeilen en aardappelen. Hook me up ;)",     "username":"Klaartje" }
+
+<> 2018-03-11T045159.400.html
+
+###
+
+POST http://localhost:8080/kwetter/api
+Accept: */*
+Cache-Control: no-cache
+
+{     "message":"Hallo, ik ben Klaartje, een spontane jonge meid, ik houd van zeilen en aardappelen. Hook me up ;)",     "username":"Klaartje" }
+
+<> 2018-03-11T045052.404.html
+
+###
+
+POST http://localhost:8080/kwetter/api
+Accept: */*
+Cache-Control: no-cache
+
+{     "message":"Hallo, ik ben Klaartje, een spontane jonge meid, ik houd van zeilen en aardappelen. Hook me up ;)",     "username":"Klaartje" }
+
+<> 2018-03-11T044116.404.html
+
+###
+
+POST http://localhost:8080/kweet/api
+Accept: */*
+Cache-Control: no-cache
+
+{     "message":"Hallo, ik ben Klaartje, een spontane jonge meid, ik houd van zeilen en aardappelen. Hook me up ;)",     "username":"Klaartje" }
+
+<> 2018-03-11T044032.404.html
+
+###
+
+POST http://localhost:8080/kwetter/api/
+Accept: */*
+Cache-Control: no-cache
+
+{     "message":"Hallo, ik ben Klaartje, een spontane jonge meid, ik houd van zeilen en aardappelen. Hook me up ;)",     "username":"Klaartje" }
+
+<> 2018-03-11T043937.404.html
+
+###
+

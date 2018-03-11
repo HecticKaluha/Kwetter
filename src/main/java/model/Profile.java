@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -26,6 +27,12 @@ public class Profile
     {
         this.username = username;
         this.role = role;
+        this.ownKweets = new ArrayList<>();
+        this.following = new ArrayList<>();
+        this.web = "";
+        this.bio = "";
+        this.location = "";
+        this.profilePictureUrl = "";
     }
 
     public Profile(String username, String bio, String location, String web, List<String> following, List<String> followers, String profilePictureUrl, Role role)
@@ -38,6 +45,7 @@ public class Profile
         this.followers = followers;
         this.profilePictureUrl = profilePictureUrl;
         this.role = role;
+        this.ownKweets = new ArrayList<>();
     }
 
     public String getUsername()

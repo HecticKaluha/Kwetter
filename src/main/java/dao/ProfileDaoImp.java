@@ -1,5 +1,6 @@
 package dao;
 
+import exceptions.CouldNotFindProfileException;
 import model.Kweet;
 import model.Profile;
 import model.Role;
@@ -90,7 +91,7 @@ public class ProfileDaoImp implements ProfileDao
     }
 
     @Override
-    public void updateRole (String username,String roleName) throws IllegalArgumentException
+    public void updateRole (String username,String roleName) throws NullPointerException
     {
         Profile profile = findProfile(username);
         if(roles.get(username)!= null)
@@ -100,13 +101,18 @@ public class ProfileDaoImp implements ProfileDao
         }
         else
         {
-            throw new IllegalArgumentException("No role by that name found!");
+            throw new NullPointerException("No role by that name found!");
         }
     }
     @Override
     public boolean addKweetToProfile(
             String username,
-            Kweet kweet){
+            Kweet kweet) throws CouldNotFindProfileException
+    {
+        if (findProfile(username) == null)
+        {
+            throw new CouldNotFindProfileException("Profile not found");
+        }
         return findProfile(username).addKweet(kweet);
     }
     @Override

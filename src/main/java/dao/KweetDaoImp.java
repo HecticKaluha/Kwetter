@@ -1,9 +1,9 @@
 package dao;
 
+import exceptions.CouldNotCreateKweetException;
 import model.*;
 
 import javax.ejb.Stateless;
-import javax.validation.constraints.Null;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -25,25 +25,33 @@ public class KweetDaoImp implements KweetDao
 
     public void initKweetDaoImp() {
         kweets = new ConcurrentHashMap<>();
-        post("Bericht 1", new Profile("Hans"));
-        post("Bericht 2", new Profile("Piet"));
-        post("Bericht 3", new Profile("Klaartje"));
+        try
+        {
+            post("Bericht 1", new Profile("Hans"));
+            post("Bericht 2", new Profile("Piet"));
+            post("Bericht 3", new Profile("Klaartje"));
+        }
+        catch (CouldNotCreateKweetException e)
+        {
+            e.printStackTrace();
+        }
+
     }
 
     @Override
     public Kweet post(String kweetMessage, Profile profile)
+    throws CouldNotCreateKweetException
     {
         Kweet kweet;
-        if (!kweetMessage.isEmpty() && profile != null) {
-
+       try{
             kweet = new Kweet(profile, kweetMessage, new Date());
             kweet.setId(nextId.getAndIncrement());
             kweets.put(kweet.getId(), kweet);
             return kweet;
         }
-        else
+        catch(IllegalArgumentException e)
         {
-            throw new IllegalArgumentException("Kweetmessage is empty");
+            throw new CouldNotCreateKweetException("Could not create Kweet");
         }
     }
 

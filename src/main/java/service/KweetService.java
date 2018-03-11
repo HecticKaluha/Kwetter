@@ -2,26 +2,33 @@ package service;
 
 import java.util.List;
 
+import exceptions.CouldNotCreateKweetException;
+import exceptions.CouldNotFindProfileException;
 import dao.KweetDao;
-import dao.KweetDaoImp;
 import dao.ProfileDao;
 import model.Kweet;
-import model.Profile;
 
+import javax.ejb.EJB;
 import javax.ejb.Stateless;
-import javax.faces.bean.ApplicationScoped;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
-@ApplicationScoped
+@Stateless
 public class KweetService {
+
     @Inject
     private KweetDao kweetDao;
     @Inject
     private ProfileDao profileDao;
 
-    public Kweet post(String kweetmessage, String profile){
+    public Kweet post(String kweetmessage, String profile) throws CouldNotFindProfileException, CouldNotCreateKweetException
+    {
+        if (profileDao.findProfile(profile) == null) {
+            throw new CouldNotFindProfileException("profile not found");
+        }
         Kweet kweet = kweetDao.post(kweetmessage, profileDao.findProfile(profile));
+
+
         profileDao.addKweetToProfile(profile, kweet);
         return kweet;
     }

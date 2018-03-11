@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=x-iso-8859-11">
-    <title>Kwetter</title>
+    <title>My Blog</title>
 </head>
 <body>
 

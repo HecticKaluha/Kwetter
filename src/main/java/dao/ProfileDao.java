@@ -1,10 +1,10 @@
 package dao;
 
+import exceptions.CouldNotFindProfileException;
 import model.Kweet;
 import model.Profile;
 import model.Role;
 
-import java.util.HashMap;
 import java.util.List;
 
 public interface ProfileDao
@@ -19,7 +19,7 @@ public interface ProfileDao
 
     void deleteProfile(String username);
 
-    void updateProfile(String username, String bio, String location, String web);
+    void updateProfile(String username, String bio, String location, String web) throws NullPointerException;
 
     List<Kweet> getLatest(Long profileId);
 
@@ -27,9 +27,9 @@ public interface ProfileDao
 
     void updateRole(String username, String roleName);
 
-    boolean addKweetToProfile(
+    boolean addKweetToProfile (
             String username,
-            Kweet kweet);
+            Kweet kweet) throws CouldNotFindProfileException;
 
     boolean removeKweetFromProfile(
             String username,

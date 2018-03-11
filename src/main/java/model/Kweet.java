@@ -19,9 +19,7 @@ public class Kweet
 
     public Kweet(Profile owner, String message, Date postDate, List<String> likes, List<Mention> mentions, List<Trend> trends)
     {
-        this.owner = owner;
-        this.message = message;
-        this.postDate = postDate;
+        this (owner,message,postDate);
         this.likes = likes;
         this.mentions = mentions;
         this.trends = trends;
@@ -29,17 +27,20 @@ public class Kweet
 
     public Kweet(Long id, Profile owner, String message, Date postDate, List<String> likes, List<Mention> mentions, List<Trend> trends)
     {
+        this (owner, message, postDate,likes,mentions,trends);
         this.id = id;
-        this.owner = owner;
-        this.message = message;
-        this.postDate = postDate;
-        this.likes = likes;
-        this.mentions = mentions;
-        this.trends = trends;
     }
 
     public Kweet(Profile owner, String message, Date postDate)
     {
+        if(owner == null)
+        {
+            throw new IllegalArgumentException("Owner is not defined");
+        }
+        if(message.isEmpty() || message.length() > 140)
+        {
+            throw new IllegalArgumentException("Message is not defined/not a value or longer than 140 characters");
+        }
         this.owner = owner;
         this.message = message;
         this.postDate = postDate;

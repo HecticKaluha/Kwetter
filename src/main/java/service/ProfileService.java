@@ -10,6 +10,7 @@ import model.Role;
 
 import javax.faces.bean.ApplicationScoped;
 import javax.inject.Inject;
+import javax.validation.constraints.Null;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -45,7 +46,7 @@ public class ProfileService
     {
         profileDao.deleteProfile(username);
     }
-    public void updateProfile(String username, String bio, String location, String web)
+    public void updateProfile(String username, String bio, String location, String web) throws NullPointerException
     {
         profileDao.updateProfile(username, bio, location, web);
     }
