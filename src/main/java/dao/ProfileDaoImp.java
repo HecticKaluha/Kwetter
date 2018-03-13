@@ -1,5 +1,6 @@
 package dao;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import exceptions.CouldNotFindProfileException;
 import exceptions.RoleNotFoundException;
 import model.Kweet;

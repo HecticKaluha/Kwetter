@@ -16,9 +16,15 @@ import java.util.concurrent.ConcurrentHashMap;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Profile implements Serializable
 {
+    @JsonIgnore
     private String username;
+    @JsonIgnore
     private String bio;
+
+    @JsonIgnore
     private String location;
+
+    @JsonIgnore
     private String web;
 
     @JsonIgnore
@@ -26,7 +32,11 @@ public class Profile implements Serializable
 
     @JsonIgnore
     private List<String> followers;
+
+    @JsonIgnore
     private String profilePictureUrl;
+
+    @JsonIgnore
     private Role role;
 
     @JsonIgnore
@@ -43,6 +53,7 @@ public class Profile implements Serializable
         this.role = role;
         this.ownKweets = new ArrayList<>();
         this.following = new ArrayList<>();
+        this.followers = new ArrayList<>();
         this.web = "";
         this.bio = "";
         this.location = "";

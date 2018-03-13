@@ -13,30 +13,10 @@ import java.util.concurrent.atomic.AtomicLong;
 @Stateless
 public class KweetDaoImp implements KweetDao
 {
-    private ConcurrentHashMap<Long, Kweet> kweets;
+    private ConcurrentHashMap<Long, Kweet> kweets = new ConcurrentHashMap<>();
 
     private AtomicLong nextId = new AtomicLong(0L);
 
-    //verplaatsen naar initclasse (singleresponsibilty)
-    private KweetDaoImp() {
-        this.initKweetDaoImp();
-    }
-
-
-    public void initKweetDaoImp() {
-        kweets = new ConcurrentHashMap<>();
-//        try
-//        {
-//            post("Bericht 1", new Profile("Hans"));
-//            post("Bericht 2", new Profile("Piet"));
-//            post("Bericht 3", new Profile("Klaartje"));
-//        }
-//        catch (CouldNotCreateKweetException e)
-//        {
-//            e.printStackTrace();
-//        }
-
-    }
 
     @Override
     public Kweet post(String kweetMessage, Profile profile)
@@ -85,6 +65,7 @@ public class KweetDaoImp implements KweetDao
 
     @Override
     public List<Kweet> findAll() {
+        //recursief! Return alleen de waarden per kweet die je nodig hebt.
         return new ArrayList<>(kweets.values());
     }
 

@@ -25,6 +25,7 @@ public class Initialize {
     {
 
     }
+
     @PostConstruct
     public void initData()
     {

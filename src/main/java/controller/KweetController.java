@@ -28,7 +28,7 @@ public class KweetController
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getAllKweet()
+    public Response getAllKweets()
     {
         //GenericEntity<List<Kweet>> kweets = new GenericEntity<List<Kweet>>(kweetService.findAll()) {};
         List<Kweet> kweets = kweetService.findAll();

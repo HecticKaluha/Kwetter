@@ -1,5 +1,6 @@
 package service;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import dao.KweetDao;
 import dao.KweetDaoImp;
 import dao.ProfileDao;
@@ -63,7 +64,6 @@ public class ProfileService
     {
         return profileDao.getRole(rolename);
     }
-
 
     public List<Kweet> getLatest(Long profileId)
     {

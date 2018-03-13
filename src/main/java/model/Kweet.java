@@ -3,6 +3,7 @@ package model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import dao.KweetDao;
 
+import javax.persistence.NamedEntityGraph;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -16,10 +17,13 @@ import java.util.List;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Kweet implements Serializable
 {
+    @JsonIgnore
     private Long id;
     @JsonIgnore
     private Profile owner;
+
     private String message;
+    @JsonIgnore
     private Date postDate;
     @JsonIgnore
     private List<String> likes;

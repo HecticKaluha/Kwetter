@@ -8,11 +8,11 @@ import java.util.Set;
 @ApplicationPath("/api")
 public class JaxApi extends Application
 {
-    @Override
+    /*@Override
     public Set<Class<?>> getClasses()
     {
         Set<Class<?>> restClass = new HashSet<>();
         restClass.add(KweetController.class);
         return restClass;
-    }
+    }*/
 }
