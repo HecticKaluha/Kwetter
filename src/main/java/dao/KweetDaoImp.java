@@ -25,16 +25,16 @@ public class KweetDaoImp implements KweetDao
 
     public void initKweetDaoImp() {
         kweets = new ConcurrentHashMap<>();
-        try
-        {
-            post("Bericht 1", new Profile("Hans"));
-            post("Bericht 2", new Profile("Piet"));
-            post("Bericht 3", new Profile("Klaartje"));
-        }
-        catch (CouldNotCreateKweetException e)
-        {
-            e.printStackTrace();
-        }
+//        try
+//        {
+//            post("Bericht 1", new Profile("Hans"));
+//            post("Bericht 2", new Profile("Piet"));
+//            post("Bericht 3", new Profile("Klaartje"));
+//        }
+//        catch (CouldNotCreateKweetException e)
+//        {
+//            e.printStackTrace();
+//        }
 
     }
 

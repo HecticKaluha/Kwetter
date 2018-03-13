@@ -4,6 +4,7 @@ import dao.KweetDao;
 import dao.KweetDaoImp;
 import dao.ProfileDao;
 import dao.ProfileDaoImp;
+import exceptions.RoleNotFoundException;
 import model.Kweet;
 import model.Profile;
 import model.Role;
@@ -57,6 +58,10 @@ public class ProfileService
     public boolean addRole(String rolename, boolean canDelete, boolean canPost, boolean  canBlacklist, boolean canLike)
     {
         return profileDao.addRole(rolename, canDelete, canPost, canBlacklist, canLike);
+    }
+    public Role getRole(String rolename) throws RoleNotFoundException
+    {
+        return profileDao.getRole(rolename);
     }
 
 

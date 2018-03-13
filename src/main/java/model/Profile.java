@@ -1,21 +1,30 @@
 package model;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-
-public class Profile
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
+public class Profile implements Serializable
 {
     private String username;
     private String bio;
     private String location;
     private String web;
+    @XmlTransient
     private List<String> following;
+    @XmlTransient
     private List<String> followers;
     private String profilePictureUrl;
     private Role role;
+    @XmlTransient
     private List<Kweet> ownKweets;
 
     public Profile(String username)

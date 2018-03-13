@@ -2,11 +2,18 @@ package model;
 
 import dao.KweetDao;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Kweet
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
+public class Kweet implements Serializable
 {
     private Long id;
     private Profile owner;

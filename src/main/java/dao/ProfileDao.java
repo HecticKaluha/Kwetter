@@ -1,6 +1,7 @@
 package dao;
 
 import exceptions.CouldNotFindProfileException;
+import exceptions.RoleNotFoundException;
 import model.Kweet;
 import model.Profile;
 import model.Role;
@@ -24,6 +25,8 @@ public interface ProfileDao
     List<Kweet> getLatest(Long profileId);
 
     boolean addRole(String rolename, boolean candelete, boolean canpost, boolean canblacklist, boolean canlike);
+
+    Role getRole(String rolename) throws RoleNotFoundException;
 
     void updateRole(String username, String roleName);
 

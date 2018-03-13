@@ -1,6 +1,7 @@
 package dao;
 
 import exceptions.CouldNotFindProfileException;
+import exceptions.RoleNotFoundException;
 import model.Kweet;
 import model.Profile;
 import model.Role;
@@ -12,8 +13,8 @@ import java.util.concurrent.ConcurrentHashMap;
 @Stateless
 public class ProfileDaoImp implements ProfileDao
 {
-    private ConcurrentHashMap<String, Profile> profiles;
-    private ConcurrentHashMap<String, Role> roles;
+    private ConcurrentHashMap<String, Profile> profiles = new ConcurrentHashMap<>();
+    private ConcurrentHashMap<String, Role> roles = new ConcurrentHashMap<>();
 
 
     private ProfileDaoImp() {
@@ -21,13 +22,13 @@ public class ProfileDaoImp implements ProfileDao
     }
 
     public void initProfileDaoImp() {
-        profiles = new ConcurrentHashMap<>();
-        roles = new ConcurrentHashMap<>();
-        addRole("Admin", true, true, true, true);
-        addRole("User", false, true, false, true);
-        createProfile("Hans", roles.get("Admin") );
-        createProfile("Peter", roles.get("Admin"));
-        createProfile("Klaartje", roles.get("User"));
+//        profiles = new ConcurrentHashMap<>();
+//        roles = new ConcurrentHashMap<>();
+//        addRole("Admin", true, true, true, true);
+//        addRole("User", false, true, false, true);
+//        createProfile("Hans", roles.get("Admin") );
+//        createProfile("Peter", roles.get("Admin"));
+//        createProfile("Klaartje", roles.get("User"));
     }
 
     @Override
@@ -88,6 +89,15 @@ public class ProfileDaoImp implements ProfileDao
             return false;
         }
         return true;
+    }
+
+    @Override
+    public Role getRole(String rolename) throws RoleNotFoundException {
+        if(roles.get(rolename) == null)
+        {
+            throw new RoleNotFoundException("Role was not found");
+        }
+        return roles.get(rolename);
     }
 
     @Override

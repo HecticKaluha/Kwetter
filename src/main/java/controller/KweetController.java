@@ -7,19 +7,31 @@ import model.KweetBody;
 import service.KweetService;
 
 import javax.ejb.EJB;
-import javax.faces.bean.RequestScoped;
+
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.ws.rs.*;
+import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.List;
 
 @RequestScoped
 @Path("/kweet")
 @Produces(MediaType.APPLICATION_JSON)
 public class KweetController
 {
-    @EJB
+    @Inject
     private KweetService kweetService;
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getAllKweet()
+    {
+        GenericEntity<List<Kweet>> kweets = new GenericEntity<List<Kweet>>(kweetService.findAll()) {};
+
+        return Response.ok(kweets).build();
+    }
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
@@ -33,7 +45,7 @@ public class KweetController
         }
         catch(CouldNotFindProfileException | CouldNotCreateKweetException e)
         {
-            return Response.ok(e.getMessage()).build();
+            return Response.status(Response.Status.NOT_FOUND).entity(e.getMessage()).build();
         }
 
 //        try{

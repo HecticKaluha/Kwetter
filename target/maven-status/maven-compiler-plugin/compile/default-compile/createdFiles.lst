@@ -1,7 +1,9 @@
+controller\KweetController$1.class
 dao\KwetterManagerDaoImp.class
 model\Kweet.class
 exceptions\CouldNotCreateKweetException.class
 exceptions\KweetNotFoundException.class
+Initialize\Initialize.class
 dao\KwetterManagerDao.class
 model\Mention.class
 model\KweetBody.class
@@ -15,6 +17,7 @@ dao\KweetDao.class
 dao\ProfileDao.class
 service\KweetService.class
 model\Profile.class
+exceptions\RoleNotFoundException.class
 model\Comment.class
 service\ProfileService.class
 controller\JaxApi.class

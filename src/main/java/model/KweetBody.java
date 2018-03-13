@@ -3,11 +3,12 @@ package model;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 
 
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-public class KweetBody
+public class KweetBody implements Serializable
 {
     private String message;
     private String username;

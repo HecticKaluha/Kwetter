@@ -3,9 +3,11 @@ C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\dao\KweetDaoImp.
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\exceptions\CouldNotFindProfileException.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\model\Comment.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\exceptions\CouldNotCreateKweetException.java
+C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\Initialize\Initialize.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\dao\KweetDao.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\model\Kweet.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\model\Role.java
+C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\exceptions\RoleNotFoundException.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\dao\ProfileDaoImp.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\model\KweetBody.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\model\Profile.java
