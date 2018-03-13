@@ -1,5 +1,6 @@
 package controller;
 
+import com.google.gson.Gson;
 import exceptions.CouldNotCreateKweetException;
 import exceptions.CouldNotFindProfileException;
 import model.Kweet;
@@ -14,6 +15,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.ArrayList;
 import java.util.List;
 
 @RequestScoped
@@ -28,8 +30,9 @@ public class KweetController
     @Produces(MediaType.APPLICATION_JSON)
     public Response getAllKweet()
     {
-        GenericEntity<List<Kweet>> kweets = new GenericEntity<List<Kweet>>(kweetService.findAll()) {};
-
+        //GenericEntity<List<Kweet>> kweets = new GenericEntity<List<Kweet>>(kweetService.findAll()) {};
+        List<Kweet> kweets = kweetService.findAll();
+        //String json = new Gson().toJson(kweets);
         return Response.ok(kweets).build();
     }
 

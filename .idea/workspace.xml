@@ -8,56 +8,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb6ac029-7f1f-4911-b8ca-8ceabf8efb41" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_8_4.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_6_4.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_8_4.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_jaxrs_jackson_jaxrs_base_2_6_4.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_jaxrs_jackson_jaxrs_json_provider_2_6_4.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_jaxb_annotations_2_8_4.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_annotation_javax_annotation_api_1_2.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_ws_rs_javax_ws_rs_api_2_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_external_javax_inject_2_5_0_b42.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_osgi_resource_locator_1_0_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jersey_core_jersey_common_2_26.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jersey_ext_jersey_entity_filtering_2_26.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jersey_media_jersey_media_json_jackson_2_26.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Initialize/Initialize.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/exceptions/RoleNotFoundException.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_8_0.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_3_8_1.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/Kwetter_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/Kwetter_war_exploded.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterPath="" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/Kwetter.iml" afterPath="$PROJECT_DIR$/Kwetter.iml" />
       <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/KweetController.java" afterPath="$PROJECT_DIR$/src/main/java/controller/KweetController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/KweetDaoImp.java" afterPath="$PROJECT_DIR$/src/main/java/dao/KweetDaoImp.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ProfileDao.java" afterPath="$PROJECT_DIR$/src/main/java/dao/ProfileDao.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ProfileDaoImp.java" afterPath="$PROJECT_DIR$/src/main/java/dao/ProfileDaoImp.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Kweet.java" afterPath="$PROJECT_DIR$/src/main/java/model/Kweet.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/KweetBody.java" afterPath="$PROJECT_DIR$/src/main/java/model/KweetBody.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Mention.java" afterPath="$PROJECT_DIR$/src/main/java/model/Mention.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Profile.java" afterPath="$PROJECT_DIR$/src/main/java/model/Profile.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/ProfileService.java" afterPath="$PROJECT_DIR$/src/main/java/service/ProfileService.java" />
       <change beforePath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT.war" afterPath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT.war" />
+      <change beforePath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/WEB-INF/classes/controller/KweetController$1.class" afterPath="" />
       <change beforePath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/WEB-INF/classes/controller/KweetController.class" afterPath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/WEB-INF/classes/controller/KweetController.class" />
-      <change beforePath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/WEB-INF/classes/dao/KweetDaoImp.class" afterPath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/WEB-INF/classes/dao/KweetDaoImp.class" />
-      <change beforePath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/WEB-INF/classes/dao/ProfileDao.class" afterPath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/WEB-INF/classes/dao/ProfileDao.class" />
-      <change beforePath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/WEB-INF/classes/dao/ProfileDaoImp.class" afterPath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/WEB-INF/classes/dao/ProfileDaoImp.class" />
       <change beforePath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/WEB-INF/classes/model/Kweet.class" afterPath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/WEB-INF/classes/model/Kweet.class" />
-      <change beforePath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/WEB-INF/classes/model/KweetBody.class" afterPath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/WEB-INF/classes/model/KweetBody.class" />
-      <change beforePath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/WEB-INF/classes/model/Mention.class" afterPath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/WEB-INF/classes/model/Mention.class" />
       <change beforePath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/WEB-INF/classes/model/Profile.class" afterPath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/WEB-INF/classes/model/Profile.class" />
-      <change beforePath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/WEB-INF/classes/service/ProfileService.class" afterPath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/WEB-INF/classes/service/ProfileService.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/KweetController$1.class" afterPath="" />
       <change beforePath="$PROJECT_DIR$/target/classes/controller/KweetController.class" afterPath="$PROJECT_DIR$/target/classes/controller/KweetController.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/KweetDaoImp.class" afterPath="$PROJECT_DIR$/target/classes/dao/KweetDaoImp.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/ProfileDao.class" afterPath="$PROJECT_DIR$/target/classes/dao/ProfileDao.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/ProfileDaoImp.class" afterPath="$PROJECT_DIR$/target/classes/dao/ProfileDaoImp.class" />
       <change beforePath="$PROJECT_DIR$/target/classes/model/Kweet.class" afterPath="$PROJECT_DIR$/target/classes/model/Kweet.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/KweetBody.class" afterPath="$PROJECT_DIR$/target/classes/model/KweetBody.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Mention.class" afterPath="$PROJECT_DIR$/target/classes/model/Mention.class" />
       <change beforePath="$PROJECT_DIR$/target/classes/model/Profile.class" afterPath="$PROJECT_DIR$/target/classes/model/Profile.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/service/ProfileService.class" afterPath="$PROJECT_DIR$/target/classes/service/ProfileService.class" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/.idea/httpRequests/" />
@@ -70,132 +42,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="KweetController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="KweetController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/KweetController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+            <state relative-caret-position="315">
+              <caret line="35" column="43" lean-forward="false" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#747#760#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="924">
-              <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AbstractRuntimeDelegate.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/glassfish/jersey/core/jersey-common/2.26/jersey-common-2.26.jar!/org/glassfish/jersey/internal/AbstractRuntimeDelegate.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="49" column="52" lean-forward="false" selection-start-line="49" selection-start-column="52" selection-end-line="49" selection-end-column="52" />
-              <folding>
-                <marker date="1520944205705" expanded="false" signature="0:104" ph="/.../" />
-                <marker date="1520944205705" expanded="false" signature="153:958" ph="..." />
-                <marker date="1520944205705" expanded="true" signature="1211:1924" ph="{...}" />
-                <marker date="1520944205705" expanded="true" signature="1983:2069" ph="{...}" />
-                <marker date="1520944205705" expanded="true" signature="2121:2132" ph=" { " />
-                <marker date="1520944205705" expanded="true" signature="2181:2187" ph=" }" />
-                <marker date="1520944205705" expanded="false" signature="2229:2240" ph=" { " />
-                <marker date="1520944205705" expanded="false" signature="2270:2276" ph=" }" />
-                <marker date="1520944205705" expanded="true" signature="2339:2425" ph="{...}" />
-                <marker date="1520944205705" expanded="true" signature="2496:2799" ph="{...}" />
-                <marker date="1520944205705" expanded="true" signature="2872:3163" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OutboundMessageContext.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/glassfish/jersey/core/jersey-common/2.26/jersey-common-2.26.jar!/org/glassfish/jersey/message/internal/OutboundMessageContext.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-              <folding>
-                <marker date="1520944205705" expanded="false" signature="0:104" ph="/.../" />
-                <marker date="1520944205705" expanded="false" signature="161:1433" ph="..." />
-                <marker date="1520944205705" expanded="true" signature="1941:2178" ph="{...}" />
-                <marker date="1520944205705" expanded="true" signature="2247:2678" ph="{...}" />
-                <marker date="1520944205705" expanded="true" signature="2751:2882" ph="{...}" />
-                <marker date="1520944205705" expanded="false" signature="2944:2955" ph=" { " />
-                <marker date="1520944205705" expanded="false" signature="3004:3010" ph=" }" />
-                <marker date="1520944205705" expanded="true" signature="3059:3170" ph="{...}" />
-                <marker date="1520944205705" expanded="true" signature="3288:4290" ph="{...}" />
-                <marker date="1520944205705" expanded="true" signature="4394:4539" ph="{...}" />
-                <marker date="1520944205705" expanded="false" signature="4595:4606" ph=" { " />
-                <marker date="1520944205705" expanded="false" signature="4626:4632" ph=" }" />
-                <marker date="1520944205705" expanded="true" signature="4660:4944" ph="{...}" />
-                <marker date="1520944205705" expanded="true" signature="4732:4929" ph="{...}" />
-                <marker date="1520944205705" expanded="true" signature="4978:5284" ph="{...}" />
-                <marker date="1520944205705" expanded="true" signature="5066:5269" ph="{...}" />
-                <marker date="1520944205705" expanded="true" signature="5322:5434" ph="{...}" />
-                <marker date="1520944205705" expanded="true" signature="5489:6915" ph="{...}" />
-                <marker date="1520944205705" expanded="true" signature="6661:6718" ph="{...}" />
-                <marker date="1520944205705" expanded="true" signature="6966:8376" ph="{...}" />
-                <marker date="1520944205705" expanded="true" signature="8077:8131" ph="{...}" />
-                <marker date="1520944205705" expanded="true" signature="8429:9046" ph="{...}" />
-                <marker date="1520944205705" expanded="true" signature="9091:9488" ph="{...}" />
-                <marker date="1520944205705" expanded="true" signature="9517:10012" ph="{...}" />
-                <marker date="1520944205705" expanded="true" signature="9605:9998" ph="{...}" />
-                <marker date="1520944205705" expanded="true" signature="10046:10536" ph="{...}" />
-                <marker date="1520944205705" expanded="true" signature="10128:10522" ph="{...}" />
-                <marker date="1520944205705" expanded="true" signature="10593:11290" ph="{...}" />
-                <marker date="1520944205705" expanded="true" signature="11328:11755" ph="{...}" />
-                <marker date="1520944205705" expanded="false" signature="11399:11485" ph="apply(value) → {" />
-                <marker date="1520944205705" expanded="false" signature="11725:11740" ph="}" />
-                <marker date="1520944205705" expanded="true" signature="11791:12182" ph="{...}" />
-                <marker date="1520944205705" expanded="false" signature="11861:11937" ph="apply(input) → {" />
-                <marker date="1520944205705" expanded="false" signature="12152:12167" ph="}" />
-                <marker date="1520944205705" expanded="true" signature="12213:12613" ph="{...}" />
-                <marker date="1520944205705" expanded="false" signature="12276:12350" ph="apply(value) → {" />
-                <marker date="1520944205705" expanded="false" signature="12583:12598" ph="}" />
-                <marker date="1520944205705" expanded="true" signature="12647:13849" ph="{...}" />
-                <marker date="1520944205705" expanded="true" signature="13618:13670" ph="{...}" />
-                <marker date="1520944205705" expanded="true" signature="13895:14276" ph="{...}" />
-                <marker date="1520944205705" expanded="true" signature="14319:14713" ph="{...}" />
-                <marker date="1520944205705" expanded="true" signature="14766:14875" ph="{...}" />
-                <marker date="1520944205705" expanded="false" signature="14907:14918" ph=" { " />
-                <marker date="1520944205705" expanded="false" signature="14945:14951" ph=" }" />
-                <marker date="1520944205705" expanded="false" signature="14982:14993" ph=" { " />
-                <marker date="1520944205705" expanded="false" signature="15012:15018" ph=" }" />
-                <marker date="1520944205705" expanded="false" signature="15060:15071" ph=" { " />
-                <marker date="1520944205705" expanded="false" signature="15135:15141" ph=" }" />
-                <marker date="1520944205705" expanded="true" signature="15210:15338" ph="{...}" />
-                <marker date="1520944205705" expanded="true" signature="15403:15614" ph="{...}" />
-                <marker date="1520944205705" expanded="true" signature="15694:15804" ph="{...}" />
-                <marker date="1520944205705" expanded="true" signature="15894:15984" ph="{...}" />
-                <marker date="1520944205705" expanded="false" signature="16035:16046" ph=" { " />
-                <marker date="1520944205705" expanded="false" signature="16096:16102" ph=" }" />
-                <marker date="1520944205705" expanded="false" signature="16140:16151" ph=" { " />
-                <marker date="1520944205705" expanded="false" signature="16220:16226" ph=" }" />
-                <marker date="1520944205705" expanded="false" signature="16259:16270" ph=" { " />
-                <marker date="1520944205705" expanded="false" signature="16336:16342" ph=" }" />
-                <marker date="1520944205705" expanded="false" signature="16384:16395" ph=" { " />
-                <marker date="1520944205705" expanded="false" signature="16435:16441" ph=" }" />
-                <marker date="1520944205705" expanded="false" signature="16489:16500" ph=" { " />
-                <marker date="1520944205705" expanded="false" signature="16552:16558" ph=" }" />
-                <marker date="1520944205705" expanded="true" signature="16623:16718" ph="{...}" />
-                <marker date="1520944205705" expanded="false" signature="16761:16772" ph=" { " />
-                <marker date="1520944205705" expanded="false" signature="16797:16803" ph=" }" />
-                <marker date="1520944205705" expanded="false" signature="16863:16874" ph=" { " />
-                <marker date="1520944205705" expanded="false" signature="16907:16913" ph=" }" />
-                <marker date="1520944205705" expanded="true" signature="16976:17354" ph="{...}" />
-                <marker date="1520944205705" expanded="true" signature="17444:17522" ph="{...}" />
-                <marker date="1520944205705" expanded="true" signature="17574:17872" ph="{...}" />
-                <marker date="1520944205705" expanded="false" signature="17906:17917" ph=" { " />
-                <marker date="1520944205705" expanded="false" signature="17966:17972" ph=" }" />
-                <marker date="1520944205705" expanded="true" signature="17998:18740" ph="{...}" />
-                <marker date="1520944205705" expanded="true" signature="18753:18874" ph="{...}" />
-                <marker date="1520944205705" expanded="true" signature="18912:18986" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -216,8 +69,8 @@
       <file leaf-file-name="KweetService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/service/KweetService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="43" column="26" lean-forward="false" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
+            <state relative-caret-position="250">
+              <caret line="43" column="23" lean-forward="false" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1135#1136#0" expanded="true" />
@@ -240,38 +93,38 @@
       <file leaf-file-name="Kweet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/model/Kweet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state relative-caret-position="420">
+              <caret line="27" column="15" lean-forward="false" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="15" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1755#1756#0" expanded="true" />
-                <element signature="e#1783#1784#0" expanded="true" />
-                <element signature="e#1830#1831#0" expanded="true" />
-                <element signature="e#1864#1865#0" expanded="true" />
-                <element signature="e#1902#1903#0" expanded="true" />
-                <element signature="e#1932#1933#0" expanded="true" />
-                <element signature="e#1982#1983#0" expanded="true" />
-                <element signature="e#2020#2021#0" expanded="true" />
-                <element signature="e#2057#2058#0" expanded="true" />
-                <element signature="e#2088#2089#0" expanded="true" />
-                <element signature="e#2138#2139#0" expanded="true" />
-                <element signature="e#2178#2179#0" expanded="true" />
-                <element signature="e#2220#2221#0" expanded="true" />
-                <element signature="e#2248#2249#0" expanded="true" />
-                <element signature="e#2300#2301#0" expanded="true" />
-                <element signature="e#2334#2335#0" expanded="true" />
-                <element signature="e#2380#2381#0" expanded="true" />
-                <element signature="e#2411#2412#0" expanded="true" />
-                <element signature="e#2470#2471#0" expanded="true" />
-                <element signature="e#2510#2511#0" expanded="true" />
-                <element signature="e#2552#2553#0" expanded="true" />
-                <element signature="e#2581#2582#0" expanded="true" />
-                <element signature="e#2634#2635#0" expanded="true" />
-                <element signature="e#2670#2671#0" expanded="true" />
-                <element signature="e#2701#2702#0" expanded="true" />
-                <element signature="e#2726#2727#0" expanded="true" />
-                <element signature="e#2764#2765#0" expanded="true" />
-                <element signature="e#2792#2793#0" expanded="true" />
+                <element signature="e#1871#1872#0" expanded="true" />
+                <element signature="e#1899#1900#0" expanded="true" />
+                <element signature="e#1946#1947#0" expanded="true" />
+                <element signature="e#1980#1981#0" expanded="true" />
+                <element signature="e#2018#2019#0" expanded="true" />
+                <element signature="e#2048#2049#0" expanded="true" />
+                <element signature="e#2098#2099#0" expanded="true" />
+                <element signature="e#2136#2137#0" expanded="true" />
+                <element signature="e#2173#2174#0" expanded="true" />
+                <element signature="e#2204#2205#0" expanded="true" />
+                <element signature="e#2254#2255#0" expanded="true" />
+                <element signature="e#2294#2295#0" expanded="true" />
+                <element signature="e#2336#2337#0" expanded="true" />
+                <element signature="e#2364#2365#0" expanded="true" />
+                <element signature="e#2416#2417#0" expanded="true" />
+                <element signature="e#2450#2451#0" expanded="true" />
+                <element signature="e#2496#2497#0" expanded="true" />
+                <element signature="e#2527#2528#0" expanded="true" />
+                <element signature="e#2586#2587#0" expanded="true" />
+                <element signature="e#2626#2627#0" expanded="true" />
+                <element signature="e#2668#2669#0" expanded="true" />
+                <element signature="e#2697#2698#0" expanded="true" />
+                <element signature="e#2750#2751#0" expanded="true" />
+                <element signature="e#2786#2787#0" expanded="true" />
+                <element signature="e#2817#2818#0" expanded="true" />
+                <element signature="e#2842#2843#0" expanded="true" />
+                <element signature="e#2880#2881#0" expanded="true" />
+                <element signature="e#2908#2909#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -280,8 +133,18 @@
       <file leaf-file-name="Profile.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/model/Profile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="23" column="35" lean-forward="false" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
+            <state relative-caret-position="105">
+              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -331,6 +194,9 @@
       <find>nullpo</find>
       <find>post</find>
       <find>find</find>
+      <find>jerse</find>
+      <find>severe</find>
+      <find>arraylis</find>
     </findStrings>
     <replaceStrings>
       <replace>k</replace>
@@ -399,10 +265,10 @@
         <option value="$PROJECT_DIR$/src/main/java/dao/ProfileDaoImp.java" />
         <option value="$PROJECT_DIR$/src/main/java/service/ProfileService.java" />
         <option value="$PROJECT_DIR$/src/main/java/Initialize/Initialize.java" />
-        <option value="$PROJECT_DIR$/src/main/java/controller/KweetController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/model/Kweet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/model/Profile.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/model/Profile.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/Kweet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/KweetController.java" />
       </list>
     </option>
   </component>
@@ -520,11 +386,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Kwetter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Kwetter" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -1153,7 +1014,7 @@
       <workItem from="1520790237250" duration="1463000" />
       <workItem from="1520885428318" duration="2759000" />
       <workItem from="1520888686896" duration="1263000" />
-      <workItem from="1520929351628" duration="18309000" />
+      <workItem from="1520929351628" duration="21546000" />
     </task>
     <task id="LOCAL-00001" summary="Implemented KweetDao and cleaned KwetterManagerDao&#10;Fixed UnitTests">
       <created>1519991535088</created>
@@ -1205,10 +1066,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="135522000" />
+    <option name="totallyTimeSpent" value="138759000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38283828" sideWeight="0.50832075" order="7" side_tool="true" content_ui="tabs" />
@@ -1230,7 +1092,7 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32621083" sideWeight="0.49597314" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38121548" sideWeight="0.49167928" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38121548" sideWeight="0.49167928" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32763532" sideWeight="0.49463087" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1984375" sideWeight="0.49554896" order="5" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1288,7 +1150,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/controller/KweetController.java</url>
-          <line>32</line>
+          <line>35</line>
           <properties />
           <option name="timeStamp" value="6" />
         </line-breakpoint>
@@ -1298,13 +1160,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/View/localHMTL/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="28" lean-forward="false" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/View/localHMTL/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -1583,18 +1438,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/KweetService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="43" column="26" lean-forward="false" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1135#1136#0" expanded="true" />
-            <element signature="e#1176#1177#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/glassfish/jersey/core/jersey-common/2.26/jersey-common-2.26.jar!/org/glassfish/jersey/message/internal/OutboundMessageContext.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
@@ -1723,68 +1566,87 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/Kweet.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/KweetService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state relative-caret-position="250">
+          <caret line="43" column="23" lean-forward="false" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1755#1756#0" expanded="true" />
-            <element signature="e#1783#1784#0" expanded="true" />
-            <element signature="e#1830#1831#0" expanded="true" />
-            <element signature="e#1864#1865#0" expanded="true" />
-            <element signature="e#1902#1903#0" expanded="true" />
-            <element signature="e#1932#1933#0" expanded="true" />
-            <element signature="e#1982#1983#0" expanded="true" />
-            <element signature="e#2020#2021#0" expanded="true" />
-            <element signature="e#2057#2058#0" expanded="true" />
-            <element signature="e#2088#2089#0" expanded="true" />
-            <element signature="e#2138#2139#0" expanded="true" />
-            <element signature="e#2178#2179#0" expanded="true" />
-            <element signature="e#2220#2221#0" expanded="true" />
-            <element signature="e#2248#2249#0" expanded="true" />
-            <element signature="e#2300#2301#0" expanded="true" />
-            <element signature="e#2334#2335#0" expanded="true" />
-            <element signature="e#2380#2381#0" expanded="true" />
-            <element signature="e#2411#2412#0" expanded="true" />
-            <element signature="e#2470#2471#0" expanded="true" />
-            <element signature="e#2510#2511#0" expanded="true" />
-            <element signature="e#2552#2553#0" expanded="true" />
-            <element signature="e#2581#2582#0" expanded="true" />
-            <element signature="e#2634#2635#0" expanded="true" />
-            <element signature="e#2670#2671#0" expanded="true" />
-            <element signature="e#2701#2702#0" expanded="true" />
-            <element signature="e#2726#2727#0" expanded="true" />
-            <element signature="e#2764#2765#0" expanded="true" />
-            <element signature="e#2792#2793#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/Profile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="23" column="35" lean-forward="false" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/KweetController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#747#760#0" expanded="true" />
+            <element signature="e#1135#1136#0" expanded="true" />
+            <element signature="e#1176#1177#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="924">
-          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+        <state relative-caret-position="187">
+          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/Kweet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="27" column="15" lean-forward="false" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1871#1872#0" expanded="true" />
+            <element signature="e#1899#1900#0" expanded="true" />
+            <element signature="e#1946#1947#0" expanded="true" />
+            <element signature="e#1980#1981#0" expanded="true" />
+            <element signature="e#2018#2019#0" expanded="true" />
+            <element signature="e#2048#2049#0" expanded="true" />
+            <element signature="e#2098#2099#0" expanded="true" />
+            <element signature="e#2136#2137#0" expanded="true" />
+            <element signature="e#2173#2174#0" expanded="true" />
+            <element signature="e#2204#2205#0" expanded="true" />
+            <element signature="e#2254#2255#0" expanded="true" />
+            <element signature="e#2294#2295#0" expanded="true" />
+            <element signature="e#2336#2337#0" expanded="true" />
+            <element signature="e#2364#2365#0" expanded="true" />
+            <element signature="e#2416#2417#0" expanded="true" />
+            <element signature="e#2450#2451#0" expanded="true" />
+            <element signature="e#2496#2497#0" expanded="true" />
+            <element signature="e#2527#2528#0" expanded="true" />
+            <element signature="e#2586#2587#0" expanded="true" />
+            <element signature="e#2626#2627#0" expanded="true" />
+            <element signature="e#2668#2669#0" expanded="true" />
+            <element signature="e#2697#2698#0" expanded="true" />
+            <element signature="e#2750#2751#0" expanded="true" />
+            <element signature="e#2786#2787#0" expanded="true" />
+            <element signature="e#2817#2818#0" expanded="true" />
+            <element signature="e#2842#2843#0" expanded="true" />
+            <element signature="e#2880#2881#0" expanded="true" />
+            <element signature="e#2908#2909#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/Role.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/Profile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/KweetController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="35" column="43" lean-forward="false" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

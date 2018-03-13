@@ -1,4 +1,3 @@
-controller\KweetController$1.class
 dao\KwetterManagerDaoImp.class
 model\Kweet.class
 exceptions\CouldNotCreateKweetException.class

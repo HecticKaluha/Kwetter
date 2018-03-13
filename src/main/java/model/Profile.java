@@ -1,5 +1,7 @@
 package model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -18,13 +20,16 @@ public class Profile implements Serializable
     private String bio;
     private String location;
     private String web;
-    @XmlTransient
+
+    @JsonIgnore
     private List<String> following;
-    @XmlTransient
+
+    @JsonIgnore
     private List<String> followers;
     private String profilePictureUrl;
     private Role role;
-    @XmlTransient
+
+    @JsonIgnore
     private List<Kweet> ownKweets;
 
     public Profile(String username)
