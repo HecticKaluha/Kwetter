@@ -6,6 +6,8 @@ import exceptions.CouldNotCreateKweetException;
 import exceptions.CouldNotFindProfileException;
 import dao.KweetDao;
 import dao.ProfileDao;
+import exceptions.KweetNotFoundException;
+import exceptions.NoContentToUpdateException;
 import model.Kweet;
 
 import javax.ejb.EJB;
@@ -33,9 +35,8 @@ public class KweetService {
         return kweet;
     }
 
-    public void update(Long id, String updatedContent){
-        kweetDao.update(id, updatedContent);
-        //return null;
+    public Kweet update(Long id, String updatedContent) throws NoContentToUpdateException, KweetNotFoundException{
+        return kweetDao.update(id, updatedContent);
     }
     public void delete(Long id){
         kweetDao.delete(id);

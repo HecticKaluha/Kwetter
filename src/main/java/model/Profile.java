@@ -17,6 +17,7 @@ import java.util.concurrent.ConcurrentHashMap;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Profile implements Serializable
 {
+
     private String username;
 
     private String bio;

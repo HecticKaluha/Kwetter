@@ -1,22 +1,19 @@
 package controller;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+import controller.JsonBodyClasses.UpdateKweetBody;
 import exceptions.CouldNotCreateKweetException;
 import exceptions.CouldNotFindProfileException;
+import exceptions.KweetNotFoundException;
+import exceptions.NoContentToUpdateException;
 import model.Kweet;
-import model.KweetBody;
+import controller.JsonBodyClasses.KweetBody;
 import service.KweetService;
-
-import javax.ejb.EJB;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.ws.rs.*;
-import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.util.ArrayList;
 import java.util.List;
 
 @RequestScoped
@@ -49,28 +46,22 @@ public class KweetController
         {
             return Response.status(Response.Status.NOT_FOUND).entity(e.getMessage()).build();
         }
-
-//        try{
-//            if(kweetService == null)
-//            {
-//                return Response.ok("kweetservice is null").build();
-//            }
-//            if(kweetBody == null) {
-//                return Response.status(Response.Status.NOT_FOUND).entity("poep").build();
-//            }
-//            if() == null)
-//            {
-
-//                return Response.ok("response is null").build();
-//            }
-//            return Response.ok(kweetService.post(kweetBody.getMessage(), kweetBody.getUsername())).build();
-//        }
-//        catch(Exception e)
-//        {
-//            return Response.ok(e.getMessage()).build();
-//        }
     }
 
+    /*@PUT
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response updateKweet(UpdateKweetBody updateKweetBody)
+    {
+        try{
+            Kweet updatedKweet = kweetService.update(updateKweetBody.getId(), updateKweetBody.getMessage());
+            return Response.ok(updatedKweet).build();
+        }
+        catch(KweetNotFoundException | NoContentToUpdateException e)
+        {
+            return Response.status(Response.Status.NOT_MODIFIED).entity(e.getMessage()).build();
+        }
+    }*/
     /*void post(String kweetMessage, Profile profile);
     void update(Long id, String content);
     void delete(Long id);

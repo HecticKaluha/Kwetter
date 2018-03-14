@@ -1,6 +1,8 @@
 package dao;
 
 import exceptions.CouldNotCreateKweetException;
+import exceptions.KweetNotFoundException;
+import exceptions.NoContentToUpdateException;
 import model.*;
 
 import javax.ejb.Stateless;
@@ -36,23 +38,21 @@ public class KweetDaoImp implements KweetDao
     }
 
     @Override
-    public void update(Long id, String content) {
+    public Kweet update(Long id, String content) throws NoContentToUpdateException, KweetNotFoundException{
 
         if (content != null && !content.isEmpty())
         {
-            throw new IllegalArgumentException("Author, Title or Content is null");
+            throw new NoContentToUpdateException("No Content to update for kweet with id " + id);
         }
-        for (Long kweetId : kweets.keySet())
+        if(!kweets.contains(id))
         {
-            if(kweetId.equals(id))
-            {
-                Kweet kweetToUpdate = kweets.get(id);
-                kweetToUpdate.setMessage(content);
-                kweetToUpdate.setPostDate(new Date());
-                kweets.put(id, kweetToUpdate);
-            }
+            throw new KweetNotFoundException("Kweet with id " + " not found");
         }
-        //return k;
+        Kweet kweetToUpdate = kweets.get(id);
+        kweetToUpdate.setMessage(content);
+        kweetToUpdate.setPostDate(new Date());
+        kweets.put(id, kweetToUpdate);
+        return kweetToUpdate;
     }
 
     @Override
