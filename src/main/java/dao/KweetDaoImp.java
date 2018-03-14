@@ -66,14 +66,14 @@ public class KweetDaoImp implements KweetDao
     @Override
     public List<Kweet> findAll() {
         //recursief! Return alleen de waarden per kweet die je nodig hebt.
-        List<Kweet> kweetList = new ArrayList<Kweet>();
+        /*List<Kweet> kweetList = new ArrayList<Kweet>();
         for(Kweet kweet:kweets.values())
         {
             //kweetList.add(new Kweet(new Profile("Hans"), "gelukt", new Date()));
             kweetList.add(new Kweet(kweet.getOwner(),  kweet.getMessage(), kweet.getPostDate()));
         }
-        return kweetList;
-        //return new ArrayList<>(kweets.values());
+        return kweetList;*/
+        return new ArrayList<>(kweets.values());
     }
 
     @Override

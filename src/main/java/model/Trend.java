@@ -4,18 +4,21 @@ package model;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
+import java.util.List;
 
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Trend
 {
     private String trend;
-    private Kweet containingKweet;
+    @XmlTransient
+    private List<Kweet> containingKweets;
 
     public Trend(String trend, Kweet containingKweet)
     {
         this.trend = trend;
-        this.containingKweet = containingKweet;
+        this.containingKweets.add(containingKweet);
     }
 
     public String getTrend()
@@ -28,13 +31,13 @@ public class Trend
         this.trend = trend;
     }
 
-    public Kweet getContainingKweet()
+    public List<Kweet> getContainingKweet()
     {
-        return containingKweet;
+        return containingKweets;
     }
 
-    public void setContainingKweet(Kweet containingKweet)
+    public void setContainingKweet(List<Kweet> containingKweet)
     {
-        this.containingKweet = containingKweet;
+        this.containingKweets = containingKweet;
     }
 }

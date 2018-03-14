@@ -1,6 +1,7 @@
 package model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.google.gson.annotations.Expose;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -16,27 +17,20 @@ import java.util.concurrent.ConcurrentHashMap;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Profile implements Serializable
 {
-    @XmlTransient
     private String username;
-    @XmlTransient
+
     private String bio;
 
-    @XmlTransient
     private String location;
 
-    @XmlTransient
     private String web;
 
-    @XmlTransient
     private List<String> following;
 
-    @XmlTransient
     private List<String> followers;
 
-    @XmlTransient
     private String profilePictureUrl;
 
-    @XmlTransient
     private Role role;
 
     @XmlTransient

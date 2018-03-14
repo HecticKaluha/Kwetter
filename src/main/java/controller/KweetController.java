@@ -1,6 +1,7 @@
 package controller;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import exceptions.CouldNotCreateKweetException;
 import exceptions.CouldNotFindProfileException;
 import model.Kweet;
@@ -30,10 +31,8 @@ public class KweetController
     @Produces(MediaType.APPLICATION_JSON)
     public Response getAllKweets()
     {
-        //GenericEntity<List<Kweet>> kweets = new GenericEntity<List<Kweet>>(kweetService.findAll()) {};
         List<Kweet> kweets = kweetService.findAll();
-        String json = new Gson().toJson(kweets);
-        return Response.ok(json).build();
+        return Response.ok(kweets).build();
     }
 
     @POST
