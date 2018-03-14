@@ -22,8 +22,8 @@ public class KweetDaoImp implements KweetDao
     public Kweet post(String kweetMessage, Profile profile)
     throws CouldNotCreateKweetException
     {
-        Kweet kweet;
-       try{
+        try{
+            Kweet kweet;
             kweet = new Kweet(profile, kweetMessage, new Date());
             kweet.setId(nextId.getAndIncrement());
             kweets.put(kweet.getId(), kweet);
@@ -66,7 +66,14 @@ public class KweetDaoImp implements KweetDao
     @Override
     public List<Kweet> findAll() {
         //recursief! Return alleen de waarden per kweet die je nodig hebt.
-        return new ArrayList<>(kweets.values());
+        List<Kweet> kweetList = new ArrayList<Kweet>();
+        for(Kweet kweet:kweets.values())
+        {
+            //kweetList.add(new Kweet(new Profile("Hans"), "gelukt", new Date()));
+            kweetList.add(new Kweet(kweet.getOwner(),  kweet.getMessage(), kweet.getPostDate()));
+        }
+        return kweetList;
+        //return new ArrayList<>(kweets.values());
     }
 
     @Override

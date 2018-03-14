@@ -32,8 +32,8 @@ public class KweetController
     {
         //GenericEntity<List<Kweet>> kweets = new GenericEntity<List<Kweet>>(kweetService.findAll()) {};
         List<Kweet> kweets = kweetService.findAll();
-        //String json = new Gson().toJson(kweets);
-        return Response.ok(kweets).build();
+        String json = new Gson().toJson(kweets);
+        return Response.ok(json).build();
     }
 
     @POST

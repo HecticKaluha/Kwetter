@@ -7,6 +7,7 @@ import javax.persistence.NamedEntityGraph;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 import java.io.Serializable;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -17,19 +18,20 @@ import java.util.List;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Kweet implements Serializable
 {
-    @JsonIgnore
+    @XmlTransient
     private Long id;
-    @JsonIgnore
+
+    @XmlTransient
     private Profile owner;
 
     private String message;
-    @JsonIgnore
+    @XmlTransient
     private Date postDate;
-    @JsonIgnore
+    @XmlTransient
     private List<String> likes;
-    @JsonIgnore
+    @XmlTransient
     private List<Mention> mentions;
-    @JsonIgnore
+    @XmlTransient
     private List<Trend> trends;
 
 

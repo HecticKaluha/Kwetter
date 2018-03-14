@@ -16,30 +16,30 @@ import java.util.concurrent.ConcurrentHashMap;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Profile implements Serializable
 {
-    @JsonIgnore
+    @XmlTransient
     private String username;
-    @JsonIgnore
+    @XmlTransient
     private String bio;
 
-    @JsonIgnore
+    @XmlTransient
     private String location;
 
-    @JsonIgnore
+    @XmlTransient
     private String web;
 
-    @JsonIgnore
+    @XmlTransient
     private List<String> following;
 
-    @JsonIgnore
+    @XmlTransient
     private List<String> followers;
 
-    @JsonIgnore
+    @XmlTransient
     private String profilePictureUrl;
 
-    @JsonIgnore
+    @XmlTransient
     private Role role;
 
-    @JsonIgnore
+    @XmlTransient
     private List<Kweet> ownKweets;
 
     public Profile(String username)
