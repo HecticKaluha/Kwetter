@@ -39,12 +39,11 @@ public class KweetDaoImp implements KweetDao
 
     @Override
     public Kweet update(Long id, String content) throws NoContentToUpdateException, KweetNotFoundException{
-
-        if (content != null && !content.isEmpty())
+        if (content == null || content.isEmpty())
         {
             throw new NoContentToUpdateException("No Content to update for kweet with id " + id);
         }
-        if(!kweets.contains(id))
+        if(kweets.get(id) == null)
         {
             throw new KweetNotFoundException("Kweet with id " + " not found");
         }

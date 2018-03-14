@@ -48,20 +48,21 @@ public class KweetController
         }
     }
 
-    /*@PUT
+    @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response updateKweet(UpdateKweetBody updateKweetBody)
     {
         try{
             Kweet updatedKweet = kweetService.update(updateKweetBody.getId(), updateKweetBody.getMessage());
-            return Response.ok(updatedKweet).build();
+            return Response.ok("gelukt").build();
         }
         catch(KweetNotFoundException | NoContentToUpdateException e)
         {
             return Response.status(Response.Status.NOT_MODIFIED).entity(e.getMessage()).build();
         }
-    }*/
+    }
+
     /*void post(String kweetMessage, Profile profile);
     void update(Long id, String content);
     void delete(Long id);
