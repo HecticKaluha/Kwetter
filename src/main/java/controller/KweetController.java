@@ -77,7 +77,6 @@ public class KweetController
         {
             return Response.status(Response.Status.NOT_MODIFIED).entity(e.getMessage()).build();
         }
-
     }
 
     @GET
@@ -95,10 +94,4 @@ public class KweetController
             return Response.status(Response.Status.NOT_FOUND).entity(e.getMessage()).build();
         }
     }
-
-    /*void post(String kweetMessage, Profile profile);
-    void update(Long id, String content);
-    void delete(Long id);
-    List<Kweet> findAll();
-    Kweet find(Long id);*/
 }

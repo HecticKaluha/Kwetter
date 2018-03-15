@@ -1,6 +1,5 @@
 package dao;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import exceptions.CouldNotFindProfileException;
 import exceptions.RoleNotFoundException;
 import model.Kweet;
@@ -47,8 +46,12 @@ public class ProfileDaoImp implements ProfileDao
     }
 
     @Override
-    public Profile findProfile(String username)
+    public Profile findProfile(String username) throws CouldNotFindProfileException
     {
+        if(profiles.contains(username))
+        {
+            throw new CouldNotFindProfileException("Profile with username " + username + " was not found");
+        }
         return profiles.get(username);
     }
 
@@ -65,7 +68,7 @@ public class ProfileDaoImp implements ProfileDao
     }
 
     @Override
-    public void updateProfile(String username, String bio, String location, String web)
+    public void updateProfile(String username, String bio, String location, String web) throws CouldNotFindProfileException
     {
         Profile profile = findProfile(username);
         profile.setBio(bio);
@@ -73,7 +76,7 @@ public class ProfileDaoImp implements ProfileDao
         profile.setWeb(web);
     }
     @Override
-    public List<Kweet> getLatest(Long profileId)
+    public List<Kweet> getLatest(Long profileId) throws CouldNotFindProfileException
     {
         return profiles.get(profileId).getLatest();
     }
@@ -102,7 +105,7 @@ public class ProfileDaoImp implements ProfileDao
     }
 
     @Override
-    public void updateRole (String username,String roleName) throws NullPointerException
+    public void updateRole (String username,String roleName) throws RoleNotFoundException, CouldNotFindProfileException
     {
         Profile profile = findProfile(username);
         if(roles.get(username)!= null)
@@ -112,7 +115,7 @@ public class ProfileDaoImp implements ProfileDao
         }
         else
         {
-            throw new NullPointerException("No role by that name found!");
+            throw new RoleNotFoundException("No role with the name " + roleName + " found!");
         }
     }
     @Override
@@ -127,7 +130,7 @@ public class ProfileDaoImp implements ProfileDao
         return findProfile(username).addKweet(kweet);
     }
     @Override
-    public boolean removeKweetFromProfile(String username, Kweet kweet)
+    public boolean removeKweetFromProfile(String username, Kweet kweet) throws CouldNotFindProfileException
     {
         return findProfile(username).removeKweet(kweet);
     }

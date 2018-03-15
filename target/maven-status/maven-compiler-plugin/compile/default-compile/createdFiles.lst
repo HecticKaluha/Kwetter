@@ -9,6 +9,7 @@ exceptions\NoContentToUpdateException.class
 service\KweetService.class
 model\Profile.class
 service\ProfileService.class
+controller\ProfileController.class
 exceptions\CouldNotCreateKweetException.class
 exceptions\KweetNotFoundException.class
 Initialize\Initialize.class

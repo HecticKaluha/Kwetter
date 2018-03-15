@@ -23,7 +23,7 @@ public class KweetService {
     @Inject
     private ProfileDao profileDao;
 
-    public Kweet post(String kweetmessage, String profile) throws CouldNotFindProfileException, CouldNotCreateKweetException
+    public Kweet post(String kweetmessage, String profile) throws CouldNotCreateKweetException, CouldNotFindProfileException
     {
         if (profileDao.findProfile(profile) == null) {
             throw new CouldNotFindProfileException("profile not found");

@@ -5,6 +5,7 @@ import dao.KweetDao;
 import dao.KweetDaoImp;
 import dao.ProfileDao;
 import dao.ProfileDaoImp;
+import exceptions.CouldNotFindProfileException;
 import exceptions.RoleNotFoundException;
 import model.Kweet;
 import model.Profile;
@@ -36,7 +37,7 @@ public class ProfileService
     {
         profileDao.unfollowUser(unfollowThisProfile, initialProfile);
     }
-    public Profile findProfile(String username)
+    public Profile findProfile(String username) throws CouldNotFindProfileException
     {
         return profileDao.findProfile(username);
     }
@@ -48,12 +49,11 @@ public class ProfileService
     {
         profileDao.deleteProfile(username);
     }
-    public void updateProfile(String username, String bio, String location, String web) throws NullPointerException
+    public void updateProfile(String username, String bio, String location, String web) throws CouldNotFindProfileException
     {
         profileDao.updateProfile(username, bio, location, web);
     }
-    public void updateRole(String username, String rolename)
-    {
+    public void updateRole(String username, String rolename) throws RoleNotFoundException, CouldNotFindProfileException {
         profileDao.updateRole("Klaartje", "admin");
     }
     public boolean addRole(String rolename, boolean canDelete, boolean canPost, boolean  canBlacklist, boolean canLike)
@@ -65,8 +65,7 @@ public class ProfileService
         return profileDao.getRole(rolename);
     }
 
-    public List<Kweet> getLatest(Long profileId)
-    {
+    public List<Kweet> getLatest(Long profileId) throws CouldNotFindProfileException {
         return profileDao.getLatest(profileId);
     }
 }
