@@ -1,6 +1,8 @@
 package dao;
 
+import exceptions.AddingToCollectionFailedException;
 import exceptions.CouldNotFindProfileException;
+import exceptions.ParametersWereEmptyException;
 import exceptions.RoleNotFoundException;
 import model.Kweet;
 import model.Profile;
@@ -56,9 +58,23 @@ public class ProfileDaoImp implements ProfileDao
     }
 
     @Override
-    public void createProfile(String username, Role role)
-    {
-        profiles.put(username, new Profile(username, role));
+    public void createProfile(String username, Role role) throws ParametersWereEmptyException, AddingToCollectionFailedException {
+        if(username == null || username.isEmpty())
+        {
+            throw new ParametersWereEmptyException("parameter " + username +" was null or empty");
+        }
+        if(role == null)
+        {
+            throw new ParametersWereEmptyException("parameter " + role +" was null or empty");
+        }
+        try{
+            profiles.put(username, new Profile(username, role));
+        }
+        catch(Exception e)
+        {
+            throw new AddingToCollectionFailedException(e.getMessage());
+        }
+
     }
 
     @Override
@@ -97,9 +113,9 @@ public class ProfileDaoImp implements ProfileDao
 
     @Override
     public Role getRole(String rolename) throws RoleNotFoundException {
-        if(roles.get(rolename) == null)
+        if(!roles.containsKey(rolename))
         {
-            throw new RoleNotFoundException("Role was not found");
+            throw new RoleNotFoundException("Role "+ rolename +" was not found");
         }
         return roles.get(rolename);
     }

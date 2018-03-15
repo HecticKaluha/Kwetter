@@ -13,18 +13,18 @@ import java.io.Serializable;
 public class CreateProfileBody implements Serializable
 {
     private String username;
-    private Role role;
+    private String role;
 
     public CreateProfileBody()
     {
 
     }
 
-    public Role getRole() {
+    public String getRole() {
         return role;
     }
 
-    public void setRole(Role role) {
+    public void setRole(String role) {
         this.role = role;
     }
 

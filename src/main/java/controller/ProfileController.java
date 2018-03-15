@@ -2,7 +2,10 @@ package controller;
 
 
 import controller.JsonBodyClasses.CreateProfileBody;
+import exceptions.AddingToCollectionFailedException;
 import exceptions.CouldNotFindProfileException;
+import exceptions.ParametersWereEmptyException;
+import exceptions.RoleNotFoundException;
 import service.ProfileService;
 
 import javax.enterprise.context.RequestScoped;
@@ -39,10 +42,10 @@ public class ProfileController
     public Response createProfile(CreateProfileBody profileBody)
     {
         try{
-            profileService.createProfile(profileBody.getUsername(), profileBody.getRole());
+            profileService.createProfile(profileBody.getUsername(), profileService.getRole(profileBody.getRole()));
             return Response.ok("Profiel met username "+ profileBody.getUsername()+" aangemaakt.").build();
         }
-        catch(Exception e){
+        catch(ParametersWereEmptyException | AddingToCollectionFailedException | RoleNotFoundException e){
             return Response.status(Response.Status.NOT_MODIFIED).entity(e.getMessage()).build();
         }
     }

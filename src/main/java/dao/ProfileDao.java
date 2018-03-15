@@ -1,6 +1,8 @@
 package dao;
 
+import exceptions.AddingToCollectionFailedException;
 import exceptions.CouldNotFindProfileException;
+import exceptions.ParametersWereEmptyException;
 import exceptions.RoleNotFoundException;
 import model.Kweet;
 import model.Profile;
@@ -16,7 +18,7 @@ public interface ProfileDao
 
     Profile findProfile(String username) throws CouldNotFindProfileException;
 
-    void createProfile(String username, Role role);
+    void createProfile(String username, Role role) throws ParametersWereEmptyException, AddingToCollectionFailedException;
 
     void deleteProfile(String username);
 

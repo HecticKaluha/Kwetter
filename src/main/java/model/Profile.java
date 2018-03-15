@@ -7,6 +7,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
+import java.beans.Transient;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -142,6 +143,8 @@ public class Profile implements Serializable
         this.following.remove(profileName);
     }
 
+    @XmlTransient
+    @Transient
     public List<Kweet> getLatest(){
         return ownKweets.subList(Math.max(ownKweets.size() - 10, 0), ownKweets.size());
     }

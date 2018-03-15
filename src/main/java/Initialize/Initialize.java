@@ -1,8 +1,6 @@
 package Initialize;
 
-import exceptions.CouldNotCreateKweetException;
-import exceptions.CouldNotFindProfileException;
-import exceptions.RoleNotFoundException;
+import exceptions.*;
 import service.KweetService;
 import service.ProfileService;
 
@@ -27,8 +25,7 @@ public class Initialize {
     }
 
     @PostConstruct
-    public void initData()
-    {
+    public void initData(){
         try
         {
             profileService.addRole("Admin", true, true, true, true);
@@ -42,7 +39,7 @@ public class Initialize {
             kweetService.post("Bericht 2","Hans");
             kweetService.post("Bericht 3", "Klaartje");
         }
-        catch (CouldNotCreateKweetException | RoleNotFoundException | CouldNotFindProfileException e)
+        catch (CouldNotCreateKweetException | RoleNotFoundException | CouldNotFindProfileException |ParametersWereEmptyException | AddingToCollectionFailedException e)
         {
             e.printStackTrace();
         }

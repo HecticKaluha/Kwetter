@@ -5,7 +5,9 @@ import dao.KweetDao;
 import dao.KweetDaoImp;
 import dao.ProfileDao;
 import dao.ProfileDaoImp;
+import exceptions.AddingToCollectionFailedException;
 import exceptions.CouldNotFindProfileException;
+import exceptions.ParametersWereEmptyException;
 import exceptions.RoleNotFoundException;
 import model.Kweet;
 import model.Profile;
@@ -41,7 +43,7 @@ public class ProfileService
     {
         return profileDao.findProfile(username);
     }
-    public void createProfile(String username, Role role)
+    public void createProfile(String username, Role role)throws ParametersWereEmptyException, AddingToCollectionFailedException
     {
         profileDao.createProfile(username, role);
     }
