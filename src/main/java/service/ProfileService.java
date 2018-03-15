@@ -29,8 +29,6 @@ public class ProfileService
     @Inject
     private KweetDao kweetDao;
 
-
-
     public void followUser(Profile followThisProfile, Profile initialProfile)
     {
         profileDao.followUser(followThisProfile, initialProfile);
@@ -50,9 +48,8 @@ public class ProfileService
     public void deleteProfile(String username) throws CouldNotFindProfileException, ParametersWereEmptyException, AddingToCollectionFailedException {
         profileDao.deleteProfile(username);
     }
-    public void updateProfile(String username, String bio, String location, String web) throws CouldNotFindProfileException
-    {
-        profileDao.updateProfile(username, bio, location, web);
+    public void updateProfile(String username, String newUsername,  String bio, String location, String web) throws CouldNotFindProfileException, ParametersWereEmptyException {
+        profileDao.updateProfile(username, newUsername, bio, location, web);
     }
     public void updateRole(String username, String rolename) throws RoleNotFoundException, CouldNotFindProfileException {
         profileDao.updateRole("Klaartje", "admin");

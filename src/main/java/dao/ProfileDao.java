@@ -22,7 +22,7 @@ public interface ProfileDao
 
     boolean deleteProfile(String username) throws CouldNotFindProfileException, ParametersWereEmptyException, AddingToCollectionFailedException;
 
-    void updateProfile(String username, String bio, String location, String web) throws CouldNotFindProfileException;
+    boolean updateProfile(String username, String newUsername, String bio, String location, String web) throws CouldNotFindProfileException, ParametersWereEmptyException;
 
     List<Kweet> getLatest(Long profileId) throws CouldNotFindProfileException;
 

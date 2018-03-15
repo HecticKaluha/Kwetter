@@ -10,6 +10,7 @@ dao\KweetDao.class
 dao\ProfileDao.class
 exceptions\NoContentToUpdateException.class
 service\KweetService.class
+controller\JsonBodyClasses\UpdateProfileBody.class
 model\Profile.class
 service\ProfileService.class
 controller\ProfileController.class

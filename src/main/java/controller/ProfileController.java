@@ -3,6 +3,8 @@ package controller;
 
 import controller.JsonBodyClasses.CreateProfileBody;
 import controller.JsonBodyClasses.DeleteProfileBody;
+import controller.JsonBodyClasses.UpdateKweetBody;
+import controller.JsonBodyClasses.UpdateProfileBody;
 import exceptions.AddingToCollectionFailedException;
 import exceptions.CouldNotFindProfileException;
 import exceptions.ParametersWereEmptyException;
@@ -63,6 +65,21 @@ public class ProfileController
         }
         catch(CouldNotFindProfileException | ParametersWereEmptyException | AddingToCollectionFailedException e)
         {
+            return Response.status(Response.Status.NOT_MODIFIED).entity(e.getMessage()).build();
+        }
+    }
+
+    @PUT
+    @Path("/{username}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response updateProfile(@PathParam("username") String username, UpdateProfileBody profileBody)
+    {
+        try{
+            profileService.updateProfile(username, profileBody.getNewUsername(), profileBody.getBio(), profileBody.getLocation(), profileBody.getWeb());
+            return Response.ok("Profiel met originele username "+ username +" geupdate.").build();
+        }
+        catch(CouldNotFindProfileException | ParametersWereEmptyException e){
             return Response.status(Response.Status.NOT_MODIFIED).entity(e.getMessage()).build();
         }
     }

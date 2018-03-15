@@ -3,6 +3,7 @@ C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\model\Mention.ja
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\model\Comment.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\Initialize\Initialize.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\controller\JsonBodyClasses\KweetBody.java
+C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\controller\JsonBodyClasses\UpdateProfileBody.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\dao\KweetDao.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\model\Kweet.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\dao\ProfileDaoImp.java

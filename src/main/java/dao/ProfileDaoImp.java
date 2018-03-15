@@ -97,12 +97,35 @@ public class ProfileDaoImp implements ProfileDao
     }
 
     @Override
-    public void updateProfile(String username, String bio, String location, String web) throws CouldNotFindProfileException
-    {
+    public boolean updateProfile(String username, String newUsername, String bio, String location, String web) throws CouldNotFindProfileException, ParametersWereEmptyException {
+        if(username == null || username.isEmpty())
+        {
+            throw new ParametersWereEmptyException("parameter " + username +" was null or empty");
+        }
+        if(newUsername == null || newUsername.isEmpty())
+        {
+            throw new ParametersWereEmptyException("parameter " + newUsername +" was null or empty");
+        }
+        if(bio == null || bio.isEmpty())
+        {
+            throw new ParametersWereEmptyException("parameter " + bio +" was null or empty");
+        }
+        if(location == null || location.isEmpty())
+        {
+            throw new ParametersWereEmptyException("parameter " + location +" was null or empty");
+        }
+        if(web == null || web.isEmpty())
+        {
+            throw new ParametersWereEmptyException("parameter " + web +" was null or empty");
+        }
         Profile profile = findProfile(username);
+        profile.setUsername(newUsername);
         profile.setBio(bio);
         profile.setLocation(location);
         profile.setWeb(web);
+        profiles.remove(username);
+        profiles.put(newUsername, profile);
+        return true;
     }
     @Override
     public List<Kweet> getLatest(Long profileId) throws CouldNotFindProfileException
