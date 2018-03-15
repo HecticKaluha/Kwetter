@@ -62,6 +62,23 @@ public class KweetController
             return Response.status(Response.Status.NOT_MODIFIED).entity(e.getMessage()).build();
         }
     }
+    @DELETE
+    @Path("/{id}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response deleteKweet(@PathParam("id") Long id)
+    {
+        try
+        {
+            kweetService.delete(id);
+            return Response.ok("Kweet deleted").build();
+        }
+        catch(Exception e)
+        {
+            return Response.status(Response.Status.NOT_MODIFIED).entity(e.getMessage()).build();
+        }
+
+    }
 
     /*void post(String kweetMessage, Profile profile);
     void update(Long id, String content);

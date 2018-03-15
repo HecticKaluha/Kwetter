@@ -55,11 +55,12 @@ public class KweetDaoImp implements KweetDao
     }
 
     @Override
-    public void delete(Long id) {
+    public boolean delete(Long id) throws KweetNotFoundException{
         if (!kweets.containsKey(id)) {
-            throw new IllegalArgumentException("Id not found: " + id);
+            throw new KweetNotFoundException("Kweet with id " + id + " not found");
         }
         kweets.remove(id);
+        return true;
     }
 
     @Override

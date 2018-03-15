@@ -12,7 +12,7 @@ public interface KweetDao
 {
     Kweet post(String kweetMessage, Profile profile) throws CouldNotCreateKweetException;
     Kweet update(Long id, String content) throws NoContentToUpdateException, KweetNotFoundException;
-    void delete(Long id);
+    boolean delete(Long id) throws KweetNotFoundException;
     List<Kweet> findAll();
     Kweet find(Long id);
 }
