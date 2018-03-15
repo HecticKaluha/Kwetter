@@ -29,9 +29,9 @@ public class ProfileService
     @Inject
     private KweetDao kweetDao;
 
-    public void followUser(Profile followThisProfile, Profile initialProfile)
+    public boolean followUser(Profile followThisProfile, Profile initialProfile)
     {
-        profileDao.followUser(followThisProfile, initialProfile);
+        return profileDao.followUser(followThisProfile, initialProfile);
     }
     public void unfollowUser(Profile unfollowThisProfile, Profile initialProfile)
     {

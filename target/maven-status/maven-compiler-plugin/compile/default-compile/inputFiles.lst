@@ -1,4 +1,5 @@
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\controller\JsonBodyClasses\CreateProfileBody.java
+C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\exceptions\UnableToFollowException.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\model\Mention.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\model\Comment.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\Initialize\Initialize.java
@@ -22,6 +23,7 @@ C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\controller\Profi
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\model\Role.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\exceptions\RoleNotFoundException.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\controller\JaxApi.java
+C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\controller\JsonBodyClasses\FollowProfileBody.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\exceptions\KweetNotFoundException.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\exceptions\NoContentToUpdateException.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\controller\JsonBodyClasses\DeleteProfileBody.java

@@ -27,6 +27,7 @@ public class Profile implements Serializable
 
     private String web;
 
+
     private List<String> following;
 
     private List<String> followers;
@@ -108,20 +109,24 @@ public class Profile implements Serializable
     {
         this.web = web;
     }
-    public void addFollower(String profileName)
+    public boolean addFollower(String profileName)
     {
-        if(!this.following.contains(profileName))
+        if(!this.followers.contains(profileName))
         {
             this.followers.add(profileName);
+            return true;
         }
+        return false;
     }
 
-    public void addFollowing(String profileName)
+    public boolean addFollowing(String profileName)
     {
         if(!this.following.contains(profileName))
         {
             this.following.add(profileName);
+            return true;
         }
+        return false;
     }
 
     public boolean addKweet(Kweet kweet)

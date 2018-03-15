@@ -1,14 +1,8 @@
 package controller;
 
 
-import controller.JsonBodyClasses.CreateProfileBody;
-import controller.JsonBodyClasses.DeleteProfileBody;
-import controller.JsonBodyClasses.UpdateKweetBody;
-import controller.JsonBodyClasses.UpdateProfileBody;
-import exceptions.AddingToCollectionFailedException;
-import exceptions.CouldNotFindProfileException;
-import exceptions.ParametersWereEmptyException;
-import exceptions.RoleNotFoundException;
+import controller.JsonBodyClasses.*;
+import exceptions.*;
 import service.ProfileService;
 
 import javax.enterprise.context.RequestScoped;
@@ -65,6 +59,26 @@ public class ProfileController
         }
         catch(CouldNotFindProfileException | ParametersWereEmptyException | AddingToCollectionFailedException e)
         {
+            return Response.status(Response.Status.NOT_MODIFIED).entity(e.getMessage()).build();
+        }
+    }
+
+    @PUT
+    @Path("/follow/{usernameToFollow}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response followProfile(@PathParam("usernameToFollow") String usernameToFollow, FollowProfileBody profileBody)
+    {
+        try{
+            if(profileService.followUser(profileService.findProfile(usernameToFollow), profileService.findProfile(profileBody.getUsername())))
+            {
+                return Response.ok(profileBody.getUsername() + " volgt nu "+ usernameToFollow).build();
+            }
+            else{
+                throw new UnableToFollowException(profileBody.getUsername() + " was unable to follow " + usernameToFollow);
+            }
+        }
+        catch(CouldNotFindProfileException | UnableToFollowException e){
             return Response.status(Response.Status.NOT_MODIFIED).entity(e.getMessage()).build();
         }
     }

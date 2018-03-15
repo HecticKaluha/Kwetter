@@ -4,6 +4,7 @@ dao\KwetterManagerDaoImp.class
 model\Kweet.class
 controller\JsonBodyClasses\KweetBody.class
 controller\JsonBodyClasses\CreateProfileBody.class
+exceptions\UnableToFollowException.class
 model\Role.class
 dao\KweetDaoImp.class
 dao\KweetDao.class
@@ -14,6 +15,7 @@ controller\JsonBodyClasses\UpdateProfileBody.class
 model\Profile.class
 service\ProfileService.class
 controller\ProfileController.class
+controller\JsonBodyClasses\FollowProfileBody.class
 exceptions\CouldNotCreateKweetException.class
 exceptions\KweetNotFoundException.class
 Initialize\Initialize.class

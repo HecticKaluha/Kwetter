@@ -12,7 +12,7 @@ import java.util.List;
 
 public interface ProfileDao
 {
-    void followUser(Profile followThisProfile,Profile initialProfile);
+    boolean followUser(Profile followThisProfile,Profile initialProfile);
 
     void unfollowUser(Profile unfollowThisProfile, Profile initialProfile);
 

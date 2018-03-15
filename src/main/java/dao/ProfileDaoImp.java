@@ -34,10 +34,13 @@ public class ProfileDaoImp implements ProfileDao
     }
 
     @Override
-    public void followUser(Profile followThisProfile, Profile initialProfile)
+    public boolean followUser(Profile followThisProfile, Profile initialProfile)
     {
-        initialProfile.addFollowing(followThisProfile.getUsername());
-        followThisProfile.addFollower(initialProfile.getUsername());
+        if(initialProfile.addFollowing(followThisProfile.getUsername()) && followThisProfile.addFollower(initialProfile.getUsername()))
+        {
+            return true;
+        }
+        return false;
     }
 
     @Override
