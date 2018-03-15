@@ -2,6 +2,7 @@ package controller;
 
 
 import controller.JsonBodyClasses.CreateProfileBody;
+import controller.JsonBodyClasses.DeleteProfileBody;
 import exceptions.AddingToCollectionFailedException;
 import exceptions.CouldNotFindProfileException;
 import exceptions.ParametersWereEmptyException;
@@ -49,66 +50,20 @@ public class ProfileController
             return Response.status(Response.Status.NOT_MODIFIED).entity(e.getMessage()).build();
         }
     }
-    /*@POST
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response post(KweetBody kweetBody)
-    {
-        try
-        {
-            Kweet kweet = kweetService.post(kweetBody.getMessage(), kweetBody.getUsername());
-            return Response.ok(kweet).build();
-        }
-        catch(CouldNotFindProfileException | CouldNotCreateKweetException e)
-        {
-            return Response.status(Response.Status.NOT_FOUND).entity(e.getMessage()).build();
-        }
-    }
 
-    @PUT
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response updateKweet(UpdateKweetBody updateKweetBody)
-    {
-        try{
-            Kweet updatedKweet = kweetService.update(updateKweetBody.getId(), updateKweetBody.getMessage());
-            return Response.ok("gelukt").build();
-        }
-        catch(KweetNotFoundException | NoContentToUpdateException e)
-        {
-            return Response.status(Response.Status.NOT_MODIFIED).entity(e.getMessage()).build();
-        }
-    }
     @DELETE
-    @Path("/{id}")
+    @Path("/{username}")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response deleteKweet(@PathParam("id") Long id)
+    public Response deleteProfile(@PathParam("username") String username)
     {
-        try
-        {
-            kweetService.delete(id);
-            return Response.ok("Kweet deleted").build();
+        try{
+            profileService.deleteProfile(username);
+            return Response.ok("Profiel met username "+ username+" verwijderd.").build();
         }
-        catch(KweetNotFoundException e)
+        catch(CouldNotFindProfileException | ParametersWereEmptyException | AddingToCollectionFailedException e)
         {
             return Response.status(Response.Status.NOT_MODIFIED).entity(e.getMessage()).build();
         }
     }
-
-    @GET
-    @Path("/{id}")
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response findKWeet(@PathParam("id") Long id)
-    {
-        try{
-            Kweet kweet = kweetService.find(id);
-            return Response.ok(kweet).build();
-        }
-        catch(KweetNotFoundException e)
-        {
-            return Response.status(Response.Status.NOT_FOUND).entity(e.getMessage()).build();
-        }
-    }*/
 }

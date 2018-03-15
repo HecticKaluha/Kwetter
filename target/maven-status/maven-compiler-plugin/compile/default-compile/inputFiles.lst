@@ -23,6 +23,7 @@ C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\exceptions\RoleN
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\controller\JaxApi.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\exceptions\KweetNotFoundException.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\exceptions\NoContentToUpdateException.java
+C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\controller\JsonBodyClasses\DeleteProfileBody.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\model\Trend.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\dao\KweetDaoJPAImp.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\exceptions\AddingToCollectionFailedException.java

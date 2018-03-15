@@ -47,8 +47,7 @@ public class ProfileService
     {
         profileDao.createProfile(username, role);
     }
-    public void deleteProfile(String username)
-    {
+    public void deleteProfile(String username) throws CouldNotFindProfileException, ParametersWereEmptyException, AddingToCollectionFailedException {
         profileDao.deleteProfile(username);
     }
     public void updateProfile(String username, String bio, String location, String web) throws CouldNotFindProfileException

@@ -78,9 +78,22 @@ public class ProfileDaoImp implements ProfileDao
     }
 
     @Override
-    public void deleteProfile(String username)
-    {
-        profiles.remove(username);
+    public boolean deleteProfile(String username) throws CouldNotFindProfileException, ParametersWereEmptyException, AddingToCollectionFailedException {
+        if(username == null || username.isEmpty()) {
+            throw new ParametersWereEmptyException("parameter " + username +" was null or empty");
+        }
+        if(!profiles.containsKey(username))
+        {
+            throw new CouldNotFindProfileException("Profile with username" + username + " was not found");
+        }
+        try{
+            profiles.remove(username);
+        }
+        catch(Exception e)
+        {
+            throw new AddingToCollectionFailedException(e.getMessage());
+        }
+        return true;
     }
 
     @Override

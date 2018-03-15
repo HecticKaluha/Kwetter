@@ -20,7 +20,7 @@ public interface ProfileDao
 
     void createProfile(String username, Role role) throws ParametersWereEmptyException, AddingToCollectionFailedException;
 
-    void deleteProfile(String username);
+    boolean deleteProfile(String username) throws CouldNotFindProfileException, ParametersWereEmptyException, AddingToCollectionFailedException;
 
     void updateProfile(String username, String bio, String location, String web) throws CouldNotFindProfileException;
 

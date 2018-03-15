@@ -23,6 +23,7 @@ exceptions\CouldNotFindProfileException.class
 dao\KweetDaoJPAImp.class
 dao\ProfileDaoImp.class
 controller\JsonBodyClasses\UpdateKweetBody.class
+controller\JsonBodyClasses\DeleteProfileBody.class
 exceptions\RoleNotFoundException.class
 model\Comment.class
 controller\JaxApi.class
