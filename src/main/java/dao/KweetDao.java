@@ -14,5 +14,5 @@ public interface KweetDao
     Kweet update(Long id, String content) throws NoContentToUpdateException, KweetNotFoundException;
     boolean delete(Long id) throws KweetNotFoundException;
     List<Kweet> findAll();
-    Kweet find(Long id);
+    Kweet find(Long id) throws KweetNotFoundException;
 }

@@ -44,7 +44,7 @@ public class KweetService {
     public List<Kweet> findAll(){
         return kweetDao.findAll();
     }
-    public Kweet find(Long id){
+    public Kweet find(Long id) throws KweetNotFoundException{
         return kweetDao.find(id);
     }
 

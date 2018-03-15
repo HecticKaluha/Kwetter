@@ -77,9 +77,9 @@ public class KweetDaoImp implements KweetDao
     }
 
     @Override
-    public Kweet find(Long id) {
+    public Kweet find(Long id) throws KweetNotFoundException{
         if (!kweets.containsKey(id)) {
-            throw new IllegalArgumentException("Id not found: " + id);
+            throw new KweetNotFoundException("Kweet with id " + id + " not found");
         }
         return kweets.get(id);
     }

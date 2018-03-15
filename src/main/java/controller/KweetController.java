@@ -73,11 +73,27 @@ public class KweetController
             kweetService.delete(id);
             return Response.ok("Kweet deleted").build();
         }
-        catch(Exception e)
+        catch(KweetNotFoundException e)
         {
             return Response.status(Response.Status.NOT_MODIFIED).entity(e.getMessage()).build();
         }
 
+    }
+
+    @GET
+    @Path("/{id}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response findKWeet(@PathParam("id") Long id)
+    {
+        try{
+            Kweet kweet = kweetService.find(id);
+            return Response.ok(kweet).build();
+        }
+        catch(KweetNotFoundException e)
+        {
+            return Response.status(Response.Status.NOT_FOUND).entity(e.getMessage()).build();
+        }
     }
 
     /*void post(String kweetMessage, Profile profile);
