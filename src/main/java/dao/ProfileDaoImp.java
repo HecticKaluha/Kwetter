@@ -48,7 +48,7 @@ public class ProfileDaoImp implements ProfileDao
     @Override
     public Profile findProfile(String username) throws CouldNotFindProfileException
     {
-        if(profiles.contains(username))
+        if(!profiles.containsKey(username))
         {
             throw new CouldNotFindProfileException("Profile with username " + username + " was not found");
         }

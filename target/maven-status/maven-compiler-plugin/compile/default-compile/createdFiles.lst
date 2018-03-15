@@ -1,6 +1,7 @@
 dao\KwetterManagerDaoImp.class
 model\Kweet.class
 controller\JsonBodyClasses\KweetBody.class
+controller\JsonBodyClasses\CreateProfileBody.class
 model\Role.class
 dao\KweetDaoImp.class
 dao\KweetDao.class

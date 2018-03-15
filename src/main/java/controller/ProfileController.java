@@ -1,6 +1,7 @@
 package controller;
 
 
+import controller.JsonBodyClasses.CreateProfileBody;
 import exceptions.CouldNotFindProfileException;
 import service.ProfileService;
 
@@ -32,6 +33,19 @@ public class ProfileController
         }
     }
 
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response createProfile(CreateProfileBody profileBody)
+    {
+        try{
+            profileService.createProfile(profileBody.getUsername(), profileBody.getRole());
+            return Response.ok("Profiel met username "+ profileBody.getUsername()+" aangemaakt.").build();
+        }
+        catch(Exception e){
+            return Response.status(Response.Status.NOT_MODIFIED).entity(e.getMessage()).build();
+        }
+    }
     /*@POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
