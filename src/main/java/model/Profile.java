@@ -25,9 +25,9 @@ public class Profile implements Serializable
 
     private String web;
 
-
+    //lijst met profiles
     private List<String> following;
-
+    //lijst met profiles
     private List<String> followers;
 
     private String profilePictureUrl;

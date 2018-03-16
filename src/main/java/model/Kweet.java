@@ -18,6 +18,7 @@ public class Kweet implements Serializable
     private Profile owner;
     private String message;
     private Date postDate;
+    //lijst van profiles
     private List<String> likes;
 
     private List<Mention> mentions;
