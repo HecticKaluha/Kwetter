@@ -1,9 +1,6 @@
 package dao;
 
-import exceptions.AddingToCollectionFailedException;
-import exceptions.CouldNotFindProfileException;
-import exceptions.ParametersWereEmptyException;
-import exceptions.RoleNotFoundException;
+import exceptions.*;
 import model.Kweet;
 import model.Profile;
 import model.Role;
@@ -24,7 +21,7 @@ public interface ProfileDao
 
     boolean updateProfile(String username, String newUsername, String bio, String location, String web) throws CouldNotFindProfileException, ParametersWereEmptyException;
 
-    List<Kweet> getLatest(Long profileId) throws CouldNotFindProfileException;
+    List<Kweet> getLatest(String username) throws CouldNotGetLatestKweets;
 
     boolean addRole(String rolename, boolean candelete, boolean canpost, boolean canblacklist, boolean canlike);
 

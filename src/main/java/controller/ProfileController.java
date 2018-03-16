@@ -117,4 +117,19 @@ public class ProfileController
             return Response.status(Response.Status.NOT_MODIFIED).entity(e.getMessage()).build();
         }
     }
+
+    @GET
+    @Path("/ownkweets/{username}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getProfileLatestKweets(@PathParam("username") String username)
+    {
+        try{
+            return Response.ok(profileService.getLatest(username)).build();
+        }
+        catch(CouldNotGetLatestKweets e)
+        {
+            return Response.status(Response.Status.NOT_FOUND).entity(e.getMessage()).build();
+        }
+    }
+
 }

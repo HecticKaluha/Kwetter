@@ -1,9 +1,6 @@
 package dao;
 
-import exceptions.AddingToCollectionFailedException;
-import exceptions.CouldNotFindProfileException;
-import exceptions.ParametersWereEmptyException;
-import exceptions.RoleNotFoundException;
+import exceptions.*;
 import model.Kweet;
 import model.Profile;
 import model.Role;
@@ -134,9 +131,8 @@ public class ProfileDaoImp implements ProfileDao
         return true;
     }
     @Override
-    public List<Kweet> getLatest(Long profileId) throws CouldNotFindProfileException
-    {
-        return profiles.get(profileId).getLatest();
+    public List<Kweet> getLatest(String username) throws CouldNotGetLatestKweets {
+        return profiles.get(username).getLatest();
     }
 
     @Override

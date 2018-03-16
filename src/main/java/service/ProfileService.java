@@ -5,10 +5,7 @@ import dao.KweetDao;
 import dao.KweetDaoImp;
 import dao.ProfileDao;
 import dao.ProfileDaoImp;
-import exceptions.AddingToCollectionFailedException;
-import exceptions.CouldNotFindProfileException;
-import exceptions.ParametersWereEmptyException;
-import exceptions.RoleNotFoundException;
+import exceptions.*;
 import model.Kweet;
 import model.Profile;
 import model.Role;
@@ -63,7 +60,7 @@ public class ProfileService
         return profileDao.getRole(rolename);
     }
 
-    public List<Kweet> getLatest(Long profileId) throws CouldNotFindProfileException {
-        return profileDao.getLatest(profileId);
+    public List<Kweet> getLatest(String username) throws CouldNotGetLatestKweets {
+        return profileDao.getLatest(username);
     }
 }

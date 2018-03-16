@@ -15,6 +15,7 @@ C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\dao\ProfileDao.j
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\service\KweetService.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\dao\KwetterManagerDaoImp.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\dao\KwetterManagerDao.java
+C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\exceptions\CouldNotGetLatestKweets.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\controller\JsonBodyClasses\UnFollowProfileBody.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\controller\JsonBodyClasses\UpdateKweetBody.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\dao\KweetDaoImp.java

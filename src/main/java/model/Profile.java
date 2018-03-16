@@ -2,6 +2,7 @@ package model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.google.gson.annotations.Expose;
+import exceptions.CouldNotGetLatestKweets;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -160,8 +161,13 @@ public class Profile implements Serializable
 
     @XmlTransient
     @Transient
-    public List<Kweet> getLatest(){
-        return ownKweets.subList(Math.max(ownKweets.size() - 10, 0), ownKweets.size());
+    public List<Kweet> getLatest() throws CouldNotGetLatestKweets {
+        List<Kweet> kweetsToReturn =  ownKweets.subList(Math.max(ownKweets.size() - 10, 0), ownKweets.size());
+        if(kweetsToReturn.isEmpty())
+        {
+            throw new CouldNotGetLatestKweets("unable to return the latest kweets of " + this.username);
+        }
+        return kweetsToReturn;
     }
     public List<String> getFollowing()
     {
