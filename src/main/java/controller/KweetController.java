@@ -1,10 +1,7 @@
 package controller;
 
 import controller.JsonBodyClasses.UpdateKweetBody;
-import exceptions.CouldNotCreateKweetException;
-import exceptions.CouldNotFindProfileException;
-import exceptions.KweetNotFoundException;
-import exceptions.NoContentToUpdateException;
+import exceptions.*;
 import model.Kweet;
 import controller.JsonBodyClasses.KweetBody;
 import service.KweetService;
@@ -28,8 +25,16 @@ public class KweetController
     @Produces(MediaType.APPLICATION_JSON)
     public Response getAllKweets()
     {
-        List<Kweet> kweets = kweetService.findAll();
-        return Response.ok(kweets).build();
+        try{
+            List<Kweet> kweets = kweetService.findAll();
+            System.out.print(kweets);
+            return Response.ok(kweets).build();
+        }
+        catch(CouldNotGetListException e)
+        {
+            return Response.status(Response.Status.NOT_FOUND).entity(e.getMessage()).build();
+        }
+
     }
 
     @POST

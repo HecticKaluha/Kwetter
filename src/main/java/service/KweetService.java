@@ -2,12 +2,9 @@ package service;
 
 import java.util.List;
 
-import exceptions.CouldNotCreateKweetException;
-import exceptions.CouldNotFindProfileException;
+import exceptions.*;
 import dao.KweetDao;
 import dao.ProfileDao;
-import exceptions.KweetNotFoundException;
-import exceptions.NoContentToUpdateException;
 import model.Kweet;
 
 import javax.ejb.EJB;
@@ -41,7 +38,7 @@ public class KweetService {
     public boolean delete(Long id) throws KweetNotFoundException{
         return kweetDao.delete(id);
     }
-    public List<Kweet> findAll(){
+    public List<Kweet> findAll() throws CouldNotGetListException{
         return kweetDao.findAll();
     }
     public Kweet find(Long id) throws KweetNotFoundException{

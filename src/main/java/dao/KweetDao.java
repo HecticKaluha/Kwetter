@@ -1,6 +1,7 @@
 package dao;
 
 import exceptions.CouldNotCreateKweetException;
+import exceptions.CouldNotGetListException;
 import exceptions.KweetNotFoundException;
 import exceptions.NoContentToUpdateException;
 import model.Kweet;
@@ -13,6 +14,6 @@ public interface KweetDao
     Kweet post(String kweetMessage, Profile profile) throws CouldNotCreateKweetException;
     Kweet update(Long id, String content) throws NoContentToUpdateException, KweetNotFoundException;
     boolean delete(Long id) throws KweetNotFoundException;
-    List<Kweet> findAll();
+    List<Kweet> findAll() throws CouldNotGetListException;
     Kweet find(Long id) throws KweetNotFoundException;
 }

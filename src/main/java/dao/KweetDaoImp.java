@@ -1,8 +1,6 @@
 package dao;
 
-import exceptions.CouldNotCreateKweetException;
-import exceptions.KweetNotFoundException;
-import exceptions.NoContentToUpdateException;
+import exceptions.*;
 import model.*;
 
 import javax.ejb.Stateless;
@@ -64,7 +62,7 @@ public class KweetDaoImp implements KweetDao
     }
 
     @Override
-    public List<Kweet> findAll() {
+    public List<Kweet> findAll() throws CouldNotGetListException {
         //recursief! Return alleen de waarden per kweet die je nodig hebt.
         /*List<Kweet> kweetList = new ArrayList<Kweet>();
         for(Kweet kweet:kweets.values())
@@ -73,6 +71,10 @@ public class KweetDaoImp implements KweetDao
             kweetList.add(new Kweet(kweet.getOwner(),  kweet.getMessage(), kweet.getPostDate()));
         }
         return kweetList;*/
+        if(kweets == null || kweets.isEmpty())
+        {
+            throw new CouldNotGetListException("List kweets was null or empty" );
+        }
         return new ArrayList<>(kweets.values());
     }
 

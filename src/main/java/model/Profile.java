@@ -38,6 +38,7 @@ public class Profile implements Serializable
     private Role role;
 
     @XmlTransient
+    @JsonIgnore
     private transient List<Kweet> ownKweets;
 
     public Profile(String username)
@@ -161,6 +162,7 @@ public class Profile implements Serializable
 
     @XmlTransient
     @Transient
+    @JsonIgnore
     public List<Kweet> getLatest() throws CouldNotGetLatestKweets {
         List<Kweet> kweetsToReturn =  ownKweets.subList(Math.max(ownKweets.size() - 10, 0), ownKweets.size());
         if(kweetsToReturn.isEmpty())
