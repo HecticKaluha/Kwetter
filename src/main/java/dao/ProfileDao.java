@@ -14,7 +14,7 @@ public interface ProfileDao
 {
     boolean followUser(Profile followThisProfile,Profile initialProfile);
 
-    void unfollowUser(Profile unfollowThisProfile, Profile initialProfile);
+    boolean unfollowUser(Profile unfollowThisProfile, Profile initialProfile);
 
     Profile findProfile(String username) throws CouldNotFindProfileException;
 

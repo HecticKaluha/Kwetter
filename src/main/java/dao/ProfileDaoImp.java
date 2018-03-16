@@ -44,10 +44,13 @@ public class ProfileDaoImp implements ProfileDao
     }
 
     @Override
-    public void unfollowUser(Profile unfollowThisProfile, Profile initialProfile)
+    public boolean unfollowUser(Profile unfollowThisProfile, Profile initialProfile)
     {
-        initialProfile.removeFollowing(unfollowThisProfile.getUsername());
-        unfollowThisProfile.removeFollower(initialProfile.getUsername());
+        if(initialProfile.removeFollowing(unfollowThisProfile.getUsername()) && unfollowThisProfile.removeFollower(initialProfile.getUsername()))
+        {
+            return true;
+        }
+        return false;
     }
 
     @Override

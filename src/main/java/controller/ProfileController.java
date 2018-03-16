@@ -84,6 +84,26 @@ public class ProfileController
     }
 
     @PUT
+    @Path("/unfollow/{usernameToUnFollow}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response unfollowProfile(@PathParam("usernameToUnFollow") String usernameToFollow, UnFollowProfileBody profileBody)
+    {
+        try{
+            if(profileService.unfollowUser(profileService.findProfile(usernameToFollow), profileService.findProfile(profileBody.getUsername())))
+            {
+                return Response.ok(profileBody.getUsername() + " volgt nu "+ usernameToFollow + " niet meer").build();
+            }
+            else{
+                throw new UnableToFollowException(profileBody.getUsername() + " was unable to unfollow " + usernameToFollow);
+            }
+        }
+        catch(CouldNotFindProfileException | UnableToFollowException e){
+            return Response.status(Response.Status.NOT_MODIFIED).entity(e.getMessage()).build();
+        }
+    }
+
+    @PUT
     @Path("/{username}")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)

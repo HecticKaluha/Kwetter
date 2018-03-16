@@ -33,9 +33,9 @@ public class ProfileService
     {
         return profileDao.followUser(followThisProfile, initialProfile);
     }
-    public void unfollowUser(Profile unfollowThisProfile, Profile initialProfile)
+    public boolean unfollowUser(Profile unfollowThisProfile, Profile initialProfile)
     {
-        profileDao.unfollowUser(unfollowThisProfile, initialProfile);
+        return profileDao.unfollowUser(unfollowThisProfile, initialProfile);
     }
     public Profile findProfile(String username) throws CouldNotFindProfileException
     {

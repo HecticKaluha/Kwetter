@@ -14,6 +14,7 @@ service\KweetService.class
 controller\JsonBodyClasses\UpdateProfileBody.class
 model\Profile.class
 service\ProfileService.class
+controller\JsonBodyClasses\UnFollowProfileBody.class
 controller\ProfileController.class
 controller\JsonBodyClasses\FollowProfileBody.class
 exceptions\CouldNotCreateKweetException.class

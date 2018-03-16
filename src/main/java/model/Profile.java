@@ -139,13 +139,23 @@ public class Profile implements Serializable
         return ownKweets.remove(kweet);
     }
 
-    public void removeFollowing(String profileName)
+    public boolean removeFollowing(String profileName)
     {
-        this.following.remove(profileName);
+        if(this.following.contains(profileName))
+        {
+            this.following.remove(profileName);
+            return true;
+        }
+        return false;
     }
-    public void removeFollower(String profileName)
+    public boolean removeFollower(String profileName)
     {
-        this.following.remove(profileName);
+        if(this.followers.contains(profileName))
+        {
+            this.followers.remove(profileName);
+            return true;
+        }
+        return false;
     }
 
     @XmlTransient
