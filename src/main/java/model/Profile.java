@@ -1,7 +1,6 @@
 package model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.google.gson.annotations.Expose;
 import exceptions.CouldNotGetLatestKweets;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -11,10 +10,8 @@ import javax.xml.bind.annotation.XmlTransient;
 import java.beans.Transient;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
+
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Profile implements Serializable
@@ -216,6 +213,9 @@ public class Profile implements Serializable
         return ownKweets;
     }
 
+    @XmlTransient
+    @Transient
+    @JsonIgnore
     public void setOwnKweetsById(List<Kweet> ownKweets)
     {
         this.ownKweets = ownKweets;

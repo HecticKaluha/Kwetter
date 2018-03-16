@@ -1,16 +1,10 @@
 package model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.google.gson.annotations.Expose;
-import dao.KweetDao;
 
-import javax.persistence.NamedEntityGraph;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 import java.io.Serializable;
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
