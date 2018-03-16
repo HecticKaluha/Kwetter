@@ -2,6 +2,7 @@ package model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import exceptions.CouldNotGetLatestKweets;
+import exceptions.CouldNotGetListException;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -26,9 +27,11 @@ public class Profile implements Serializable
     private String web;
 
     //lijst met profiles
-    private List<String> following;
+    @JsonIgnore
+    private List<Profile> following;
     //lijst met profiles
-    private List<String> followers;
+    @JsonIgnore
+    private List<Profile> followers;
 
     private String profilePictureUrl;
 
@@ -56,7 +59,7 @@ public class Profile implements Serializable
         this.profilePictureUrl = "";
     }
 
-    public Profile(String username, String bio, String location, String web, List<String> following, List<String> followers, String profilePictureUrl, Role role)
+    public Profile(String username, String bio, String location, String web, List<Profile> following, List<Profile> followers, String profilePictureUrl, Role role)
     {
         this.username = username;
         this.bio = bio;
@@ -108,21 +111,21 @@ public class Profile implements Serializable
     {
         this.web = web;
     }
-    public boolean addFollower(String profileName)
+    public boolean addFollower(Profile profile)
     {
-        if(!this.followers.contains(profileName))
+        if(!this.followers.contains(profile))
         {
-            this.followers.add(profileName);
+            this.followers.add(profile);
             return true;
         }
         return false;
     }
 
-    public boolean addFollowing(String profileName)
+    public boolean addFollowing(Profile profile)
     {
-        if(!this.following.contains(profileName))
+        if(!this.following.contains(profile))
         {
-            this.following.add(profileName);
+            this.following.add(profile);
             return true;
         }
         return false;
@@ -138,23 +141,39 @@ public class Profile implements Serializable
         return ownKweets.remove(kweet);
     }
 
-    public boolean removeFollowing(String profileName)
+    public boolean removeFollowing(Profile profile)
     {
-        if(this.following.contains(profileName))
+        if(this.following.contains(profile))
         {
-            this.following.remove(profileName);
+            this.following.remove(profile);
             return true;
         }
         return false;
     }
-    public boolean removeFollower(String profileName)
+    public boolean removeFollower(Profile profile)
     {
-        if(this.followers.contains(profileName))
+        if(this.followers.contains(profile))
         {
-            this.followers.remove(profileName);
+            this.followers.remove(profile);
             return true;
         }
         return false;
+    }
+
+    public List<Profile> getFollowing() throws CouldNotGetListException {
+        if(this.following == null )
+        {
+            throw new CouldNotGetListException("List following was empty or null");
+        }
+        return this.following;
+    }
+
+    public List<Profile> getFollower() throws CouldNotGetListException {
+        if(this.followers == null )
+        {
+            throw new CouldNotGetListException("List followers was empty or null");
+        }
+        return this.followers;
     }
 
     @XmlTransient
@@ -168,22 +187,18 @@ public class Profile implements Serializable
         }
         return kweetsToReturn;
     }
-    public List<String> getFollowing()
-    {
-        return following;
-    }
 
-    public void setFollowing(List<String> following)
+    public void setFollowing(List<Profile> following)
     {
         this.following = following;
     }
 
-    public List<String> getFollowers()
+    public List<Profile> getFollowers()
     {
         return followers;
     }
 
-    public void setFollowers(List<String> followers)
+    public void setFollowers(List<Profile> followers)
     {
         this.followers = followers;
     }

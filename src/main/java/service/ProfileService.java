@@ -59,6 +59,12 @@ public class ProfileService
     {
         return profileDao.getRole(rolename);
     }
+    public List<Profile> getFollowing(String username) throws CouldNotFindProfileException, CouldNotGetListException {
+        return profileDao.getFollowing(username);
+    }
+    public List<Profile> getFollower(String username) throws CouldNotFindProfileException, CouldNotGetListException {
+        return profileDao.getFollower(username);
+    }
 
     public List<Kweet> getLatest(String username) throws CouldNotGetLatestKweets {
         return profileDao.getLatest(username);

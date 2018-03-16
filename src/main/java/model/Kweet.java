@@ -1,6 +1,8 @@
 package model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -18,15 +20,16 @@ public class Kweet implements Serializable
     private Profile owner;
     private String message;
     private Date postDate;
-    //lijst van profiles
-    private List<String> likes;
+
+    @JsonIgnore
+    private List<Profile> likes;
 
     private List<Mention> mentions;
 
     private List<Trend> trends;
 
 
-    public Kweet(Profile owner, String message, Date postDate, List<String> likes, List<Mention> mentions, List<Trend> trends)
+    public Kweet(Profile owner, String message, Date postDate, List<Profile> likes, List<Mention> mentions, List<Trend> trends)
     {
         this (owner,message,postDate);
         this.likes = likes;
@@ -34,7 +37,7 @@ public class Kweet implements Serializable
         this.trends = trends;
     }
 
-    public Kweet(Long id, Profile owner, String message, Date postDate, List<String> likes, List<Mention> mentions, List<Trend> trends)
+    public Kweet(Long id, Profile owner, String message, Date postDate, List<Profile> likes, List<Mention> mentions, List<Trend> trends)
     {
         this (owner, message, postDate,likes,mentions,trends);
         this.id = id;
@@ -91,12 +94,12 @@ public class Kweet implements Serializable
         this.postDate = postDate;
     }
 
-    public List<String> getLikes()
+    public List<Profile> getLikes()
     {
         return likes;
     }
 
-    public void setLikes(List<String> likes)
+    public void setLikes(List<Profile> likes)
     {
         this.likes = likes;
     }

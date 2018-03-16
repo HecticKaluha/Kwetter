@@ -132,4 +132,32 @@ public class ProfileController
         }
     }
 
+    @GET
+    @Path("/followers/{username}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getProfileFollowers(@PathParam("username") String username)
+    {
+        try{
+            return Response.ok(profileService.getFollower(username)).build();
+        }
+        catch(CouldNotFindProfileException | CouldNotGetListException e)
+        {
+            return Response.status(Response.Status.NOT_FOUND).entity(e.getMessage()).build();
+        }
+    }
+
+    @GET
+    @Path("/following/{username}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getProfileFollowing(@PathParam("username") String username)
+    {
+        try{
+            return Response.ok(profileService.getFollowing(username)).build();
+        }
+        catch(CouldNotFindProfileException | CouldNotGetListException e)
+        {
+            return Response.status(Response.Status.NOT_FOUND).entity(e.getMessage()).build();
+        }
+    }
+
 }

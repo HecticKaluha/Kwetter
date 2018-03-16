@@ -29,6 +29,9 @@ public interface ProfileDao
 
     void updateRole(String username, String roleName) throws RoleNotFoundException, CouldNotFindProfileException;
 
+    List<Profile> getFollowing(String username) throws CouldNotFindProfileException, CouldNotGetListException;
+    List<Profile> getFollower(String username) throws CouldNotFindProfileException, CouldNotGetListException;
+
     boolean addKweetToProfile (
             String username,
             Kweet kweet) throws CouldNotFindProfileException;

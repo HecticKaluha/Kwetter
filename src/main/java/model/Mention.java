@@ -1,5 +1,7 @@
 package model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -12,6 +14,7 @@ public class Mention
 {
 
     @XmlTransient
+    @JsonIgnore
     private List<Kweet> containingKweet;
     private Profile mention;
 

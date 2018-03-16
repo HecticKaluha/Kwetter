@@ -33,7 +33,7 @@ public class ProfileDaoImp implements ProfileDao
     @Override
     public boolean followUser(Profile followThisProfile, Profile initialProfile)
     {
-        if(initialProfile.addFollowing(followThisProfile.getUsername()) && followThisProfile.addFollower(initialProfile.getUsername()))
+        if(initialProfile.addFollowing(followThisProfile) && followThisProfile.addFollower(initialProfile))
         {
             return true;
         }
@@ -43,7 +43,7 @@ public class ProfileDaoImp implements ProfileDao
     @Override
     public boolean unfollowUser(Profile unfollowThisProfile, Profile initialProfile)
     {
-        if(initialProfile.removeFollowing(unfollowThisProfile.getUsername()) && unfollowThisProfile.removeFollower(initialProfile.getUsername()))
+        if(initialProfile.removeFollowing(unfollowThisProfile) && unfollowThisProfile.removeFollower(initialProfile))
         {
             return true;
         }
@@ -172,6 +172,17 @@ public class ProfileDaoImp implements ProfileDao
             throw new RoleNotFoundException("No role with the name " + roleName + " found!");
         }
     }
+
+    @Override
+    public List<Profile> getFollowing(String username) throws CouldNotFindProfileException, CouldNotGetListException {
+        return findProfile(username).getFollowing();
+    }
+
+    @Override
+    public List<Profile> getFollower(String username) throws CouldNotFindProfileException, CouldNotGetListException {
+        return findProfile(username).getFollower();
+    }
+
     @Override
     public boolean addKweetToProfile(
             String username,

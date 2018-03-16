@@ -1,6 +1,8 @@
 package model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -12,7 +14,7 @@ import java.util.List;
 public class Trend
 {
     private String trend;
-    @XmlTransient
+    @JsonIgnore
     private List<Kweet> containingKweets;
 
     public Trend(String trend, Kweet containingKweet)
