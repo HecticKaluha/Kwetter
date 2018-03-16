@@ -38,7 +38,7 @@ public class Profile implements Serializable
     private Role role;
 
     @XmlTransient
-    private List<Kweet> ownKweets;
+    private transient List<Kweet> ownKweets;
 
     public Profile(String username)
     {
