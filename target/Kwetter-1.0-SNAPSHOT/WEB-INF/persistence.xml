@@ -5,7 +5,7 @@
     <persistence-unit name="KwetterPersistence">
         <description>This unit manages all kweets and profiles withing the Kwetter application disigned by Stefano Verhoeve
         </description>
-        <jta-data-source>jdbc/KwetterDS</jta-data-source>
+        <jta-data-source>jdbc/KwettersDS</jta-data-source>
         <exclude-unlisted-classes>false</exclude-unlisted-classes>
         <properties>
             <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
