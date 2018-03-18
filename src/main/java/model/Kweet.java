@@ -3,6 +3,7 @@ package model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import javax.persistence.*;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -13,6 +14,8 @@ import java.util.List;
 
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
+@Entity
+@Table(name = "Kweet", schema = "Kwetter")
 public class Kweet implements Serializable
 {
 
@@ -63,7 +66,7 @@ public class Kweet implements Serializable
         //return comments;
         return new ArrayList<>();
     }
-
+    @OneToOne(cascade= CascadeType.ALL, mappedBy="order")
     public Profile getOwner()
     {
         return owner;

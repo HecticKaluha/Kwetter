@@ -47,7 +47,7 @@ public class KweetController
             Kweet kweet = kweetService.post(kweetBody.getMessage(), kweetBody.getUsername());
             return Response.ok(kweet).build();
         }
-        catch(CouldNotFindProfileException | CouldNotCreateKweetException e)
+        catch(CouldNotFindProfileException | CouldNotCreateKweetException | CouldNotRoleBackException e)
         {
             return Response.status(Response.Status.NOT_FOUND).entity(e.getMessage()).build();
         }

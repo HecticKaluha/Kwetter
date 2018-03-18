@@ -17,6 +17,8 @@ model\Profile.class
 service\ProfileService.class
 controller\JsonBodyClasses\UnFollowProfileBody.class
 controller\ProfileController.class
+exceptions\CouldNotRoleBackException.class
+qualifier\JPA.class
 exceptions\CouldNotGetLatestKweets.class
 controller\JsonBodyClasses\FollowProfileBody.class
 exceptions\CouldNotCreateKweetException.class

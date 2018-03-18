@@ -1,6 +1,7 @@
 package Initialize;
 
 import exceptions.*;
+import qualifier.JPA;
 import service.KweetService;
 import service.ProfileService;
 
@@ -39,7 +40,7 @@ public class Initialize {
             kweetService.post("Bericht 2","Hans");
             kweetService.post("Bericht 3", "Klaartje");
         }
-        catch (CouldNotCreateKweetException | RoleNotFoundException | CouldNotFindProfileException |ParametersWereEmptyException | AddingToCollectionFailedException e)
+        catch (CouldNotCreateKweetException | RoleNotFoundException | CouldNotFindProfileException |ParametersWereEmptyException | AddingToCollectionFailedException | CouldNotRoleBackException e)
         {
             e.printStackTrace();
         }

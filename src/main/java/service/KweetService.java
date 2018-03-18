@@ -6,6 +6,7 @@ import exceptions.*;
 import dao.KweetDao;
 import dao.ProfileDao;
 import model.Kweet;
+import qualifier.JPA;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
@@ -16,12 +17,12 @@ import javax.inject.Singleton;
 public class KweetService {
 
     @Inject
+    @JPA
     private KweetDao kweetDao;
     @Inject
     private ProfileDao profileDao;
 
-    public Kweet post(String kweetmessage, String profile) throws CouldNotCreateKweetException, CouldNotFindProfileException
-    {
+    public Kweet post(String kweetmessage, String profile) throws CouldNotCreateKweetException, CouldNotFindProfileException, CouldNotRoleBackException {
         if (profileDao.findProfile(profile) == null) {
             throw new CouldNotFindProfileException("profile not found");
         }

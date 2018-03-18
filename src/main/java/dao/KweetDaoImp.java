@@ -17,7 +17,6 @@ public class KweetDaoImp implements KweetDao
 
     private AtomicLong nextId = new AtomicLong(0L);
 
-
     @Override
     public Kweet post(String kweetMessage, Profile profile)
     throws CouldNotCreateKweetException
