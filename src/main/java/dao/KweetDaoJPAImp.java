@@ -24,43 +24,43 @@ import java.util.concurrent.atomic.AtomicLong;
 @Stateless
 public class KweetDaoJPAImp implements KweetDao
 {
-    /*@PersistenceContext(unitName = "KwetterPersistence")
+    @PersistenceContext(unitName = "KwetterPersistence")
     private EntityManager em;
 
-    @Resource
-    private UserTransaction utx;
+    /*@Resource
+    private UserTransaction utx;*/
 
 
     private AtomicLong nextId = new AtomicLong(0L);
-    private ConcurrentHashMap<Long, Kweet> kweets = new ConcurrentHashMap<>();*/
+    private ConcurrentHashMap<Long, Kweet> kweets = new ConcurrentHashMap<>();
 
     @Override
     public Kweet post(String kweetMessage, Profile profile)
             throws CouldNotCreateKweetException, CouldNotRoleBackException {
-        /*try{
+        try{
             Kweet kweet = new Kweet(profile, kweetMessage, new Date());
             kweet.setId(nextId.getAndIncrement());
             kweets.put(kweet.getId(), kweet);
 
-            utx.begin();
+            //utx.begin();
             em.persist(kweet);
-            utx.commit();
+            //utx.commit();
 
             return new Kweet(profile, kweetMessage, new Date());
         }
         catch(Exception e)
         {
-            try
+            /*try
             {
                 utx.rollback();
             }
             catch(SystemException ex)
             {
                 throw new CouldNotRoleBackException(ex.getMessage());
-            }
+            }*/
             throw new CouldNotCreateKweetException(e.getMessage());
-        }*/
-        return new Kweet(profile, kweetMessage, new Date());
+        }
+        //return new Kweet(profile, kweetMessage, new Date());
     }
 
     @Override

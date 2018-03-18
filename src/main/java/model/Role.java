@@ -1,18 +1,30 @@
 package model;
 
+import javax.persistence.*;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 
 
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-public class Role
+@Entity(name = "Role")
+@Table(name = "role")
+public class Role implements Serializable
 {
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private Long id;
+
     private boolean canDelete;
     private boolean canPost;
     private boolean canBlacklist;
     private boolean canLike;
+
+    public Role(){
+
+    }
 
     public Role(boolean canDelete, boolean canPost, boolean canBlacklist, boolean canLike)
     {
@@ -60,5 +72,13 @@ public class Role
     public void setCanLike(boolean canLike)
     {
         this.canLike = canLike;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }

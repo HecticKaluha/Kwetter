@@ -1,6 +1,5 @@
 exceptions\ParametersWereEmptyException.class
 exceptions\AddingToCollectionFailedException.class
-dao\KwetterManagerDaoImp.class
 model\Kweet.class
 controller\JsonBodyClasses\KweetBody.class
 controller\JsonBodyClasses\CreateProfileBody.class
@@ -16,6 +15,7 @@ controller\JsonBodyClasses\UpdateProfileBody.class
 model\Profile.class
 service\ProfileService.class
 controller\JsonBodyClasses\UnFollowProfileBody.class
+dao\ProfileDaoJPAImp.class
 controller\ProfileController.class
 exceptions\CouldNotRoleBackException.class
 qualifier\JPA.class
@@ -24,7 +24,6 @@ controller\JsonBodyClasses\FollowProfileBody.class
 exceptions\CouldNotCreateKweetException.class
 exceptions\KweetNotFoundException.class
 Initialize\Initialize.class
-dao\KwetterManagerDao.class
 model\Mention.class
 model\Trend.class
 exceptions\CouldNotFindProfileException.class

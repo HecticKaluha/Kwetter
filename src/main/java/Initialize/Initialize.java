@@ -32,9 +32,11 @@ public class Initialize {
             profileService.addRole("Admin", true, true, true, true);
             profileService.addRole("User", false, true, false, true);
 
+            //Profiles worden alleen naar de database gestuurd wanneer ze daadwerkelijk een kweet hebben gepost.
+            //dit komt doordat nu alleen nog POST JPA implementatie heeft.
             profileService.createProfile("Hans", profileService.getRole("Admin"));
-            profileService.createProfile("Peter", profileService.getRole("Admin"));
-            profileService.createProfile("Klaartje", profileService.getRole("User"));
+            profileService.createProfile("Peter", profileService.getRole("User"));
+            profileService.createProfile("Klaartje", profileService.getRole("Admin"));
 
             kweetService.post("Bericht 1", "Klaartje");
             kweetService.post("Bericht 2","Hans");

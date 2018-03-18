@@ -1,9 +1,11 @@
 package model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import exceptions.CouldNotGetLatestKweets;
 import exceptions.CouldNotGetListException;
 
+import javax.persistence.*;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -15,8 +17,13 @@ import java.util.List;
 
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
+@Entity(name = "Profile")
+@Table(name = "profile")
 public class Profile implements Serializable
 {
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private Long id;
 
     private String username;
 
@@ -26,20 +33,29 @@ public class Profile implements Serializable
 
     private String web;
 
-    //lijst met profiles
     @JsonIgnore
+    @OneToMany(mappedBy = "following", cascade = CascadeType.PERSIST, fetch=FetchType.LAZY)
+    @ElementCollection
     private List<Profile> following;
-    //lijst met profiles
+
     @JsonIgnore
+    @ElementCollection
+    @OneToMany(mappedBy = "follower", cascade = CascadeType.PERSIST, fetch=FetchType.LAZY)
     private List<Profile> followers;
 
     private String profilePictureUrl;
 
+    //look into
+    @ManyToOne(/*mappedBy = "role",*/ cascade = CascadeType.PERSIST)
     private Role role;
 
     @XmlTransient
     @JsonIgnore
+    @OneToMany(mappedBy = "ownkweets", fetch=FetchType.LAZY, cascade = CascadeType.PERSIST)
+    //@JsonManagedReference
     private transient List<Kweet> ownKweets;
+
+    public Profile(){}
 
     public Profile(String username)
     {
@@ -237,4 +253,11 @@ public class Profile implements Serializable
     }
 
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 }

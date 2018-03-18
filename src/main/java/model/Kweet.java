@@ -1,6 +1,7 @@
 package model;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
@@ -14,30 +15,43 @@ import java.util.List;
 
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-@Entity
-@Table(name = "Kweet", schema = "Kwetter")
+@Entity(name = "Kweet")
+@Table(name = "kweet")
+//@NamedQueries({@NamedQuery(name = "kweet.getKweets", query = "SELECT K FROM Kweet K")})
 public class Kweet implements Serializable
 {
-
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
+    //look into this
+    @ManyToOne(fetch=FetchType.LAZY, cascade = CascadeType.PERSIST)
+    @JoinColumn(name="PROFILE_OWNER", nullable = false)
+    //@JsonBackReference
     private Profile owner;
+
     private String message;
     private Date postDate;
 
-    @JsonIgnore
-    private List<Profile> likes;
+    //@JsonIgnore
+    //private List<Profile> likes;
 
-    private List<Mention> mentions;
+    //@ManyToMany
+    //private List<Mention> mentions;
 
-    private List<Trend> trends;
+    //@ManyToMany
+    //private List<Trend> trends;
 
+    public Kweet()
+    {
+
+    }
 
     public Kweet(Profile owner, String message, Date postDate, List<Profile> likes, List<Mention> mentions, List<Trend> trends)
     {
         this (owner,message,postDate);
-        this.likes = likes;
+        /*this.likes = likes;
         this.mentions = mentions;
-        this.trends = trends;
+        this.trends = trends;*/
     }
 
     public Kweet(Long id, Profile owner, String message, Date postDate, List<Profile> likes, List<Mention> mentions, List<Trend> trends)
@@ -66,7 +80,7 @@ public class Kweet implements Serializable
         //return comments;
         return new ArrayList<>();
     }
-    @OneToOne(cascade= CascadeType.ALL, mappedBy="order")
+
     public Profile getOwner()
     {
         return owner;
@@ -99,32 +113,35 @@ public class Kweet implements Serializable
 
     public List<Profile> getLikes()
     {
-        return likes;
+        //return likes;
+        return null;
     }
 
     public void setLikes(List<Profile> likes)
     {
-        this.likes = likes;
+        //this.likes = likes;
     }
 
     public List<Mention> getMentions()
     {
-        return mentions;
+        //return mentions;
+        return null;
     }
 
     public void setMentions(List<Mention> mentions)
     {
-        this.mentions = mentions;
+        //this.mentions = mentions;
     }
 
     public List<Trend> getTrends()
     {
-        return trends;
+        //return trends;
+        return null;
     }
 
     public void setTrends(List<Trend> trends)
     {
-        this.trends = trends;
+        //this.trends = trends;
     }
 
     public Long getId()

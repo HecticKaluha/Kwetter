@@ -25,9 +25,10 @@ public class ProfileController
     public Response getProfile(@PathParam("username") String username)
     {
         try{
-            return Response.ok(profileService.findProfile(username)).build();
+            return Response.ok(username).build();
+            //return Response.ok(profileService.findProfile(username)).build();
         }
-        catch(CouldNotFindProfileException e)
+        catch(/*CouldNotFindProfileException*/ Exception e)
         {
             return Response.status(Response.Status.NOT_FOUND).entity(e.getMessage()).build();
         }

@@ -20,6 +20,7 @@ public class KweetService {
     @JPA
     private KweetDao kweetDao;
     @Inject
+    @JPA
     private ProfileDao profileDao;
 
     public Kweet post(String kweetmessage, String profile) throws CouldNotCreateKweetException, CouldNotFindProfileException, CouldNotRoleBackException {
@@ -27,8 +28,6 @@ public class KweetService {
             throw new CouldNotFindProfileException("profile not found");
         }
         Kweet kweet = kweetDao.post(kweetmessage, profileDao.findProfile(profile));
-
-
         profileDao.addKweetToProfile(profile, kweet);
         return kweet;
     }

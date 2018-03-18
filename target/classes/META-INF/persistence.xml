@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                  xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
@@ -5,7 +6,7 @@
     <persistence-unit name="KwetterPersistence">
         <description>This unit manages all kweets and profiles withing the Kwetter application disigned by Stefano Verhoeve
         </description>
-        <jta-data-source>jdbc/KwettersDS</jta-data-source>
+        <jta-data-source>jdbc/KwetterDS</jta-data-source>
         <exclude-unlisted-classes>false</exclude-unlisted-classes>
         <properties>
             <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>

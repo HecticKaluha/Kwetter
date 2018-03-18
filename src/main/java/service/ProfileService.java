@@ -9,6 +9,7 @@ import exceptions.*;
 import model.Kweet;
 import model.Profile;
 import model.Role;
+import qualifier.JPA;
 
 import javax.faces.bean.ApplicationScoped;
 import javax.inject.Inject;
@@ -21,9 +22,11 @@ import java.util.List;
 public class ProfileService
 {
     @Inject
+    @JPA
     private ProfileDao profileDao;
 
     @Inject
+    @JPA
     private KweetDao kweetDao;
 
     public boolean followUser(Profile followThisProfile, Profile initialProfile)
