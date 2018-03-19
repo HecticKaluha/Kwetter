@@ -1,6 +1,6 @@
 package exceptions;
 
-public class AddingToCollectionFailedException extends Throwable
+public class AddingToCollectionFailedException extends Exception
 {
     public AddingToCollectionFailedException(String message) {
         super(message);

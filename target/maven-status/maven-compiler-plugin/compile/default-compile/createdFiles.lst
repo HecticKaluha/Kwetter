@@ -28,6 +28,7 @@ model\Mention.class
 model\Trend.class
 exceptions\CouldNotFindProfileException.class
 dao\KweetDaoJPAImp.class
+exceptions\CouldNotDeleteKweetException.class
 dao\ProfileDaoImp.class
 controller\JsonBodyClasses\UpdateKweetBody.class
 controller\JsonBodyClasses\DeleteProfileBody.class

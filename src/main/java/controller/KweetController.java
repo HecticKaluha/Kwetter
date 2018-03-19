@@ -27,12 +27,11 @@ public class KweetController
     {
         try{
             List<Kweet> kweets = kweetService.findAll();
-            System.out.print(kweets);
             return Response.ok(kweets).build();
         }
         catch(CouldNotGetListException e)
         {
-            return Response.status(Response.Status.NOT_FOUND).entity(e.getMessage()).build();
+            return Response.status(Response.Status.CONFLICT).entity(e.getMessage()).build();
         }
 
     }
@@ -49,7 +48,7 @@ public class KweetController
         }
         catch(CouldNotFindProfileException | CouldNotCreateKweetException | CouldNotRoleBackException e)
         {
-            return Response.status(Response.Status.NOT_FOUND).entity(e.getMessage()).build();
+            return Response.status(Response.Status.CONFLICT).entity(e.getMessage()).build();
         }
     }
 
@@ -64,7 +63,7 @@ public class KweetController
         }
         catch(KweetNotFoundException | NoContentToUpdateException e)
         {
-            return Response.status(Response.Status.NOT_MODIFIED).entity(e.getMessage()).build();
+            return Response.status(Response.Status.CONFLICT).entity(e.getMessage()).build();
         }
     }
     @DELETE
@@ -78,9 +77,9 @@ public class KweetController
             kweetService.delete(id);
             return Response.ok("Kweet deleted").build();
         }
-        catch(KweetNotFoundException e)
+        catch(KweetNotFoundException | CouldNotDeleteKweetException e)
         {
-            return Response.status(Response.Status.NOT_MODIFIED).entity(e.getMessage()).build();
+            return Response.status(Response.Status.CONFLICT).entity(e.getMessage()).build();
         }
     }
 
@@ -96,7 +95,7 @@ public class KweetController
         }
         catch(KweetNotFoundException e)
         {
-            return Response.status(Response.Status.NOT_FOUND).entity(e.getMessage()).build();
+            return Response.status(Response.Status.CONFLICT).entity(e.getMessage()).build();
         }
     }
 }

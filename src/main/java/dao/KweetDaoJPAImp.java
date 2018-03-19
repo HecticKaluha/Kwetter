@@ -40,27 +40,16 @@ public class KweetDaoJPAImp implements KweetDao
         try{
             Kweet kweet = new Kweet(profile, kweetMessage, new Date());
             kweet.setId(nextId.getAndIncrement());
-            kweets.put(kweet.getId(), kweet);
-
+            //kweets.put(kweet.getId(), kweet);
             //utx.begin();
             em.persist(kweet);
             //utx.commit();
-
             return new Kweet(profile, kweetMessage, new Date());
         }
         catch(Exception e)
         {
-            /*try
-            {
-                utx.rollback();
-            }
-            catch(SystemException ex)
-            {
-                throw new CouldNotRoleBackException(ex.getMessage());
-            }*/
             throw new CouldNotCreateKweetException(e.getMessage());
         }
-        //return new Kweet(profile, kweetMessage, new Date());
     }
 
     @Override
@@ -71,34 +60,54 @@ public class KweetDaoJPAImp implements KweetDao
         }
         Kweet kweetToUpdate;
         try {
-            kweetToUpdate = em.createQuery("SELECT kweet FROM Kweet kweet WHERE kweet.id = :id", Kweet.class)
-                    .setParameter("id", id)
-                    .getSingleResult();
-            System.out.print("Aangekoemn - " + id);
+            kweetToUpdate = find(id);
             kweetToUpdate.setMessage(content);
             kweetToUpdate.setPostDate(new Date());
+
             return kweetToUpdate;
         }
         catch(Exception e)
         {
-            System.out.print("Error: " + e.getMessage());
             throw new KweetNotFoundException("Kweet with id " + id + " was not found in the database.");
         }
     }
 
     @Override
-    public boolean delete(Long id) throws KweetNotFoundException {
-        return false;
+    public boolean delete(Long id) throws CouldNotDeleteKweetException{
+        try{
+            Kweet kweetToDelete = find(id);
+            em.remove(kweetToDelete);
+            return true;
+        }
+        catch(Exception e)
+        {
+            throw new CouldNotDeleteKweetException("Kweet with id " + id + " was not deleted because: " + e.getMessage());
+        }
     }
 
     @Override
     public List<Kweet> findAll() throws CouldNotGetListException {
-        return null;
+        try{
+            return em.createQuery("SELECT kweet FROM Kweet kweet").getResultList();
+        }
+        catch(Exception e)
+        {
+            throw new CouldNotGetListException("Could not retrieve all from database");
+        }
     }
 
     @Override
     public Kweet find(Long id) throws KweetNotFoundException {
-        return null;
+        try {
+            Kweet kweetToReturn = em.createQuery("SELECT kweet FROM Kweet kweet WHERE kweet.id = :id", Kweet.class)
+                    .setParameter("id", id)
+                    .getSingleResult();
+            return kweetToReturn;
+        }
+        catch(Exception e)
+        {
+            throw new KweetNotFoundException("Kweet with id " + id + " not found");
+        }
     }
 
     /*@Override

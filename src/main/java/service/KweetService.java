@@ -35,7 +35,7 @@ public class KweetService {
     public Kweet update(Long id, String updatedContent) throws NoContentToUpdateException, KweetNotFoundException{
         return kweetDao.update(id, updatedContent);
     }
-    public boolean delete(Long id) throws KweetNotFoundException{
+    public boolean delete(Long id) throws KweetNotFoundException, CouldNotDeleteKweetException {
         return kweetDao.delete(id);
     }
     public List<Kweet> findAll() throws CouldNotGetListException{

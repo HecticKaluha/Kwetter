@@ -10,7 +10,7 @@ public interface KweetDao
 {
     Kweet post(String kweetMessage, Profile profile) throws CouldNotCreateKweetException, CouldNotRoleBackException;
     Kweet update(Long id, String content) throws NoContentToUpdateException, KweetNotFoundException;
-    boolean delete(Long id) throws KweetNotFoundException;
+    boolean delete(Long id) throws KweetNotFoundException, CouldNotDeleteKweetException;
     List<Kweet> findAll() throws CouldNotGetListException;
     Kweet find(Long id) throws KweetNotFoundException;
 }

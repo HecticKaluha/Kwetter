@@ -17,14 +17,13 @@ import java.util.List;
 @XmlAccessorType(XmlAccessType.FIELD)
 @Entity(name = "Kweet")
 @Table(name = "kweet")
-//@NamedQueries({@NamedQuery(name = "kweet.getKweets", query = "SELECT K FROM Kweet K")})
 public class Kweet implements Serializable
 {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
     //look into this
-    @ManyToOne(fetch=FetchType.LAZY, cascade = CascadeType.PERSIST)
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name="PROFILE_OWNER", nullable = false)
     //@JsonBackReference
     private Profile owner;
