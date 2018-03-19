@@ -65,7 +65,25 @@ public class KweetDaoJPAImp implements KweetDao
 
     @Override
     public Kweet update(Long id, String content) throws NoContentToUpdateException, KweetNotFoundException {
-        return null;
+        if (content == null || content.isEmpty())
+        {
+            throw new NoContentToUpdateException("No Content to update for kweet with id " + id);
+        }
+        Kweet kweetToUpdate;
+        try {
+            kweetToUpdate = em.createQuery("SELECT kweet FROM Kweet kweet WHERE kweet.id = :id", Kweet.class)
+                    .setParameter("id", id)
+                    .getSingleResult();
+            System.out.print("Aangekoemn - " + id);
+            kweetToUpdate.setMessage(content);
+            kweetToUpdate.setPostDate(new Date());
+            return kweetToUpdate;
+        }
+        catch(Exception e)
+        {
+            System.out.print("Error: " + e.getMessage());
+            throw new KweetNotFoundException("Kweet with id " + id + " was not found in the database.");
+        }
     }
 
     @Override

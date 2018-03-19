@@ -17,7 +17,7 @@
     <facet type="jpa" name="JPA">
       <configuration>
         <setting name="validation-enabled" value="true" />
-        <setting name="provider-name" value="" />
+        <setting name="provider-name" value="EclipseLink" />
         <datasource-mapping>
           <factory-entry name="KwetterPersistence" value="8fcafeb1-2039-4b32-af24-0fba1d29d689" />
         </datasource-mapping>
