@@ -7,6 +7,8 @@ import model.Role;
 import qualifier.JPA;
 
 import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -17,6 +19,8 @@ public class ProfileDaoJPAImp implements ProfileDao
     private ConcurrentHashMap<String, Profile> profiles = new ConcurrentHashMap<>();
     private ConcurrentHashMap<String, Role> roles = new ConcurrentHashMap<>();
 
+    @PersistenceContext(unitName = "KwetterPersistence")
+    private EntityManager em;
 
     private ProfileDaoJPAImp() {
         this.initProfileDaoImp();
@@ -55,11 +59,17 @@ public class ProfileDaoJPAImp implements ProfileDao
     @Override
     public Profile findProfile(String username) throws CouldNotFindProfileException
     {
-        if(!profiles.containsKey(username))
-        {
-            throw new CouldNotFindProfileException("Profile with username " + username + " was not found");
+
+        try {
+            Profile profileToReturn = em.createQuery("SELECT profile FROM Profile profile WHERE profile.username = :username", Profile.class)
+                    .setParameter("username", username)
+                    .getSingleResult();
+            return profileToReturn;
         }
-        return profiles.get(username);
+        catch(Exception e)
+        {
+            throw new CouldNotFindProfileException("profile with id " + username + " not found because: " + e.getMessage());
+        }
     }
 
     @Override
@@ -73,7 +83,9 @@ public class ProfileDaoJPAImp implements ProfileDao
             throw new ParametersWereEmptyException("parameter " + role +" was null or empty");
         }
         try{
-            profiles.put(username, new Profile(username, role));
+            Profile profile = new Profile(username, role);
+            em.persist(profile);
+            //profiles.put(username, new Profile(username, role));
         }
         catch(Exception e)
         {
@@ -87,16 +99,12 @@ public class ProfileDaoJPAImp implements ProfileDao
         if(username == null || username.isEmpty()) {
             throw new ParametersWereEmptyException("parameter " + username +" was null or empty");
         }
-        if(!profiles.containsKey(username))
-        {
-            throw new CouldNotFindProfileException("Profile with username" + username + " was not found");
-        }
         try{
-            profiles.remove(username);
+            em.remove(findProfile(username));
         }
         catch(Exception e)
         {
-            throw new AddingToCollectionFailedException(e.getMessage());
+            throw new AddingToCollectionFailedException("could not delete profile because: " + e.getMessage());
         }
         return true;
     }

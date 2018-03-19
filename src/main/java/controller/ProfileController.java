@@ -30,7 +30,7 @@ public class ProfileController
         }
         catch(/*CouldNotFindProfileException*/ Exception e)
         {
-            return Response.status(Response.Status.NOT_FOUND).entity(e.getMessage()).build();
+            return Response.status(Response.Status.CONFLICT).entity(e.getMessage()).build();
         }
     }
 
@@ -44,7 +44,7 @@ public class ProfileController
             return Response.ok("Profiel met username "+ profileBody.getUsername()+" aangemaakt.").build();
         }
         catch(ParametersWereEmptyException | AddingToCollectionFailedException | RoleNotFoundException e){
-            return Response.status(Response.Status.NOT_MODIFIED).entity(e.getMessage()).build();
+            return Response.status(Response.Status.CONFLICT).entity(e.getMessage()).build();
         }
     }
 
@@ -60,7 +60,7 @@ public class ProfileController
         }
         catch(CouldNotFindProfileException | ParametersWereEmptyException | AddingToCollectionFailedException e)
         {
-            return Response.status(Response.Status.NOT_MODIFIED).entity(e.getMessage()).build();
+            return Response.status(Response.Status.CONFLICT).entity(e.getMessage()).build();
         }
     }
 
@@ -80,7 +80,7 @@ public class ProfileController
             }
         }
         catch(CouldNotFindProfileException | UnableToFollowException e){
-            return Response.status(Response.Status.NOT_MODIFIED).entity(e.getMessage()).build();
+            return Response.status(Response.Status.CONFLICT).entity(e.getMessage()).build();
         }
     }
 
@@ -100,7 +100,7 @@ public class ProfileController
             }
         }
         catch(CouldNotFindProfileException | UnableToFollowException e){
-            return Response.status(Response.Status.NOT_MODIFIED).entity(e.getMessage()).build();
+            return Response.status(Response.Status.CONFLICT).entity(e.getMessage()).build();
         }
     }
 
@@ -115,7 +115,7 @@ public class ProfileController
             return Response.ok("Profiel met originele username "+ username +" geupdate.").build();
         }
         catch(CouldNotFindProfileException | ParametersWereEmptyException e){
-            return Response.status(Response.Status.NOT_MODIFIED).entity(e.getMessage()).build();
+            return Response.status(Response.Status.CONFLICT).entity(e.getMessage()).build();
         }
     }
 
@@ -129,7 +129,7 @@ public class ProfileController
         }
         catch(CouldNotGetLatestKweets e)
         {
-            return Response.status(Response.Status.NOT_FOUND).entity(e.getMessage()).build();
+            return Response.status(Response.Status.CONFLICT).entity(e.getMessage()).build();
         }
     }
 
@@ -143,7 +143,7 @@ public class ProfileController
         }
         catch(CouldNotFindProfileException | CouldNotGetListException e)
         {
-            return Response.status(Response.Status.NOT_FOUND).entity(e.getMessage()).build();
+            return Response.status(Response.Status.CONFLICT).entity(e.getMessage()).build();
         }
     }
 
@@ -157,7 +157,7 @@ public class ProfileController
         }
         catch(CouldNotFindProfileException | CouldNotGetListException e)
         {
-            return Response.status(Response.Status.NOT_FOUND).entity(e.getMessage()).build();
+            return Response.status(Response.Status.CONFLICT).entity(e.getMessage()).build();
         }
     }
 
