@@ -63,7 +63,7 @@ public class KweetDaoJPAImp implements KweetDao
             kweetToUpdate = find(id);
             kweetToUpdate.setMessage(content);
             kweetToUpdate.setPostDate(new Date());
-
+            em.persist(kweetToUpdate);
             return kweetToUpdate;
         }
         catch(Exception e)

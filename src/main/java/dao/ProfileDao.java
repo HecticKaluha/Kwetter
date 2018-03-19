@@ -9,9 +9,9 @@ import java.util.List;
 
 public interface ProfileDao
 {
-    boolean followUser(Profile followThisProfile,Profile initialProfile);
+    boolean followUser(Profile followThisProfile,Profile initialProfile) throws CouldNotFindProfileException, UnableToFollowException;
 
-    boolean unfollowUser(Profile unfollowThisProfile, Profile initialProfile);
+    boolean unfollowUser(Profile unfollowThisProfile, Profile initialProfile) throws UnableToUnFollowException;
 
     Profile findProfile(String username) throws CouldNotFindProfileException;
 
@@ -19,9 +19,9 @@ public interface ProfileDao
 
     boolean deleteProfile(String username) throws CouldNotFindProfileException, ParametersWereEmptyException, AddingToCollectionFailedException;
 
-    boolean updateProfile(String username, String newUsername, String bio, String location, String web) throws CouldNotFindProfileException, ParametersWereEmptyException;
+    boolean updateProfile(String username, String newUsername, String bio, String location, String web) throws CouldNotFindProfileException, ParametersWereEmptyException, CouldNotUpdateProfileException;
 
-    List<Kweet> getLatest(String username) throws CouldNotGetLatestKweets;
+    List<Kweet> getLatest(String username) throws CouldNotGetLatestKweets, CouldNotFetchLatestKweetFromDatabaseException;
 
     boolean addRole(String rolename, boolean candelete, boolean canpost, boolean canblacklist, boolean canlike);
 

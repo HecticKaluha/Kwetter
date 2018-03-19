@@ -1,10 +1,13 @@
 exceptions\ParametersWereEmptyException.class
 exceptions\AddingToCollectionFailedException.class
+exceptions\AddigToDatabaseFailedException.class
 model\Kweet.class
 controller\JsonBodyClasses\KweetBody.class
 controller\JsonBodyClasses\CreateProfileBody.class
+exceptions\CouldNotFetchLatestKweetFromDatabaseException.class
 exceptions\UnableToFollowException.class
 model\Role.class
+exceptions\UnableToUnFollowException.class
 dao\KweetDaoImp.class
 exceptions\CouldNotGetListException.class
 dao\KweetDao.class
@@ -14,6 +17,7 @@ service\KweetService.class
 controller\JsonBodyClasses\UpdateProfileBody.class
 model\Profile.class
 service\ProfileService.class
+exceptions\CouldNotUpdateProfileException.class
 controller\JsonBodyClasses\UnFollowProfileBody.class
 dao\ProfileDaoJPAImp.class
 controller\ProfileController.class

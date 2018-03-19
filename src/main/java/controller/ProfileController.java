@@ -25,8 +25,8 @@ public class ProfileController
     public Response getProfile(@PathParam("username") String username)
     {
         try{
-            return Response.ok(username).build();
-            //return Response.ok(profileService.findProfile(username)).build();
+            //return Response.ok(username).build();
+            return Response.ok(profileService.findProfile(username)).build();
         }
         catch(/*CouldNotFindProfileException*/ Exception e)
         {
@@ -96,10 +96,10 @@ public class ProfileController
                 return Response.ok(profileBody.getUsername() + " volgt nu "+ usernameToFollow + " niet meer").build();
             }
             else{
-                throw new UnableToFollowException(profileBody.getUsername() + " was unable to unfollow " + usernameToFollow);
+                throw new UnableToUnFollowException(profileBody.getUsername() + " was unable to unfollow " + usernameToFollow);
             }
         }
-        catch(CouldNotFindProfileException | UnableToFollowException e){
+        catch(CouldNotFindProfileException | UnableToUnFollowException e){
             return Response.status(Response.Status.CONFLICT).entity(e.getMessage()).build();
         }
     }
@@ -114,7 +114,7 @@ public class ProfileController
             profileService.updateProfile(username, profileBody.getNewUsername(), profileBody.getBio(), profileBody.getLocation(), profileBody.getWeb());
             return Response.ok("Profiel met originele username "+ username +" geupdate.").build();
         }
-        catch(CouldNotFindProfileException | ParametersWereEmptyException e){
+        catch(CouldNotFindProfileException | ParametersWereEmptyException | CouldNotUpdateProfileException e){
             return Response.status(Response.Status.CONFLICT).entity(e.getMessage()).build();
         }
     }
@@ -127,7 +127,7 @@ public class ProfileController
         try{
             return Response.ok(profileService.getLatest(username)).build();
         }
-        catch(CouldNotGetLatestKweets e)
+        catch(CouldNotGetLatestKweets | CouldNotFetchLatestKweetFromDatabaseException e)
         {
             return Response.status(Response.Status.CONFLICT).entity(e.getMessage()).build();
         }

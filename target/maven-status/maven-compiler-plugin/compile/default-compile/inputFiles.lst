@@ -27,8 +27,11 @@ C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\controller\Profi
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\model\Role.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\qualifier\JPA.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\exceptions\RoleNotFoundException.java
+C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\exceptions\AddigToDatabaseFailedException.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\controller\JaxApi.java
+C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\exceptions\UnableToUnFollowException.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\controller\JsonBodyClasses\FollowProfileBody.java
+C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\exceptions\CouldNotUpdateProfileException.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\exceptions\KweetNotFoundException.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\exceptions\NoContentToUpdateException.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\controller\JsonBodyClasses\DeleteProfileBody.java
@@ -36,3 +39,4 @@ C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\model\Trend.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\dao\KweetDaoJPAImp.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\exceptions\AddingToCollectionFailedException.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\controller\KweetController.java
+C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\exceptions\CouldNotFetchLatestKweetFromDatabaseException.java

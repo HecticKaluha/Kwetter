@@ -34,13 +34,13 @@ public class Profile implements Serializable
     private String web;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "following", cascade = CascadeType.PERSIST/*, fetch=FetchType.LAZY*/)
-    @ElementCollection
+    @XmlTransient
+    @ManyToMany(/*mappedBy = "following", cascade = CascadeType.PERSIST,*/ fetch=FetchType.LAZY)
     private List<Profile> following;
 
     @JsonIgnore
-    @ElementCollection
-    @OneToMany(mappedBy = "follower", cascade = CascadeType.PERSIST/*, fetch=FetchType.LAZY*/)
+    @XmlTransient
+    @ManyToMany(mappedBy = "following", cascade = CascadeType.PERSIST,/*cascade = CascadeType.PERSIST,*/ fetch=FetchType.LAZY)
     private List<Profile> followers;
 
     private String profilePictureUrl;

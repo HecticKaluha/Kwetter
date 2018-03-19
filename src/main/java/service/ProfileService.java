@@ -29,12 +29,10 @@ public class ProfileService
     @JPA
     private KweetDao kweetDao;
 
-    public boolean followUser(Profile followThisProfile, Profile initialProfile)
-    {
+    public boolean followUser(Profile followThisProfile, Profile initialProfile) throws CouldNotFindProfileException, UnableToFollowException {
         return profileDao.followUser(followThisProfile, initialProfile);
     }
-    public boolean unfollowUser(Profile unfollowThisProfile, Profile initialProfile)
-    {
+    public boolean unfollowUser(Profile unfollowThisProfile, Profile initialProfile) throws UnableToUnFollowException {
         return profileDao.unfollowUser(unfollowThisProfile, initialProfile);
     }
     public Profile findProfile(String username) throws CouldNotFindProfileException
@@ -48,7 +46,7 @@ public class ProfileService
     public void deleteProfile(String username) throws CouldNotFindProfileException, ParametersWereEmptyException, AddingToCollectionFailedException {
         profileDao.deleteProfile(username);
     }
-    public void updateProfile(String username, String newUsername,  String bio, String location, String web) throws CouldNotFindProfileException, ParametersWereEmptyException {
+    public void updateProfile(String username, String newUsername,  String bio, String location, String web) throws CouldNotFindProfileException, ParametersWereEmptyException, CouldNotUpdateProfileException {
         profileDao.updateProfile(username, newUsername, bio, location, web);
     }
     public void updateRole(String username, String rolename) throws RoleNotFoundException, CouldNotFindProfileException {
@@ -69,7 +67,7 @@ public class ProfileService
         return profileDao.getFollower(username);
     }
 
-    public List<Kweet> getLatest(String username) throws CouldNotGetLatestKweets {
+    public List<Kweet> getLatest(String username) throws CouldNotGetLatestKweets, CouldNotFetchLatestKweetFromDatabaseException {
         return profileDao.getLatest(username);
     }
 }

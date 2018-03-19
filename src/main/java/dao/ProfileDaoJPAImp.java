@@ -37,29 +37,43 @@ public class ProfileDaoJPAImp implements ProfileDao
     }
 
     @Override
-    public boolean followUser(Profile followThisProfile, Profile initialProfile)
-    {
-        if(initialProfile.addFollowing(followThisProfile) && followThisProfile.addFollower(initialProfile))
-        {
+    public boolean followUser(Profile followThisProfile, Profile initialProfile) throws CouldNotFindProfileException, UnableToFollowException {
+        try{
+            Profile profileToFollow = findProfile(followThisProfile.getUsername());
+            Profile ownProfile = findProfile(initialProfile.getUsername());
+            ownProfile.addFollowing(profileToFollow);
+            profileToFollow.addFollower(ownProfile);
+            em.merge(ownProfile);
+            em.merge(profileToFollow);
             return true;
         }
-        return false;
+        catch(Exception e)
+        {
+            System.out.print("Error");
+            throw new UnableToFollowException(initialProfile.getUsername() + " was unable to follow " + followThisProfile.getUsername() + " because: " + e.getMessage());
+        }
     }
 
     @Override
-    public boolean unfollowUser(Profile unfollowThisProfile, Profile initialProfile)
-    {
-        if(initialProfile.removeFollowing(unfollowThisProfile) && unfollowThisProfile.removeFollower(initialProfile))
-        {
+    public boolean unfollowUser(Profile unfollowThisProfile, Profile initialProfile) throws UnableToUnFollowException {
+        try{
+            Profile profileToUnFollow = findProfile(unfollowThisProfile.getUsername());
+            Profile ownProfile = findProfile(initialProfile.getUsername());
+            ownProfile.removeFollowing(profileToUnFollow);
+            profileToUnFollow.removeFollower(ownProfile);
+            em.merge(ownProfile);
+            em.merge(profileToUnFollow);
             return true;
         }
-        return false;
+        catch(Exception e)
+        {
+            throw new UnableToUnFollowException(initialProfile.getUsername() + " was unable to unfollow " + unfollowThisProfile.getUsername() + " because: " + e.getMessage());
+        }
     }
 
     @Override
     public Profile findProfile(String username) throws CouldNotFindProfileException
     {
-
         try {
             Profile profileToReturn = em.createQuery("SELECT profile FROM Profile profile WHERE profile.username = :username", Profile.class)
                     .setParameter("username", username)
@@ -91,7 +105,6 @@ public class ProfileDaoJPAImp implements ProfileDao
         {
             throw new AddingToCollectionFailedException(e.getMessage());
         }
-
     }
 
     @Override
@@ -110,7 +123,7 @@ public class ProfileDaoJPAImp implements ProfileDao
     }
 
     @Override
-    public boolean updateProfile(String username, String newUsername, String bio, String location, String web) throws CouldNotFindProfileException, ParametersWereEmptyException {
+    public boolean updateProfile(String username, String newUsername, String bio, String location, String web) throws CouldNotFindProfileException, ParametersWereEmptyException, CouldNotUpdateProfileException {
         if(username == null || username.isEmpty())
         {
             throw new ParametersWereEmptyException("parameter " + username +" was null or empty");
@@ -131,19 +144,39 @@ public class ProfileDaoJPAImp implements ProfileDao
         {
             throw new ParametersWereEmptyException("parameter " + web +" was null or empty");
         }
-        Profile profile = findProfile(username);
-        profile.setUsername(newUsername);
-        profile.setBio(bio);
-        profile.setLocation(location);
-        profile.setWeb(web);
-        //update
-        //profiles.remove(username);
-        //profiles.put(newUsername, profile);
-        return true;
+        try
+        {
+            Profile profile = findProfile(username);
+            profile.setUsername(newUsername);
+            profile.setBio(bio);
+            profile.setLocation(location);
+            profile.setWeb(web);
+
+            em.merge(profile);
+
+            return true;
+        }
+        catch(Exception e)
+        {
+            throw new CouldNotUpdateProfileException("Could not update profile because: " + e.getMessage());
+        }
     }
+
     @Override
-    public List<Kweet> getLatest(String username) throws CouldNotGetLatestKweets {
-        return profiles.get(username).getLatest();
+    public List<Kweet> getLatest(String username) throws CouldNotGetLatestKweets, CouldNotFetchLatestKweetFromDatabaseException {
+        try
+        {
+            List<Kweet> profileToReturn = em.createQuery("SELECT Kweet FROM Kweet kweet WHERE kweet.owner.username = :username ", Kweet.class)
+                    .setParameter("username", username)
+                    .setMaxResults(10).getResultList();
+            return profileToReturn;
+        }
+        catch(Exception e)
+        {
+            throw new CouldNotFetchLatestKweetFromDatabaseException("Could not fetch latest kweets of profile " + username);
+        }
+
+
     }
 
     @Override
