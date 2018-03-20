@@ -175,7 +175,7 @@ public class Profile implements Serializable
         }
         return false;
     }
-
+    @JsonIgnore
     public List<Profile> getFollowing() throws CouldNotGetListException {
         if(this.following == null )
         {
@@ -183,7 +183,7 @@ public class Profile implements Serializable
         }
         return this.following;
     }
-
+    @JsonIgnore
     public List<Profile> getFollower() throws CouldNotGetListException {
         if(this.followers == null )
         {

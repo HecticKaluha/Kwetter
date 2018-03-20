@@ -8,7 +8,9 @@ import qualifier.JPA;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -219,12 +221,34 @@ public class ProfileDaoJPAImp implements ProfileDao
 
     @Override
     public List<Profile> getFollowing(String username) throws CouldNotFindProfileException, CouldNotGetListException {
-        return findProfile(username).getFollowing();
+        try
+        {
+            List<Profile> profilesToReturn = em.createQuery("SELECT profile.following FROM Profile profile WHERE profile.username = :username ", Profile.class)
+                    .setParameter("username", username)
+                    .getResultList();
+            return profilesToReturn;
+        }
+        catch(NoResultException e)
+        {
+            return new ArrayList<>();
+        }
+
     }
 
     @Override
     public List<Profile> getFollower(String username) throws CouldNotFindProfileException, CouldNotGetListException {
-        return findProfile(username).getFollower();
+
+        try{
+            List<Profile> profilesToReturn = em.createQuery("SELECT profile.followers FROM Profile profile WHERE profile.username = :username ", Profile.class)
+                    .setParameter("username", username)
+                    .getResultList();
+            return profilesToReturn;
+        }
+        catch(NoResultException e)
+        {
+            return new ArrayList<>();
+        }
+
     }
 
     @Override
