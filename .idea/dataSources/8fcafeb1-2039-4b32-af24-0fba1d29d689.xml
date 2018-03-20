@@ -998,119 +998,152 @@
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="251" parent="242" name="PRIMARY">
+    <index id="251" parent="242" name="FK_kweet_PROFILE_OWNER">
+      <ColNames>PROFILE_OWNER</ColNames>
+    </index>
+    <key id="252" parent="242" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="252" parent="243" name="ID">
+    <foreign-key id="253" parent="242" name="FK_kweet_PROFILE_OWNER">
+      <ColNames>PROFILE_OWNER</ColNames>
+      <RefSchemaName>kwetterdb</RefSchemaName>
+      <RefTableName>profile</RefTableName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
+    <column id="254" parent="243" name="ID">
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="253" parent="243" name="BIO">
+    <column id="255" parent="243" name="BIO">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="254" parent="243" name="LOCATION">
+    <column id="256" parent="243" name="LOCATION">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="255" parent="243" name="PROFILEPICTUREURL">
+    <column id="257" parent="243" name="PROFILEPICTUREURL">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="256" parent="243" name="USERNAME">
+    <column id="258" parent="243" name="USERNAME">
       <Position>5</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="257" parent="243" name="WEB">
+    <column id="259" parent="243" name="WEB">
       <Position>6</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="258" parent="243" name="ROLE_ID">
+    <column id="260" parent="243" name="ROLE_ID">
       <Position>7</Position>
       <DataType>bigint(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="259" parent="243" name="PRIMARY">
+    <index id="261" parent="243" name="FK_profile_ROLE_ID">
+      <ColNames>ROLE_ID</ColNames>
+    </index>
+    <key id="262" parent="243" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="260" parent="244" name="following_ID">
+    <foreign-key id="263" parent="243" name="FK_profile_ROLE_ID">
+      <ColNames>ROLE_ID</ColNames>
+      <RefSchemaName>kwetterdb</RefSchemaName>
+      <RefTableName>role</RefTableName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
+    <column id="264" parent="244" name="following_ID">
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="261" parent="244" name="followers_ID">
+    <column id="265" parent="244" name="followers_ID">
       <Position>2</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="262" parent="244" name="PRIMARY">
+    <index id="266" parent="244" name="FK_profile_profile_followers_ID">
+      <ColNames>followers_ID</ColNames>
+    </index>
+    <key id="267" parent="244" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>following_ID
 followers_ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="263" parent="245" name="ID">
+    <foreign-key id="268" parent="244" name="FK_profile_profile_following_ID">
+      <ColNames>following_ID</ColNames>
+      <RefSchemaName>kwetterdb</RefSchemaName>
+      <RefTableName>profile</RefTableName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
+    <foreign-key id="269" parent="244" name="FK_profile_profile_followers_ID">
+      <ColNames>followers_ID</ColNames>
+      <RefSchemaName>kwetterdb</RefSchemaName>
+      <RefTableName>profile</RefTableName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
+    <column id="270" parent="245" name="ID">
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="264" parent="245" name="CANBLACKLIST">
+    <column id="271" parent="245" name="CANBLACKLIST">
       <Position>2</Position>
       <DataType>tinyint(1)|0</DataType>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="265" parent="245" name="CANDELETE">
+    <column id="272" parent="245" name="CANDELETE">
       <Position>3</Position>
       <DataType>tinyint(1)|0</DataType>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="266" parent="245" name="CANLIKE">
+    <column id="273" parent="245" name="CANLIKE">
       <Position>4</Position>
       <DataType>tinyint(1)|0</DataType>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="267" parent="245" name="CANPOST">
+    <column id="274" parent="245" name="CANPOST">
       <Position>5</Position>
       <DataType>tinyint(1)|0</DataType>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="268" parent="245" name="PRIMARY">
+    <key id="275" parent="245" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="269" parent="246" name="SEQ_NAME">
+    <column id="276" parent="246" name="SEQ_NAME">
       <Position>1</Position>
       <DataType>varchar(50)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="270" parent="246" name="SEQ_COUNT">
+    <column id="277" parent="246" name="SEQ_COUNT">
       <Position>2</Position>
       <DataType>decimal(38)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="271" parent="246" name="PRIMARY">
+    <key id="278" parent="246" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>SEQ_NAME</ColNames>
       <Primary>1</Primary>
