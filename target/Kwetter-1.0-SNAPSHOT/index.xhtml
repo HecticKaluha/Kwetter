@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <h:outputStylesheet name="css/style.css"></h:outputStylesheet>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"/>
+    <title>Kwetter - Homepage</title>
+</h:head>
+<h:body>
+    <div id="header" class="flexbox center row wrap"><h1>Kwetter</h1></div>
+    <div id="main">
+        <h2>Hier komt de inhoud van de profielpagina</h2>
+        <p>
+            Look, just because I don't be givin' no man a foot massage don't make it right for Marsellus to throw Antwone into a glass motherfuckin' house, fuckin' up the way the nigger talks. Motherfucker do that shit to me, he better paralyze my ass, 'cause I'll kill the motherfucker, know what I'm sayin'?
+
+            My money's in that office, right? If she start giving me some bullshit about it ain't there, and we got to go someplace else and get it, I'm gonna shoot you in the head then and there. Then I'm gonna shoot that bitch in the kneecaps, find out where my goddamn money is. She gonna tell me too. Hey, look at me when I'm talking to you, motherfucker. You listen: we go in there, and that nigga Winston or anybody else is in there, you the first motherfucker to get shot. You understand?
+
+            My money's in that office, right? If she start giving me some bullshit about it ain't there, and we got to go someplace else and get it, I'm gonna shoot you in the head then and there. Then I'm gonna shoot that bitch in the kneecaps, find out where my goddamn money is. She gonna tell me too. Hey, look at me when I'm talking to you, motherfucker. You listen: we go in there, and that nigga Winston or anybody else is in there, you the first motherfucker to get shot. You understand?
+
+        </p>
+
+
+
+
+    </div>
+    <div id="footer" class="flexbox center row wrap">&copy; Kwetter - Stefano Verhoeve </div>
+
+
+    <!--<h:panelGroup>
+        <h:form>
+            <h:outputLabel value="Skill Filter: "/>
+            <h:inputText value="#{studentBean.filter}" id="filter">
+                <f:ajax event="keyup" execute="filter" render="studenten"/>
+            </h:inputText>
+        </h:form>
+    </h:panelGroup>
+
+    <h:panelGroup id="studenten">
+        <h:form class="well">
+            <h:dataTable class="table" value="#{studentBean.studenten}" var ="student">
+                <h:column>
+                    <f:facet name = "header">Name</f:facet>
+                    <h:outputLabel value="#{student.name}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name = "header"> Age</f:facet>
+                    <h:outputLabel value ="#{student.age}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name = "header">Name</f:facet>
+                    <h:outputLabel value ="#{student.skill}"/>
+                </h:column>
+                <h:column>
+                    <h:commandLink class="btn btn-danger" value="Remove" action="#{studentBean.removeStudent(student)}">
+                        <f:ajax event="action" render="studenten"/>
+                    </h:commandLink>
+                </h:column>
+                <h:column>
+                    <h:outputLink class="btn btn-primary" value ="studentdetail.xhtml">Details
+                        <f:param name="nameId" value="#{student.name}"/>
+                    </h:outputLink>
+                </h:column>
+            </h:dataTable>
+        </h:form>
+    </h:panelGroup>
+
+    <h:panelGroup>
+        <h:form class="well">
+            <h:panelGrid columns="1">
+                name: <h:inputText value="#{studentBean.name}"/>
+                age: <h:inputText value="#{studentBean.age}" />
+                skill: <h:inputText value="#{studentBean.skill}"/>
+            </h:panelGrid>
+            <h:commandButton  value ="Add" action="#{studentBean.addStudent()}"/>
+            <h:messages/>
+        </h:form>
+    </h:panelGroup>-->
+</h:body>
+</html>

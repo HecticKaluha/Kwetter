@@ -11,6 +11,7 @@ import model.Profile;
 import model.Role;
 import qualifier.JPA;
 
+import javax.ejb.Stateless;
 import javax.faces.bean.ApplicationScoped;
 import javax.inject.Inject;
 import javax.validation.constraints.Null;
@@ -18,7 +19,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-@ApplicationScoped
+@Stateless
 public class ProfileService
 {
     @Inject
