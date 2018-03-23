@@ -9,7 +9,6 @@ body{
 }
 #main{
     width: 100%;
-    justify-content: space-evenly;
     max-width: 1000px;
     margin:0 auto;
 }
@@ -44,6 +43,12 @@ body{
 {
     align-self: center;
 }
+.self_end
+{
+    position:absolute;
+    right: 5px;
+    top: 5px;
+}
 .self_baseline {
     align-self: flex-end;
 }
@@ -61,11 +66,6 @@ body{
     color: #fcfcfc;
     text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
-#header p a{
-    color: #fcfcfc;
-    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
-    text-decoration:none;
-}
 #header img{
     height:150px;
     width:150px;
@@ -77,6 +77,12 @@ body{
 }
 #header p{
     margin-right: 15px;
+}
+a
+{
+    color: #fcfcfc;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    text-decoration:none;
 }
 #footer{
     width: 75vw;
@@ -90,6 +96,34 @@ body{
     width:65vw;
     margin: 0 auto;
 }
-
+.input
+{
+    padding:3px;
+    border-radius: 3px;
+    border: 2px solid #f2f2f2;
+    margin-top: 5px;
+}
+#login_form
+{
+    border-radius: 3px;
+    padding:8px;
+    max-width: 400px;
+    border: 2px solid #f2f2f2;
+    transition: box-shadow 0.5s ease-in-out;
+    word-wrap: break-word;
+}
+#login_form:hover{
+    box-shadow: 0 5px 15px rgba(2, 2, 2, 0.3);;
+}
+.error
+{
+    color: red;
+}
+.error::before {
+    content: "! ";
+    color: red;
+    font-weight: bold;
+    font-family: Arial-Round,verdana,sans-serif;
+}
 
 

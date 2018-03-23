@@ -18,6 +18,7 @@ controller\JsonBodyClasses\UpdateProfileBody.class
 model\Profile.class
 service\ProfileService.class
 exceptions\CouldNotUpdateProfileException.class
+bean\LoginBean.class
 controller\JsonBodyClasses\UnFollowProfileBody.class
 dao\ProfileDaoJPAImp.class
 controller\ProfileController.class
