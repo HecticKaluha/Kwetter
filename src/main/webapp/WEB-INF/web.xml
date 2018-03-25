@@ -28,32 +28,57 @@
     <welcome-file-list>
         <welcome-file>index.xhtml</welcome-file>
     </welcome-file-list>
-    <!--
+
     <security-constraint>
         <display-name>User</display-name>
         <web-resource-collection>
             <web-resource-name>user</web-resource-name>
-            <description>user</description>
-            <url-pattern>/user.xhtml</url-pattern>
+            <description>A security constraint on the profilepage</description>
+            <url-pattern>/pages/profile.xhtml</url-pattern>
         </web-resource-collection>
         <auth-constraint>
-            <description/>
-            <role-name>AdminRole</role-name>
-            <role-name>UserRole</role-name>
+            <role-name>User</role-name>
+            <role-name>Admin</role-name>
         </auth-constraint>
+        <user-data-constraint>
+            <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+        </user-data-constraint>
     </security-constraint>
+
+    <security-constraint>
+        <display-name>Admin</display-name>
+        <web-resource-collection>
+            <web-resource-name>admin</web-resource-name>
+            <description>A security constraint for the adminpage</description>
+            <url-pattern>/pages/admin.xhtml</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>Admin</role-name>
+        </auth-constraint>
+        <user-data-constraint>
+            <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+        </user-data-constraint>
+    </security-constraint>
+
     <login-config>
-        <auth-method>BASIC</auth-method>
-        <realm-name>StudentJDBCRealm</realm-name>
+        <auth-method>FORM</auth-method>
+        <realm-name>jdbcKwetterRealm</realm-name>
+        <form-login-config>
+            <form-login-page>/pages/login.xhtml</form-login-page>
+            <form-error-page>/error/forbidden.xhtml</form-error-page>
+        </form-login-config>
     </login-config>
+
     <security-role>
-        <description/>
-        <role-name>AdminRole</role-name>
-    </security-role>
-    <security-role>
-        <description/>
-        <role-name>UserRole</role-name>
+        <role-name>User</role-name>
     </security-role>
 
-    -->
+    <security-role>
+        <role-name>Admin</role-name>
+    </security-role>
+
+    <error-page>
+        <error-code>403</error-code>
+        <location>/error/forbidden.xhtml</location>
+    </error-page>
 </web-app>
