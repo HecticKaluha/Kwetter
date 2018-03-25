@@ -1067,7 +1067,7 @@
       <DataType>varchar(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="266" parent="244" name="PASSWORD">
+    <column id="266" parent="244" name="pwd">
       <Position>3</Position>
       <DataType>varchar(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>

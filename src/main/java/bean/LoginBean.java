@@ -70,8 +70,8 @@ public class LoginBean implements Serializable{
         }
         catch(Exception e){
             System.out.print("Something went wrong because: " + e.getMessage());
-            context.addMessage(usernameComponent.getClientId(), new FacesMessage("Username may not be correct"));
-            context.addMessage(passwordComponent.getClientId(), new FacesMessage("Password may not be correct"));
+            //context.addMessage(usernameComponent.getClientId(), new FacesMessage("Username may not be correct"));
+            //context.addMessage(passwordComponent.getClientId(), new FacesMessage("Password may not be correct"));
             return "/error/forbidden.xhtml";
         }
         System.out.print("Login Succesvol");
