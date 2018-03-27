@@ -39,5 +39,7 @@ public interface ProfileDao
     boolean removeKweetFromProfile(
             String username,
             Kweet kweet) throws CouldNotFindProfileException;
+
+    List<Profile> getAllProfiles() throws CouldNotGetListException;
 }
 

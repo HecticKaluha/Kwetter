@@ -21,7 +21,6 @@ exceptions\CouldNotUpdateProfileException.class
 controller\JsonBodyClasses\UnFollowProfileBody.class
 dao\ProfileDaoJPAImp.class
 controller\ProfileController.class
-bean\LogoutBean.class
 exceptions\CouldNotRoleBackException.class
 qualifier\JPA.class
 exceptions\CouldNotGetLatestKweets.class
@@ -34,6 +33,7 @@ model\Trend.class
 exceptions\CouldNotFindProfileException.class
 dao\KweetDaoJPAImp.class
 exceptions\CouldNotDeleteKweetException.class
+bean\KwetterBean.class
 dao\ProfileDaoImp.class
 controller\JsonBodyClasses\UpdateKweetBody.class
 controller\JsonBodyClasses\DeleteProfileBody.class

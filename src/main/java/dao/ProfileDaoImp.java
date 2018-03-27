@@ -6,6 +6,7 @@ import model.Profile;
 import model.Role;
 
 import javax.ejb.Stateless;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -198,6 +199,11 @@ public class ProfileDaoImp implements ProfileDao
     public boolean removeKweetFromProfile(String username, Kweet kweet) throws CouldNotFindProfileException
     {
         return findProfile(username).removeKweet(kweet);
+    }
+
+    @Override
+    public List<Profile> getAllProfiles() throws CouldNotGetListException {
+        return new ArrayList<>();
     }
 }
 

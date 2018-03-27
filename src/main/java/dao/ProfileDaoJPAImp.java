@@ -267,6 +267,20 @@ public class ProfileDaoJPAImp implements ProfileDao
     {
         return findProfile(username).removeKweet(kweet);
     }
+
+    @Override
+    public List<Profile> getAllProfiles() throws CouldNotGetListException
+    {
+        try
+        {
+             return em.createQuery("SELECT profile FROM Profile profile").getResultList();
+        }
+        catch(Exception e)
+        {
+            throw new CouldNotGetListException("Could not retrieve all from database");
+        }
+    }
+
 }
 
 

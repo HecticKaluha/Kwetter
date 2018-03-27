@@ -9,13 +9,109 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <h:outputStylesheet name="css/style.css"/>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"/>
+    <h:outputScript library="primefaces" name="jquery/jquery.js" />
+    <script type="text/javascript">
+
+        jQuery.browser = {};
+        (function () {
+            jQuery.browser.msie = false;
+            jQuery.browser.version = 0;
+            if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+                jQuery.browser.msie = true;
+                jQuery.browser.version = RegExp.$1;
+            }
+        })();
+    </script>
     <title>Kwetter - Homepage</title>
 </h:head>
 <h:body>
     <div id="header" class="flexbox center row wrap"><h1><h:link value="Kwetter" outcome="/index.xhtml"/></h1></div>
-    <div id="main" class="flexbox center wrap">
+    <div id="main" class="flexbox center wrap column">
         <h2>Admin Console Panel</h2>
+        <div id="content" class="flexbox row wrap ">
+            <div id="user_data">
+                <h:form id="profileForm">
+                    <p:growl id="msgs" showDetail="true" />
+                    <p:dataTable id="basicDT" var="profile" value="#{kwetterBean.getAllUsers()}">
+                        <f:facet name="header">
+                            Basic
+                        </f:facet>
+                        <p:column headerText="Id">
+                            <h:outputText value="#{profile.id}" />
+                        </p:column>
+                        <p:column headerText="Username">
+                            <h:outputText value="#{profile.username}" />
+                        </p:column>
+                        <p:column headerText="profilePictureURL">
+                            <h:outputText value="#{profile.profilePictureUrl}" />
+                        </p:column>
+                        <p:column headerText="Bio">
+                            <h:outputText value="#{profile.bio}" />
+                        </p:column>
+                        <p:column headerText="Web">
+                            <h:outputText value="#{profile.web}" />
+                        </p:column>
+                        <p:column headerText="Role">
+                            <h:outputText value="#{profile.role.id}" />
+                        </p:column>
+                        <p:column style="width:32px;text-align: center">
+                            <p:commandButton update=":profileForm:profileDetail" oncomplete="profileDialog.show()" icon="ui-icon-search" title="View">
+                                <f:setPropertyActionListener value="#{profile}" target="#{kwetterBean.selectedProfile}" />
+                            </p:commandButton>
+                        </p:column>
+                    </p:dataTable>
+
+
+                    <p:dialog header="Profile Info" widgetVar="profileDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+                        <p:outputPanel id="profileDetail" style="text-align:center;">
+                            <p:panelGrid  columns="2" rendered="#{not empty kwetterBean.selectedProfile}" columnClasses="label,value">
+                                <f:facet name="header">
+
+                                </f:facet>
+
+                                <h:outputText value="Id:" />
+                                <h:outputText value="#{kwetterBean.selectedProfile.id}" />
+
+                                <h:outputText value="Username" />
+                                <h:outputText value="#{kwetterBean.selectedProfile.username}" />
+
+                                <h:outputText value="ProfilepictureURL:" />
+                                <h:outputText value="#{kwetterBean.selectedProfile.profilePictureUrl}"/>
+
+                                <h:outputText value="Bio" />
+                                <h:outputText value="#{kwetterBean.selectedProfile.bio}" />
+
+                                <h:outputText value="Web" />
+                                <h:outputText value="#{kwetterBean.selectedProfile.web}" />
+
+                                <h:outputText value="Role" />
+                                <h:outputText value="#{kwetterBean.selectedProfile.role.id}" />
+                            </p:panelGrid>
+                        </p:outputPanel>
+                    </p:dialog>
+            </h:form>
+            </div>
+            <div id="kweet_data">
+                <!--<h:form id="form">
+                    <h:panelGrid columns="3" style="margin:10px 0">
+                        <p:outputLabel for="template" value="Template:" style="font-weight:bold"/>
+                        <p:inputText id="template" value="#{dtColumnsView.columnTemplate}" size="50"/>
+                        <p:commandButton update="cars" actionListener="#{dtColumnsView.updateColumns}" value="Update" process="@parent" icon="ui-icon-refresh" oncomplete="PF('carsTable').clearFilters()"/>
+                    </h:panelGrid>
+
+                    <p:dataTable id="cars" var="car" value="#{dtColumnsView.cars}" widgetVar="carsTable" filteredValue="#{dtColumnsView.filteredCars}">
+                        <p:columns value="#{dtColumnsView.columns}" var="column" columnIndexVar="colIndex" sortBy="#{car[column.property]}" filterBy="#{car[column.property]}">
+                            <f:facet name="header">
+                                <h:outputText value="#{column.header}" />
+                            </f:facet>
+                            <h:outputText value="#{car[column.property]}" />
+                        </p:columns>
+                    </p:dataTable>
+                </h:form>-->
+            </div>
+
+
+        </div>
         <p>This is where the admin can administer Kwetter</p>
     </div>
     <div id="footer" class="flexbox center row wrap">&copy; Kwetter - Stefano Verhoeve </div>
