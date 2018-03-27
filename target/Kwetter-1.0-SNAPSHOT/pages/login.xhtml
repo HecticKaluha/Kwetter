@@ -16,38 +16,18 @@
     <div id="header" class="flexbox center row wrap"><h1><h:link value="Kwetter" outcome="/index.xhtml"/></h1></div>
     <div id="main" class="flexbox center wrap">
 
-        <!--<form action="j_security_check" method="POST" id="login_form" class="flexbox column">
-            <h3>Vul je gegevens in om in te loggen</h3>
-            <input type="text" value="username" class="input"  id="j_username">
-            </input>
-            <input type="text" value="password" id="j_password" class="input">
-            </input>
-            <input type="submit" value="Login" class="input"/>
-        </form>-->
 
         <form method="post" action="j_security_check" id="login_form" class="flexbox column">
             <h3>Vul je gegevens in om in te loggen</h3>
-            <h:outputLabel for="j_username" value="Username" />
-            <input type="text" name="j_username" class="input" />
+            <label for="j_username">Username</label>
+            <input type="text" name="j_username" id="j_username" class="input" />
 
-            <h:outputLabel for="j_password" value="Password" />
-            <input type="password" name="j_password" class="input" />
+            <label for="j_password">Password</label>
+            <input type="password" name="j_password" id="j_password" class="input" />
 
             <input type="submit" name="submit" value="Login" class="input" />
             <h:button outcome="/index.xhmtl" value="Cancel" class="input" />
         </form>
-
-        <!-- throws view could not be restored exception before even going to the LoginBean -->
-        <!--<h:form id="login_form" class="flexbox column">
-            <h3>Vul je gegevens in om in te loggen</h3>
-            <h:inputText value="#{loginBean.username}" class="input" a:placeholder="Username" id="username" binding="#{loginBean.usernameComponent}">
-            </h:inputText>
-            <h:message for="username" class="error"/>
-            <h:inputSecret value="#{loginBean.password}" class="input" a:placeholder="Password" id="password" binding="#{loginBean.passwordComponent}">
-            </h:inputSecret>
-            <h:message for="password" class="error"/>
-            <h:commandButton value="Login" class="input" action="#{loginBean.login()}"/>
-        </h:form>-->
 
 
     </div>

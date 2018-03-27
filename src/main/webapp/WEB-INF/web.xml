@@ -40,9 +40,6 @@
             <role-name>User</role-name>
             <role-name>Admin</role-name>
         </auth-constraint>
-        <user-data-constraint>
-            <transport-guarantee>CONFIDENTIAL</transport-guarantee>
-        </user-data-constraint>
     </security-constraint>
 
     <security-constraint>
@@ -55,9 +52,6 @@
         <auth-constraint>
             <role-name>Admin</role-name>
         </auth-constraint>
-        <user-data-constraint>
-            <transport-guarantee>CONFIDENTIAL</transport-guarantee>
-        </user-data-constraint>
     </security-constraint>
 
     <login-config>

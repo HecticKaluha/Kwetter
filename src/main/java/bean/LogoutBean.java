@@ -8,11 +8,12 @@ import javax.faces.context.FacesContext;
 import javax.inject.Named;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.io.Serializable;
 
 @RequestScoped
 @Named(value="loginBean")
-public class LoginBean implements Serializable{
+public class LogoutBean implements Serializable{
 
     private String username;
     private String password;
@@ -51,30 +52,9 @@ public class LoginBean implements Serializable{
         this.usernameComponent = usernameComponent;
     }
 
-    public String login()
-    {
-        System.out.print("Handling login");
+    public String doLogout() {
+        ((HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false)).invalidate();
 
-        FacesContext context = FacesContext.getCurrentInstance();
-
-        System.out.print("Got Context");
-
-        HttpServletRequest request = (HttpServletRequest)context.getExternalContext().getRequest();
-
-        System.out.print("got request");
-
-        try{
-            System.out.print("Login in...");
-            request.login(this.username, this.password);
-            System.out.print("Logged in");
-        }
-        catch(Exception e){
-            System.out.print("Something went wrong because: " + e.getMessage());
-            //context.addMessage(usernameComponent.getClientId(), new FacesMessage("Username may not be correct"));
-            //context.addMessage(passwordComponent.getClientId(), new FacesMessage("Password may not be correct"));
-            return "/error/forbidden.xhtml";
-        }
-        System.out.print("Login Succesvol");
-        return "/pages/admin.xhtml";
+        return "student.xhtml?faces-redirect=true";
     }
 }
