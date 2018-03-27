@@ -8,18 +8,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb6ac029-7f1f-4911-b8ca-8ceabf8efb41" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8fcafeb1-2039-4b32-af24-0fba1d29d689.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/8fcafeb1-2039-4b32-af24-0fba1d29d689.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bean/LoginBean.java" afterPath="$PROJECT_DIR$/src/main/java/bean/LogoutBean.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/View/glassfish-web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/glassfish-web.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bean/LogoutBean.java" afterPath="$PROJECT_DIR$/src/main/java/bean/LogoutBean.java" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/index.xhtml" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/login.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/pages/login.xhtml" />
       <change beforePath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT.war" afterPath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT.war" />
-      <change beforePath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/WEB-INF/View/glassfish-web.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/WEB-INF/web.xml" />
-      <change beforePath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/pages/login.xhtml" afterPath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/pages/login.xhtml" />
+      <change beforePath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/WEB-INF/classes/bean/LoginBean.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/index.xhtml" afterPath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/index.xhtml" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bean/LoginBean.class" afterPath="" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/.idea/httpRequests/" />
@@ -70,8 +68,8 @@
       <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-61">
-              <caret line="34" column="31" lean-forward="false" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="35" />
+            <state relative-caret-position="-353">
+              <caret line="28" column="22" lean-forward="false" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -84,7 +82,7 @@
           </provider>
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="357">
-              <caret line="17" column="49" lean-forward="true" selection-start-line="17" selection-start-column="49" selection-end-line="17" selection-end-column="49" />
+              <caret line="17" column="49" lean-forward="false" selection-start-line="17" selection-start-column="49" selection-end-line="17" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -93,8 +91,8 @@
       <file leaf-file-name="index.xhtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/index.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="14" column="177" lean-forward="true" selection-start-line="14" selection-start-column="177" selection-end-line="14" selection-end-column="177" />
+            <state relative-caret-position="357">
+              <caret line="20" column="107" lean-forward="true" selection-start-line="20" selection-start-column="107" selection-end-line="20" selection-end-column="107" />
               <folding />
             </state>
           </provider>
@@ -103,8 +101,8 @@
       <file leaf-file-name="login.xhtml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/login.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="52">
-              <caret line="20" column="55" lean-forward="true" selection-start-line="20" selection-start-column="55" selection-end-line="20" selection-end-column="55" />
+            <state relative-caret-position="63">
+              <caret line="15" column="116" lean-forward="false" selection-start-line="15" selection-start-column="116" selection-end-line="15" selection-end-column="116" />
               <folding>
                 <element signature="e#1589#1595#0" expanded="true" />
               </folding>
@@ -125,8 +123,8 @@
       <file leaf-file-name="admin.xhtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/admin.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="6" selection-end-column="53" />
+            <state relative-caret-position="180">
+              <caret line="15" column="116" lean-forward="true" selection-start-line="15" selection-start-column="116" selection-end-line="15" selection-end-column="116" />
               <folding />
             </state>
           </provider>
@@ -135,8 +133,8 @@
       <file leaf-file-name="LogoutBean.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/bean/LogoutBean.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="54" column="30" lean-forward="true" selection-start-line="54" selection-start-column="30" selection-end-line="54" selection-end-column="30" />
+            <state relative-caret-position="367">
+              <caret line="56" column="49" lean-forward="false" selection-start-line="56" selection-start-column="49" selection-end-line="56" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -159,7 +157,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>aangekomen</find>
       <find>follow</find>
       <find>merge</find>
       <find>getfollo</find>
@@ -187,6 +184,7 @@
       <find>welcom</find>
       <find>input</find>
       <find>loginbean</find>
+      <find>index.xhtml</find>
       <find>confid</find>
       <find>log</find>
     </findStrings>
@@ -253,15 +251,15 @@
         <option value="$PROJECT_DIR$/src/main/java/bean/loginBean.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/css/style.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/error/forbidden.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/pages/admin.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/pages/profile.xhtml" />
         <option value="$PROJECT_DIR$/src/main/java/bean/LoginBean.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/View/glassfish-web.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/pages/login.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/index.xhtml" />
         <option value="$PROJECT_DIR$/src/main/java/bean/LogoutBean.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/index.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/pages/admin.xhtml" />
       </list>
     </option>
   </component>
@@ -1100,7 +1098,7 @@
       <workItem from="1522002374637" duration="6575000" />
       <workItem from="1522056354056" duration="6524000" />
       <workItem from="1522072894567" duration="109000" />
-      <workItem from="1522133903194" duration="7383000" />
+      <workItem from="1522133903194" duration="9956000" />
     </task>
     <task id="LOCAL-00001" summary="Implemented KweetDao and cleaned KwetterManagerDao&#10;Fixed UnitTests">
       <created>1519991535088</created>
@@ -1152,7 +1150,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="331159000" />
+    <option name="totallyTimeSpent" value="333732000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1193,6 +1191,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17132115" sideWeight="0.5522042" order="5" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21709532" sideWeight="0.5138889" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32673267" sideWeight="0.8632353" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1202,7 +1201,6 @@
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30827066" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" x="0" y="0" width="295" height="544" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5214521" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32673267" sideWeight="0.8632353" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1502,14 +1500,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="116" column="1" lean-forward="false" selection-start-line="105" selection-start-column="0" selection-end-line="116" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2268">
@@ -1532,18 +1522,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-61">
-          <caret line="34" column="31" lean-forward="false" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://table:/f3833183/8fcafeb1-2039-4b32-af24-0fba1d29d689/kwetterdb.group">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="94">
+          <caret line="116" column="1" lean-forward="false" selection-start-line="105" selection-start-column="0" selection-end-line="116" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/bean/LogoutBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="56" column="49" lean-forward="false" selection-start-line="56" selection-start-column="49" selection-end-line="56" selection-end-column="49" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1553,39 +1551,39 @@
       </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
-          <caret line="17" column="49" lean-forward="true" selection-start-line="17" selection-start-column="49" selection-end-line="17" selection-end-column="49" />
+          <caret line="17" column="49" lean-forward="false" selection-start-line="17" selection-start-column="49" selection-end-line="17" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/admin.xhtml">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="6" selection-end-column="53" />
+        <state relative-caret-position="-353">
+          <caret line="28" column="22" lean-forward="false" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/index.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="14" column="177" lean-forward="true" selection-start-line="14" selection-start-column="177" selection-end-line="14" selection-end-column="177" />
+        <state relative-caret-position="357">
+          <caret line="20" column="107" lean-forward="true" selection-start-line="20" selection-start-column="107" selection-end-line="20" selection-end-column="107" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/bean/LogoutBean.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/admin.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="54" column="30" lean-forward="true" selection-start-line="54" selection-start-column="30" selection-end-line="54" selection-end-column="30" />
+        <state relative-caret-position="180">
+          <caret line="15" column="116" lean-forward="true" selection-start-line="15" selection-start-column="116" selection-end-line="15" selection-end-column="116" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/login.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="20" column="55" lean-forward="true" selection-start-line="20" selection-start-column="55" selection-end-line="20" selection-end-column="55" />
+        <state relative-caret-position="63">
+          <caret line="15" column="116" lean-forward="false" selection-start-line="15" selection-start-column="116" selection-end-line="15" selection-end-column="116" />
           <folding>
             <element signature="e#1589#1595#0" expanded="true" />
           </folding>

@@ -1,4 +1,5 @@
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\controller\JsonBodyClasses\CreateProfileBody.java
+C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\bean\LogoutBean.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\exceptions\UnableToFollowException.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\model\Mention.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\model\Comment.java
@@ -37,7 +38,6 @@ C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\exceptions\NoCon
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\controller\JsonBodyClasses\DeleteProfileBody.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\model\Trend.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\dao\KweetDaoJPAImp.java
-C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\bean\LoginBean.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\exceptions\AddingToCollectionFailedException.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\controller\KweetController.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\exceptions\CouldNotFetchLatestKweetFromDatabaseException.java

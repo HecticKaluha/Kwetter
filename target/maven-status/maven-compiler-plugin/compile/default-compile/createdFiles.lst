@@ -18,10 +18,10 @@ controller\JsonBodyClasses\UpdateProfileBody.class
 model\Profile.class
 service\ProfileService.class
 exceptions\CouldNotUpdateProfileException.class
-bean\LoginBean.class
 controller\JsonBodyClasses\UnFollowProfileBody.class
 dao\ProfileDaoJPAImp.class
 controller\ProfileController.class
+bean\LogoutBean.class
 exceptions\CouldNotRoleBackException.class
 qualifier\JPA.class
 exceptions\CouldNotGetLatestKweets.class

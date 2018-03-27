@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
 import java.io.Serializable;
 
 @RequestScoped
-@Named(value="loginBean")
+@Named(value="logoutBean")
 public class LogoutBean implements Serializable{
 
     private String username;
@@ -54,7 +54,6 @@ public class LogoutBean implements Serializable{
 
     public String doLogout() {
         ((HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false)).invalidate();
-
-        return "student.xhtml?faces-redirect=true";
+        return "index.xhtml?faces-redirect=true";
     }
 }
