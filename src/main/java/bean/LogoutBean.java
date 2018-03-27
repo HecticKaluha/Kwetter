@@ -53,7 +53,14 @@ public class LogoutBean implements Serializable{
     }
 
     public String doLogout() {
-        ((HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false)).invalidate();
-        return "index.xhtml?faces-redirect=true";
+        FacesContext context = FacesContext.getCurrentInstance();
+        HttpServletRequest request = (HttpServletRequest) context.getExternalContext().getRequest();
+        try {
+            request.logout();
+            return "/index.xhtml";
+        }
+        catch (ServletException e) {
+            return null;
+        }
     }
 }
