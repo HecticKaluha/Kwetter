@@ -1,7 +1,9 @@
 package bean;
 
 import exceptions.CouldNotGetListException;
+import model.Kweet;
 import model.Profile;
+import org.primefaces.event.RowEditEvent;
 import service.KweetService;
 import service.ProfileService;
 
@@ -17,6 +19,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.xml.registry.infomodel.User;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @RequestScoped
@@ -27,12 +31,13 @@ public class KwetterBean implements Serializable{
     private KweetService kweetService;
     @Inject
     private ProfileService profileService;
-
+//profile table
     private Profile selectedProfile;
     private String username;
     private String password;
     private UIComponent passwordComponent;
     private UIComponent usernameComponent;
+
 
     public String getUsername() {
         return username;
@@ -66,6 +71,16 @@ public class KwetterBean implements Serializable{
         this.usernameComponent = usernameComponent;
     }
 
+    public Profile getSelectedProfile()
+    {
+        return selectedProfile;
+    }
+    public void setSelectedProfile(Profile profile)
+    {
+        this.selectedProfile = profile;
+    }
+
+
     public String doLogout() {
         FacesContext context = FacesContext.getCurrentInstance();
         HttpServletRequest request = (HttpServletRequest) context.getExternalContext().getRequest();
@@ -86,16 +101,31 @@ public class KwetterBean implements Serializable{
         }
         catch(CouldNotGetListException e)
         {
-            return null;
+            System.out.print("something went wrong when getting all the users: " + e.getMessage());
+            return new ArrayList<>();
+        }
+
+}
+    public List<Kweet> getAllKweets()
+    {
+        try
+        {
+            return kweetService.findAll();
+        }
+        catch (CouldNotGetListException e) {
+            System.out.print("something went wrong when getting all the kweets: " + e.getMessage());
+            return new ArrayList<>();
         }
     }
 
-    public Profile getSelectedProfile()
-    {
-        return selectedProfile;
+    public void onRowEdit(RowEditEvent event) {
+        FacesMessage msg = new FacesMessage("Kweet Edited", (((Kweet)event.getObject()).getId()).toString());
+        //TODO: servicecall to edit in database;
+        FacesContext.getCurrentInstance().addMessage(null, msg);
     }
-    public void setSelectedProfile(Profile profile)
-    {
-        this.selectedProfile = profile;
+
+    public void onRowCancel(RowEditEvent event) {
+        FacesMessage msg = new FacesMessage("Edit Cancelled", (((Kweet) event.getObject()).getId()).toString());
+        FacesContext.getCurrentInstance().addMessage(null, msg);
     }
 }

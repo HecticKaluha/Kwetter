@@ -31,7 +31,6 @@
         <div id="content" class="flexbox row wrap ">
             <div id="user_data">
                 <h:form id="profileForm">
-                    <p:growl id="msgs" showDetail="true" />
                     <p:dataTable id="basicDT" var="profile" value="#{kwetterBean.getAllUsers()}">
                         <f:facet name="header">
                             Basic
@@ -91,7 +90,49 @@
                     </p:dialog>
             </h:form>
             </div>
+
+
+
             <div id="kweet_data">
+                <h:form id="kweetForm">
+                    <p:growl id="msgs" showDetail="true" />
+
+                    <p:dataTable id="kweets" var="kweet" value="#{kwetterBean.getAllKweets()}" editable="true" style="margin-bottom:20px">
+                        <f:facet name="header">
+                            Edit Kweets
+                        </f:facet>
+
+                        <p:ajax event="rowEdit" listener="#{kwetterBean.onRowEdit}" update=":kweetForm:msgs" />
+                        <p:ajax event="rowEditCancel" listener="#{kwetterBean.onRowCancel}" update=":kweetForm:msgs" />
+
+                        <p:column headerText="Id">
+                            <h:outputText value="#{kweet.id}" />
+                        </p:column>
+
+                        <p:column headerText="Owner">
+                            <h:outputText value="#{kweet.owner.username}" />
+                        </p:column>
+
+                        <p:column headerText="Message">
+                            <p:cellEditor>
+                                <f:facet name="output"><h:outputText value="#{kweet.message}" /></f:facet>
+                                <f:facet name="input"><p:inputText value="#{kweet.message}" style="width:100%" label="message"/></f:facet>
+                            </p:cellEditor>
+                        </p:column>
+
+                        <p:column headerText="Postdate">
+                                <h:outputText value="#{kweet.postDate}" />
+                        </p:column>
+
+                        <p:column style="width:32px">
+                            <p:rowEditor />
+                        </p:column>
+                    </p:dataTable>
+                </h:form>
+
+
+
+
                 <!--<h:form id="form">
                     <h:panelGrid columns="3" style="margin:10px 0">
                         <p:outputLabel for="template" value="Template:" style="font-weight:bold"/>
