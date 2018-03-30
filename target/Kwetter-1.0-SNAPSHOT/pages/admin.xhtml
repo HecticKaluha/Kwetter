@@ -30,72 +30,36 @@
         <h2>Admin Console Panel</h2>
         <div id="content" class="flexbox row wrap ">
             <div id="user_data">
-                <h:form id="profileForm">
-                    <p:dataTable id="basicDT" var="profile" value="#{kwetterBean.getAllUsers()}">
+                <h:form id="profile_Role_Form">
+                    <p:growl id="profile_msgs" showDetail="true" />
+
+                    <p:dataTable id="profiles" var="profile" value="#{kwetterBean.allProfiles}" editable="true" editMode="cell" style="margin-bottom:20px">
                         <f:facet name="header">
-                            Basic
+                            Edit Kweets
                         </f:facet>
+
+                        <p:ajax event="cellEdit" listener="#{kwetterBean.onProfileCellEdit}" update=":profile_Role_Form:profile_msgs"/>
+
                         <p:column headerText="Id">
                             <h:outputText value="#{profile.id}" />
                         </p:column>
+
                         <p:column headerText="Username">
                             <h:outputText value="#{profile.username}" />
                         </p:column>
-                        <p:column headerText="profilePictureURL">
-                            <h:outputText value="#{profile.profilePictureUrl}" />
-                        </p:column>
-                        <p:column headerText="Bio">
-                            <h:outputText value="#{profile.bio}" />
-                        </p:column>
-                        <p:column headerText="Web">
-                            <h:outputText value="#{profile.web}" />
-                        </p:column>
+
                         <p:column headerText="Role">
-                            <h:outputText value="#{profile.role.id}" />
-                        </p:column>
-                        <p:column style="width:32px;text-align: center">
-                            <p:commandButton update=":profileForm:profileDetail" oncomplete="profileDialog.show()" icon="ui-icon-search" title="View">
-                                <f:setPropertyActionListener value="#{profile}" target="#{kwetterBean.selectedProfile}" />
-                            </p:commandButton>
+                                <h:outputText value="#{profile.role.canBlacklist}" />
                         </p:column>
                     </p:dataTable>
-
-
-                    <p:dialog header="Profile Info" widgetVar="profileDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
-                        <p:outputPanel id="profileDetail" style="text-align:center;">
-                            <p:panelGrid  columns="2" rendered="#{not empty kwetterBean.selectedProfile}" columnClasses="label,value">
-                                <f:facet name="header">
-
-                                </f:facet>
-
-                                <h:outputText value="Id:" />
-                                <h:outputText value="#{kwetterBean.selectedProfile.id}" />
-
-                                <h:outputText value="Username" />
-                                <h:outputText value="#{kwetterBean.selectedProfile.username}" />
-
-                                <h:outputText value="ProfilepictureURL:" />
-                                <h:outputText value="#{kwetterBean.selectedProfile.profilePictureUrl}"/>
-
-                                <h:outputText value="Bio" />
-                                <h:outputText value="#{kwetterBean.selectedProfile.bio}" />
-
-                                <h:outputText value="Web" />
-                                <h:outputText value="#{kwetterBean.selectedProfile.web}" />
-
-                                <h:outputText value="Role" />
-                                <h:outputText value="#{kwetterBean.selectedProfile.role.id}" />
-                            </p:panelGrid>
-                        </p:outputPanel>
-                    </p:dialog>
-            </h:form>
+                </h:form>
             </div>
 
 
 
             <div id="kweet_data">
                 <h:form id="kweetForm">
-                    <p:growl id="msgs" showDetail="true" />
+                    <p:growl id="kweet_msgs" showDetail="true" />
 
                     <p:dataTable id="kweets" var="kweet" value="#{kwetterBean.allKweets}" editable="true" editMode="cell" style="margin-bottom:20px">
                         <f:facet name="header">
@@ -103,9 +67,7 @@
                         </f:facet>
 
 
-                        <p:ajax event="cellEdit" listener="#{kwetterBean.onCellEdit}" update=":kweetForm:msgs"/>
-                        <!--<p:ajax event="rowEdit" listener="#{kwetterBean.onRowEdit}" update=":kweetForm:msgs" />-->
-                        <!--<p:ajax event="rowEditCancel" listener="#{kwetterBean.onRowCancel}" update=":kweetForm:msgs" />-->
+                        <p:ajax event="cellEdit" listener="#{kwetterBean.onKweetCellEdit}" update=":kweetForm:kweet_msgs"/>
 
                         <p:column headerText="Id">
                             <h:outputText value="#{kweet.id}" />

@@ -207,6 +207,7 @@ public class ProfileDaoJPAImp implements ProfileDao
     @Override
     public void updateRole (String username,String roleName) throws RoleNotFoundException, CouldNotFindProfileException
     {
+        //TODO:fix this with JAAS ROLEs
         Profile profile = findProfile(username);
         if(roles.get(username)!= null)
         {
