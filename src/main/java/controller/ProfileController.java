@@ -40,10 +40,10 @@ public class ProfileController
     public Response createProfile(CreateProfileBody profileBody)
     {
         try{
-            profileService.createProfile(profileBody.getUsername(), profileService.getRole(profileBody.getRole()));
+            profileService.createProfile(profileBody.getUsername(), profileBody.getRole());
             return Response.ok("Profiel met username "+ profileBody.getUsername()+" aangemaakt.").build();
         }
-        catch(ParametersWereEmptyException | AddingToCollectionFailedException | RoleNotFoundException e){
+        catch(ParametersWereEmptyException | AddingToCollectionFailedException | RoleNotFoundException | CouldNotFindProfileException e){
             return Response.status(Response.Status.CONFLICT).entity(e.getMessage()).build();
         }
     }

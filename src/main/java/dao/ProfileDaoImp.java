@@ -4,6 +4,7 @@ import exceptions.*;
 import model.Kweet;
 import model.Profile;
 import model.Role;
+import model.UserGroup;
 
 import javax.ejb.Stateless;
 import java.util.ArrayList;
@@ -62,7 +63,7 @@ public class ProfileDaoImp implements ProfileDao
     }
 
     @Override
-    public void createProfile(String username, Role role) throws ParametersWereEmptyException, AddingToCollectionFailedException {
+    public void createProfile(String username, UserGroup role) throws ParametersWereEmptyException, AddingToCollectionFailedException {
         if(username == null || username.isEmpty())
         {
             throw new ParametersWereEmptyException("parameter " + username +" was null or empty");
@@ -72,7 +73,9 @@ public class ProfileDaoImp implements ProfileDao
             throw new ParametersWereEmptyException("parameter " + role +" was null or empty");
         }
         try{
-            profiles.put(username, new Profile(username, role));
+            List<UserGroup> groups = new ArrayList<>();
+            groups.add(role);
+            profiles.put(username, new Profile(username, groups));
         }
         catch(Exception e)
         {
@@ -137,40 +140,37 @@ public class ProfileDaoImp implements ProfileDao
     }
 
     @Override
-    public boolean addRole(String rolename, boolean candelete, boolean canpost, boolean canblacklist, boolean canlike)
-    {
-        if(!roles.containsKey(rolename))
-        {
-            Role role = new Role(candelete, canpost, canblacklist, canlike);
-            roles.put(rolename, role);
-        }
-        else{
-            return false;
-        }
-        return true;
+    public boolean addRole(String rolename) {
+        return false;
     }
 
     @Override
-    public Role getRole(String rolename) throws RoleNotFoundException {
+    public boolean roleExists(String rolename) {
+        return false;
+    }
+
+
+    @Override
+    public UserGroup getRole(String rolename) throws RoleNotFoundException {
         if(!roles.containsKey(rolename))
         {
             throw new RoleNotFoundException("Role "+ rolename +" was not found");
         }
-        return roles.get(rolename);
+        return null;
     }
 
     @Override
-    public void updateRole (String username,String roleName) throws RoleNotFoundException, CouldNotFindProfileException
+    public void updateRole (String username,String groupName) throws RoleNotFoundException, CouldNotFindProfileException
     {
         Profile profile = findProfile(username);
         if(roles.get(username)!= null)
         {
             Role role = roles.get(username);
-            profile.setRole(role);
+            //profile.setRole(role);
         }
         else
         {
-            throw new RoleNotFoundException("No role with the name " + roleName + " found!");
+            throw new RoleNotFoundException("No role with the name " + groupName + " found!");
         }
     }
 

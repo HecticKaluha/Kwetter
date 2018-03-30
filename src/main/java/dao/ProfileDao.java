@@ -3,7 +3,7 @@ package dao;
 import exceptions.*;
 import model.Kweet;
 import model.Profile;
-import model.Role;
+import model.UserGroup;
 
 import java.util.List;
 
@@ -15,7 +15,9 @@ public interface ProfileDao
 
     Profile findProfile(String username) throws CouldNotFindProfileException;
 
-    void createProfile(String username, Role role) throws ParametersWereEmptyException, AddingToCollectionFailedException;
+    //void createProfile(String username, Role role) throws ParametersWereEmptyException, AddingToCollectionFailedException;
+
+    void createProfile(String username, UserGroup role) throws ParametersWereEmptyException, AddingToCollectionFailedException;
 
     boolean deleteProfile(String username) throws CouldNotFindProfileException, ParametersWereEmptyException, AddingToCollectionFailedException;
 
@@ -23,11 +25,15 @@ public interface ProfileDao
 
     List<Kweet> getLatest(String username) throws CouldNotGetLatestKweets, CouldNotFetchLatestKweetFromDatabaseException;
 
-    boolean addRole(String rolename, boolean candelete, boolean canpost, boolean canblacklist, boolean canlike);
+    //boolean addRole(String rolename, boolean candelete, boolean canpost, boolean canblacklist, boolean canlike);
 
-    Role getRole(String rolename) throws RoleNotFoundException;
+    boolean addRole(String rolename);
 
-    void updateRole(String username, String roleName) throws RoleNotFoundException, CouldNotFindProfileException;
+    boolean roleExists(String rolename);
+
+    UserGroup getRole(String rolename) throws RoleNotFoundException;
+
+    void updateRole(String username, String roleName) throws RoleNotFoundException, CouldNotFindProfileException, CouldNotUpdateProfileException;
 
     List<Profile> getFollowing(String username) throws CouldNotFindProfileException, CouldNotGetListException;
     List<Profile> getFollower(String username) throws CouldNotFindProfileException, CouldNotGetListException;

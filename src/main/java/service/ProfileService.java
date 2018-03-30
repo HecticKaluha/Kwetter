@@ -9,6 +9,7 @@ import exceptions.*;
 import model.Kweet;
 import model.Profile;
 import model.Role;
+import model.UserGroup;
 import qualifier.JPA;
 
 import javax.ejb.Stateless;
@@ -40,9 +41,17 @@ public class ProfileService
     {
         return profileDao.findProfile(username);
     }
-    public void createProfile(String username, Role role)throws ParametersWereEmptyException, AddingToCollectionFailedException
-    {
-        profileDao.createProfile(username, role);
+    public void createProfile(String username, String role) throws ParametersWereEmptyException, AddingToCollectionFailedException, RoleNotFoundException, CouldNotFindProfileException {
+
+        //TODO: Find OUT WHy i cannot make a user with the same group as someone else
+        if(profileDao.roleExists(role)){
+            UserGroup usergroup = getRole(role);
+            profileDao.createProfile(username, usergroup);
+        }
+        else
+        {
+            throw new CouldNotFindProfileException("Profile " + username + " could not be created");
+        }
     }
     public void deleteProfile(String username) throws CouldNotFindProfileException, ParametersWereEmptyException, AddingToCollectionFailedException {
         profileDao.deleteProfile(username);
@@ -50,16 +59,23 @@ public class ProfileService
     public void updateProfile(String username, String newUsername,  String bio, String location, String web) throws CouldNotFindProfileException, ParametersWereEmptyException, CouldNotUpdateProfileException {
         profileDao.updateProfile(username, newUsername, bio, location, web);
     }
-    public void updateRole(String username, String rolename) throws RoleNotFoundException, CouldNotFindProfileException {
+    public void updateRole(String username, String rolename) throws RoleNotFoundException, CouldNotFindProfileException, CouldNotUpdateProfileException {
         profileDao.updateRole("Klaartje", "admin");
     }
-    public boolean addRole(String rolename, boolean canDelete, boolean canPost, boolean  canBlacklist, boolean canLike)
+    public boolean addRole(String rolename)
     {
-        return profileDao.addRole(rolename, canDelete, canPost, canBlacklist, canLike);
+        return profileDao.addRole(rolename);
     }
-    public Role getRole(String rolename) throws RoleNotFoundException
-    {
-        return profileDao.getRole(rolename);
+    public UserGroup getRole(String rolename) throws RoleNotFoundException {
+        /*if(profileDao.roleExists(rolename))
+        {*/
+            UserGroup usergroup = profileDao.getRole(rolename);
+            return usergroup;
+        /*}
+        else
+        {
+            throw new RoleNotFoundException("role with name " + rolename + " was not found");
+        }*/
     }
     public List<Profile> getFollowing(String username) throws CouldNotFindProfileException, CouldNotGetListException {
         return profileDao.getFollowing(username);

@@ -12,6 +12,7 @@ C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\exceptions\Could
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\model\Profile.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\exceptions\ParametersWereEmptyException.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\service\ProfileService.java
+C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\exceptions\CouldNotCreateProfileException.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\dao\ProfileDao.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\service\KweetService.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\exceptions\CouldNotGetListException.java
@@ -31,6 +32,7 @@ C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\exceptions\RoleN
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\exceptions\AddigToDatabaseFailedException.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\controller\JaxApi.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\exceptions\UnableToUnFollowException.java
+C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\model\UserGroup.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\controller\JsonBodyClasses\FollowProfileBody.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\exceptions\CouldNotUpdateProfileException.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\exceptions\KweetNotFoundException.java

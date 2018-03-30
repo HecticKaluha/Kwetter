@@ -1,9 +1,11 @@
 package dao;
 
+import com.mysql.jdbc.StringUtils;
 import exceptions.*;
 import model.Kweet;
 import model.Profile;
 import model.Role;
+import model.UserGroup;
 import qualifier.JPA;
 
 import javax.ejb.Stateless;
@@ -89,6 +91,28 @@ public class ProfileDaoJPAImp implements ProfileDao
     }
 
     @Override
+    public void createProfile(String username, UserGroup role) throws ParametersWereEmptyException, AddingToCollectionFailedException {
+        if(StringUtils.isNullOrEmpty(username))
+        {
+            throw new ParametersWereEmptyException("parameter " + username +" was null or empty");
+        }
+        if(role == null)
+        {
+            throw new ParametersWereEmptyException("parameter " + role +" was null or empty");
+        }
+        try{
+            List<UserGroup> groups = new ArrayList<>();
+            groups.add(role);
+            Profile profile = new Profile(username, groups);
+            em.persist(profile);
+        }
+        catch(Exception e)
+        {
+            throw new AddingToCollectionFailedException(e.getMessage());
+        }
+    }
+
+    /*@Override
     public void createProfile(String username, Role role) throws ParametersWereEmptyException, AddingToCollectionFailedException {
         if(username == null || username.isEmpty())
         {
@@ -107,7 +131,7 @@ public class ProfileDaoJPAImp implements ProfileDao
         {
             throw new AddingToCollectionFailedException(e.getMessage());
         }
-    }
+    }*/
 
     @Override
     public boolean deleteProfile(String username) throws CouldNotFindProfileException, ParametersWereEmptyException, AddingToCollectionFailedException {
@@ -182,41 +206,57 @@ public class ProfileDaoJPAImp implements ProfileDao
     }
 
     @Override
-    public boolean addRole(String rolename, boolean candelete, boolean canpost, boolean canblacklist, boolean canlike)
+    public boolean addRole(String rolename)
     {
-        if(!roles.containsKey(rolename))
+        if(!roleExists(rolename))
         {
-            Role role = new Role(candelete, canpost, canblacklist, canlike);
-            roles.put(rolename, role);
+            UserGroup role = new UserGroup(rolename);
+            em.persist(role);
         }
         else{
             return false;
         }
         return true;
     }
-
     @Override
-    public Role getRole(String rolename) throws RoleNotFoundException {
-        if(!roles.containsKey(rolename))
-        {
-            throw new RoleNotFoundException("Role "+ rolename +" was not found");
+    public boolean roleExists(String rolename)
+    {
+        try{
+            UserGroup userGroup = getRole(rolename);
+            return true;
         }
-        return roles.get(rolename);
+        catch(RoleNotFoundException e)
+        {
+            return false;
+        }
+    }
+    @Override
+    public UserGroup getRole(String rolename) throws RoleNotFoundException {
+        try{
+            UserGroup userGroup = em.createQuery("SELECT usergroup FROM UserGroup usergroup WHERE usergroup.name = :rolename", UserGroup.class)
+                    .setParameter("rolename", rolename)
+                    .getSingleResult();
+            return userGroup;
+        }
+        catch(Exception e)
+        {
+            throw new RoleNotFoundException("Role with name " + rolename + " was not found because: " + e.getMessage());
+        }
     }
 
     @Override
-    public void updateRole (String username,String roleName) throws RoleNotFoundException, CouldNotFindProfileException
-    {
-        //TODO:fix this with JAAS ROLEs
-        Profile profile = findProfile(username);
-        if(roles.get(username)!= null)
-        {
-            Role role = roles.get(username);
-            profile.setRole(role);
+    public void updateRole (String username,String roleName) throws RoleNotFoundException, CouldNotFindProfileException, CouldNotUpdateProfileException {
+        //TODO:fix this with JAAS ROLES
+        try{
+            Profile profile = findProfile(username);
+            UserGroup userGroup = getRole(roleName);
+            List<UserGroup> groups = new ArrayList<>();
+            groups.add(userGroup);
+            profile.setRole(groups);
         }
-        else
+        catch(Exception e)
         {
-            throw new RoleNotFoundException("No role with the name " + roleName + " found!");
+            throw new CouldNotUpdateProfileException("Could not update role of profile " + username + " because: " + e.getMessage());
         }
     }
 

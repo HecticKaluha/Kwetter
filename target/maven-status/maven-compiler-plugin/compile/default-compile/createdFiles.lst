@@ -11,6 +11,7 @@ exceptions\UnableToUnFollowException.class
 dao\KweetDaoImp.class
 exceptions\CouldNotGetListException.class
 dao\KweetDao.class
+exceptions\CouldNotCreateProfileException.class
 dao\ProfileDao.class
 exceptions\NoContentToUpdateException.class
 service\KweetService.class
@@ -35,6 +36,7 @@ dao\KweetDaoJPAImp.class
 exceptions\CouldNotDeleteKweetException.class
 bean\KwetterBean.class
 dao\ProfileDaoImp.class
+model\UserGroup.class
 controller\JsonBodyClasses\UpdateKweetBody.class
 controller\JsonBodyClasses\DeleteProfileBody.class
 exceptions\RoleNotFoundException.class

@@ -10,6 +10,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
+import javax.xml.registry.infomodel.User;
 import java.beans.Transient;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -45,9 +46,13 @@ public class Profile implements Serializable
 
     private String profilePictureUrl;
 
-    //look into
-    @ManyToOne(/*mappedBy = "role",*/ cascade = CascadeType.PERSIST)
-    private Role role;
+
+    @ManyToMany(fetch=FetchType.LAZY)
+    @JoinTable(joinColumns = @JoinColumn(name = "username", referencedColumnName = "username"),
+            inverseJoinColumns = @JoinColumn(name = "groupName", referencedColumnName = "groupname"))
+    @JsonIgnore
+    private List<UserGroup> groups = new ArrayList<>();
+
 
     @XmlTransient
     @JsonIgnore
@@ -62,10 +67,10 @@ public class Profile implements Serializable
         this.username = username;
     }
 
-    public Profile(String username, Role role)
+    public Profile(String username, List<UserGroup> roles)
     {
         this.username = username;
-        this.role = role;
+        this.groups = roles;
         this.ownKweets = new ArrayList<>();
         this.following = new ArrayList<>();
         this.followers = new ArrayList<>();
@@ -75,7 +80,7 @@ public class Profile implements Serializable
         this.profilePictureUrl = "";
     }
 
-    public Profile(String username, String bio, String location, String web, List<Profile> following, List<Profile> followers, String profilePictureUrl, Role role)
+    public Profile(String username, String bio, String location, String web, List<Profile> following, List<Profile> followers, String profilePictureUrl, List<UserGroup> roles)
     {
         this.username = username;
         this.bio = bio;
@@ -84,7 +89,7 @@ public class Profile implements Serializable
         this.following = following;
         this.followers = followers;
         this.profilePictureUrl = profilePictureUrl;
-        this.role = role;
+        this.groups = roles;
         this.ownKweets = new ArrayList<>();
     }
 
@@ -229,14 +234,14 @@ public class Profile implements Serializable
         this.profilePictureUrl = profilePictureUrl;
     }
 
-    public Role getRole()
+    public List<UserGroup> getRole()
     {
-        return role;
+        return groups;
     }
 
-    public void setRole(Role role)
+    public void setRole(List<UserGroup> roles)
     {
-        this.role = role;
+        this.groups = roles;
     }
 
     public List<Kweet> getOwnKweetsById()
@@ -259,5 +264,13 @@ public class Profile implements Serializable
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public List<UserGroup> getGroups() {
+        return groups;
+    }
+
+    public void setGroups(List<UserGroup> groups) {
+        this.groups = groups;
     }
 }

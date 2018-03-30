@@ -130,7 +130,7 @@ public class KwetterBean implements Serializable{
                 facesMessage = new FacesMessage("Updated profile", username);
             }
         }
-        catch(CouldNotFindProfileException | RoleNotFoundException e)
+        catch(CouldNotFindProfileException | RoleNotFoundException | CouldNotUpdateProfileException e)
         {
             facesMessage = new FacesMessage("Something went wrong updating profile", username);
         }
