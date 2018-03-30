@@ -1,8 +1,13 @@
 package bean;
 
+import com.mysql.jdbc.StringUtils;
 import exceptions.CouldNotGetListException;
+import exceptions.KweetNotFoundException;
+import exceptions.NoContentToUpdateException;
 import model.Kweet;
 import model.Profile;
+import org.primefaces.component.datatable.DataTable;
+import org.primefaces.event.CellEditEvent;
 import org.primefaces.event.RowEditEvent;
 import service.KweetService;
 import service.ProfileService;
@@ -37,6 +42,10 @@ public class KwetterBean implements Serializable{
     private String password;
     private UIComponent passwordComponent;
     private UIComponent usernameComponent;
+
+
+
+    private List<Kweet> allKweets;
 
 
     public String getUsername() {
@@ -106,11 +115,14 @@ public class KwetterBean implements Serializable{
         }
 
 }
+
     public List<Kweet> getAllKweets()
     {
         try
         {
-            return kweetService.findAll();
+            if (allKweets == null)
+                allKweets = kweetService.findAll();
+            return allKweets;
         }
         catch (CouldNotGetListException e) {
             System.out.print("something went wrong when getting all the kweets: " + e.getMessage());
@@ -118,14 +130,54 @@ public class KwetterBean implements Serializable{
         }
     }
 
+    public void setAllKweets(List<Kweet> allKweets) {
+        this.allKweets = allKweets;
+    }
+
     public void onRowEdit(RowEditEvent event) {
-        FacesMessage msg = new FacesMessage("Kweet Edited", (((Kweet)event.getObject()).getId()).toString());
-        //TODO: servicecall to edit in database;
+        Kweet editedKweet = (Kweet)event.getObject();
+        FacesMessage msg = new FacesMessage("");
+        try {
+            kweetService.update(editedKweet.getId(), editedKweet.getMessage());
+             msg = new FacesMessage("Kweet Edited", (((Kweet)event.getObject()).getId()).toString());
+        } catch (NoContentToUpdateException | KweetNotFoundException e) {
+            e.printStackTrace();
+            msg = new FacesMessage("Failed to edit kweet", (((Kweet)event.getObject()).getId()).toString());
+        }
         FacesContext.getCurrentInstance().addMessage(null, msg);
+        //TODO: servicecall to edit in database;
+
     }
 
     public void onRowCancel(RowEditEvent event) {
         FacesMessage msg = new FacesMessage("Edit Cancelled", (((Kweet) event.getObject()).getId()).toString());
         FacesContext.getCurrentInstance().addMessage(null, msg);
+    }
+
+    public void onCellEdit(CellEditEvent event) {
+        String oldMessage = event.getOldValue().toString();
+        String newMessage = event.getNewValue().toString();
+        if(!oldMessage.equals(newMessage)) {
+            Kweet entity = (Kweet) ((DataTable) event.getComponent()).getRowData();
+            editKweetText(entity.getId(), newMessage);
+        }
+    }
+
+    public void editKweetText(long id, String message) {
+        FacesMessage facesMessage = new FacesMessage("");
+        try{
+            Kweet kweet = kweetService.find(id);
+
+            if (kweet != null && !StringUtils.isNullOrEmpty(message)) {
+                kweetService.update(id, message);
+                facesMessage = new FacesMessage("Updated kweet", message);
+            }
+        }
+        catch(KweetNotFoundException | NoContentToUpdateException e)
+        {
+            facesMessage = new FacesMessage("Updated kweet", message);
+        }
+        FacesContext.getCurrentInstance().addMessage(null, facesMessage);
+
     }
 }

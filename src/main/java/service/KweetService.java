@@ -10,10 +10,14 @@ import qualifier.JPA;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
 @Stateless
+@ManagedBean
+@SessionScoped
 public class KweetService {
 
     @Inject

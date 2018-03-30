@@ -97,13 +97,15 @@
                 <h:form id="kweetForm">
                     <p:growl id="msgs" showDetail="true" />
 
-                    <p:dataTable id="kweets" var="kweet" value="#{kwetterBean.getAllKweets()}" editable="true" style="margin-bottom:20px">
+                    <p:dataTable id="kweets" var="kweet" value="#{kwetterBean.allKweets}" editable="true" editMode="cell" style="margin-bottom:20px">
                         <f:facet name="header">
                             Edit Kweets
                         </f:facet>
 
-                        <p:ajax event="rowEdit" listener="#{kwetterBean.onRowEdit}" update=":kweetForm:msgs" />
-                        <p:ajax event="rowEditCancel" listener="#{kwetterBean.onRowCancel}" update=":kweetForm:msgs" />
+
+                        <p:ajax event="cellEdit" listener="#{kwetterBean.onCellEdit}" update=":kweetForm:msgs"/>
+                        <!--<p:ajax event="rowEdit" listener="#{kwetterBean.onRowEdit}" update=":kweetForm:msgs" />-->
+                        <!--<p:ajax event="rowEditCancel" listener="#{kwetterBean.onRowCancel}" update=":kweetForm:msgs" />-->
 
                         <p:column headerText="Id">
                             <h:outputText value="#{kweet.id}" />
@@ -124,9 +126,9 @@
                                 <h:outputText value="#{kweet.postDate}" />
                         </p:column>
 
-                        <p:column style="width:32px">
+                        <!--<p:column style="width:32px">
                             <p:rowEditor />
-                        </p:column>
+                        </p:column>-->
                     </p:dataTable>
                 </h:form>
 
