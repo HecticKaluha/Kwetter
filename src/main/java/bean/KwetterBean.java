@@ -4,7 +4,6 @@ import com.mysql.jdbc.StringUtils;
 import exceptions.*;
 import model.Kweet;
 import model.Profile;
-import model.Role;
 import org.apache.commons.lang3.ObjectUtils;
 import org.primefaces.component.datatable.DataTable;
 import org.primefaces.event.CellEditEvent;

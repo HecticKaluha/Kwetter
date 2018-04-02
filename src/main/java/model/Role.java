@@ -6,7 +6,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 
-
+/*
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 @Entity(name = "Role")
@@ -81,4 +81,4 @@ public class Role implements Serializable
     public void setId(Long id) {
         this.id = id;
     }
-}
+}*/

@@ -6,7 +6,6 @@ controller\JsonBodyClasses\KweetBody.class
 controller\JsonBodyClasses\CreateProfileBody.class
 exceptions\CouldNotFetchLatestKweetFromDatabaseException.class
 exceptions\UnableToFollowException.class
-model\Role.class
 exceptions\UnableToUnFollowException.class
 dao\KweetDaoImp.class
 exceptions\CouldNotGetListException.class

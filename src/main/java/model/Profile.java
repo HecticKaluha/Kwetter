@@ -28,6 +28,8 @@ public class Profile implements Serializable
 
     private String username;
 
+    private String password;
+
     private String bio;
 
     private String location;
@@ -48,8 +50,8 @@ public class Profile implements Serializable
 
 
     @ManyToMany(fetch=FetchType.LAZY)
-    @JoinTable(joinColumns = @JoinColumn(name = "username", referencedColumnName = "username"),
-            inverseJoinColumns = @JoinColumn(name = "groupName", referencedColumnName = "groupname"))
+    @JoinTable(joinColumns = @JoinColumn(name = "userName", referencedColumnName = "username"),
+            inverseJoinColumns = @JoinColumn(name = "groupName", referencedColumnName = "name"))
     @JsonIgnore
     private List<UserGroup> groups = new ArrayList<>();
 
@@ -65,6 +67,12 @@ public class Profile implements Serializable
     public Profile(String username)
     {
         this.username = username;
+    }
+
+    public Profile(String username, String password, List<UserGroup> roles)
+    {
+        this (username, roles);
+        this.password = password;
     }
 
     public Profile(String username, List<UserGroup> roles)

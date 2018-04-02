@@ -8,7 +8,6 @@ import dao.ProfileDaoImp;
 import exceptions.*;
 import model.Kweet;
 import model.Profile;
-import model.Role;
 import model.UserGroup;
 import qualifier.JPA;
 
@@ -41,12 +40,12 @@ public class ProfileService
     {
         return profileDao.findProfile(username);
     }
-    public void createProfile(String username, String role) throws ParametersWereEmptyException, AddingToCollectionFailedException, RoleNotFoundException, CouldNotFindProfileException {
+    public void createProfile(String username, String role, String password) throws ParametersWereEmptyException, AddingToCollectionFailedException, RoleNotFoundException, CouldNotFindProfileException {
 
         //TODO: Find OUT WHy i cannot make a user with the same group as someone else
         if(profileDao.roleExists(role)){
             UserGroup usergroup = getRole(role);
-            profileDao.createProfile(username, usergroup);
+            profileDao.createProfile(username, usergroup, password);
         }
         else
         {
@@ -60,22 +59,25 @@ public class ProfileService
         profileDao.updateProfile(username, newUsername, bio, location, web);
     }
     public void updateRole(String username, String rolename) throws RoleNotFoundException, CouldNotFindProfileException, CouldNotUpdateProfileException {
+        //TODO Make Dynamic
         profileDao.updateRole("Klaartje", "admin");
     }
+
     public boolean addRole(String rolename)
     {
         return profileDao.addRole(rolename);
     }
+
     public UserGroup getRole(String rolename) throws RoleNotFoundException {
-        /*if(profileDao.roleExists(rolename))
-        {*/
+        if(profileDao.roleExists(rolename))
+        {
             UserGroup usergroup = profileDao.getRole(rolename);
             return usergroup;
-        /*}
+        }
         else
         {
             throw new RoleNotFoundException("role with name " + rolename + " was not found");
-        }*/
+        }
     }
     public List<Profile> getFollowing(String username) throws CouldNotFindProfileException, CouldNotGetListException {
         return profileDao.getFollowing(username);

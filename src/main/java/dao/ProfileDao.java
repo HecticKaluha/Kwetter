@@ -17,7 +17,7 @@ public interface ProfileDao
 
     //void createProfile(String username, Role role) throws ParametersWereEmptyException, AddingToCollectionFailedException;
 
-    void createProfile(String username, UserGroup role) throws ParametersWereEmptyException, AddingToCollectionFailedException;
+    void createProfile(String username, UserGroup role, String password) throws ParametersWereEmptyException, AddingToCollectionFailedException;
 
     boolean deleteProfile(String username) throws CouldNotFindProfileException, ParametersWereEmptyException, AddingToCollectionFailedException;
 

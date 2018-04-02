@@ -3,7 +3,6 @@ package dao;
 import exceptions.*;
 import model.Kweet;
 import model.Profile;
-import model.Role;
 import model.UserGroup;
 
 import javax.ejb.Stateless;
@@ -15,7 +14,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class ProfileDaoImp implements ProfileDao
 {
     private ConcurrentHashMap<String, Profile> profiles = new ConcurrentHashMap<>();
-    private ConcurrentHashMap<String, Role> roles = new ConcurrentHashMap<>();
+    //private ConcurrentHashMap<String, Role> roles = new ConcurrentHashMap<>();
 
 
     private ProfileDaoImp() {
@@ -63,6 +62,11 @@ public class ProfileDaoImp implements ProfileDao
     }
 
     @Override
+    public void createProfile(String username, UserGroup role, String password) throws ParametersWereEmptyException, AddingToCollectionFailedException {
+
+    }
+
+    /*@Override
     public void createProfile(String username, UserGroup role) throws ParametersWereEmptyException, AddingToCollectionFailedException {
         if(username == null || username.isEmpty())
         {
@@ -82,7 +86,7 @@ public class ProfileDaoImp implements ProfileDao
             throw new AddingToCollectionFailedException(e.getMessage());
         }
 
-    }
+    }*/
 
     @Override
     public boolean deleteProfile(String username) throws CouldNotFindProfileException, ParametersWereEmptyException, AddingToCollectionFailedException {
@@ -152,17 +156,17 @@ public class ProfileDaoImp implements ProfileDao
 
     @Override
     public UserGroup getRole(String rolename) throws RoleNotFoundException {
-        if(!roles.containsKey(rolename))
+        /*if(!roles.containsKey(rolename))
         {
             throw new RoleNotFoundException("Role "+ rolename +" was not found");
-        }
+        }*/
         return null;
     }
 
     @Override
     public void updateRole (String username,String groupName) throws RoleNotFoundException, CouldNotFindProfileException
     {
-        Profile profile = findProfile(username);
+        /*Profile profile = findProfile(username);
         if(roles.get(username)!= null)
         {
             Role role = roles.get(username);
@@ -171,7 +175,7 @@ public class ProfileDaoImp implements ProfileDao
         else
         {
             throw new RoleNotFoundException("No role with the name " + groupName + " found!");
-        }
+        }*/
     }
 
     @Override

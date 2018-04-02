@@ -40,7 +40,7 @@ public class ProfileController
     public Response createProfile(CreateProfileBody profileBody)
     {
         try{
-            profileService.createProfile(profileBody.getUsername(), profileBody.getRole());
+            profileService.createProfile(profileBody.getUsername(), profileBody.getRole(), profileBody.getPassword());
             return Response.ok("Profiel met username "+ profileBody.getUsername()+" aangemaakt.").build();
         }
         catch(ParametersWereEmptyException | AddingToCollectionFailedException | RoleNotFoundException | CouldNotFindProfileException e){

@@ -4,7 +4,6 @@ import com.mysql.jdbc.StringUtils;
 import exceptions.*;
 import model.Kweet;
 import model.Profile;
-import model.Role;
 import model.UserGroup;
 import qualifier.JPA;
 
@@ -14,14 +13,11 @@ import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ConcurrentHashMap;
 
 @JPA
 @Stateless
 public class ProfileDaoJPAImp implements ProfileDao
 {
-    private ConcurrentHashMap<String, Profile> profiles = new ConcurrentHashMap<>();
-    private ConcurrentHashMap<String, Role> roles = new ConcurrentHashMap<>();
 
     @PersistenceContext(unitName = "KwetterPersistence")
     private EntityManager em;
@@ -91,7 +87,7 @@ public class ProfileDaoJPAImp implements ProfileDao
     }
 
     @Override
-    public void createProfile(String username, UserGroup role) throws ParametersWereEmptyException, AddingToCollectionFailedException {
+    public void createProfile(String username, UserGroup role, String password) throws ParametersWereEmptyException, AddingToCollectionFailedException {
         if(StringUtils.isNullOrEmpty(username))
         {
             throw new ParametersWereEmptyException("parameter " + username +" was null or empty");
@@ -100,10 +96,14 @@ public class ProfileDaoJPAImp implements ProfileDao
         {
             throw new ParametersWereEmptyException("parameter " + role +" was null or empty");
         }
+        if(StringUtils.isNullOrEmpty(password))
+        {
+            throw new ParametersWereEmptyException("parameter password was null or empty");
+        }
         try{
             List<UserGroup> groups = new ArrayList<>();
             groups.add(role);
-            Profile profile = new Profile(username, groups);
+            Profile profile = new Profile(username, password, groups);
             em.persist(profile);
         }
         catch(Exception e)

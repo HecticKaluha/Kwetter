@@ -32,9 +32,9 @@ public class Initialize {
             profileService.addRole("Admin");
             profileService.addRole("User");
 
-            profileService.createProfile("Hans", "Admin");
-            profileService.createProfile("Klaartje","Admin");
-            profileService.createProfile("Peter", "User");
+            profileService.createProfile("Hans", "Admin", "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918");
+            profileService.createProfile("Klaartje","Admin", "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918");
+            profileService.createProfile("Peter", "User", "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918");
 
             kweetService.post("Bericht 1", "Klaartje");
             kweetService.post("Bericht 2","Hans");
