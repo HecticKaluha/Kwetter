@@ -4,6 +4,7 @@ import com.mysql.jdbc.StringUtils;
 import exceptions.*;
 import model.Kweet;
 import model.Profile;
+import model.UserGroup;
 import org.apache.commons.lang3.ObjectUtils;
 import org.primefaces.component.datatable.DataTable;
 import org.primefaces.event.CellEditEvent;
@@ -23,6 +24,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.xml.registry.infomodel.User;
 import java.io.Serializable;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -38,6 +40,7 @@ public class KwetterBean implements Serializable{
 
     private List<Kweet> allKweets;
     private List<Profile> allProfiles;
+    private List<UserGroup> allRoles;
 
     public String doLogout() {
         FacesContext context = FacesContext.getCurrentInstance();
@@ -47,12 +50,14 @@ public class KwetterBean implements Serializable{
             return "/index.xhtml";
         }
         catch (ServletException e) {
+            System.out.print("Something went wrong while logging out: " + e.getMessage());
             return null;
         }
     }
 
     public List<Kweet> getAllKweets()
     {
+        FacesMessage facesMessage;
         try
         {
             if (allKweets == null)
@@ -61,6 +66,8 @@ public class KwetterBean implements Serializable{
         }
         catch (CouldNotGetListException e) {
             System.out.print("something went wrong when getting all the kweets: " + e.getMessage());
+            facesMessage = new FacesMessage("something went wrong when getting all the kweets: " + e.getMessage());
+            FacesContext.getCurrentInstance().addMessage(null, facesMessage);
             return new ArrayList<>();
         }
     }
@@ -94,6 +101,7 @@ public class KwetterBean implements Serializable{
     }
 
     public List<Profile> getAllProfiles() {
+        FacesMessage facesMessage;
         try
         {
             if (allProfiles == null)
@@ -102,6 +110,8 @@ public class KwetterBean implements Serializable{
         }
         catch (CouldNotGetListException e) {
             System.out.print("something went wrong when getting all the profiles: " + e.getMessage());
+            facesMessage = new FacesMessage("something went wrong when getting all the profiles: " + e.getMessage());
+            FacesContext.getCurrentInstance().addMessage(null, facesMessage);
             return new ArrayList<>();
         }
     }
@@ -115,17 +125,17 @@ public class KwetterBean implements Serializable{
         String newValue = event.getNewValue().toString();
         if(!oldValue.equals(newValue)) {
             Profile profile = (Profile) ((DataTable) event.getComponent()).getRowData();
-            editProfileRole(profile.getUsername(), newValue);
+            editProfileRole(profile.getUsername(), newValue, oldValue);
         }
     }
 
-    public void editProfileRole(String username, String newRole) {
+    public void editProfileRole(String username, String newRole, String oldRole) {
         FacesMessage facesMessage = new FacesMessage("");
         try{
             if(!StringUtils.isNullOrEmpty(username) && !StringUtils.isNullOrEmpty(newRole))
             {
                 //TODO: FIx with JAAS ROLES
-                profileService.updateRole(username, newRole);
+                profileService.updateRole(username, newRole, oldRole);
                 facesMessage = new FacesMessage("Updated profile", username);
             }
         }
@@ -134,6 +144,24 @@ public class KwetterBean implements Serializable{
             facesMessage = new FacesMessage("Something went wrong updating profile", username);
         }
         FacesContext.getCurrentInstance().addMessage(null, facesMessage);
+    }
+
+    public List<UserGroup> getAllRoles()
+    {
+        FacesMessage facesMessage;
+        try
+        {
+            if (allRoles == null)
+                allRoles = profileService.getAllRoles();
+            return allRoles;
+        }
+        catch (SQLException | RoleNotFoundException e) {
+            facesMessage = new FacesMessage("Something went wrong getting all the roles");
+            System.out.print("something went wrong when getting all the roles: " + e.getMessage());
+            FacesContext.getCurrentInstance().addMessage(null, facesMessage);
+            return new ArrayList<>();
+        }
+
     }
 
 

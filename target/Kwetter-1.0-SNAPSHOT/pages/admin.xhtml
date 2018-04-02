@@ -35,7 +35,7 @@
 
                     <p:dataTable id="profiles" var="profile" value="#{kwetterBean.allProfiles}" editable="true" editMode="cell" style="margin-bottom:20px">
                         <f:facet name="header">
-                            Edit Kweets
+                            Edit Roles
                         </f:facet>
 
                         <p:ajax event="cellEdit" listener="#{kwetterBean.onProfileCellEdit}" update=":profile_Role_Form:profile_msgs"/>
@@ -49,7 +49,14 @@
                         </p:column>
 
                         <p:column headerText="Role">
-                                <h:outputText value="#{profile.groups}" />
+                            <p:cellEditor>
+                                <f:facet name="output"><h:outputText value="#{profile.getSingleUserGroup().name}" /></f:facet>
+                                <f:facet name="input">
+                                    <h:selectOneMenu value="#{profile.getSingleUserGroup().name}" style="width:100%">
+                                        <f:selectItems value="#{kwetterBean.getAllRoles()}" var="userGroup" itemLabel="#{userGroup.name}" itemValue="#{userGroup.name}" />
+                                    </h:selectOneMenu>
+                                </f:facet>
+                            </p:cellEditor>
                         </p:column>
                     </p:dataTable>
                 </h:form>

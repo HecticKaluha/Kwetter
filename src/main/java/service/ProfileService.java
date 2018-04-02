@@ -15,6 +15,7 @@ import javax.ejb.Stateless;
 import javax.faces.bean.ApplicationScoped;
 import javax.inject.Inject;
 import javax.validation.constraints.Null;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -42,7 +43,6 @@ public class ProfileService
     }
     public void createProfile(String username, String role, String password) throws ParametersWereEmptyException, AddingToCollectionFailedException, RoleNotFoundException, CouldNotFindProfileException {
 
-        //TODO: Find OUT WHy i cannot make a user with the same group as someone else
         if(profileDao.roleExists(role)){
             UserGroup usergroup = getRole(role);
             profileDao.createProfile(username, usergroup, password);
@@ -58,9 +58,8 @@ public class ProfileService
     public void updateProfile(String username, String newUsername,  String bio, String location, String web) throws CouldNotFindProfileException, ParametersWereEmptyException, CouldNotUpdateProfileException {
         profileDao.updateProfile(username, newUsername, bio, location, web);
     }
-    public void updateRole(String username, String rolename) throws RoleNotFoundException, CouldNotFindProfileException, CouldNotUpdateProfileException {
-        //TODO Make Dynamic
-        profileDao.updateRole("Klaartje", "admin");
+    public void updateRole(String username, String newRoleName, String oldRoleName) throws RoleNotFoundException, CouldNotFindProfileException, CouldNotUpdateProfileException {
+        profileDao.updateRole(username, newRoleName, oldRoleName);
     }
 
     public boolean addRole(String rolename)
@@ -93,5 +92,9 @@ public class ProfileService
     public List<Profile> getAllProfiles() throws CouldNotGetListException
     {
         return profileDao.getAllProfiles();
+    }
+
+    public List<UserGroup> getAllRoles() throws RoleNotFoundException, SQLException {
+        return profileDao.getAllRoles();
     }
 }

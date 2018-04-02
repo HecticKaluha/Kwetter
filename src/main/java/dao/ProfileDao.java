@@ -5,6 +5,7 @@ import model.Kweet;
 import model.Profile;
 import model.UserGroup;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public interface ProfileDao
@@ -33,7 +34,7 @@ public interface ProfileDao
 
     UserGroup getRole(String rolename) throws RoleNotFoundException;
 
-    void updateRole(String username, String roleName) throws RoleNotFoundException, CouldNotFindProfileException, CouldNotUpdateProfileException;
+    void updateRole(String username, String newRoleName, String oldRoleName) throws RoleNotFoundException, CouldNotFindProfileException, CouldNotUpdateProfileException;
 
     List<Profile> getFollowing(String username) throws CouldNotFindProfileException, CouldNotGetListException;
     List<Profile> getFollower(String username) throws CouldNotFindProfileException, CouldNotGetListException;
@@ -47,5 +48,7 @@ public interface ProfileDao
             Kweet kweet) throws CouldNotFindProfileException;
 
     List<Profile> getAllProfiles() throws CouldNotGetListException;
+
+    List<UserGroup> getAllRoles() throws SQLException, RoleNotFoundException;
 }
 

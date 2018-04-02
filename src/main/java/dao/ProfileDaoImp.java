@@ -163,19 +163,10 @@ public class ProfileDaoImp implements ProfileDao
         return null;
     }
 
+
     @Override
-    public void updateRole (String username,String groupName) throws RoleNotFoundException, CouldNotFindProfileException
-    {
-        /*Profile profile = findProfile(username);
-        if(roles.get(username)!= null)
-        {
-            Role role = roles.get(username);
-            //profile.setRole(role);
-        }
-        else
-        {
-            throw new RoleNotFoundException("No role with the name " + groupName + " found!");
-        }*/
+    public void updateRole(String username, String newRoleName, String oldRoleName) throws RoleNotFoundException, CouldNotFindProfileException, CouldNotUpdateProfileException {
+
     }
 
     @Override
@@ -208,6 +199,11 @@ public class ProfileDaoImp implements ProfileDao
     @Override
     public List<Profile> getAllProfiles() throws CouldNotGetListException {
         return new ArrayList<>();
+    }
+
+    @Override
+    public List<UserGroup> getAllRoles() {
+        return null;
     }
 }
 

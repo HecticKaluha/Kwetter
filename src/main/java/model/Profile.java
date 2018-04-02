@@ -281,4 +281,13 @@ public class Profile implements Serializable
     public void setGroups(List<UserGroup> groups) {
         this.groups = groups;
     }
+
+    public UserGroup getSingleUserGroup()
+    {
+        if(groups.get(0) != null)
+        {
+            return groups.get(0);
+        }
+        return null;
+    }
 }

@@ -1,5 +1,6 @@
 package dao;
 
+import java.sql.*;
 import com.mysql.jdbc.StringUtils;
 import exceptions.*;
 import model.Kweet;
@@ -11,6 +12,10 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -245,14 +250,26 @@ public class ProfileDaoJPAImp implements ProfileDao
     }
 
     @Override
-    public void updateRole (String username,String roleName) throws RoleNotFoundException, CouldNotFindProfileException, CouldNotUpdateProfileException {
+    public void updateRole (String username,String newRoleName, String oldRoleName) throws RoleNotFoundException, CouldNotFindProfileException, CouldNotUpdateProfileException {
         //TODO:fix this with JAAS ROLES
         try{
+            List<UserGroup> newGroupsForProfile = new ArrayList<>();
             Profile profile = findProfile(username);
-            UserGroup userGroup = getRole(roleName);
-            List<UserGroup> groups = new ArrayList<>();
-            groups.add(userGroup);
-            profile.setRole(groups);
+
+            //updating the old usergroup
+            UserGroup oldUserGroup = getRole(oldRoleName);
+            oldUserGroup.getUsers().remove(profile);
+
+            //updating the new usergroup
+            UserGroup newUserGroup = getRole(newRoleName);
+            newUserGroup.getUsers().add(profile);
+            newGroupsForProfile.add(newUserGroup);
+            profile.setRole(newGroupsForProfile);
+
+            //updating everything to the database
+            em.merge(oldUserGroup);
+            em.merge(newUserGroup);
+            em.merge(profile);
         }
         catch(Exception e)
         {
@@ -322,35 +339,25 @@ public class ProfileDaoJPAImp implements ProfileDao
         }
     }
 
+    @Override
+    public List<UserGroup> getAllRoles() throws SQLException, RoleNotFoundException{
+        //TODO: Make more JPA like?
+        List<UserGroup> roles = new ArrayList<>();
+        try (   Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/kwetterdb", "rootuser", "root");
+                Statement stmt = conn.createStatement())
+        {
+            String strSelect = "select name from usergroup";
+
+            ResultSet rset = stmt.executeQuery(strSelect);
+
+            System.out.println("The records selected are:");
+            while(rset.next()) {
+                String roleName = rset.getString("name");
+                UserGroup usergroup = getRole(roleName);
+                roles.add(usergroup);
+            }
+        }
+        return roles;
+    }
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
