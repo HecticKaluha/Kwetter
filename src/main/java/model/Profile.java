@@ -49,7 +49,7 @@ public class Profile implements Serializable
     private String profilePictureUrl;
 
 
-    @ManyToMany(fetch=FetchType.LAZY)
+    @ManyToMany(fetch=FetchType.EAGER)
     @JoinTable(joinColumns = @JoinColumn(name = "userName", referencedColumnName = "username"),
             inverseJoinColumns = @JoinColumn(name = "groupName", referencedColumnName = "name"))
     @JsonIgnore
@@ -280,6 +280,20 @@ public class Profile implements Serializable
 
     public void setGroups(List<UserGroup> groups) {
         this.groups = groups;
+    }
+
+    public void setGroup(UserGroup group)
+    {
+        for(UserGroup ug: groups)
+        {
+            ug.getUsers().remove(this);
+        }
+
+        groups.clear();
+
+        groups.add(group);
+
+        group.getUsers().add(this);
     }
 
     public UserGroup getSingleUserGroup()

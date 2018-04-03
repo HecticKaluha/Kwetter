@@ -36,4 +36,17 @@ public class UserGroup implements Serializable {
     public void setUsers(List<Profile> users) {
         this.users = users;
     }
+
+    public void setUser(Profile profile){
+        for (UserGroup ug:profile.getGroups()
+                ) {
+            ug.getUsers().remove(profile);
+        }
+        for(Profile p: users)
+        {
+            p.getRole().clear();
+            this.users.add(profile);
+            p.getRole().add(this);
+        }
+    }
 }

@@ -251,24 +251,28 @@ public class ProfileDaoJPAImp implements ProfileDao
 
     @Override
     public void updateRole (String username,String newRoleName, String oldRoleName) throws RoleNotFoundException, CouldNotFindProfileException, CouldNotUpdateProfileException {
-        //TODO:fix this with JAAS ROLES
+
         try{
             List<UserGroup> newGroupsForProfile = new ArrayList<>();
             Profile profile = findProfile(username);
+            UserGroup newUserGroup = getRole(newRoleName);
+            newGroupsForProfile.add(newUserGroup);
+            profile.setGroups(newGroupsForProfile);
 
             //updating the old usergroup
-            UserGroup oldUserGroup = getRole(oldRoleName);
-            oldUserGroup.getUsers().remove(profile);
-
-            //updating the new usergroup
-            UserGroup newUserGroup = getRole(newRoleName);
-            newUserGroup.getUsers().add(profile);
-            newGroupsForProfile.add(newUserGroup);
-            profile.setRole(newGroupsForProfile);
-
-            //updating everything to the database
-            em.merge(oldUserGroup);
-            em.merge(newUserGroup);
+//            UserGroup oldUserGroup = getRole(oldRoleName);
+//            oldUserGroup.getUsers().remove(profile);
+//
+//
+//            //updating the new usergroup
+//            UserGroup newUserGroup = getRole(newRoleName);
+//            newUserGroup.getUsers().add(profile);
+//            newGroupsForProfile.add(newUserGroup);
+//            profile.setGroups(newGroupsForProfile);
+//
+//            //updating everything to the database
+//            em.merge(oldUserGroup);
+//            em.merge(newUserGroup);
             em.merge(profile);
         }
         catch(Exception e)
