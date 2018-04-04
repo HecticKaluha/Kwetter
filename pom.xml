@@ -156,7 +156,7 @@
                           <goal>copy</goal>
                       </goals>
                       <configuration>
-                          <outputDirectory>../target/endorsed</outputDirectory>
+                          <outputDirectory>${endorsed.dir}</outputDirectory>
                           <silent>true</silent>
                           <artifactItems>
                               <artifactItem>
