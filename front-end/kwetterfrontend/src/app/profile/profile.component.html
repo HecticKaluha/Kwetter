@@ -6,16 +6,12 @@
         <div id="details" class="flexbox row wrap border tile">
           <!--dynamically load profilepicture-->
           <img id="profilepicture" src="../../assets/img/logo.png" alt="Uw profielfoto">
-          <div id="profile_details">
-            <form>
-              <div id="properties" class="flexbox column wrap">
-                <label for="profilename">Profielnaam:<input id="profilename" type="text" placeholder="profielnaam"/></label>
-                <label for="location">Locatie:<input id="location" type="text" placeholder="locatie"/></label>
-                <label for="web">Web url:<input id="web" type="text" placeholder="weburl"/></label>
-                <label for="bio">Bio:<input id="bio" type="text" placeholder="weburl"/></label>
-              </div>
-            </form>
-          </div>
+          <form id="properties" class="flexbox column wrap center">
+              <div><label for="profilename">Profielnaam:</label><input id="profilename" type="text" placeholder="profielnaam"/></div>
+              <div><label for="location">Locatie:</label><input id="location" type="text" placeholder="locatie"/></div>
+              <div><label for="web">Web url:</label><input id="web" type="text" placeholder="weburl"/></div>
+              <div><label for="bio">Bio:</label><input id="bio" type="text" placeholder="weburl"/></div>
+          </form>
         </div>
 
         <div id="kweets" class="border tile">
@@ -27,12 +23,24 @@
 
       <div id="profile-right" class="flexbox column wrap">
         <div id="data" class="border tile">
-          <p>Ammount of kweets:<a>1241</a></p>
-          <p>Followers:<a>43</a></p>
-          <p>Following:<a>83</a></p>
+          <p>Ammount of kweets:<a href="#">1241</a></p>
+          <p>Followers:<a href="#" >43</a></p>
+          <p>Following:<a href="#">83</a></p>
         </div>
-        <div id="followers" class="border tile">
-
+        <div id="followers" class="flexbox wrap column border tile">
+          <h3>Followers</h3>
+          <div id="followers-profiles" class="flexbox wrap evenly">
+            <a href="#"><img src="../../assets/img/android-icon-96x96.png" ><span class="username">Username</span></a>
+            <a href="#"><img src="../../assets/img/android-icon-96x96.png" ><span class="username">Username</span></a>
+            <a href="#"><img src="../../assets/img/android-icon-96x96.png" ><span class="username">Username</span></a>
+            <a href="#"><img src="../../assets/img/android-icon-96x96.png" ><span class="username">Username</span></a>
+            <a href="#"><img src="../../assets/img/android-icon-96x96.png" ><span class="username">Username</span></a>
+            <a href="#"><img src="../../assets/img/android-icon-96x96.png" ><span class="username">Username</span></a>
+            <a href="#"><img src="../../assets/img/android-icon-96x96.png" ><span class="username">Username</span></a>
+            <a href="#"><img src="../../assets/img/android-icon-96x96.png" ><span class="username">Username</span></a>
+            <a href="#"><img src="../../assets/img/android-icon-96x96.png" ><span class="username">Username</span></a>
+            <a href="#"><img src="../../assets/img/android-icon-96x96.png" ><span class="username">Username</span></a>
+          </div>
         </div>
       </div>
 

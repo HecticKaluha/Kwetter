@@ -47,6 +47,9 @@
 .self_baseline {
   align-self: flex-end;
 }
+.around{
+  justify-content: space-around;
+}
 
 body{
   margin:0;
