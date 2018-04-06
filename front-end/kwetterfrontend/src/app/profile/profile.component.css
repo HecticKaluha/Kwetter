@@ -1,0 +1,15 @@
+#profilepicture {
+  width: 180px;
+  height: 180px;
+}
+
+#properties {
+  max-width: 350px;
+  display: flex;
+}
+
+#properties label {
+  display: flex;
+  margin: 10px;
+  justify-content: space-between;
+}

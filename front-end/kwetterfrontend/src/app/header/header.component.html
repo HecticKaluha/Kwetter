@@ -1,6 +1,14 @@
-<div id="header" class="flexbox between row">
-  <a href="#"><img src="../../assets/img/logo.png" alt="Een kwetter Logo" /></a>
-  <a href="#"><h1>Kwetter</h1></a>
-  <a href="#" class="top-right">Logout</a>
+<div id="header" class="flexbox column">
+  <div id="header_elements" class="flexbox between row">
+    <a href="#"><img src="../../assets/img/logo.png" alt="Een kwetter Logo" /></a>
+    <a href="#"><h1>Kwetter</h1></a>
+    <a href="#" class="top-right">Logout</a>
+  </div>
+  <div id="nav" class="middle flexbox wrap">
+    <ul id="navbar-menu" class=" flexbox row wrap" routerLinkActive="active">
+      <li class="nav-item"><a class="nav-link" [routerLink]="['home']">Home</a></li>
+      <li class="nav-item"><a class="nav-link" [routerLink]="['profile']">Profile</a></li>
+    </ul>
+  </div>
 </div>
 
