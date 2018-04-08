@@ -26,11 +26,15 @@ public class ProfileController
     {
         try{
             //return Response.ok(username).build();
-            return Response.ok(profileService.findProfile(username)).build();
+            return Response.ok(profileService.findProfile(username)).header("Access-Control-Allow-Origin", "*")
+                    .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
+                    .allow("OPTIONS").build();
         }
         catch(/*CouldNotFindProfileException*/ Exception e)
         {
-            return Response.status(Response.Status.CONFLICT).entity(e.getMessage()).build();
+            return Response.status(Response.Status.CONFLICT).entity(e.getMessage()).header("Access-Control-Allow-Origin", "*")
+                    .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
+                    .allow("OPTIONS").build();
         }
     }
 
@@ -41,10 +45,14 @@ public class ProfileController
     {
         try{
             profileService.createProfile(profileBody.getUsername(), profileBody.getRole(), profileBody.getPassword());
-            return Response.ok("Profiel met username "+ profileBody.getUsername()+" aangemaakt.").build();
+            return Response.ok("Profiel met username "+ profileBody.getUsername()+" aangemaakt.").header("Access-Control-Allow-Origin", "*")
+                    .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
+                    .allow("OPTIONS").build();
         }
         catch(ParametersWereEmptyException | AddingToCollectionFailedException | RoleNotFoundException | CouldNotFindProfileException e){
-            return Response.status(Response.Status.CONFLICT).entity(e.getMessage()).build();
+            return Response.status(Response.Status.CONFLICT).entity(e.getMessage()).header("Access-Control-Allow-Origin", "*")
+                    .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
+                    .allow("OPTIONS").build();
         }
     }
 
@@ -56,11 +64,15 @@ public class ProfileController
     {
         try{
             profileService.deleteProfile(username);
-            return Response.ok("Profiel met username "+ username+" verwijderd.").build();
+            return Response.ok("Profiel met username "+ username+" verwijderd.").header("Access-Control-Allow-Origin", "*")
+                    .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
+                    .allow("OPTIONS").build();
         }
         catch(CouldNotFindProfileException | ParametersWereEmptyException | AddingToCollectionFailedException e)
         {
-            return Response.status(Response.Status.CONFLICT).entity(e.getMessage()).build();
+            return Response.status(Response.Status.CONFLICT).entity(e.getMessage()).header("Access-Control-Allow-Origin", "*")
+                    .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
+                    .allow("OPTIONS").build();
         }
     }
 
@@ -73,14 +85,18 @@ public class ProfileController
         try{
             if(profileService.followUser(profileService.findProfile(usernameToFollow), profileService.findProfile(profileBody.getUsername())))
             {
-                return Response.ok(profileBody.getUsername() + " volgt nu "+ usernameToFollow).build();
+                return Response.ok(profileBody.getUsername() + " volgt nu "+ usernameToFollow).header("Access-Control-Allow-Origin", "*")
+                        .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
+                        .allow("OPTIONS").build();
             }
             else{
                 throw new UnableToFollowException(profileBody.getUsername() + " was unable to follow " + usernameToFollow);
             }
         }
         catch(CouldNotFindProfileException | UnableToFollowException e){
-            return Response.status(Response.Status.CONFLICT).entity(e.getMessage()).build();
+            return Response.status(Response.Status.CONFLICT).entity(e.getMessage()).header("Access-Control-Allow-Origin", "*")
+                    .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
+                    .allow("OPTIONS").build();
         }
     }
 
@@ -93,14 +109,18 @@ public class ProfileController
         try{
             if(profileService.unfollowUser(profileService.findProfile(usernameToFollow), profileService.findProfile(profileBody.getUsername())))
             {
-                return Response.ok(profileBody.getUsername() + " volgt nu "+ usernameToFollow + " niet meer").build();
+                return Response.ok(profileBody.getUsername() + " volgt nu "+ usernameToFollow + " niet meer").header("Access-Control-Allow-Origin", "*")
+                        .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
+                        .allow("OPTIONS").build();
             }
             else{
                 throw new UnableToUnFollowException(profileBody.getUsername() + " was unable to unfollow " + usernameToFollow);
             }
         }
         catch(CouldNotFindProfileException | UnableToUnFollowException e){
-            return Response.status(Response.Status.CONFLICT).entity(e.getMessage()).build();
+            return Response.status(Response.Status.CONFLICT).entity(e.getMessage()).header("Access-Control-Allow-Origin", "*")
+                    .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
+                    .allow("OPTIONS").build();
         }
     }
 
@@ -112,10 +132,14 @@ public class ProfileController
     {
         try{
             profileService.updateProfile(username, profileBody.getNewUsername(), profileBody.getBio(), profileBody.getLocation(), profileBody.getWeb());
-            return Response.ok("Profiel met originele username "+ username +" geupdate.").build();
+            return Response.ok("Profiel met originele username "+ username +" geupdate.").header("Access-Control-Allow-Origin", "*")
+                    .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
+                    .allow("OPTIONS").build();
         }
         catch(CouldNotFindProfileException | ParametersWereEmptyException | CouldNotUpdateProfileException e){
-            return Response.status(Response.Status.CONFLICT).entity(e.getMessage()).build();
+            return Response.status(Response.Status.CONFLICT).entity(e.getMessage()).header("Access-Control-Allow-Origin", "*")
+                    .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
+                    .allow("OPTIONS").build();
         }
     }
 
@@ -125,11 +149,15 @@ public class ProfileController
     public Response getProfileLatestKweets(@PathParam("username") String username)
     {
         try{
-            return Response.ok(profileService.getLatest(username)).build();
+            return Response.ok(profileService.getLatest(username)).header("Access-Control-Allow-Origin", "*")
+                    .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
+                    .allow("OPTIONS").build();
         }
         catch(CouldNotGetLatestKweets | CouldNotFetchLatestKweetFromDatabaseException e)
         {
-            return Response.status(Response.Status.CONFLICT).entity(e.getMessage()).build();
+            return Response.status(Response.Status.CONFLICT).entity(e.getMessage()).header("Access-Control-Allow-Origin", "*")
+                    .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
+                    .allow("OPTIONS").build();
         }
     }
 
@@ -139,11 +167,15 @@ public class ProfileController
     public Response getProfileFollowers(@PathParam("username") String username)
     {
         try{
-            return Response.ok(profileService.getFollower(username)).build();
+            return Response.ok(profileService.getFollower(username)).header("Access-Control-Allow-Origin", "*")
+                    .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
+                    .allow("OPTIONS").build();
         }
         catch(CouldNotFindProfileException | CouldNotGetListException e)
         {
-            return Response.status(Response.Status.CONFLICT).entity(e.getMessage()).build();
+            return Response.status(Response.Status.CONFLICT).entity(e.getMessage()).header("Access-Control-Allow-Origin", "*")
+                    .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
+                    .allow("OPTIONS").build();
         }
     }
 
@@ -153,11 +185,15 @@ public class ProfileController
     public Response getProfileFollowing(@PathParam("username") String username)
     {
         try{
-            return Response.ok(profileService.getFollowing(username)).build();
+            return Response.ok(profileService.getFollowing(username)).header("Access-Control-Allow-Origin", "*")
+                    .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
+                    .allow("OPTIONS").build();
         }
         catch(CouldNotFindProfileException | CouldNotGetListException e)
         {
-            return Response.status(Response.Status.CONFLICT).entity(e.getMessage()).build();
+            return Response.status(Response.Status.CONFLICT).entity(e.getMessage()).header("Access-Control-Allow-Origin", "*")
+                    .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
+                    .allow("OPTIONS").build();
         }
     }
 

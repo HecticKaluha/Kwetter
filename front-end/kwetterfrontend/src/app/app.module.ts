@@ -12,6 +12,7 @@ import { OwnkweetsComponent } from './ownkweets/ownkweets.component';
 import { FollowersComponent } from './followers/followers.component';
 import { OwnprofileComponent } from './ownprofile/ownprofile.component';
 import { ProfiledataComponent } from './profiledata/profiledata.component';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { ProfiledataComponent } from './profiledata/profiledata.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     FormsModule,
     AppRoutingModule
   ],
