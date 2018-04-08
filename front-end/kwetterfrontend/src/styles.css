@@ -38,13 +38,13 @@
 {
   align-self: center;
 }
-.self_end
+.self_topright
 {
   position:absolute;
   right: 5px;
   top: 5px;
 }
-.self_baseline {
+.self_end {
   align-self: flex-end;
 }
 .around{
