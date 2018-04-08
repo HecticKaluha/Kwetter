@@ -1,85 +1,8 @@
-.border{
-  border: 2px solid #f2f2f2;
-}
-.border > *{
-  margin:5px;
-}
-.tile
-{
-  margin: 5px 0 5px 0;
-}
-
-#profilepicture {
-  width: 173px;
-  height: 173px;
-}
-
-#properties {
-  /*max-width: 350px;*/
-  display: flex;
-}
-
-#properties > div {
-  display: flex;
-}
-#properties > div > label{
-  display:flex;
-  flex:1;
-}
-#properties > div > input{
-  display: flex;
-  flex:1;
-}
-#properties > *{
-  margin: 5px;
-}
-
-#kweets{
-  min-height: 500px;
-  /*max-width: 475px;*/
-  width: 100%;
-
-}
-
-#details{
-  /*max-width:487px;*/
-  width:100%;
-}
-#kweettitle{
-  margin:10px;
-}
-
-#profile-left{
+#profile-left, #profile-right{
   flex: 1;
   min-width: 300px;
   margin:0 5px 0 5px;
 }
-#profile-right{
-  flex:1;
-  min-width:300px;
-  margin:0 5px 0 5px;
-}
-#profile-right >  div{
-
-}
-#profile-left >  div{
-
-}
-#data{
-   width: 100%;
- }
-
-#followers
-{
-  min-height: 400px;
+#profile-right >  *, #profile-left >  *{
   width:100%;
 }
-#followers-profiles a
- {
-   width: 100px;
-   height: 120px;
-   margin:5px;
- }
-
-
-

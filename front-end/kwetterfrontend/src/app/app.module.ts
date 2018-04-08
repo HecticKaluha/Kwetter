@@ -8,6 +8,10 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AppRoutingModule } from './app-routing.module';
+import { OwnkweetsComponent } from './ownkweets/ownkweets.component';
+import { FollowersComponent } from './followers/followers.component';
+import { OwnprofileComponent } from './ownprofile/ownprofile.component';
+import { ProfiledataComponent } from './profiledata/profiledata.component';
 
 
 @NgModule({
@@ -16,7 +20,11 @@ import { AppRoutingModule } from './app-routing.module';
     FooterComponent,
     HeaderComponent,
     HomeComponent,
-    ProfileComponent
+    ProfileComponent,
+    OwnkweetsComponent,
+    FollowersComponent,
+    OwnprofileComponent,
+    ProfiledataComponent
   ],
   imports: [
     BrowserModule,

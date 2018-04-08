@@ -50,20 +50,17 @@
 .around{
   justify-content: space-around;
 }
-
 body{
   margin:0;
   background-color: #fcfcfc;
   width: 100%;
   min-width:530px;
 }
-
 a {
   color: #fcfcfc;
   text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
   text-decoration:none;
 }
-
 #main-box
 {
   width: 100%;
@@ -78,6 +75,14 @@ a {
   max-width: 1000px;
   margin:0 auto;
 }
-#main h2{
-  margin-top: 0px;
+.border{
+  border: 2px solid #f2f2f2;
+}
+.tile
+{
+  margin: 5px 0 5px 0;
+  padding:5px;
+}
+.title{
+  margin: 5px;
 }

@@ -1,0 +1,20 @@
+#properties,#properties > div {
+  /*max-width: 350px;*/
+  display: flex;
+}
+#properties > *{
+  margin:5px;
+}
+#profilepicture {
+  width: 173px;
+  height: 173px;
+}
+#properties > div > input{
+  display:flex;
+  flex:1;
+}
+
+#properties > div > label{
+  display:flex;
+  flex:1;
+}
