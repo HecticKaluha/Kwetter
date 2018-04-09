@@ -49,7 +49,7 @@ public class ProfileController
                     .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
                     .allow("OPTIONS").build();
         }
-        catch(ParametersWereEmptyException | AddingToCollectionFailedException | RoleNotFoundException | CouldNotFindProfileException e){
+        catch(ParametersWereEmptyException | AddingToCollectionFailedException | RoleNotFoundException | CouldNotCreateProfileException e){
             return Response.status(Response.Status.CONFLICT).entity(e.getMessage()).header("Access-Control-Allow-Origin", "*")
                     .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
                     .allow("OPTIONS").build();

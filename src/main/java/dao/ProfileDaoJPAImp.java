@@ -83,6 +83,7 @@ public class ProfileDaoJPAImp implements ProfileDao
             Profile profileToReturn = em.createQuery("SELECT profile FROM Profile profile WHERE profile.username = :username", Profile.class)
                     .setParameter("username", username)
                     .getSingleResult();
+            System.out.print(profileToReturn.toString());
             return profileToReturn;
         }
         catch(Exception e)
@@ -109,6 +110,17 @@ public class ProfileDaoJPAImp implements ProfileDao
             List<UserGroup> groups = new ArrayList<>();
             groups.add(role);
             Profile profile = new Profile(username, password, groups);
+            em.persist(profile);
+        }
+        catch(Exception e)
+        {
+            throw new AddingToCollectionFailedException(e.getMessage());
+        }
+    }
+
+    @Override
+    public void createProfile(Profile profile) throws AddingToCollectionFailedException {
+        try{
             em.persist(profile);
         }
         catch(Exception e)

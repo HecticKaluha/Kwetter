@@ -66,6 +66,11 @@ public class ProfileDaoImp implements ProfileDao
 
     }
 
+    @Override
+    public void createProfile(Profile profile) {
+
+    }
+
     /*@Override
     public void createProfile(String username, UserGroup role) throws ParametersWereEmptyException, AddingToCollectionFailedException {
         if(username == null || username.isEmpty())

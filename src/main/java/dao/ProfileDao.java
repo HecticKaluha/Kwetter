@@ -20,6 +20,8 @@ public interface ProfileDao
 
     void createProfile(String username, UserGroup role, String password) throws ParametersWereEmptyException, AddingToCollectionFailedException;
 
+    void createProfile(Profile profile) throws AddingToCollectionFailedException;
+
     boolean deleteProfile(String username) throws CouldNotFindProfileException, ParametersWereEmptyException, AddingToCollectionFailedException;
 
     boolean updateProfile(String username, String newUsername, String bio, String location, String web) throws CouldNotFindProfileException, ParametersWereEmptyException, CouldNotUpdateProfileException;

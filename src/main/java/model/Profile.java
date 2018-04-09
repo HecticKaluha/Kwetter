@@ -75,6 +75,16 @@ public class Profile implements Serializable
         this.password = password;
     }
 
+    public Profile(String username, String password, List<UserGroup> roles, String location, String webUrl, String bio)
+    {
+        this (username, roles);
+        this.password = password;
+        this.location = location;
+        this.web = webUrl;
+        this.bio = bio;
+    }
+
+
     public Profile(String username, List<UserGroup> roles)
     {
         this.username = username;

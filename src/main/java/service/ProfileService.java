@@ -41,7 +41,7 @@ public class ProfileService
     {
         return profileDao.findProfile(username);
     }
-    public void createProfile(String username, String role, String password) throws ParametersWereEmptyException, AddingToCollectionFailedException, RoleNotFoundException, CouldNotFindProfileException {
+    public void createProfile(String username, String role, String password) throws ParametersWereEmptyException, AddingToCollectionFailedException, RoleNotFoundException, CouldNotCreateProfileException {
 
         if(profileDao.roleExists(role)){
             UserGroup usergroup = getRole(role);
@@ -49,9 +49,18 @@ public class ProfileService
         }
         else
         {
-            throw new CouldNotFindProfileException("Profile " + username + " could not be created");
+            throw new CouldNotCreateProfileException("Profile " + username + " could not be created");
         }
     }
+    public void createProfile(Profile profile) throws CouldNotCreateProfileException, AddingToCollectionFailedException {
+        if(profileDao.roleExists(profile.getRole().get(0).getName())){
+            profileDao.createProfile(profile);
+        }
+        else{
+            throw new CouldNotCreateProfileException("Profile " + profile.getUsername() + " could not be created");
+        }
+    }
+
     public void deleteProfile(String username) throws CouldNotFindProfileException, ParametersWereEmptyException, AddingToCollectionFailedException {
         profileDao.deleteProfile(username);
     }
@@ -66,6 +75,7 @@ public class ProfileService
     {
         return profileDao.addRole(rolename);
     }
+
 
     public UserGroup getRole(String rolename) throws RoleNotFoundException {
         if(profileDao.roleExists(rolename))
