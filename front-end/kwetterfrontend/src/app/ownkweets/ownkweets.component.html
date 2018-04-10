@@ -2,14 +2,14 @@
   <h3 id="kweettitle" class="title">Own kweets</h3>
   <!-- Kweets Go Here -->
   <!-- sample kweets-->
-
-  <ng-container *ngFor="let kweet of kweets" >
-    <div class="kweet flexbox kweet-border wrap column">
-      <a href="#"><p class="kweet-profile-name">{{kweet.owner.username}}</p></a>
-      <p class="kweet-message">{{kweet.message}}</p>
-      <p class="kweet-postdate-text self_end">postdate: <span id="kweet-postdate">{{kweet.postDate}}</span></p>
-    </div>
-  </ng-container>
-
-
+  <p *ngIf="!hasKweets">You do not have any Kweets. When you do they show up here :-)</p>
+  <div *ngIf="hasKweets">
+    <ng-container *ngFor="let kweet of kweets" >
+      <div class="kweet flexbox kweet-border wrap column">
+        <a href="#"><p class="kweet-profile-name">{{kweet.owner.username}}</p></a>
+        <p class="kweet-message">{{kweet.message}}</p>
+        <p class="kweet-postdate-text self_end">postdate: <span id="kweet-postdate">{{kweet.postDate}}</span></p>
+      </div>
+    </ng-container>
+  </div>
 </div>
