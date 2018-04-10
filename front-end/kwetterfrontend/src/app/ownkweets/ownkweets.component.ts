@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { ProfileService } from '../profile.service';
@@ -11,12 +11,13 @@ import { ProfileService } from '../profile.service';
 export class OwnkweetsComponent implements OnInit {
 
   kweets: any;
+  @Input() username;
 
   constructor(protected profileservice: ProfileService) {
 
   }
   public getOwnKweets(profilename: string){
-    this.profileservice.getOwnKweets("Hans").subscribe(res=> {
+    this.profileservice.getOwnKweets(profilename).subscribe(res=> {
         console.log(res);
         this.kweets = res;
       },
@@ -26,7 +27,7 @@ export class OwnkweetsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getOwnKweets("Hans");
+    this.getOwnKweets(this.username);
   }
 
 }

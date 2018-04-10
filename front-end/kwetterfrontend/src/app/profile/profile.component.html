@@ -3,13 +3,13 @@
     <h2 class="title">ProfielPagina</h2>
     <div id="profile" class="flexbox row wrap between">
       <div id="profile-left" class="flexbox column">
-        <app-ownprofile></app-ownprofile>
-        <app-ownkweets></app-ownkweets>
+        <app-ownprofile [username]="username"></app-ownprofile>
+        <app-ownkweets [username]="username"></app-ownkweets>
       </div>
 
       <div id="profile-right" class="flexbox column wrap">
-        <app-profiledata></app-profiledata>
-        <app-followers></app-followers>
+        <app-profiledata [username]="username"></app-profiledata>
+        <app-followers [username]="username"></app-followers>
       </div>
     </div>
   </div>

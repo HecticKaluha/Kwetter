@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {ActivatedRoute, Params} from "@angular/router";
 import {Subscription} from "rxjs/Subscription";
@@ -12,10 +12,10 @@ import {Subscription} from "rxjs/Subscription";
 export class ProfileComponent implements OnInit {
 
   title = "Profilepage";
-  private username:string;
   private route$ : Subscription;
   //get profile
   private apiUrl = "http://localhost:8080/kwetter/api/profile/Klaartje";
+  @Input() username;
 
 
   constructor(protected httpClient: HttpClient, private route : ActivatedRoute) {

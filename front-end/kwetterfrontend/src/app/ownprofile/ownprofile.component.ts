@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {ProfileService} from "../profile.service";
 
@@ -10,24 +10,27 @@ import {ProfileService} from "../profile.service";
 export class OwnprofileComponent implements OnInit {
 
   details: any = {};
-  username: any = "";
+  profilename: any = "";
   bio: any = "";
   web: any = "";
   location: any = "";
-  profilename = "Hans";
+  profilePicture: any = "";
+  @Input() username;
 
   constructor(protected httpClient: HttpClient, protected profileservive: ProfileService) {
 
   }
 
-  public getProfile(){
-    return this.profileservive.getProfileData(this.profilename).subscribe(res=> {
-        console.log(res);
+  public getProfile(username: String){
+    return this.profileservive.getProfileData(username).subscribe(res=> {
+        console.log("ownerprofile",res);
         this.details = res;
-        this.username = this.details.username;
+        this.profilename = this.details.username;
         this.bio = this.details.bio;
         this.web = this.details.web;
         this.location = this.details.location;
+        this.profilePicture = this.details.profilePictureUrl;
+        ;
       },
       err => console.log(err),
       ()=> console.log("Done loading all the kweets of " + this.profilename)
@@ -35,7 +38,7 @@ export class OwnprofileComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getProfile();
+    this.getProfile(this.username);
   }
 
 }

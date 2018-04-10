@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {ProfileService} from "../profile.service";
 
@@ -9,22 +9,21 @@ import {ProfileService} from "../profile.service";
 })
 export class ProfiledataComponent implements OnInit {
 
-
-  private username= "Hans";
   ammountOfFollowers: any;
   ammountOfFollowersLength: any;
   ammountOfFollowing: any;
   ammountOfFollowingLength: any;
   ammountOfkweets: any;
   ammountOfkweetsLength: any;
+  @Input() username;
 
   constructor(protected httpClient: HttpClient, protected profileservice: ProfileService) {
 
   }
 
-  public getOwnProfileDataAmmounts(){
+  public getOwnProfileDataAmmounts(username: String){
     //get ammount of followers
-      this.profileservice.getFollowers(this.username).subscribe(res=> {
+      this.profileservice.getFollowers(username).subscribe(res=> {
         this.ammountOfFollowers = res;
           if(this.ammountOfFollowers == null)
           {
@@ -40,7 +39,7 @@ export class ProfiledataComponent implements OnInit {
       ()=> console.log("Done loading all the followers of " + this.username)
     );
       //get ammount of followings
-    this.profileservice.getFollowing(this.username).subscribe(res=> {
+    this.profileservice.getFollowing(username).subscribe(res=> {
         this.ammountOfFollowing = res;
         if(this.ammountOfFollowing == null)
         {
@@ -54,7 +53,7 @@ export class ProfiledataComponent implements OnInit {
       ()=> console.log("Done loading all the followings of " + this.username)
     );
     //get profilekweets (ammount)
-    this.profileservice.getOwnKweets(this.username).subscribe(res=> {
+    this.profileservice.getOwnKweets(username).subscribe(res=> {
         this.ammountOfkweets = res;
         console.log(res);
         if(this.ammountOfkweets == null)
@@ -71,7 +70,7 @@ export class ProfiledataComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getOwnProfileDataAmmounts();
+    this.getOwnProfileDataAmmounts(this.username);
   }
 
 }
