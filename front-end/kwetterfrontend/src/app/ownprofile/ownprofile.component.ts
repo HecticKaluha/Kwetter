@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import {ProfileService} from "../profile.service";
 
 @Component({
   selector: 'app-ownprofile',
@@ -8,20 +9,19 @@ import { HttpClient } from '@angular/common/http';
 })
 export class OwnprofileComponent implements OnInit {
 
-  private apiUrl = "http://localhost:8080/kwetter/api/profile";
   details: any = {};
   username: any = "";
   bio: any = "";
   web: any = "";
   location: any = "";
+  profilename = "Hans";
 
-  constructor(protected httpClient: HttpClient) {
+  constructor(protected httpClient: HttpClient, protected profileservive: ProfileService) {
 
   }
 
-  public getProfile(profilename: string){
-
-    return this.httpClient.get(`${this.apiUrl}/${profilename}`).subscribe(res=> {
+  public getProfile(){
+    return this.profileservive.getProfileData(this.profilename).subscribe(res=> {
         console.log(res);
         this.details = res;
         this.username = this.details.username;
@@ -30,13 +30,12 @@ export class OwnprofileComponent implements OnInit {
         this.location = this.details.location;
       },
       err => console.log(err),
-      ()=> console.log("Done loading all the kweets of " + profilename)
+      ()=> console.log("Done loading all the kweets of " + this.profilename)
     );
   }
 
   ngOnInit() {
-    //console.log("Fetching profile");
-    this.getProfile("Hans");
+    this.getProfile();
   }
 
 }

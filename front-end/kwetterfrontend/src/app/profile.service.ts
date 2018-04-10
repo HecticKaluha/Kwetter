@@ -7,6 +7,7 @@ export class ProfileService {
   private getOwnKweetsUrl = "http://localhost:8080/kwetter/api/profile/ownkweets";
   private getFollowersUrl = "http://localhost:8080/kwetter/api/profile/followers";
   private getFollowingUrl = "http://localhost:8080/kwetter/api/profile/following";
+  private getProfileDataUrl = "http://localhost:8080/kwetter/api/profile";
   constructor(protected httpClient: HttpClient) { }
 
   public getOwnKweets(profilename: String)
@@ -23,6 +24,12 @@ export class ProfileService {
   {
     return this.httpClient.get(`${this.getFollowingUrl}/${profilename}`);
   }
+
+  public getProfileData(profilename: String)
+  {
+    return this.httpClient.get(`${this.getProfileDataUrl}/${profilename}`)
+  }
+
 
 
 }
