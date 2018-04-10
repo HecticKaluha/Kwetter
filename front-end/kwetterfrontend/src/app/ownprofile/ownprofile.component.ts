@@ -23,11 +23,11 @@ export class OwnprofileComponent implements OnInit {
 
     return this.httpClient.get(`${this.apiUrl}/${profilename}`).subscribe(res=> {
         console.log(res);
-
-        this.username = res.username;
-        this.bio = res.bio;
-        this.web = res.web;
-        this.location = res.location;
+        this.details = res;
+        this.username = this.details.username;
+        this.bio = this.details.bio;
+        this.web = this.details.web;
+        this.location = this.details.location;
       },
       err => console.log(err),
       ()=> console.log("Done loading all the kweets of " + profilename)

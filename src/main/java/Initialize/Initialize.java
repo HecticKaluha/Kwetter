@@ -40,7 +40,7 @@ public class Initialize {
 
             //profileService.createProfile("Hans", "Admin", "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918");
             List<UserGroup> roles = new ArrayList<>();
-            roles.add(profileService.getRole("admin"));
+            roles.add(profileService.getRole("Admin"));
             Profile hans = new Profile("Hans", "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918", roles, "Havikstraat Sliedrecht", "google.com", "Ik wil graag UFO-Piloot worden");
             profileService.createProfile(hans);
 

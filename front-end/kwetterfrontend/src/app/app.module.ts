@@ -13,6 +13,8 @@ import { FollowersComponent } from './followers/followers.component';
 import { OwnprofileComponent } from './ownprofile/ownprofile.component';
 import { ProfiledataComponent } from './profiledata/profiledata.component';
 import {HttpClientModule} from '@angular/common/http';
+import { ProfileService } from './profile.service';
+
 
 
 @NgModule({
@@ -33,7 +35,7 @@ import {HttpClientModule} from '@angular/common/http';
     FormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ProfileService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
