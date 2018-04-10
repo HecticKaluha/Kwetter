@@ -27,7 +27,7 @@ form{
   margin: 5px;
 }
 
-#properties > div > p:nth-of-type(2){
+#properties > div > *:nth-of-type(2), #properties > div > a{
   display:flex;
   flex:2;
   margin: 5px;

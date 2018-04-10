@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import {ActivatedRoute, Params} from "@angular/router";
+import {Subscription} from "rxjs/Subscription";
 
 
 @Component({
@@ -10,11 +12,13 @@ import { HttpClient } from '@angular/common/http';
 export class ProfileComponent implements OnInit {
 
   title = "Profilepage";
+  private username:string;
+  private route$ : Subscription;
   //get profile
   private apiUrl = "http://localhost:8080/kwetter/api/profile/Klaartje";
 
 
-  constructor(protected httpClient: HttpClient) {
+  constructor(protected httpClient: HttpClient, private route : ActivatedRoute) {
 
   }
 
@@ -32,6 +36,12 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.route$ = this.route.params.subscribe(
+      (params : Params) => {
+        this.username = params["username"];
+
+      }
+    );
   }
 }
 

@@ -6,6 +6,7 @@ import { ProfileComponent } from './profile/profile.component';
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: '', component: HomeComponent },
+  { path : 'profile/:username', component : ProfileComponent},
   { path: 'profile', component: ProfileComponent }/*,
   { path: '**', redirectTo: '/home' }*/
 ];

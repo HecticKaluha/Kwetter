@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ProfileService} from "../profile.service";
+import {ActivatedRoute, Params} from "@angular/router";
+import {Subscription} from "rxjs/Subscription";
 
 
 @Component({
@@ -8,13 +10,14 @@ import {ProfileService} from "../profile.service";
   styleUrls: ['./followers.component.css']
 })
 export class FollowersComponent implements OnInit {
-  private username = "Hans";
+  private username:string;
+  private route$ : Subscription;
   private hasFollowers = false;
   followers: any = {};
 
-  constructor(protected profileservice: ProfileService) { }
+  constructor(protected profileservice: ProfileService, private route : ActivatedRoute) { }
 
-  public getFollowers(){
+  public getFollowers(username: string){
     this.profileservice.getFollowers(this.username).subscribe(res=> {
       console.log("The returned data is: ");
       console.log(res);
@@ -26,12 +29,17 @@ export class FollowersComponent implements OnInit {
       }
     },
       err => console.log(err),
-      ()=> console.log("Done loading all the followers of " + this.username)
+      ()=> console.log("Done loading all the followers of " + username)
     );;
   }
 
   ngOnInit() {
-    this.getFollowers();
+    this.route$ = this.route.params.subscribe(
+      (params : Params) => {
+        this.username = params["username"];
+      }
+    );
+    this.getFollowers(this.username);
   }
 
 }

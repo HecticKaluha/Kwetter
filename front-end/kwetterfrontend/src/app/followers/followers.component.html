@@ -4,7 +4,7 @@
     <p *ngIf="!hasFollowers">You do not have any followers. When you do they show up here :-)</p>
     <div *ngIf="hasFollowers" class="flexbox wrap evenly">
       <ng-container *ngFor="let follower of followers">
-        <a href="#" class="flexbox column wrap">
+        <a [routerLink]="['/profile/', follower.username]" class="flexbox column wrap">
           <img src="{{follower.profilePictureUrl}}" >
           <span class="username" class="text-center">{{follower.username}}</span>
         </a>
