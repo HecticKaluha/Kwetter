@@ -3,7 +3,9 @@
   text-align: left;
   font-family: verdana;
 }
-
+.text-center{
+  text-align: center;
+}
 .middle{
   margin:0 auto;
 }
