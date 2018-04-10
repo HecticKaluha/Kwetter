@@ -30,7 +30,6 @@ export class OwnprofileComponent implements OnInit {
         this.web = this.details.web;
         this.location = this.details.location;
         this.profilePicture = this.details.profilePictureUrl;
-        ;
       },
       err => console.log(err),
       ()=> console.log("Done loading all the kweets of " + this.profilename)
@@ -38,6 +37,9 @@ export class OwnprofileComponent implements OnInit {
   }
 
   ngOnInit() {
+
+  }
+  ngOnChanges(){
     this.getProfile(this.username);
   }
 

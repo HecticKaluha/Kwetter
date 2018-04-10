@@ -27,6 +27,9 @@ export class OwnkweetsComponent implements OnInit {
   }
 
   ngOnInit() {
+
+  }
+  ngOnChanges() {
     this.getOwnKweets(this.username);
   }
 

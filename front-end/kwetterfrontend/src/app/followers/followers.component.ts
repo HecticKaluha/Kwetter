@@ -27,6 +27,10 @@ export class FollowersComponent implements OnInit {
         console.log(this.followers);
         this.hasFollowers = true;
       }
+      else{
+        this.followers = null;
+        this.hasFollowers = false;
+      }
     },
       err => console.log(err),
       ()=> console.log("Done loading all the followers of " + username)
@@ -34,11 +38,9 @@ export class FollowersComponent implements OnInit {
   }
 
   ngOnInit() {
-    /*this.route$ = this.route.params.subscribe(
-      (params : Params) => {
-        this.username = params["username"];
-      }
-    );*/
+
+  }
+  ngOnChanges() {
     this.getFollowers(this.username);
   }
 

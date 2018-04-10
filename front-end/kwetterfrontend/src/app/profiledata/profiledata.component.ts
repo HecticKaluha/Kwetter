@@ -24,15 +24,15 @@ export class ProfiledataComponent implements OnInit {
   public getOwnProfileDataAmmounts(username: String){
     //get ammount of followers
       this.profileservice.getFollowers(username).subscribe(res=> {
-        this.ammountOfFollowers = res;
-          if(this.ammountOfFollowers == null)
+          this.ammountOfFollowers = res;
+          console.log("ammountOfFollowers",res);
+          if(this.ammountOfFollowers[0] == null)
           {
             this.ammountOfFollowersLength = 0;
           }
           else {
             this.ammountOfFollowersLength = this.ammountOfFollowers.length;
           }
-        this.ammountOfFollowersLength = this.ammountOfFollowers.length;
         console.log(this.ammountOfFollowersLength);
       },
       err => console.log(err),
@@ -41,7 +41,8 @@ export class ProfiledataComponent implements OnInit {
       //get ammount of followings
     this.profileservice.getFollowing(username).subscribe(res=> {
         this.ammountOfFollowing = res;
-        if(this.ammountOfFollowing == null)
+        console.log("ammountOfFollowing",res);
+        if(this.ammountOfFollowing[0] == null)
         {
           this.ammountOfFollowingLength = 0;
         }
@@ -55,8 +56,8 @@ export class ProfiledataComponent implements OnInit {
     //get profilekweets (ammount)
     this.profileservice.getOwnKweets(username).subscribe(res=> {
         this.ammountOfkweets = res;
-        console.log(res);
-        if(this.ammountOfkweets == null)
+        console.log("ammountofkweets",res);
+        if(this.ammountOfkweets[0] == null)
         {
           this.ammountOfkweetsLength = 0;
         }
@@ -70,6 +71,9 @@ export class ProfiledataComponent implements OnInit {
   }
 
   ngOnInit() {
+
+  }
+  ngOnChanges() {
     this.getOwnProfileDataAmmounts(this.username);
   }
 
