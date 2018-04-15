@@ -7,9 +7,9 @@
         <option>Logout</option>
       </select>
     </div>
-    <div>
+    <div class="devide flexbox row wrap">
       <div class="left flexbox column" >
-        <h2>What's happening</h2>
+        <h2 class="title">What's happening</h2>
         <label for="kweet"></label>
         <textarea id="kweet" maxlength="140" name="kweet" rows="6" placeholder="140 characters to express yourself!" ></textarea>
 
@@ -18,14 +18,33 @@
             <li class="nav-item active" ><a class="nav-link" >Timeline</a></li>
             <li class="nav-item"><a class="nav-link" >Mentions</a></li>
           </ul>
-          <app-ownkweets></app-ownkweets>
+          <app-ownkweets class="border"></app-ownkweets>
         </div>
-
+      </div>
       <div class="right">
-
+        <div class="profile">
+          <div>
+            <h3 class="title">Latest Kweet</h3>
+            <!--<ng-container *ngFor="let kweet of kweets" >-->
+              <div class="kweet flexbox kweet-border wrap column">
+                <a href="#"><p class="kweet-profile-name">Kweet.owner.username</p></a>
+                <p class="kweet-message">kweet.message</p>
+                <p class="kweet-postdate-text self_end">postdate: <span id="kweet-postdate">kweet.postDate</span></p>
+              </div>
+            <!--</ng-container>-->
+          </div>
+          <div class="flexbox wrap row around home-profile-followinfo">
+            <div>
+              <app-followers></app-followers>
+            </div>
+            <div>
+              <app-following></app-following>
+            </div>
+          </div>
+          </div>
+          <app-trends></app-trends>
+        </div>
       </div>
     </div>
-
   </div>
-</div>
 

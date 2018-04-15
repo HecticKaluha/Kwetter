@@ -14,9 +14,9 @@
 }
 textarea
 {
-  max-width:300px;
   max-height: 96px;
   resize:none;
+  width:98%;
 }
 #subpagemenu{
   list-style-type: none;
@@ -47,10 +47,33 @@ textarea
   transition: ease-in-out 0.5s;
 }
 app-ownkweets{
-  max-width: 400px;
+  width:99%;
+}
+
+.devide > *{
+  flex:1;
+  margin:5px;
+}
+.most-recent-kweet{
 
 }
-app-ownkweets > *{
-  margin:0px !important;
-  padding:0px !important;
+.kweet{
+  padding:5px;
+}
+.kweet-profile-name{
+  font-weight: bold;
+  font-size: 15px;
+  margin: 0;
+}
+.kweet-border{
+  border-bottom: 2px solid #f2f2f2;
+}
+.home-profile-followinfo > * {
+  flex:1;
+}
+.home-profile-followinfo{
+}
+app-followers, app-following{
+  overflow:auto;
+  overflow: paged-y;
 }

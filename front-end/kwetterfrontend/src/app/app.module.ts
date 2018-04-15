@@ -14,7 +14,8 @@ import { OwnprofileComponent } from './ownprofile/ownprofile.component';
 import { ProfiledataComponent } from './profiledata/profiledata.component';
 import {HttpClientModule} from '@angular/common/http';
 import { ProfileService } from './profile.service';
-import { MainComponent } from './main/main.component';
+import { FollowingComponent } from './following/following.component';
+import { TrendsComponent } from './trends/trends.component';
 
 
 
@@ -29,7 +30,8 @@ import { MainComponent } from './main/main.component';
     FollowersComponent,
     OwnprofileComponent,
     ProfiledataComponent,
-    MainComponent
+    FollowingComponent,
+    TrendsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,6 @@
+<p *ngIf="!areTrends">There are no trends at the moment...</p>
+<ul *ngIf="arTrends">
+  <ng-container *ngFor="let trend of trends">
+    <li>trend.name</li>
+  </ng-container>
+</ul>
