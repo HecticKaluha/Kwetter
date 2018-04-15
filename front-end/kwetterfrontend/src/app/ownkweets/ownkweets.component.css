@@ -16,3 +16,7 @@
 .kweet-border{
   border-bottom: 2px solid #f2f2f2;
 }
+.tile
+{
+  margin: 5px 0 5px 0;
+}

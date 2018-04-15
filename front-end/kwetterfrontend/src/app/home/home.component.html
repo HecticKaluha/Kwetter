@@ -1,7 +1,31 @@
 <div id="main-box">
-  <div id="main">
-    <h2>Welkom op Kwetter</h2>
-    <p>Kwetter is de nieuwe innovatie op het gebied van socializen. Blijf in contact met familie en vrienden, leer nieuwe mensen kennen en blijf op de hoogte!</p>
+  <div id="main" class="flexbox column wrap">
+    <div class="top between flexbox row wrap">
+      <input type="text" placeholder="Search...">
+      <select>
+        <option selected="true">Profile</option>
+        <option>Logout</option>
+      </select>
+    </div>
+    <div>
+      <div class="left flexbox column" >
+        <h2>What's happening</h2>
+        <label for="kweet"></label>
+        <textarea id="kweet" maxlength="140" name="kweet" rows="6" placeholder="140 characters to express yourself!" ></textarea>
+
+        <div id="tabnav" class="flexbox column wrap">
+          <ul id="subpagemenu" class=" flexbox row wrap" routerLinkActive="active">
+            <li class="nav-item active" ><a class="nav-link" >Timeline</a></li>
+            <li class="nav-item"><a class="nav-link" >Mentions</a></li>
+          </ul>
+          <app-ownkweets></app-ownkweets>
+        </div>
+
+      <div class="right">
+
+      </div>
+    </div>
+
   </div>
 </div>
 

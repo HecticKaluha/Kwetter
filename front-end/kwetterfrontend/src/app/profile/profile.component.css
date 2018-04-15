@@ -6,3 +6,7 @@
 #profile-right >  *, #profile-left >  *{
   width:100%;
 }
+.tile
+{
+  margin: 5px 0 5px 0;
+}

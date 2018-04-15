@@ -1,1 +1,56 @@
+.top input
+{
+  border-radius: 20px;
+  padding:5px;
+}
+.top input:focus {
+  outline: 0px;
+  box-shadow: 3px 3px 5px 0px rgba(201,201,201,1);
+  transition: ease-in-out 0.5s;
+}
+.top input:hover{
+  box-shadow: 3px 3px 5px 0px rgba(201,201,201,1);
+  transition: ease-in-out 0.5s;
+}
+textarea
+{
+  max-width:300px;
+  max-height: 96px;
+  resize:none;
+}
+#subpagemenu{
+  list-style-type: none;
+  padding: 0px;
+  margin:5px 0px 0px 0px;
+}
+#subpagemenu li{
+  list-style-type: none;
+  padding: 5px;
+  border:1px solid grey;
+  background-color:#f2f2f2;
+}
+#subpagemenu :first-child{
+  border-radius: 10px 0 0 0px;
+}
+#subpagemenu :last-child{
+  border-radius: 0px 10px 0px 0px;
+}
+.active{
+   background-color: #e6e6e6 !important;
+ }
+#subpagemenu li:hover{
+  background-color: #d8d8d8;
+  -webkit-transition: ease-in-out 0.5s;
+  -moz-transition: ease-in-out 0.5s;
+  -ms-transition: ease-in-out 0.5s;
+  -o-transition: ease-in-out 0.5s;
+  transition: ease-in-out 0.5s;
+}
+app-ownkweets{
+  max-width: 400px;
 
+}
+app-ownkweets > *{
+  margin:0px !important;
+  padding:0px !important;
+}

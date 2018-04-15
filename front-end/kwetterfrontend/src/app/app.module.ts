@@ -14,6 +14,7 @@ import { OwnprofileComponent } from './ownprofile/ownprofile.component';
 import { ProfiledataComponent } from './profiledata/profiledata.component';
 import {HttpClientModule} from '@angular/common/http';
 import { ProfileService } from './profile.service';
+import { MainComponent } from './main/main.component';
 
 
 
@@ -27,7 +28,8 @@ import { ProfileService } from './profile.service';
     OwnkweetsComponent,
     FollowersComponent,
     OwnprofileComponent,
-    ProfiledataComponent
+    ProfiledataComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
