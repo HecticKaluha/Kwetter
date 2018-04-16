@@ -1,8 +1,8 @@
-<div id="followers" class="flexbox wrap column inner">
+<div id="following" class="flexbox wrap column inner">
   <h3 class="title">Following</h3>
-  <div id="followers-profiles">
-    <p *ngIf="!hasFollowers">You do not have any friends. When you do they show up here :-)</p>
-    <div *ngIf="hasFollowers" class="flexbox wrap evenly">
+  <div id="following-profiles">
+    <p *ngIf="!hasFollowing">You do not have any friends. When you do they show up here :-)</p>
+    <div *ngIf="hasFollowing" class="flexbox wrap evenly">
       <ng-container *ngFor="let following of following">
         <a [routerLink]="['/profile/', following.username]" class="flexbox column wrap">
           <img src="{{following.profilePictureUrl}}" >

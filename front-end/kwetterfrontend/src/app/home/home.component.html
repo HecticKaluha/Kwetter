@@ -40,10 +40,10 @@
           </div>
           <div class="flexbox wrap row around home-profile-followinfo">
             <div>
-              <app-followers></app-followers>
+              <app-followers [username]="loggedInUser"></app-followers>
             </div>
             <div>
-              <app-following></app-following>
+              <app-following [username]="loggedInUser"></app-following>
             </div>
           </div>
           </div>

@@ -53,6 +53,7 @@ app-ownkweets{
 .devide > *{
   flex:1;
   margin:5px;
+  min-width: 400px;
 }
 .most-recent-kweet{
 

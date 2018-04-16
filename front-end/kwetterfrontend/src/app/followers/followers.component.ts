@@ -1,6 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ProfileService} from "../profile.service";
-import {ActivatedRoute, Params} from "@angular/router";
 import {Subscription} from "rxjs/Subscription";
 
 @Component({
@@ -19,12 +18,10 @@ export class FollowersComponent implements OnInit {
 
   public getFollowers(username: string){
     this.profileservice.getFollowers(this.username).subscribe(res=> {
-      console.log("The returned data is: ");
-      console.log(res);
       if(res[0] != null)
       {
         this.followers = res;
-        console.log(this.followers);
+        console.log("followers",this.followers);
         this.hasFollowers = true;
       }
       else{
