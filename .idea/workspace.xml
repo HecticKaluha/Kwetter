@@ -8,12 +8,10 @@
   <component name="ChangeListManager">
     <list default="true" id="98fc4199-0440-4b12-9400-cfb6b10d678a" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/front-end/kwetterfrontend/src/app/followers/followers.component.ts" afterPath="$PROJECT_DIR$/front-end/kwetterfrontend/src/app/followers/followers.component.ts" />
-      <change beforePath="$PROJECT_DIR$/front-end/kwetterfrontend/src/app/following/following.component.css" afterPath="$PROJECT_DIR$/front-end/kwetterfrontend/src/app/following/following.component.css" />
-      <change beforePath="$PROJECT_DIR$/front-end/kwetterfrontend/src/app/following/following.component.html" afterPath="$PROJECT_DIR$/front-end/kwetterfrontend/src/app/following/following.component.html" />
-      <change beforePath="$PROJECT_DIR$/front-end/kwetterfrontend/src/app/following/following.component.ts" afterPath="$PROJECT_DIR$/front-end/kwetterfrontend/src/app/following/following.component.ts" />
-      <change beforePath="$PROJECT_DIR$/front-end/kwetterfrontend/src/app/home/home.component.css" afterPath="$PROJECT_DIR$/front-end/kwetterfrontend/src/app/home/home.component.css" />
-      <change beforePath="$PROJECT_DIR$/front-end/kwetterfrontend/src/app/home/home.component.html" afterPath="$PROJECT_DIR$/front-end/kwetterfrontend/src/app/home/home.component.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ProfileDaoJPAImp.java" afterPath="$PROJECT_DIR$/src/main/java/dao/ProfileDaoJPAImp.java" />
+      <change beforePath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT.war" afterPath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT.war" />
+      <change beforePath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/WEB-INF/classes/dao/ProfileDaoJPAImp.class" afterPath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/WEB-INF/classes/dao/ProfileDaoJPAImp.class" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -56,48 +54,18 @@
       <file leaf-file-name="home.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/front-end/kwetterfrontend/src/app/home/home.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="45" column="54" lean-forward="false" selection-start-line="45" selection-start-column="54" selection-end-line="45" selection-end-column="54" />
+            <state relative-caret-position="551">
+              <caret line="32" column="32" lean-forward="true" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="followers.component.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front-end/kwetterfrontend/src/app/followers/followers.component.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="18" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="following.component.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/front-end/kwetterfrontend/src/app/following/following.component.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="12" column="16" lean-forward="true" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="following.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front-end/kwetterfrontend/src/app/following/following.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="4" column="58" lean-forward="true" selection-start-line="4" selection-start-column="58" selection-end-line="4" selection-end-column="58" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.component.ts" pinned="false" current-in-tab="false">
+      <file leaf-file-name="home.component.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/front-end/kwetterfrontend/src/app/home/home.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="15" column="22" lean-forward="false" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="22" />
+            <state relative-caret-position="324">
+              <caret line="38" column="35" lean-forward="true" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
               </folding>
@@ -105,25 +73,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="following.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front-end/kwetterfrontend/src/app/following/following.component.ts">
+      <file leaf-file-name="ProfileDaoJPAImp.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/dao/ProfileDaoJPAImp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="29" column="38" lean-forward="true" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
+            <state relative-caret-position="161">
+              <caret line="386" column="0" lean-forward="false" selection-start-line="386" selection-start-column="0" selection-end-line="386" selection-end-column="0" />
               <folding>
-                <element signature="e#0#55#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="followers.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front-end/kwetterfrontend/src/app/followers/followers.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="19" column="69" lean-forward="false" selection-start-line="19" selection-start-column="69" selection-end-line="19" selection-end-column="69" />
-              <folding>
-                <element signature="e#0#55#0" expanded="true" />
+                <marker date="1523914714553" expanded="true" signature="13065:13091" ph="select name usergroup" />
               </folding>
             </state>
           </provider>
@@ -163,10 +119,8 @@
         <option value="$PROJECT_DIR$/src/main/java/dao/KweetDaoImp.java" />
         <option value="$PROJECT_DIR$/src/main/java/dao/ProfileDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/dao/ProfileDaoImp.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dao/ProfileDaoJPAImp.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/KweetController.java" />
         <option value="$PROJECT_DIR$/src/main/java/service/KweetService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/service/ProfileService.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/ProfileController.java" />
         <option value="$PROJECT_DIR$/front-end/kwetterfrontend/src/app/kweet.service.ts" />
         <option value="$PROJECT_DIR$/front-end/kwetterfrontend/src/app/profile.service.ts" />
@@ -179,6 +133,8 @@
         <option value="$PROJECT_DIR$/front-end/kwetterfrontend/src/app/home/home.component.html" />
         <option value="$PROJECT_DIR$/front-end/kwetterfrontend/src/app/following/following.component.html" />
         <option value="$PROJECT_DIR$/front-end/kwetterfrontend/src/app/following/following.component.css" />
+        <option value="$PROJECT_DIR$/src/main/java/service/ProfileService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dao/ProfileDaoJPAImp.java" />
       </list>
     </option>
   </component>
@@ -260,43 +216,7 @@
               <item name="kwetterfrontend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="followers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Kwetter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Kwetter" type="462c0819:PsiDirectoryNode" />
-              <item name="front-end" type="462c0819:PsiDirectoryNode" />
-              <item name="kwetterfrontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="following" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Kwetter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Kwetter" type="462c0819:PsiDirectoryNode" />
-              <item name="front-end" type="462c0819:PsiDirectoryNode" />
-              <item name="kwetterfrontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="home" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Kwetter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Kwetter" type="462c0819:PsiDirectoryNode" />
-              <item name="front-end" type="462c0819:PsiDirectoryNode" />
-              <item name="kwetterfrontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="profile" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Kwetter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Kwetter" type="462c0819:PsiDirectoryNode" />
-              <item name="front-end" type="462c0819:PsiDirectoryNode" />
-              <item name="kwetterfrontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="profiledata" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Kwetter" type="b2602c69:ProjectViewProjectNode" />
@@ -543,16 +463,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1523899668709</updated>
-      <workItem from="1523899670069" duration="13304000" />
+      <workItem from="1523899670069" duration="16050000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13304000" />
+    <option name="totallyTimeSpent" value="16050000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1726" height="928" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -561,19 +480,19 @@
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.095757574" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18787879" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3989432" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32893" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32893" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24969697" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
@@ -593,7 +512,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="2" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -667,13 +588,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/f3833183/75c1e35f-36e0-45e2-a132-1fe853a790d8/kwetterdb.kweet">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dao/KweetDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -743,32 +657,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/ProfileController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="136" column="33" lean-forward="false" selection-start-line="136" selection-start-column="11" selection-end-line="136" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/ProfileService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="100" column="31" lean-forward="false" selection-start-line="100" selection-start-column="17" selection-end-line="100" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/ProfileDaoJPAImp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="376" column="0" lean-forward="false" selection-start-line="376" selection-start-column="0" selection-end-line="376" selection-end-column="0" />
-          <folding>
-            <marker date="1523908902002" expanded="true" signature="12916:12942" ph="select name usergroup" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front-end/kwetterfrontend/src/app/followers/followers.component.spec.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -800,7 +688,7 @@
         <state relative-caret-position="294">
           <caret line="14" column="28" lean-forward="false" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
           <folding>
-            <element signature="e#0#55#0" expanded="true" />
+            <element signature="e#0#55#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -821,28 +709,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front-end/kwetterfrontend/src/app/profile/profile.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="14" column="32" lean-forward="false" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front-end/kwetterfrontend/src/app/profile/profile.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="71" lean-forward="false" selection-start-line="10" selection-start-column="50" selection-end-line="10" selection-end-column="71" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front-end/kwetterfrontend/src/app/profiledata/profiledata.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-63">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#55#0" expanded="true" />
+            <element signature="e#0#55#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -863,22 +735,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front-end/kwetterfrontend/src/app/home/home.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="15" column="22" lean-forward="false" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front-end/kwetterfrontend/src/app/following/following.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
-          <caret line="29" column="38" lean-forward="true" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
+          <caret line="29" column="38" lean-forward="false" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
           <folding>
-            <element signature="e#0#55#0" expanded="true" />
+            <element signature="e#0#55#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -888,15 +750,23 @@
         <state relative-caret-position="147">
           <caret line="19" column="69" lean-forward="false" selection-start-line="19" selection-start-column="69" selection-end-line="19" selection-end-column="69" />
           <folding>
-            <element signature="e#0#55#0" expanded="true" />
+            <element signature="e#0#55#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front-end/kwetterfrontend/src/app/home/home.component.html">
+    <entry file="file://$PROJECT_DIR$/front-end/kwetterfrontend/src/app/following/following.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="58" lean-forward="false" selection-start-line="4" selection-start-column="58" selection-end-line="4" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/kwetterfrontend/src/app/following/following.component.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
-          <caret line="45" column="54" lean-forward="false" selection-start-line="45" selection-start-column="54" selection-end-line="45" selection-end-column="54" />
+          <caret line="12" column="16" lean-forward="false" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
           <folding />
         </state>
       </provider>
@@ -909,19 +779,70 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front-end/kwetterfrontend/src/app/following/following.component.html">
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/ProfileService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="58" lean-forward="true" selection-start-line="4" selection-start-column="58" selection-end-line="4" selection-end-column="58" />
+        <state relative-caret-position="266">
+          <caret line="101" column="8" lean-forward="false" selection-start-line="101" selection-start-column="8" selection-end-line="101" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front-end/kwetterfrontend/src/app/following/following.component.css">
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/ProfileController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="16" lean-forward="true" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+        <state relative-caret-position="305">
+          <caret line="144" column="9" lean-forward="false" selection-start-line="144" selection-start-column="9" selection-end-line="144" selection-end-column="9" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/f3833183/75c1e35f-36e0-45e2-a132-1fe853a790d8/kwetterdb.kweet">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/kwetterfrontend/src/app/profile/profile.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="71" lean-forward="false" selection-start-line="10" selection-start-column="50" selection-end-line="10" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/kwetterfrontend/src/app/profile/profile.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="25" column="43" lean-forward="true" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dao/ProfileDaoJPAImp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="386" column="0" lean-forward="false" selection-start-line="386" selection-start-column="0" selection-end-line="386" selection-end-column="0" />
+          <folding>
+            <marker date="1523914714553" expanded="true" signature="13065:13091" ph="select name usergroup" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/kwetterfrontend/src/app/home/home.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="32" column="32" lean-forward="true" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/kwetterfrontend/src/app/home/home.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="38" column="35" lean-forward="true" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

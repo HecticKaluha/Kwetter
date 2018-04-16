@@ -209,10 +209,11 @@ public class ProfileDaoJPAImp implements ProfileDao
     public List<Kweet> getLatest(String username) throws CouldNotGetLatestKweets, CouldNotFetchLatestKweetFromDatabaseException {
         try
         {
-            List<Kweet> profileToReturn = em.createQuery("SELECT Kweet FROM Kweet kweet WHERE kweet.owner.username = :username ", Kweet.class)
+            List<Kweet> kweetFromProfileToReturn = em.createQuery("SELECT Kweet FROM Kweet kweet WHERE kweet.owner.username = :username ", Kweet.class)
                     .setParameter("username", username)
-                    .setMaxResults(10).getResultList();
-            return profileToReturn;
+                    .getResultList();
+            List<Kweet> kweetsToReturn = kweetFromProfileToReturn.subList(Math.max(kweetFromProfileToReturn.size() - 10, 0), kweetFromProfileToReturn.size());
+            return kweetsToReturn;
         }
         catch(Exception e)
         {
@@ -379,14 +380,17 @@ public class ProfileDaoJPAImp implements ProfileDao
     public Kweet getLatestKweet(String username) throws CouldNotFetchLatestKweetFromDatabaseException {
         try
         {
-            Kweet kweetFromProfileToReturn = em.createQuery("SELECT Kweet FROM Kweet kweet WHERE kweet.owner.username = :username ", Kweet.class)
+            List<Kweet> kweetFromProfileToReturn = em.createQuery("SELECT Kweet FROM Kweet kweet WHERE kweet.owner.username = :username ", Kweet.class)
                     .setParameter("username", username)
-                    .setMaxResults(1).getSingleResult();
-            return kweetFromProfileToReturn;
+                    .getResultList();
+
+            Kweet kweetToReturn = kweetFromProfileToReturn.get(kweetFromProfileToReturn.size() - 1);
+            return kweetToReturn;
+
         }
         catch(Exception e)
         {
-            throw new CouldNotFetchLatestKweetFromDatabaseException("Could not fetch latest kweets of profile " + username);
+            throw new CouldNotFetchLatestKweetFromDatabaseException("Could not fetch latest kweets of profile " + username + " due to " + e.getMessage());
         }
     }
 
