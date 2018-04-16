@@ -219,7 +219,6 @@ public class ProfileDaoJPAImp implements ProfileDao
             throw new CouldNotFetchLatestKweetFromDatabaseException("Could not fetch latest kweets of profile " + username);
         }
 
-
     }
 
     @Override
@@ -374,6 +373,21 @@ public class ProfileDaoJPAImp implements ProfileDao
             }
         }
         return roles;
+    }
+
+    @Override
+    public Kweet getLatestKweet(String username) throws CouldNotFetchLatestKweetFromDatabaseException {
+        try
+        {
+            Kweet kweetFromProfileToReturn = em.createQuery("SELECT Kweet FROM Kweet kweet WHERE kweet.owner.username = :username ", Kweet.class)
+                    .setParameter("username", username)
+                    .setMaxResults(1).getSingleResult();
+            return kweetFromProfileToReturn;
+        }
+        catch(Exception e)
+        {
+            throw new CouldNotFetchLatestKweetFromDatabaseException("Could not fetch latest kweets of profile " + username);
+        }
     }
 
 }

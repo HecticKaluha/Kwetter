@@ -210,6 +210,11 @@ public class ProfileDaoImp implements ProfileDao
     public List<UserGroup> getAllRoles() {
         return null;
     }
+
+    @Override
+    public Kweet getLatestKweet(String username) {
+        return null;
+    }
 }
 
 

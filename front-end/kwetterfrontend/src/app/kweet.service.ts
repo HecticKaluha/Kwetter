@@ -11,7 +11,7 @@ export class KweetService {
 
   constructor(protected httpClient: HttpClient) { }
 
-  public postKweet(message: String, loggedInUser:string)
+  public postKweet(message: string, loggedInUser:string)
   {
     //console.log("bericht: " , message);
     //console.log("Account: " , loggedInUser);

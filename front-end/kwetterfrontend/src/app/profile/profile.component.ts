@@ -13,26 +13,11 @@ export class ProfileComponent implements OnInit {
 
   title = "Profilepage";
   private route$ : Subscription;
-  //get profile
-  private apiUrl = "http://localhost:8080/kwetter/api/profile/Klaartje";
   @Input() username;
 
 
-  constructor(protected httpClient: HttpClient, private route : ActivatedRoute) {
+  constructor(private route : ActivatedRoute) {
 
-  }
-
-  public createCORSRequest(method, url) {
-    var xhr = new XMLHttpRequest();
-    if ("withCredentials" in xhr) {
-      // XHR for Chrome/Firefox/Opera/Safari.
-      xhr.open(method, url, true);
-    }
-    else {
-      // CORS not supported.
-      xhr = null;
-    }
-    return xhr;
   }
 
   ngOnInit() {

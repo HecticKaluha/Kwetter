@@ -134,6 +134,20 @@ public class ProfileController
     }
 
     @GET
+    @Path("/mostrecent/{username}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getProfileLatestKweet(@PathParam("username") String username)
+    {
+        try{
+            return Response.ok(profileService.getLatestKweet(username)).build();
+        }
+        catch(CouldNotFetchLatestKweetFromDatabaseException e)
+        {
+            return Response.status(Response.Status.CONFLICT).entity(e.getMessage()).build();
+        }
+    }
+
+    @GET
     @Path("/followers/{username}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getProfileFollowers(@PathParam("username") String username)

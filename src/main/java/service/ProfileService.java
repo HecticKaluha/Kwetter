@@ -98,6 +98,9 @@ public class ProfileService
     public List<Kweet> getLatest(String username) throws CouldNotGetLatestKweets, CouldNotFetchLatestKweetFromDatabaseException {
         return profileDao.getLatest(username);
     }
+    public Kweet getLatestKweet(String username) throws CouldNotFetchLatestKweetFromDatabaseException {
+        return profileDao.getLatestKweet(username);
+    }
 
     public List<Profile> getAllProfiles() throws CouldNotGetListException
     {

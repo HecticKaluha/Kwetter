@@ -29,13 +29,14 @@
         <div class="profile">
           <div>
             <h3 class="title">Latest Kweet</h3>
-            <!--<ng-container *ngFor="let kweet of kweets" >-->
-              <div class="kweet flexbox kweet-border wrap column">
-                <a href="#"><p class="kweet-profile-name">Kweet.owner.username</p></a>
-                <p class="kweet-message">kweet.message</p>
-                <p class="kweet-postdate-text self_end">postdate: <span id="kweet-postdate">kweet.postDate</span></p>
-              </div>
-            <!--</ng-container>-->
+            <div *ngIf="!status"><p>You haven't posted anything yet!</p></div>
+            <div *ngIf="status">
+                <div class="kweet flexbox kweet-border wrap column">
+                  <a href="#"><p class="kweet-profile-name">{{mostRecentKweet.owner.username}}</p></a>
+                  <p class="kweet-message">{{mostRecentKweet.message}}</p>
+                  <p class="kweet-postdate-text self_end">postdate: <span id="kweet-postdate">{{mostRecentKweet.postDate}}</span></p>
+                </div>
+            </div>
           </div>
           <div class="flexbox wrap row around home-profile-followinfo">
             <div>
