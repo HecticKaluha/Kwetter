@@ -24,6 +24,7 @@ C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\dao\ProfileDaoJP
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\dao\KweetDaoImp.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\exceptions\CouldNotFindProfileException.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\exceptions\CouldNotCreateKweetException.java
+C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\controller\AccesControlResponseFilter.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\exceptions\CouldNotRoleBackException.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\controller\ProfileController.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\model\Role.java

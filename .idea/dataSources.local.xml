@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="kwetterdb@localhost" uuid="0503f655-bb65-4d0b-a00a-408e147d8876">
+    <data-source name="kwetterdb@localhost" uuid="75c1e35f-36e0-45e2-a132-1fe853a790d8">
       <database-info product="MySQL" version="5.5.5-10.1.31-MariaDB" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.45 ( Revision: 9131eefa398531c7dc98776e8a3fe839e544c5b2 )">
         <extra-name-characters>#@</extra-name-characters>
         <identifier-quote-string>`</identifier-quote-string>

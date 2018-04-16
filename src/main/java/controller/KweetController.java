@@ -27,15 +27,11 @@ public class KweetController
     {
         try{
             List<Kweet> kweets = kweetService.findAll();
-            return Response.ok(kweets).header("Access-Control-Allow-Origin", "*")
-                    .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
-                    .allow("OPTIONS").build();
+            return Response.ok(kweets).build();
         }
         catch(CouldNotGetListException e)
         {
-            return Response.status(Response.Status.CONFLICT).entity(e.getMessage()).header("Access-Control-Allow-Origin", "*")
-                    .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
-                    .allow("OPTIONS").build();
+            return Response.status(Response.Status.CONFLICT).entity(e.getMessage()).build();
         }
 
     }
@@ -48,15 +44,11 @@ public class KweetController
         try
         {
             Kweet kweet = kweetService.post(kweetBody.getMessage(), kweetBody.getUsername());
-            return Response.ok(kweet).header("Access-Control-Allow-Origin", "*")
-                    .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
-                    .allow("OPTIONS").build();
+            return Response.ok(kweet).build();
         }
         catch(CouldNotFindProfileException | CouldNotCreateKweetException | CouldNotRoleBackException e)
         {
-            return Response.status(Response.Status.CONFLICT).entity(e.getMessage()).header("Access-Control-Allow-Origin", "*")
-                    .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
-                    .allow("OPTIONS").build();
+            return Response.status(Response.Status.CONFLICT).entity(e.getMessage()).build();
         }
     }
 
@@ -67,15 +59,11 @@ public class KweetController
     {
         try{
             Kweet updatedKweet = kweetService.update(updateKweetBody.getId(), updateKweetBody.getMessage());
-            return Response.ok("gelukt").header("Access-Control-Allow-Origin", "*")
-                    .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
-                    .allow("OPTIONS").build();
+            return Response.ok("gelukt").build();
         }
         catch(KweetNotFoundException | NoContentToUpdateException e)
         {
-            return Response.status(Response.Status.CONFLICT).entity(e.getMessage()).header("Access-Control-Allow-Origin", "*")
-                    .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
-                    .allow("OPTIONS").build();
+            return Response.status(Response.Status.CONFLICT).entity(e.getMessage()).build();
         }
     }
     @DELETE
@@ -87,15 +75,11 @@ public class KweetController
         try
         {
             kweetService.delete(id);
-            return Response.ok("Kweet deleted").header("Access-Control-Allow-Origin", "*")
-                    .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
-                    .allow("OPTIONS").build();
+            return Response.ok("Kweet deleted").build();
         }
         catch(KweetNotFoundException | CouldNotDeleteKweetException e)
         {
-            return Response.status(Response.Status.CONFLICT).entity(e.getMessage()).header("Access-Control-Allow-Origin", "*")
-                    .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
-                    .allow("OPTIONS").build();
+            return Response.status(Response.Status.CONFLICT).entity(e.getMessage()).build();
         }
     }
 
@@ -107,15 +91,11 @@ public class KweetController
     {
         try{
             Kweet kweet = kweetService.find(id);
-            return Response.ok(kweet).header("Access-Control-Allow-Origin", "*")
-                    .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
-                    .allow("OPTIONS").build();
+            return Response.ok(kweet).build();
         }
         catch(KweetNotFoundException e)
         {
-            return Response.status(Response.Status.CONFLICT).entity(e.getMessage()).header("Access-Control-Allow-Origin", "*")
-                    .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
-                    .allow("OPTIONS").build();
+            return Response.status(Response.Status.CONFLICT).entity(e.getMessage()).build();
         }
     }
 }

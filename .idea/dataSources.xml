@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="kwetterdb@localhost" uuid="0503f655-bb65-4d0b-a00a-408e147d8876">
+    <data-source source="LOCAL" name="kwetterdb@localhost" uuid="75c1e35f-36e0-45e2-a132-1fe853a790d8">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>

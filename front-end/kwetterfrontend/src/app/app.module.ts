@@ -14,6 +14,7 @@ import { OwnprofileComponent } from './ownprofile/ownprofile.component';
 import { ProfiledataComponent } from './profiledata/profiledata.component';
 import {HttpClientModule} from '@angular/common/http';
 import { ProfileService } from './profile.service';
+import { KweetService } from './kweet.service';
 import { FollowingComponent } from './following/following.component';
 import { TrendsComponent } from './trends/trends.component';
 
@@ -31,7 +32,7 @@ import { TrendsComponent } from './trends/trends.component';
     OwnprofileComponent,
     ProfiledataComponent,
     FollowingComponent,
-    TrendsComponent
+    TrendsComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,7 +40,10 @@ import { TrendsComponent } from './trends/trends.component';
     FormsModule,
     AppRoutingModule
   ],
-  providers: [ProfileService],
+  providers: [
+    ProfileService,
+    KweetService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

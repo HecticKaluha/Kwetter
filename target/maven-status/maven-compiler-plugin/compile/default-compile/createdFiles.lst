@@ -2,6 +2,7 @@ exceptions\ParametersWereEmptyException.class
 exceptions\AddingToCollectionFailedException.class
 exceptions\AddigToDatabaseFailedException.class
 model\Kweet.class
+controller\AccesControlResponseFilter.class
 controller\JsonBodyClasses\KweetBody.class
 controller\JsonBodyClasses\CreateProfileBody.class
 exceptions\CouldNotFetchLatestKweetFromDatabaseException.class

@@ -10,8 +10,12 @@
     <div class="devide flexbox row wrap">
       <div class="left flexbox column" >
         <h2 class="title">What's happening</h2>
-        <label for="kweet"></label>
-        <textarea id="kweet" maxlength="140" name="kweet" rows="6" placeholder="140 characters to express yourself!" ></textarea>
+        <form (ngSubmit)="postKweet()">
+          <label for="kweet"></label>
+          <textarea [(ngModel)] = "value" id="kweet" maxlength="140" name="kweet" rows="6" placeholder="140 characters to express yourself!" ></textarea>
+          <input type="submit" value="Post Kweet!"/>
+        </form>
+
 
         <div id="tabnav" class="flexbox column wrap">
           <ul id="subpagemenu" class=" flexbox row wrap" routerLinkActive="active">
