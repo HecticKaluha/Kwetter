@@ -9,6 +9,8 @@ export class ProfileService {
   private getFollowingUrl = "http://localhost:8080/kwetter/api/profile/following";
   private getProfileDataUrl = "http://localhost:8080/kwetter/api/profile";
   private getMostRecentURL = "http://localhost:8080/kwetter/api/profile/mostrecent";
+  private getTimelineURL = "http://localhost:8080/kwetter/api/profile/timeline";
+
   constructor(protected httpClient: HttpClient) { }
 
   public getOwnKweets(profilename: String)
@@ -37,5 +39,7 @@ export class ProfileService {
   }
 
 
-
+  public getOwnTimeline(username: string) {
+    return this.httpClient.get(`${this.getTimelineURL}/${username}`);
+  }
 }

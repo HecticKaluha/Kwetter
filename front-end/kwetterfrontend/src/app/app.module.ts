@@ -17,6 +17,7 @@ import { ProfileService } from './profile.service';
 import { KweetService } from './kweet.service';
 import { FollowingComponent } from './following/following.component';
 import { TrendsComponent } from './trends/trends.component';
+import { TimelineComponent } from './timeline/timeline.component';
 
 
 
@@ -33,6 +34,7 @@ import { TrendsComponent } from './trends/trends.component';
     ProfiledataComponent,
     FollowingComponent,
     TrendsComponent,
+    TimelineComponent,
   ],
   imports: [
     BrowserModule,

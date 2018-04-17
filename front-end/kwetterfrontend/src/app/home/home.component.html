@@ -22,7 +22,8 @@
             <li class="nav-item active" ><a class="nav-link" >Timeline</a></li>
             <li class="nav-item"><a class="nav-link" >Mentions</a></li>
           </ul>
-          <app-ownkweets class="border"></app-ownkweets>
+          <app-timeline class="border" [username]="loggedInUser"></app-timeline>
+          <!--<app-ownkweets class="border"></app-ownkweets>-->
         </div>
       </div>
       <div class="right">

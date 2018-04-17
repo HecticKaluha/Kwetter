@@ -30,8 +30,12 @@ export class HomeComponent implements OnInit {
   }
 
   postKweet(){
-    this.kweetService.postKweet(this.value, this.loggedInUser).subscribe(res=> this.statusmessage = "Kweet succesfully posted",
-      (error) => this.statusmessage = "Something went wrong when posting your Kweet... Try again later.");
+    this.kweetService.postKweet(this.value, this.loggedInUser).subscribe(res=> {
+      this.statusmessage = "Kweet succesfully posted";
+        this.getMostRecentKweet(this.loggedInUser);
+      },
+        (error) => this.statusmessage = "Something went wrong when posting your Kweet... Try again later."
+    );
   }
 
   getMostRecentKweet(loggedInUser:string){
