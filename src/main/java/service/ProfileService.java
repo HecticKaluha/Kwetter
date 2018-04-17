@@ -110,4 +110,9 @@ public class ProfileService
     public List<UserGroup> getAllRoles() throws RoleNotFoundException, SQLException {
         return profileDao.getAllRoles();
     }
+
+    public List<Kweet> getTimeline(String username) throws CouldNotFetchLatestKweetFromDatabaseException, CouldNotFindProfileException {
+        Profile profile = findProfile(username);
+        return profileDao.getTimeline(profile);
+    }
 }

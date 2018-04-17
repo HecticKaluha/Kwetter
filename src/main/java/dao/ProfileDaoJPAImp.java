@@ -394,4 +394,22 @@ public class ProfileDaoJPAImp implements ProfileDao
         }
     }
 
+    @Override
+    public List<Kweet> getTimeline(Profile profile) throws CouldNotFetchLatestKweetFromDatabaseException {
+        try{
+            List<Kweet> ownTimeLine = em.createQuery("SELECT kweet FROM Kweet kweet WHERE kweet.owner.id = :id OR :profile Member of kweet.owner.following  ORDER BY kweet.postDate DESC")
+                    .setParameter("profile", profile).setParameter("id", profile.getId())
+                    .getResultList();
+            /*List<Kweet> ownTimeLine = em.createQuery("Select kweet from Kweet kweet where kweet.owner.id in " +
+                    "(SELECT profile.id FROM Profile profile WHERE profile )")
+                    .setParameter("id", id)
+                    .getResultList();*/
+            return ownTimeLine; // select profile id from profile where profile in owner.followers
+        }
+        catch(Exception e)
+        {
+            throw new CouldNotFetchLatestKweetFromDatabaseException("Could not fetch latest kweets of profile " + profile.getUsername() + " due to " + e.getMessage());
+        }
+    }
+
 }

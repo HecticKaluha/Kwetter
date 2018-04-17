@@ -215,6 +215,11 @@ public class ProfileDaoImp implements ProfileDao
     public Kweet getLatestKweet(String username) {
         return null;
     }
+
+    @Override
+    public List<Kweet> getTimeline(Profile profile) {
+        return null;
+    }
 }
 
 

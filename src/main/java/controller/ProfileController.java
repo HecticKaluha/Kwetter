@@ -175,5 +175,17 @@ public class ProfileController
         }
     }
 
-
+    @GET
+    @Path("/timeline/{username}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getTimeLine(@PathParam("username") String username)
+    {
+        try{
+            return Response.ok(profileService.getTimeline(username)).build();
+        }
+        catch(CouldNotFetchLatestKweetFromDatabaseException | CouldNotFindProfileException e)
+        {
+            return Response.status(Response.Status.CONFLICT).entity(e.getMessage()).build();
+        }
+    }
 }

@@ -54,5 +54,7 @@ public interface ProfileDao
     List<UserGroup> getAllRoles() throws SQLException, RoleNotFoundException;
 
     Kweet getLatestKweet(String username) throws CouldNotFetchLatestKweetFromDatabaseException;
+
+    List<Kweet> getTimeline(Profile profile) throws CouldNotFetchLatestKweetFromDatabaseException;
 }
 
