@@ -220,6 +220,16 @@ public class ProfileDaoImp implements ProfileDao
     public List<Kweet> getTimeline(Profile profile) {
         return null;
     }
+
+    @Override
+    public void authenticate(String username, String password) throws SecurityException {
+
+    }
+
+    @Override
+    public String issueToken(String login) {
+        return null;
+    }
 }
 
 

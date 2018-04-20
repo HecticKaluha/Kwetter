@@ -1,14 +1,21 @@
 package dao;
 
+import java.security.Key;
 import java.sql.*;
 import com.mysql.jdbc.StringUtils;
 import exceptions.*;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
 import model.Kweet;
 import model.Profile;
 import model.UserGroup;
 import qualifier.JPA;
+import util.DateUtil;
+import util.PasswordUtils;
 
+import javax.crypto.KeyGenerator;
 import javax.ejb.Stateless;
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
@@ -16,8 +23,12 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import javax.ws.rs.core.Context;
+import javax.ws.rs.core.UriInfo;
+import java.util.Date;
 
 @JPA
 @Stateless
@@ -26,6 +37,14 @@ public class ProfileDaoJPAImp implements ProfileDao
 
     @PersistenceContext(unitName = "KwetterPersistence")
     private EntityManager em;
+
+    @Inject
+    private KeyGenerator keyGenerator;
+    @Context
+    private UriInfo uriInfo;
+
+    @Inject
+    private DateUtil dateutil;
 
     private ProfileDaoJPAImp() {
         this.initProfileDaoImp();
@@ -412,4 +431,27 @@ public class ProfileDaoJPAImp implements ProfileDao
         }
     }
 
+    @Override
+    public void authenticate(String username, String password) throws SecurityException {
+        Profile profile = em.createQuery("SELECT u FROM User u WHERE u.login = :login AND u.password = :password", Profile.class)
+                .setParameter("login", username).setParameter("password", PasswordUtils.digestPassword(password))
+                .getSingleResult();
+
+        if (profile == null)
+            throw new SecurityException("Invalid user/password");
+    }
+
+    @Override
+    public String issueToken(String login) {
+        Key key = keyGenerator.generateKey();
+        String jwtToken = Jwts.builder()
+                .setSubject(login)
+                .setIssuer(uriInfo.getAbsolutePath().toString())
+                .setIssuedAt(new Date())
+                .setExpiration(dateutil.toDate(LocalDateTime.now().plusMinutes(15L)))
+                .signWith(SignatureAlgorithm.HS512, key)
+                .compact();
+        System.out.println("#### generating token for a key : " + jwtToken + " - " + key);
+        return jwtToken;
+    }
 }

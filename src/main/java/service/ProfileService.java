@@ -115,4 +115,14 @@ public class ProfileService
         Profile profile = findProfile(username);
         return profileDao.getTimeline(profile);
     }
+
+    public void authenticate(String login, String password) throws Exception {
+        profileDao.authenticate(login, password);
+    }
+
+    public String issueToken(String login)
+    {
+        return profileDao.issueToken(login);
+    }
+
 }

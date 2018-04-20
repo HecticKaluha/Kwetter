@@ -3,13 +3,19 @@ package controller;
 
 import controller.JsonBodyClasses.*;
 import exceptions.*;
+import filter.JWTTokenNeeded;
 import service.ProfileService;
 
+import javax.crypto.KeyGenerator;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+
+import static javax.ws.rs.core.HttpHeaders.AUTHORIZATION;
+import static javax.ws.rs.core.MediaType.APPLICATION_FORM_URLENCODED;
+import static javax.ws.rs.core.Response.Status.UNAUTHORIZED;
 
 @RequestScoped
 @Path("/profile")
@@ -18,6 +24,29 @@ public class ProfileController
 {
     @Inject
     private ProfileService profileService;
+
+
+    @POST
+    @Path("/login")
+    @Consumes(APPLICATION_FORM_URLENCODED)
+    public Response authenticateUser(@FormParam("login") String login,
+                                     @FormParam("password") String password) {
+        try {
+
+            // Authenticate the user using the credentials provided
+            profileService.authenticate(login, password);
+
+            // Issue a token for the user
+            String token = profileService.issueToken(login);
+
+            // Return the token on the response
+            return Response.ok().header(AUTHORIZATION, "Bearer " + token).build();
+
+        } catch (Exception e) {
+            return Response.status(UNAUTHORIZED).build();
+        }
+    }
+
 
     @GET
     @Path("/{username}")
@@ -66,6 +95,7 @@ public class ProfileController
 
     @PUT
     @Path("/follow/{usernameToFollow}")
+    @JWTTokenNeeded
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response followProfile(@PathParam("usernameToFollow") String usernameToFollow, FollowProfileBody profileBody)
