@@ -1,10 +1,11 @@
 package filter;
 
 import io.jsonwebtoken.Jwts;
+import util.KeyGenerator;
 
 import javax.annotation.Priority;
-import javax.crypto.KeyGenerator;
 import javax.inject.Inject;
+import javax.ws.rs.NotAuthorizedException;
 import javax.ws.rs.Priorities;
 import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.container.ContainerRequestFilter;
@@ -18,6 +19,7 @@ import java.security.Key;
 @JWTTokenNeeded
 @Priority(Priorities.AUTHENTICATION)
 public class JWTTokenNeededFilter implements ContainerRequestFilter {
+
     @Inject
     private KeyGenerator keyGenerator;
 
@@ -26,6 +28,13 @@ public class JWTTokenNeededFilter implements ContainerRequestFilter {
 
         // Get the HTTP Authorization header from the request
         String authorizationHeader = requestContext.getHeaderString(HttpHeaders.AUTHORIZATION);
+        System.out.println("#### authorizationHeader : " + authorizationHeader);
+
+        // Check if the HTTP Authorization header is present and formatted correctly
+        if (authorizationHeader == null || !authorizationHeader.startsWith("Bearer ")) {
+            System.out.println("#### invalid authorizationHeader : " + authorizationHeader);
+            throw new NotAuthorizedException("Authorization header must be provided");
+        }
 
         // Extract the token from the HTTP Authorization header
         String token = authorizationHeader.substring("Bearer".length()).trim();
@@ -43,3 +52,4 @@ public class JWTTokenNeededFilter implements ContainerRequestFilter {
         }
     }
 }
+

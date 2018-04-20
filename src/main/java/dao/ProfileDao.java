@@ -1,6 +1,5 @@
 package dao;
 
-import com.sun.deploy.security.SessionCertStore;
 import exceptions.*;
 import model.Kweet;
 import model.Profile;

@@ -1,7 +1,10 @@
 package dao;
 
+import java.nio.charset.StandardCharsets;
 import java.security.Key;
 import java.sql.*;
+
+import com.google.common.hash.Hashing;
 import com.mysql.jdbc.StringUtils;
 import exceptions.*;
 import io.jsonwebtoken.Jwts;
@@ -11,9 +14,9 @@ import model.Profile;
 import model.UserGroup;
 import qualifier.JPA;
 import util.DateUtil;
+import util.KeyGenerator;
 import util.PasswordUtils;
 
-import javax.crypto.KeyGenerator;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
@@ -433,8 +436,10 @@ public class ProfileDaoJPAImp implements ProfileDao
 
     @Override
     public void authenticate(String username, String password) throws SecurityException {
-        Profile profile = em.createQuery("SELECT u FROM User u WHERE u.login = :login AND u.password = :password", Profile.class)
-                .setParameter("login", username).setParameter("password", PasswordUtils.digestPassword(password))
+        Profile profile = em.createQuery("SELECT p FROM Profile p WHERE p.username = :login AND p.password = :password", Profile.class)
+                .setParameter("login", username).setParameter("password", Hashing.sha256()
+                        .hashString(password, StandardCharsets.UTF_8)
+                        .toString())
                 .getSingleResult();
 
         if (profile == null)

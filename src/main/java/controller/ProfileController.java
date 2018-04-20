@@ -6,7 +6,6 @@ import exceptions.*;
 import filter.JWTTokenNeeded;
 import service.ProfileService;
 
-import javax.crypto.KeyGenerator;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.ws.rs.*;
