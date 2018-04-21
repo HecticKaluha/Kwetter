@@ -451,7 +451,9 @@ public class ProfileDaoJPAImp implements ProfileDao
         Key key = keyGenerator.generateKey();
         String jwtToken = Jwts.builder()
                 .setSubject(login)
-                .setIssuer(uriInfo.getAbsolutePath().toString())
+//                .setIssuer(uriInfo.getAbsolutePath().toString() )
+                //TODO: Set the correct value on the issuer (what value should be assigned to the issuer?)
+                .setIssuer(login)
                 .setIssuedAt(new Date())
                 .setExpiration(dateutil.toDate(LocalDateTime.now().plusMinutes(15L)))
                 .signWith(SignatureAlgorithm.HS512, key)
