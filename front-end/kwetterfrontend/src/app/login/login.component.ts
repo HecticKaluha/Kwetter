@@ -31,6 +31,7 @@ export class LoginComponent implements OnInit {
         .subscribe(
           () => {
             console.log("User is logged in");
+            this.profileservice.setLoggedInUser(val.email);
             this.router.navigateByUrl('/home/'+ val.email);
           }
         );

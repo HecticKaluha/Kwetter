@@ -170,7 +170,7 @@ public class ProfileController
     {
         try{
             Kweet kweet = profileService.getLatestKweet(username);
-            return Response.ok(profileService.getLatestKweet(username)).build();
+            return Response.ok(kweet).build();
         }
         catch(CouldNotFetchLatestKweetFromDatabaseException e)
         {

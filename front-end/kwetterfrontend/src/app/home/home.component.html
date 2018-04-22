@@ -1,56 +1,64 @@
 <div id="main-box">
+
   <div id="main" class="flexbox column wrap">
-    <div class="top between flexbox row wrap">
-      <input type="text" placeholder="Search...">
-      <select>
-        <option selected="true">Profile</option>
-        <option>Logout</option>
-      </select>
+    <div *ngIf="!loggedInUser">
+      <h4>You need to log in to view this page! Click <a [routerLink]="['login']">here to log in</a></h4>
     </div>
-    <div class="devide flexbox row wrap">
-      <div class="left flexbox column" >
-        <h2 class="title">What's happening</h2>
-        <form (ngSubmit)="postKweet()">
-          <label for="kweet"></label>
-          <textarea [(ngModel)] = "value" id="kweet" maxlength="140" name="kweet" rows="6" placeholder="140 characters to express yourself!" ></textarea>
-          <input type="submit" value="Post Kweet!"/>
-        </form>
-
-
-        <div id="tabnav" class="flexbox column wrap">
-          <ul id="subpagemenu" class=" flexbox row wrap" routerLinkActive="active">
-            <li class="nav-item active" ><a class="nav-link" >Timeline</a></li>
-            <li class="nav-item"><a class="nav-link" >Mentions</a></li>
-          </ul>
-          <app-timeline class="border" [username]="loggedInUser"></app-timeline>
-          <!--<app-ownkweets class="border"></app-ownkweets>-->
-        </div>
+    <div *ngIf="loggedInUser != null">
+      <div class="top between flexbox row wrap">
+        <input type="text" placeholder="Search...">
+        <select (change)="onChange($event.target.value)">
+          <option selected="true">--Select an option--</option>
+          <option>{{loggedInUser}}</option>
+          <option>Logout</option>
+        </select>
       </div>
-      <div class="right">
-        <div class="profile">
-          <div>
-            <h3 class="title">Latest Kweet</h3>
-            <div *ngIf="!status"><p>You haven't posted anything yet!</p></div>
-            <div *ngIf="status">
+      <div class="devide flexbox row wrap">
+        <div class="left flexbox column">
+          <h2 class="title">What's happening</h2>
+          <form (ngSubmit)="postKweet()">
+            <label for="kweet"></label>
+            <textarea [(ngModel)]="value" id="kweet" maxlength="140" name="kweet" rows="6"
+                      placeholder="140 characters to express yourself!"></textarea>
+            <input type="submit" value="Post Kweet!"/>
+          </form>
+
+          <div id="tabnav" class="flexbox column wrap">
+            <ul id="subpagemenu" class=" flexbox row wrap" routerLinkActive="active">
+              <li class="nav-item active"><a class="nav-link">Timeline</a></li>
+              <li class="nav-item"><a class="nav-link">Mentions</a></li>
+            </ul>
+            <app-timeline class="border" [username]="loggedInUser"></app-timeline>
+            <!--<app-ownkweets class="border"></app-ownkweets>-->
+          </div>
+        </div>
+        <div class="right">
+          <div class="profile">
+            <div>
+              <h3 class="title">Latest Kweet</h3>
+              <div *ngIf="!status"><p>You haven't posted anything yet!</p></div>
+              <div *ngIf="status">
                 <div class="kweet flexbox kweet-border wrap column">
                   <a href="#"><p class="kweet-profile-name">{{mostRecentKweet.owner.username}}</p></a>
                   <p class="kweet-message">{{mostRecentKweet.message}}</p>
-                  <p class="kweet-postdate-text self_end">postdate: <span id="kweet-postdate">{{mostRecentKweet.postDate}}</span></p>
+                  <p class="kweet-postdate-text self_end">postdate: <span id="kweet-postdate">{{mostRecentKweet.postDate}}</span>
+                  </p>
                 </div>
+              </div>
             </div>
-          </div>
-          <div class="flexbox wrap row around home-profile-followinfo">
-            <div>
-              <app-followers [username]="loggedInUser"></app-followers>
+            <div class="flexbox wrap row around home-profile-followinfo">
+              <div>
+                <app-followers [username]="loggedInUser"></app-followers>
+              </div>
+              <div>
+                <app-following [username]="loggedInUser"></app-following>
+              </div>
             </div>
-            <div>
-              <app-following [username]="loggedInUser"></app-following>
-            </div>
-          </div>
           </div>
           <app-trends></app-trends>
         </div>
       </div>
     </div>
   </div>
+</div>
 

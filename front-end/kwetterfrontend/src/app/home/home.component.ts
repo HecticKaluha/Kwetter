@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {KweetService} from "../kweet.service";
 import {ProfileService} from "../profile.service";
-import {ActivatedRoute, Params} from "@angular/router";
+import {ActivatedRoute, Params, Router} from "@angular/router";
 import {Subscription} from "rxjs/Subscription";
 
 
@@ -22,19 +22,22 @@ export class HomeComponent implements OnInit {
 
   mostRecentKweet:any = {};
   private status: boolean;
-  constructor(protected kweetService: KweetService,protected profileService: ProfileService, private route : ActivatedRoute) { }
+  constructor(protected kweetService: KweetService,protected profileService: ProfileService, private route : ActivatedRoute,  private router: Router) { }
 
   ngOnInit() {
+    console.log("loggedinuser ", this.loggedInUser)
     this.route$ = this.route.params.subscribe(
       (params : Params) => {
         this.loggedInUser = params["username"];
       }
     );
 
-    this.getMostRecentKweet(this.loggedInUser);
+    if(this.loggedInUser != null)
+      this.getMostRecentKweet(this.loggedInUser);
   }
   ngOnChanges() {
-    this.getMostRecentKweet(this.loggedInUser);
+    if(this.loggedInUser != null)
+      this.getMostRecentKweet(this.loggedInUser);
   }
 
   public opentab(tab: string){
@@ -60,6 +63,17 @@ export class HomeComponent implements OnInit {
         this.statusmessage = "Something went wrong when retrieving the most recent kweet... Try again later.";
         this.status = false;
       });
+  }
+  public onChange(value){
+    if(value == "Logout")
+    {
+      console.log("uitgelogd");
+    }
+    else{
+
+      this.router.navigateByUrl('/profile/'+ value);
+      console.log("route naar profile");
+    }
   }
 
 }

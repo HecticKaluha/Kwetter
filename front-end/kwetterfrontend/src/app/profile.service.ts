@@ -4,6 +4,8 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 @Injectable()
 export class ProfileService {
 
+  private loggedInUser:string;
+
   private getOwnKweetsUrl = "http://localhost:8080/kwetter/api/profile/ownkweets";
   private getFollowersUrl = "http://localhost:8080/kwetter/api/profile/followers";
   private getFollowingUrl = "http://localhost:8080/kwetter/api/profile/following";
@@ -53,5 +55,12 @@ export class ProfileService {
     // body.set('password', password);
     let body = `login=${login}&password=${password}`;
     return this.httpClient.post(`${this.postLoginURL}`, body, {headers: this.headers});
+  }
+
+  public getLoggedInUser(){
+    return this.loggedInUser;
+  }
+  public setLoggedInUser(loggedInUser){
+    this.loggedInUser = loggedInUser;
   }
 }
