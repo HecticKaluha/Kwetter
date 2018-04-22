@@ -13,7 +13,10 @@ export class ProfileService {
   private getMostRecentURL = "http://localhost:8080/kwetter/api/profile/mostrecent";
   private getTimelineURL = "http://localhost:8080/kwetter/api/profile/timeline";
   private postLoginURL = "http://localhost:8080/kwetter/api/profile/login";
+  private getAllProfilesURL = "http://localhost:8080/kwetter/api/profile/";
+  private followProfileURL = "http://localhost:8080/kwetter/api/profile/follow";
   private headers = {'Content-Type': 'application/x-www-form-urlencoded'};
+
 
   constructor(protected httpClient: HttpClient) { }
 
@@ -62,5 +65,16 @@ export class ProfileService {
   }
   public setLoggedInUser(loggedInUser){
     this.loggedInUser = loggedInUser;
+  }
+
+  public getAllProfiles(){
+    return this.httpClient.get(`${this.getAllProfilesURL}`);
+  }
+
+  public follow(profileToFollow:string){
+    //TODO: Actually send LoggedinUser
+    let body = {username: this.loggedInUser};
+    console.log(body);
+    return this.httpClient.post(`${this.followProfileURL}/${profileToFollow}`, body);
   }
 }

@@ -1,3 +1,20 @@
-<p>
-  profiles works!
-</p>
+<div id="main-box">
+  <div id="main" class="flexbox column wrap">
+    <h2>All profiles</h2>
+    <div *ngIf="!areprofiles">
+      <p>There are no profiles yet. If there are any, they show up here.</p>
+    </div>
+    <div *ngIf="areprofiles">
+      <div class="flexbox column wrap">
+        <ng-container *ngFor="let profile of profiles">
+          <div class="flexbox wrap row between profile">
+            <a [routerLink]="['/profile/', profile.username]" class="flexbox column wrap">
+              <img src="{{profile.profilePictureUrl}}" >
+              <span class="username" class="text-center">{{profile.username}}</span>
+            </a>
+            <input class="self_center" type="button" (click)="follow(profile.username)" value="Follow {{profile.username}}!">
+          </div>
+        </ng-container>
+      </div>
+    </div>
+</div>

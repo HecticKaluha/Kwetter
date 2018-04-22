@@ -1,0 +1,13 @@
+img{
+  width:150px;
+  height:150px;
+  background-size: cover;
+}
+input{
+  max-height: 21px;
+}
+.profile{
+  margin:5px;
+  border:1px solid #f2f2f2;
+  padding: 5px;
+}

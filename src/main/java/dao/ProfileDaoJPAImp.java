@@ -373,7 +373,7 @@ public class ProfileDaoJPAImp implements ProfileDao
         }
         catch(Exception e)
         {
-            throw new CouldNotGetListException("Could not retrieve all from database");
+            throw new CouldNotGetListException("Could not retrieve all profiles from database");
         }
     }
 

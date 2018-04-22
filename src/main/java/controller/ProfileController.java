@@ -47,6 +47,19 @@ public class ProfileController
         }
     }
 
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getAllProfiles()
+    {
+        try{
+            //return Response.ok(username).build();
+            return Response.ok(profileService.getAllProfiles()).build();
+        }
+        catch(/*CouldNotFindProfileException*/ Exception e)
+        {
+            return Response.status(Response.Status.CONFLICT).entity(e.getMessage()).build();
+        }
+    }
 
     @GET
     @Path("/{username}")
