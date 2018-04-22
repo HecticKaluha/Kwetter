@@ -1,0 +1,16 @@
+<form [formGroup]="form" class="center middle loginform flexbox column wrap">
+  <h2>Login</h2>
+    <div class="form-field flexbox row wrap">
+      <label>Username:</label>
+      <input name="email" formControlName="email">
+    </div>
+    <div class="form-field flexbox row wrap">
+      <label>Password:</label>
+      <input name="password" formControlName="password"
+             type="password">
+    </div>
+  <div class="form-buttons">
+    <button class="button button-primary"
+            (click)="login()">Login</button>
+  </div>
+</form>

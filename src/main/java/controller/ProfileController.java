@@ -4,6 +4,7 @@ package controller;
 import controller.JsonBodyClasses.*;
 import exceptions.*;
 import filter.JWTTokenNeeded;
+import model.Kweet;
 import service.ProfileService;
 
 import javax.enterprise.context.RequestScoped;
@@ -168,6 +169,7 @@ public class ProfileController
     public Response getProfileLatestKweet(@PathParam("username") String username)
     {
         try{
+            Kweet kweet = profileService.getLatestKweet(username);
             return Response.ok(profileService.getLatestKweet(username)).build();
         }
         catch(CouldNotFetchLatestKweetFromDatabaseException e)

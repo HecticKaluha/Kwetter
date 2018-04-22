@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 
 @Injectable()
 export class ProfileService {
@@ -10,6 +10,8 @@ export class ProfileService {
   private getProfileDataUrl = "http://localhost:8080/kwetter/api/profile";
   private getMostRecentURL = "http://localhost:8080/kwetter/api/profile/mostrecent";
   private getTimelineURL = "http://localhost:8080/kwetter/api/profile/timeline";
+  private postLoginURL = "http://localhost:8080/kwetter/api/profile/login";
+  private headers = {'Content-Type': 'application/x-www-form-urlencoded'};
 
   constructor(protected httpClient: HttpClient) { }
 
@@ -41,5 +43,15 @@ export class ProfileService {
 
   public getOwnTimeline(username: string) {
     return this.httpClient.get(`${this.getTimelineURL}/${username}`);
+  }
+
+  public login(login:string, password:string){
+    //TODO: shareReplay() to prevent the receiver of this Observable from accidentally triggering multiple POST requests due to multiple subscriptions.
+    console.log("Aangekomen")
+    // let body = new URLSearchParams();
+    // body.set('login', login);
+    // body.set('password', password);
+    let body = `login=${login}&password=${password}`;
+    return this.httpClient.post(`${this.postLoginURL}`, body, {headers: this.headers});
   }
 }
