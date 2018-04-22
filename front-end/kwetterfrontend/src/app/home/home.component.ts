@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {KweetService} from "../kweet.service";
 import {ProfileService} from "../profile.service";
+import {ActivatedRoute, Params} from "@angular/router";
+import {Subscription} from "rxjs/Subscription";
 
 
 @Component({
@@ -13,12 +15,22 @@ export class HomeComponent implements OnInit {
   private value;
   private result;
   private statusmessage: string;
-  private loggedInUser = "Hans";
+  private loggedInUser;
+
+  private route$ : Subscription;
+  @Input() username;
+
   mostRecentKweet:any = {};
   private status: boolean;
-  constructor(protected kweetService: KweetService,protected profileService: ProfileService) { }
+  constructor(protected kweetService: KweetService,protected profileService: ProfileService, private route : ActivatedRoute) { }
 
   ngOnInit() {
+    this.route$ = this.route.params.subscribe(
+      (params : Params) => {
+        this.loggedInUser = params["username"];
+      }
+    );
+
     this.getMostRecentKweet(this.loggedInUser);
   }
   ngOnChanges() {

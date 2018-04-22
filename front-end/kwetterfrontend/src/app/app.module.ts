@@ -19,6 +19,7 @@ import { FollowingComponent } from './following/following.component';
 import { TrendsComponent } from './trends/trends.component';
 import { TimelineComponent } from './timeline/timeline.component';
 import { LoginComponent } from './login/login.component';
+import { ProfilesComponent } from './profiles/profiles.component';
 
 
 
@@ -37,6 +38,7 @@ import { LoginComponent } from './login/login.component';
     TrendsComponent,
     TimelineComponent,
     LoginComponent,
+    ProfilesComponent,
   ],
   imports: [
     BrowserModule,
