@@ -12,7 +12,7 @@ import { OwnkweetsComponent } from './ownkweets/ownkweets.component';
 import { FollowersComponent } from './followers/followers.component';
 import { OwnprofileComponent } from './ownprofile/ownprofile.component';
 import { ProfiledataComponent } from './profiledata/profiledata.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { ProfileService } from './profile.service';
 import { KweetService } from './kweet.service';
 import { FollowingComponent } from './following/following.component';
@@ -20,6 +20,7 @@ import { TrendsComponent } from './trends/trends.component';
 import { TimelineComponent } from './timeline/timeline.component';
 import { LoginComponent } from './login/login.component';
 import { ProfilesComponent } from './profiles/profiles.component';
+import {TokenInterceptor} from "./auth/token.interceptor";
 
 
 
@@ -48,6 +49,11 @@ import { ProfilesComponent } from './profiles/profiles.component';
     ReactiveFormsModule
   ],
   providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    },
     ProfileService,
     KweetService
   ],

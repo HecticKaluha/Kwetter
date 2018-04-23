@@ -436,14 +436,17 @@ public class ProfileDaoJPAImp implements ProfileDao
 
     @Override
     public void authenticate(String username, String password) throws SecurityException {
-        Profile profile = em.createQuery("SELECT p FROM Profile p WHERE p.username = :login AND p.password = :password", Profile.class)
-                .setParameter("login", username).setParameter("password", Hashing.sha256()
-                        .hashString(password, StandardCharsets.UTF_8)
-                        .toString())
-                .getSingleResult();
+        try{
+            Profile profile = em.createQuery("SELECT p FROM Profile p WHERE p.username = :login AND p.password = :password", Profile.class)
+                    .setParameter("login", username).setParameter("password", Hashing.sha256()
+                            .hashString(password, StandardCharsets.UTF_8)
+                            .toString())
+                    .getSingleResult();
+        }
+        catch(Exception e){
+            throw new SecurityException("Invalid user/password : " + e.getMessage());
+        }
 
-        if (profile == null)
-            throw new SecurityException("Invalid user/password");
     }
 
     @Override

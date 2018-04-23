@@ -109,8 +109,14 @@ public class ProfileService {
         return profileDao.getTimeline(profile);
     }
 
-    public void authenticate(String login, String password) throws Exception {
-        profileDao.authenticate(login, password);
+    public void authenticate(String login, String password) throws SecurityException {
+
+        try{
+            profileDao.authenticate(login, password);
+        }
+        catch(Exception e){
+            throw new SecurityException("Invalid user/password : " + e.getMessage());
+        }
     }
 
     public String issueToken(String login) {

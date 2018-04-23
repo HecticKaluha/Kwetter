@@ -29,6 +29,7 @@ public class ProfileController
     @POST
     @Path("/login")
     @Consumes(APPLICATION_FORM_URLENCODED)
+    @Produces(APPLICATION_FORM_URLENCODED)
     public Response authenticateUser(@FormParam("login") String login,
                                      @FormParam("password") String password) {
         try {
@@ -41,7 +42,6 @@ public class ProfileController
 
             // Return the token on the response
             return Response.ok().header(AUTHORIZATION, "Bearer " + token).build();
-
         } catch (Exception e) {
             return Response.status(UNAUTHORIZED).build();
         }

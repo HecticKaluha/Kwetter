@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {tokenNotExpired} from "angular2-jwt";
+import 'rxjs/add/operator/map';
+import {toPromise} from "rxjs/operator/toPromise";
 
 @Injectable()
 export class ProfileService {
@@ -17,8 +20,12 @@ export class ProfileService {
   private followProfileURL = "http://localhost:8080/kwetter/api/profile/follow";
   private headers = {'Content-Type': 'application/x-www-form-urlencoded'};
 
+  public token: string;
 
-  constructor(protected httpClient: HttpClient) { }
+  constructor(protected httpClient: HttpClient) {
+    var currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    this.token = currentUser && currentUser.token;
+  }
 
   public getOwnKweets(profilename: String)
   {
@@ -53,15 +60,30 @@ export class ProfileService {
   public login(login:string, password:string){
     //TODO: shareReplay() to prevent the receiver of this Observable from accidentally triggering multiple POST requests due to multiple subscriptions.
     console.log("Aangekomen")
-    // let body = new URLSearchParams();
-    // body.set('login', login);
-    // body.set('password', password);
+
     let body = `login=${login}&password=${password}`;
-    return this.httpClient.post(`${this.postLoginURL}`, body, {headers: this.headers});
+    return this.httpClient.post(`${this.postLoginURL}`, body, {headers: this.headers}).subscribe((response: Response) => {
+      // login successful if there's a jwt token in the response
+      console.log("res", response.json());
+      let token =  response.headers.get('AUTHORIZATION');
+      console.log("token", token);
+      if(token != null)
+      {
+        this.token = token;
+        localStorage.setItem('currentUser', JSON.stringify({ username: login, token: token }));
+        localStorage.setItem('loggedinuser', login);
+        localStorage.setItem('token', token);
+        console.log(token);
+        return true;
+      }
+      else {
+        return false;
+      }
+    });
   }
 
   public getLoggedInUser(){
-    return this.loggedInUser;
+    return  localStorage.getItem('loggedinuser');
   }
   public setLoggedInUser(loggedInUser){
     this.loggedInUser = loggedInUser;
@@ -76,5 +98,17 @@ export class ProfileService {
     let body = {username: this.loggedInUser};
     console.log(body);
     return this.httpClient.post(`${this.followProfileURL}/${profileToFollow}`, body);
+  }
+
+  public getToken(): string {
+    return localStorage.getItem('token');
+  }
+
+  public isAuthenticated(): boolean {
+    // get the token
+    const token = this.getToken();
+    // return a boolean reflecting
+    // whether or not the token is expired
+    return tokenNotExpired(null, token);
   }
 }
