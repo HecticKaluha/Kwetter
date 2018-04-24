@@ -41,7 +41,9 @@ public class ProfileController
             String token = profileService.issueToken(login);
 
             // Return the token on the response
-            return Response.ok().header(AUTHORIZATION, "Bearer " + token).build();
+            return Response.ok("\"" + token + "\"")
+                    //.header(AUTHORIZATION, "Bearer " + token)
+                    .build();
         } catch (Exception e) {
             return Response.status(UNAUTHORIZED).build();
         }

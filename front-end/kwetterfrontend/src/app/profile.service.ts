@@ -62,10 +62,12 @@ export class ProfileService {
     console.log("Aangekomen")
 
     let body = `login=${login}&password=${password}`;
-    return this.httpClient.post(`${this.postLoginURL}`, body, {headers: this.headers}).subscribe((response: Response) => {
+    return this.httpClient.post(`${this.postLoginURL}`, body, {headers: this.headers, observe:'response'}).subscribe((res) => {
       // login successful if there's a jwt token in the response
-      console.log("res", response.json());
-      let token =  response.headers.get('AUTHORIZATION');
+      console.log("res", res);
+      console.log("body", res.body);
+      //let token =  res.headers.get('AUTHORIZATION');
+      let token:string =  res.body.toString();
       console.log("token", token);
       if(token != null)
       {
@@ -95,7 +97,7 @@ export class ProfileService {
 
   public follow(profileToFollow:string){
     //TODO: Actually send LoggedinUser
-    let body = {username: this.loggedInUser};
+    let body = {username: localStorage.getItem("loggedinuser")};
     console.log(body);
     return this.httpClient.post(`${this.followProfileURL}/${profileToFollow}`, body);
   }
