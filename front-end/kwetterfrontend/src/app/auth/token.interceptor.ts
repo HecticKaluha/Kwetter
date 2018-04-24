@@ -17,7 +17,7 @@ export class TokenInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const headers = new HttpHeaders({
-      'Authorization': 'Bearer \'' + this.auth.getToken().toString() + '\'',
+      'Authorization': 'Bearer ' + this.auth.getToken().toString(),
       'Content-Type': 'application/json'
     });
     console.log("headers zijn", headers);

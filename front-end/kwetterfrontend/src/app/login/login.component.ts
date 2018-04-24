@@ -27,14 +27,7 @@ export class LoginComponent implements OnInit {
     const val = this.form.value;
 
     if (val.email && val.password) {
-      if(this.profileservice.login(val.email, val.password)) {
-        //console.log("User is logged in");
-        //this.router.navigateByUrl('/home/'+ this.profileservice.getLoggedInUser());
-      }
-      else{
-        // console.log("Not logged in");
-        // this.router.navigateByUrl('/login/'+ this.profileservice.getLoggedInUser());
-      }
+      this.profileservice.login(val.email, val.password);
     }
   }
 

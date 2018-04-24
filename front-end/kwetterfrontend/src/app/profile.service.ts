@@ -71,18 +71,16 @@ export class ProfileService {
         this.router.navigateByUrl('/home/'+ this.getLoggedInUser());
         return true;
       }
-      if(res.status == 401)
-      {
-        console.log("Not logged in");
-        this.router.navigateByUrl('/login/');
-        return false;
+    },
+      err => {
+        if(err.status == 401)
+        {
+          console.log("Not logged in");
+          alert("Not logged in!");
+          return false;
+        }
       }
-      else {
-        console.log("Not logged in");
-        this.router.navigateByUrl('/login/');
-        return false;
-      }
-    });
+    );
   }
 
   public getLoggedInUser(){

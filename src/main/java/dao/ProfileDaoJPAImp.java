@@ -444,7 +444,7 @@ public class ProfileDaoJPAImp implements ProfileDao
                     .getSingleResult();
         }
         catch(Exception e){
-            throw new SecurityException("Invalid user/password : " + e.getMessage());
+            throw new SecurityException("Invalid user/password");
         }
 
     }

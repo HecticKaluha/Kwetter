@@ -110,12 +110,11 @@ public class ProfileService {
     }
 
     public void authenticate(String login, String password) throws SecurityException {
-
         try{
             profileDao.authenticate(login, password);
         }
         catch(Exception e){
-            throw new SecurityException("Invalid user/password : " + e.getMessage());
+            throw new SecurityException("Invalid user/password");
         }
     }
 
