@@ -41,7 +41,7 @@ public class ProfileController
 
             // Return the token on the response
             return Response.ok("\"" + token + "\"")
-                    .header(AUTHORIZATION, "" + token + "")
+                    .header(AUTHORIZATION, "" + token + "\"")
                     .build();
         } catch (Exception e) {
             return Response.status(UNAUTHORIZED).build();
@@ -117,7 +117,7 @@ public class ProfileController
         try{
             if(profileService.followUser(profileService.findProfile(usernameToFollow), profileService.findProfile(profileBody.getUsername())))
             {
-                return Response.ok(profileBody.getUsername() + " volgt nu "+ usernameToFollow).build();
+                return Response.ok().build();
             }
             else{
                 throw new UnableToFollowException(profileBody.getUsername() + " was unable to follow " + usernameToFollow);
