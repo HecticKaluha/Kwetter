@@ -3,6 +3,7 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {tokenNotExpired} from "angular2-jwt";
 import 'rxjs/add/operator/map';
 import {toPromise} from "rxjs/operator/toPromise";
+import {Router} from "@angular/router";
 
 @Injectable()
 export class ProfileService {
@@ -22,7 +23,7 @@ export class ProfileService {
 
   public token: string;
 
-  constructor(protected httpClient: HttpClient) {
+  constructor(protected httpClient: HttpClient, private router: Router) {
     var currentUser = JSON.parse(localStorage.getItem('currentUser'));
     this.token = currentUser && currentUser.token;
   }
@@ -59,13 +60,14 @@ export class ProfileService {
 
   public login(login:string, password:string){
     //TODO: shareReplay() to prevent the receiver of this Observable from accidentally triggering multiple POST requests due to multiple subscriptions.
-    console.log("Aangekomen")
 
     let body = `login=${login}&password=${password}`;
     return this.httpClient.post(`${this.postLoginURL}`, body, {headers: this.headers, observe:'response'}).subscribe((res) => {
       // login successful if there's a jwt token in the response
       console.log("res", res);
+      console.log("status", res.headers.get("status") );
       console.log("body", res.body);
+      let status:number = +res.headers.get("status");
       //let token =  res.headers.get('AUTHORIZATION');
       let token:string =  res.body.toString();
       console.log("token", token);
@@ -75,10 +77,19 @@ export class ProfileService {
         localStorage.setItem('currentUser', JSON.stringify({ username: login, token: token }));
         localStorage.setItem('loggedinuser', login);
         localStorage.setItem('token', token);
-        console.log(token);
+        console.log("logged in");
+        this.router.navigateByUrl('/home/'+ this.getLoggedInUser());
         return true;
       }
+      if(status == 401)
+      {
+        console.log("Not logged in");
+        this.router.navigateByUrl('/login/');
+        return false;
+      }
       else {
+        console.log("Not logged in");
+        this.router.navigateByUrl('/login/');
         return false;
       }
     });
