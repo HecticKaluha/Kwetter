@@ -19,6 +19,7 @@ export class ProfileService {
   private postLoginURL = "http://localhost:8080/kwetter/api/profile/login";
   private getAllProfilesURL = "http://localhost:8080/kwetter/api/profile/";
   private followProfileURL = "http://localhost:8080/kwetter/api/profile/follow";
+
   private headers = {'Content-Type': 'application/x-www-form-urlencoded'};
 
   public token: string;
@@ -63,13 +64,8 @@ export class ProfileService {
 
     let body = `login=${login}&password=${password}`;
     return this.httpClient.post(`${this.postLoginURL}`, body, {headers: this.headers, observe:'response'}).subscribe((res) => {
-      // login successful if there's a jwt token in the response
-      console.log("res", res);
-      console.log("status", res.headers.get("status") );
-      console.log("body", res.body);
-      let status:number = +res.headers.get("status");
-      //let token =  res.headers.get('AUTHORIZATION');
-      let token:string =  res.body.toString();
+      console.log("status", res.status);
+      let token =  res.headers.get('Authorization');
       console.log("token", token);
       if(token != null)
       {
@@ -81,7 +77,7 @@ export class ProfileService {
         this.router.navigateByUrl('/home/'+ this.getLoggedInUser());
         return true;
       }
-      if(status == 401)
+      if(res.status == 401)
       {
         console.log("Not logged in");
         this.router.navigateByUrl('/login/');

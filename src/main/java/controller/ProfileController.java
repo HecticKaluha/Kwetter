@@ -42,7 +42,7 @@ public class ProfileController
 
             // Return the token on the response
             return Response.ok("\"" + token + "\"")
-                    //.header(AUTHORIZATION, "Bearer " + token)
+                    .header(AUTHORIZATION, "\"" + token + "\"")
                     .build();
         } catch (Exception e) {
             return Response.status(UNAUTHORIZED).build();

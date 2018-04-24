@@ -7,6 +7,7 @@ import {
 } from '@angular/common/http';
 import { ProfileService } from '../profile.service';
 import { Observable } from 'rxjs/Observable';
+import {RequestOptionsArgs} from "@angular/http";
 
 
 
@@ -18,7 +19,7 @@ export class TokenInterceptor implements HttpInterceptor {
 
     request = request.clone({
       setHeaders: {
-        Authorization: `Bearer ${this.auth.getToken()}`
+        Authorization: `${this.auth.getToken()}`
       }
     });
     return next.handle(request);
