@@ -28,17 +28,16 @@ public class ProfileController
 
     @POST
     @Path("/login")
-    @Consumes(APPLICATION_FORM_URLENCODED)
-    @Produces(APPLICATION_FORM_URLENCODED)
-    public Response authenticateUser(@FormParam("login") String login,
-                                     @FormParam("password") String password) {
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response authenticateUser(LoginProfileBody loginProfileBody) {
         try {
 
             // Authenticate the user using the credentials provided
-            profileService.authenticate(login, password);
+            profileService.authenticate(loginProfileBody.getLogin(), loginProfileBody.getPassword());
 
             // Issue a token for the user
-            String token = profileService.issueToken(login);
+            String token = profileService.issueToken(loginProfileBody.getLogin());
 
             // Return the token on the response
             return Response.ok("\"" + token + "\"")

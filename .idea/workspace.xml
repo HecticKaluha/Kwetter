@@ -2,14 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b99c18d-e3dd-4f3f-9f92-96e09b41c7f4" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/controller/JsonBodyClasses/LoginProfileBody.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/front-end/kwetterfrontend/src/app/auth/token.interceptor.ts" afterPath="$PROJECT_DIR$/front-end/kwetterfrontend/src/app/auth/token.interceptor.ts" />
       <change beforePath="$PROJECT_DIR$/front-end/kwetterfrontend/src/app/profile.service.ts" afterPath="$PROJECT_DIR$/front-end/kwetterfrontend/src/app/profile.service.ts" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/AccesControlResponseFilter.java" afterPath="$PROJECT_DIR$/src/main/java/controller/AccesControlResponseFilter.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/ProfileController.java" afterPath="$PROJECT_DIR$/src/main/java/controller/ProfileController.java" />
       <change beforePath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT.war" afterPath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT.war" />
       <change beforePath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/WEB-INF/classes/controller/ProfileController.class" afterPath="$PROJECT_DIR$/target/Kwetter-1.0-SNAPSHOT/WEB-INF/classes/controller/ProfileController.class" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,125 +38,35 @@
       <file leaf-file-name="profile.service.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/front-end/kwetterfrontend/src/app/profile.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-137">
-              <caret line="74" column="45" lean-forward="true" selection-start-line="74" selection-start-column="45" selection-end-line="74" selection-end-column="45" />
+            <state relative-caret-position="241">
+              <caret line="70" column="68" lean-forward="false" selection-start-line="70" selection-start-column="68" selection-end-line="70" selection-end-column="68" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="token.interceptor.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front-end/kwetterfrontend/src/app/auth/token.interceptor.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="25" column="3" lean-forward="false" selection-start-line="25" selection-start-column="3" selection-end-line="25" selection-end-column="3" />
-              <folding>
-                <element signature="e#0#43#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="followers.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front-end/kwetterfrontend/src/app/followers/followers.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ownkweets.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front-end/kwetterfrontend/src/app/ownkweets/ownkweets.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-189">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#55#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="kweet.service.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front-end/kwetterfrontend/src/app/kweet.service.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-205">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#43#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="followers.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front-end/kwetterfrontend/src/app/followers/followers.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-205">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#55#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front-end/kwetterfrontend/src/app/login/login.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="35" column="87" lean-forward="false" selection-start-line="35" selection-start-column="87" selection-end-line="35" selection-end-column="87" />
-              <folding>
-                <element signature="e#0#50#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProfileController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/controller/ProfileController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="45" column="29" lean-forward="false" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AccesControlResponseFilter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/controller/AccesControlResponseFilter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="21" column="67" lean-forward="false" selection-start-line="21" selection-start-column="67" selection-end-line="21" selection-end-column="67" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.module.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front-end/kwetterfrontend/src/app/app.module.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="14" column="43" lean-forward="false" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="43" />
-              <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>login</find>
       <find>service</find>
       <find>http</find>
       <find>headers</find>
-      <find>follow</find>
       <find>inject</find>
+      <find>follow</find>
+      <find>generating</find>
+      <find>header</find>
+      <find>gener</find>
+      <find>login</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -170,6 +82,7 @@
       <list>
         <option value="$PROJECT_DIR$/front-end/kwetterfrontend/src/app/login/login.component.ts" />
         <option value="$PROJECT_DIR$/src/main/java/controller/AccesControlResponseFilter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/JsonBodyClasses/LoginProfileBody.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/ProfileController.java" />
         <option value="$PROJECT_DIR$/front-end/kwetterfrontend/src/app/auth/token.interceptor.ts" />
         <option value="$PROJECT_DIR$/front-end/kwetterfrontend/src/app/profile.service.ts" />
@@ -334,7 +247,24 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="JsonBodyClasses" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kwetter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kwetter" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="filter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kwetter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kwetter" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -533,12 +463,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1524554174093</updated>
-      <workItem from="1524554192407" duration="9561000" />
+      <workItem from="1524554192407" duration="15387000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9561000" />
+    <option name="totallyTimeSpent" value="15387000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -554,7 +484,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -567,7 +497,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3990878" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -583,7 +513,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="5" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -603,36 +535,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#56#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front-end/kwetterfrontend/src/app/profiles/profiles.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-310">
-          <caret line="12" column="56" lean-forward="true" selection-start-line="12" selection-start-column="56" selection-end-line="12" selection-end-column="56" />
-          <folding>
-            <element signature="e#0#50#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front-end/kwetterfrontend/src/app/followers/followers.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-205">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#55#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front-end/kwetterfrontend/src/app/kweet.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-205">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -671,50 +573,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front-end/kwetterfrontend/src/app/ownkweets/ownkweets.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-189">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#55#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/AccesControlResponseFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="21" column="67" lean-forward="false" selection-start-line="21" selection-start-column="67" selection-end-line="21" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front-end/kwetterfrontend/src/app/login/login.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="35" column="87" lean-forward="false" selection-start-line="35" selection-start-column="87" selection-end-line="35" selection-end-column="87" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/ProfileController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="45" column="29" lean-forward="false" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/filter/JWTTokenNeededFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front-end/kwetterfrontend/src/app/followers/followers.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -723,20 +581,136 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/kwetterfrontend/src/app/ownkweets/ownkweets.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-189">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#55#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/kwetterfrontend/src/app/kweet.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-205">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#43#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/kwetterfrontend/src/app/followers/followers.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-205">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#55#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/kwetterfrontend/src/app/login/login.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="35" column="87" lean-forward="false" selection-start-line="35" selection-start-column="87" selection-end-line="35" selection-end-column="87" />
+          <folding>
+            <element signature="e#0#50#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/kwetterfrontend/src/app/profiles/profiles.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="56" lean-forward="false" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/kwetterfrontend/src/app/profiles/profiles.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-231">
+          <caret line="12" column="56" lean-forward="false" selection-start-line="12" selection-start-column="56" selection-end-line="12" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/util/KeyGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="21" lean-forward="false" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/filter/JWTTokenNeededFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/util/SimpleKeyGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/JsonBodyClasses/KweetBody.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-16">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/AccesControlResponseFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="19" column="109" lean-forward="false" selection-start-line="19" selection-start-column="109" selection-end-line="19" selection-end-column="109" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/JsonBodyClasses/LoginProfileBody.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/front-end/kwetterfrontend/src/app/auth/token.interceptor.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="25" column="3" lean-forward="false" selection-start-line="25" selection-start-column="3" selection-end-line="25" selection-end-column="3" />
+        <state relative-caret-position="133">
+          <caret line="17" column="87" lean-forward="false" selection-start-line="17" selection-start-column="87" selection-end-line="17" selection-end-column="87" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/ProfileController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="42" column="51" lean-forward="true" selection-start-line="42" selection-start-column="51" selection-end-line="42" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/front-end/kwetterfrontend/src/app/profile.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-137">
-          <caret line="74" column="45" lean-forward="true" selection-start-line="74" selection-start-column="45" selection-end-line="74" selection-end-column="45" />
+        <state relative-caret-position="241">
+          <caret line="70" column="68" lean-forward="false" selection-start-line="70" selection-start-column="68" selection-end-line="70" selection-end-column="68" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
           </folding>

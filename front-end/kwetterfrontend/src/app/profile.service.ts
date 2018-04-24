@@ -20,8 +20,6 @@ export class ProfileService {
   private getAllProfilesURL = "http://localhost:8080/kwetter/api/profile/";
   private followProfileURL = "http://localhost:8080/kwetter/api/profile/follow";
 
-  private headers = {'Content-Type': 'application/x-www-form-urlencoded'};
-
   public token: string;
 
   constructor(protected httpClient: HttpClient, private router: Router) {
@@ -61,19 +59,15 @@ export class ProfileService {
 
   public login(login:string, password:string){
     //TODO: shareReplay() to prevent the receiver of this Observable from accidentally triggering multiple POST requests due to multiple subscriptions.
-
-    let body = `login=${login}&password=${password}`;
-    return this.httpClient.post(`${this.postLoginURL}`, body, {headers: this.headers, observe:'response'}).subscribe((res) => {
-      console.log("status", res.status);
+    let body = {login: login, password: password};
+    return this.httpClient.post(`${this.postLoginURL}`, body, {observe:'response'}).subscribe((res) => {
       let token =  res.headers.get('Authorization');
-      console.log("token", token);
       if(token != null)
       {
         this.token = token;
         localStorage.setItem('currentUser', JSON.stringify({ username: login, token: token }));
         localStorage.setItem('loggedinuser', login);
         localStorage.setItem('token', token);
-        console.log("logged in");
         this.router.navigateByUrl('/home/'+ this.getLoggedInUser());
         return true;
       }
@@ -106,7 +100,7 @@ export class ProfileService {
     //TODO: Actually send LoggedinUser
     let body = {username: localStorage.getItem("loggedinuser")};
     console.log(body);
-    return this.httpClient.post(`${this.followProfileURL}/${profileToFollow}`, body);
+    return this.httpClient.put(`${this.followProfileURL}/${profileToFollow}`, body);
   }
 
   public getToken(): string {

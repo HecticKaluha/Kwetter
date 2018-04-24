@@ -30,6 +30,7 @@ C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\controller\Kweet
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\exceptions\CouldNotFetchLatestKweetFromDatabaseException.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\util\PasswordUtils.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\util\SimpleKeyGenerator.java
+C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\controller\JsonBodyClasses\LoginProfileBody.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\controller\JsonBodyClasses\UpdateProfileBody.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\dao\KweetDao.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\model\Kweet.java

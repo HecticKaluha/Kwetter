@@ -3,7 +3,7 @@ import {
   HttpRequest,
   HttpHandler,
   HttpEvent,
-  HttpInterceptor
+  HttpInterceptor, HttpHeaders
 } from '@angular/common/http';
 import { ProfileService } from '../profile.service';
 import { Observable } from 'rxjs/Observable';
@@ -16,12 +16,14 @@ export class TokenInterceptor implements HttpInterceptor {
   constructor(public auth: ProfileService) {}
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-
-    request = request.clone({
-      setHeaders: {
-        Authorization: `${this.auth.getToken()}`
-      }
+    const headers = new HttpHeaders({
+      'Authorization': 'Bearer \'' + this.auth.getToken().toString() + '\'',
+      'Content-Type': 'application/json'
     });
-    return next.handle(request);
+    console.log("headers zijn", headers);
+    const cloneReq = request.clone({headers});
+
+    return next.handle(cloneReq);
+    //return next.handle(request);
   }
 }

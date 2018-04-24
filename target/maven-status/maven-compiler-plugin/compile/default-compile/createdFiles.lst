@@ -33,6 +33,7 @@ controller\AccesControlResponseFilter.class
 controller\JsonBodyClasses\KweetBody.class
 exceptions\CouldNotFetchLatestKweetFromDatabaseException.class
 dao\KweetDaoImp.class
+controller\JsonBodyClasses\LoginProfileBody.class
 dao\KweetDao.class
 exceptions\NoContentToUpdateException.class
 filter\JWTTokenNeededFilter.class
