@@ -81,7 +81,7 @@ public class KwetterBean implements Serializable{
         String newMessage = event.getNewValue().toString();
         if(!oldMessage.equals(newMessage)) {
             Kweet entity = (Kweet) ((DataTable) event.getComponent()).getRowData();
-            editKweetMessage(entity.getId(), newMessage);
+            editKweetMessage(entity.getKweetId(), newMessage);
         }
     }
 

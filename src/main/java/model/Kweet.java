@@ -2,7 +2,10 @@ package model;
 
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import org.springframework.hateoas.ResourceSupport;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -17,7 +20,7 @@ import java.util.List;
 @XmlAccessorType(XmlAccessType.FIELD)
 @Entity(name = "Kweet")
 @Table(name = "kweet")
-public class Kweet implements Serializable
+public class Kweet extends ResourceSupport implements Serializable
 {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -31,6 +34,7 @@ public class Kweet implements Serializable
     private String message;
     private Date postDate;
 
+
     //@JsonIgnore
     //private List<Profile> likes;
 
@@ -40,12 +44,14 @@ public class Kweet implements Serializable
     //@ManyToMany
     //private List<Trend> trends;
 
+    @JsonCreator
     public Kweet()
     {
 
     }
 
-    public Kweet(Profile owner, String message, Date postDate, List<Profile> likes, List<Mention> mentions, List<Trend> trends)
+    @JsonCreator
+    public Kweet(@JsonProperty("owner") Profile owner,@JsonProperty("message") String message,@JsonProperty("postDate") Date postDate,@JsonProperty("likes") List<Profile> likes,@JsonProperty("mentions") List<Mention> mentions,@JsonProperty("trends") List<Trend> trends)
     {
         this (owner,message,postDate);
         /*this.likes = likes;
@@ -53,13 +59,15 @@ public class Kweet implements Serializable
         this.trends = trends;*/
     }
 
-    public Kweet(Long id, Profile owner, String message, Date postDate, List<Profile> likes, List<Mention> mentions, List<Trend> trends)
+    @JsonCreator
+    public Kweet(@JsonProperty("id") Long id,@JsonProperty("owner") Profile owner,@JsonProperty("message") String message,@JsonProperty("postDate") Date postDate,@JsonProperty("likes") List<Profile> likes,@JsonProperty("mentions") List<Mention> mentions,@JsonProperty("trends") List<Trend> trends)
     {
         this (owner, message, postDate,likes,mentions,trends);
         this.id = id;
     }
 
-    public Kweet(Profile owner, String message, Date postDate)
+    @JsonCreator
+    public Kweet(@JsonProperty("owner") Profile owner, @JsonProperty("message") String message, @JsonProperty("postDate") Date postDate)
     {
         if(owner == null)
         {
@@ -143,7 +151,7 @@ public class Kweet implements Serializable
         //this.trends = trends;
     }
 
-    public Long getId()
+    public Long getKweetId()
     {
         return id;
     }

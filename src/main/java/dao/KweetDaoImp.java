@@ -25,7 +25,7 @@ public class KweetDaoImp implements KweetDao
             Kweet kweet;
             kweet = new Kweet(profile, kweetMessage, new Date());
             kweet.setId(nextId.getAndIncrement());
-            kweets.put(kweet.getId(), kweet);
+            kweets.put(kweet.getKweetId(), kweet);
             return kweet;
         }
         catch(IllegalArgumentException e)

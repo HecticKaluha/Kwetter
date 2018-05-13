@@ -4,6 +4,7 @@ import controller.JsonBodyClasses.UpdateKweetBody;
 import exceptions.*;
 import model.Kweet;
 import controller.JsonBodyClasses.KweetBody;
+import org.springframework.web.bind.annotation.*;
 import service.KweetService;
 
 import javax.enterprise.context.RequestScoped;
@@ -13,8 +14,12 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.List;
 
+import static org.springframework.hateoas.mvc.ControllerLinkBuilder.*;
+
 @RequestScoped
 @Path("/kweet")
+@RestController
+@RequestMapping("kwetter/api/kweet")
 @Produces(MediaType.APPLICATION_JSON)
 public class KweetController
 {
@@ -85,12 +90,14 @@ public class KweetController
 
     @GET
     @Path("/{id}")
+    @RequestMapping("/{id}")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response findKWeet(@PathParam("id") Long id)
+    public Response findKweet(@PathVariable("id") @PathParam("id") Long id)
     {
         try{
             Kweet kweet = kweetService.find(id);
+            kweet.add(linkTo(methodOn(KweetController.class).findKweet(id)).withSelfRel());
             return Response.ok(kweet).build();
         }
         catch(KweetNotFoundException e)

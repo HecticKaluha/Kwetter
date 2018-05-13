@@ -5,17 +5,21 @@ import controller.JsonBodyClasses.*;
 import exceptions.*;
 import filter.JWTTokenNeeded;
 import model.Kweet;
+import model.Profile;
+import org.springframework.hateoas.Link;
 import service.ProfileService;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
+import javax.json.Json;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.UriBuilder;
 
 import static javax.ws.rs.core.HttpHeaders.AUTHORIZATION;
-import static javax.ws.rs.core.MediaType.APPLICATION_FORM_URLENCODED;
 import static javax.ws.rs.core.Response.Status.UNAUTHORIZED;
+import static org.springframework.hateoas.mvc.ControllerLinkBuilder.*;
 
 @RequestScoped
 @Path("/profile")
@@ -68,8 +72,10 @@ public class ProfileController
     public Response getProfile(@PathParam("username") String username)
     {
         try{
-            //return Response.ok(username).build();
-            return Response.ok(profileService.findProfile(username)).build();
+            Profile profile = profileService.findProfile(username);
+
+
+            return Response.ok(profile).build();
         }
         catch(/*CouldNotFindProfileException*/ Exception e)
         {
