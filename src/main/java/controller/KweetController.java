@@ -73,9 +73,10 @@ public class KweetController
     }
     @DELETE
     @Path("/{id}")
+    @RequestMapping("/{id}")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response deleteKweet(@PathParam("id") Long id)
+    public Response deleteKweet(@PathVariable("id") @PathParam("id") Long id)
     {
         try
         {
@@ -97,7 +98,8 @@ public class KweetController
     {
         try{
             Kweet kweet = kweetService.find(id);
-            kweet.add(linkTo(methodOn(KweetController.class).findKweet(id)).withSelfRel());
+            kweet.add(linkTo(methodOn(KweetController.class).findKweet(id)).withSelfRel().withType("POST"));
+            kweet.add(linkTo(methodOn(KweetController.class).deleteKweet(id)).withRel("Delete kweet").withType("DELETE"));
             return Response.ok(kweet).build();
         }
         catch(KweetNotFoundException e)
