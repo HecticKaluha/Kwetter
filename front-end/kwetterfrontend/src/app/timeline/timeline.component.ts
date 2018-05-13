@@ -7,7 +7,7 @@ import {ProfileService} from "../profile.service";
   styleUrls: ['./timeline.component.css']
 })
 export class TimelineComponent implements OnInit {
-  private timeline: any = {};
+  public timeline: any = {};
   private hasTimeline: boolean;
   @Input() username;
 
