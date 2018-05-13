@@ -15,11 +15,9 @@ public class AccesControlResponseFilter implements ContainerResponseFilter {
     @Override
     public void filter(ContainerRequestContext requestContext, ContainerResponseContext responseContext) throws IOException {
         final MultivaluedMap<String, Object> headers = responseContext.getHeaders();
-
         headers.add("Access-Control-Allow-Origin", "*");
-        headers.add("Access-Control-Allow-Headers", "Authorization, Origin, X-Requested-With, Content-Type");
-        headers.add("Access-Control-Expose-Headers", "Location, Content-Disposition");
-        headers.add("Access-Control-Expose-Headers", "Authorization");
+        headers.add("Access-Control-Allow-Headers", "Authorization, Origin, X-Requested-With, accept, Content-Type, Access-Control-Allow-Origin");
+        headers.add("Access-Control-Expose-Headers", "Location, Content-Disposition, Authorization");
         headers.add("Access-Control-Allow-Methods", "POST, PUT, GET, DELETE, HEAD, OPTIONS");
     }
 

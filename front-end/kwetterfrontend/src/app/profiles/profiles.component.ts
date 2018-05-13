@@ -35,14 +35,13 @@ export class ProfilesComponent implements OnInit {
 
   follow(profileToFollow:string){
     this.profileservice.follow(profileToFollow).subscribe(res=> {
-        console.log("result is", res)
-        ;
+        console.log("result is", res);
       },
       err => {
-      console.log(err);
-        alert("Je volgt nu " + profileToFollow);
+        console.log(err);
+        alert("er is iets fout gegaan tijdens het volgen van de gebruiker. probeer het later opnieuw");
       },
-      ()=> console.log("You are now following " + profileToFollow)
+      ()=> alert("You are now following " + profileToFollow)
     );
   }
 

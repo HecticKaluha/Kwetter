@@ -32,7 +32,7 @@ export class OwnprofileComponent implements OnInit {
         this.profilePicture = this.details.profilePictureUrl;
       },
       err => console.log(err),
-      ()=> console.log("Done loading all the kweets of " + this.profilename)
+      ()=> console.log("Done loading the profile of " + this.profilename)
     );
   }
 
