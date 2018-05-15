@@ -316,7 +316,7 @@ public class ProfileDaoJPAImp implements ProfileDao
     }
 
     @Override
-    public List<Profile> getFollowing(String username) throws CouldNotFindProfileException, CouldNotGetListException {
+    public List<Profile> getFollowing(String username) {
         try
         {
             List<Profile> profilesToReturn = em.createQuery("SELECT profile.following FROM Profile profile WHERE profile.username = :username ", Profile.class)

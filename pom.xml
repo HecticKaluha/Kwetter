@@ -117,6 +117,11 @@
           <artifactId>jersey-declarative-linking</artifactId>
           <version>2.27</version>
       </dependency>
+      <dependency>
+          <groupId>org.eclipse.persistence</groupId>
+          <artifactId>eclipselink</artifactId>
+          <version>2.5.2</version>
+      </dependency>
 
 
   </dependencies>

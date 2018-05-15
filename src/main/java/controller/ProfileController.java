@@ -7,6 +7,9 @@ import filter.JWTTokenNeeded;
 import model.Kweet;
 import model.Profile;
 import org.springframework.hateoas.Link;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import service.ProfileService;
 
 import javax.enterprise.context.RequestScoped;
@@ -17,12 +20,16 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriBuilder;
 
+import java.util.List;
+
 import static javax.ws.rs.core.HttpHeaders.AUTHORIZATION;
 import static javax.ws.rs.core.Response.Status.UNAUTHORIZED;
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.*;
 
 @RequestScoped
 @Path("/profile")
+@RestController
+@RequestMapping("kwetter/api/profile")
 @Produces(MediaType.APPLICATION_JSON)
 public class ProfileController
 {
@@ -58,7 +65,8 @@ public class ProfileController
     {
         try{
             //return Response.ok(username).build();
-            return Response.ok(profileService.getAllProfiles()).build();
+            List<Profile> profileList = profileService.getAllProfiles();
+            return Response.ok(profileList).build();
         }
         catch(/*CouldNotFindProfileException*/ Exception e)
         {
@@ -68,11 +76,36 @@ public class ProfileController
 
     @GET
     @Path("/{username}")
+    @RequestMapping("/{username}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getProfile(@PathParam("username") String username)
+    public Response getProfile(@PathVariable("username") @PathParam("username") String username)
     {
         try{
             Profile profile = profileService.findProfile(username);
+            profile.removeLinks();
+            profile.add(linkTo(methodOn(ProfileController.class).getProfile(username)).withSelfRel().withType("GET"));
+
+            profile.add(linkTo(methodOn(ProfileController.class).deleteProfile(username)).withRel("Delete profile").withType("DELETE"));
+
+            //hoe updates en posts af te handelen?
+            FollowProfileBody fpb = new FollowProfileBody();
+            fpb.setUsername("andere gebruiker");
+            profile.add(linkTo(methodOn(ProfileController.class).followProfile(username, fpb)).withRel("Follow this profile").withType("PUT"));
+
+            UnFollowProfileBody ufpb = new UnFollowProfileBody();
+            ufpb.setUsername("andere gebruiker");
+            profile.add(linkTo(methodOn(ProfileController.class).unfollowProfile(username, ufpb)).withRel("Unfollow this profile").withType("PUT"));
+
+            profile.add(linkTo(methodOn(ProfileController.class).getProfileLatestKweets(username)).withRel("Get the latest kweets of this profile").withType("GET"));
+
+            profile.add(linkTo(methodOn(ProfileController.class).getProfileLatestKweet(username)).withRel("Get the latest kweet of this profile").withType("GET"));
+
+            profile.add(linkTo(methodOn(ProfileController.class).getProfileFollowers(username)).withRel("Get all he followers of this profile").withType("GET"));
+
+            profile.add(linkTo(methodOn(ProfileController.class).getProfileFollowing(username)).withRel("Get all the profiles this profile is following").withType("GET"));
+
+            profile.add(linkTo(methodOn(ProfileController.class).getTimeLine(username)).withRel("Get the timeline of this profile").withType("GET"));
+
 
 
             return Response.ok(profile).build();
@@ -99,9 +132,10 @@ public class ProfileController
 
     @DELETE
     @Path("/{username}")
+    @RequestMapping("/{username}")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response deleteProfile(@PathParam("username") String username)
+    public Response deleteProfile(@PathVariable("username") @PathParam("username") String username)
     {
         try{
             profileService.deleteProfile(username);
@@ -115,10 +149,11 @@ public class ProfileController
 
     @PUT
     @Path("/follow/{usernameToFollow}")
+    @RequestMapping("/follow/{usernameToFollow}")
     @JWTTokenNeeded
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response followProfile(@PathParam("usernameToFollow") String usernameToFollow, FollowProfileBody profileBody)
+    public Response followProfile(@PathVariable("usernameToFollow") @PathParam("usernameToFollow") String usernameToFollow, FollowProfileBody profileBody)
     {
         try{
             if(profileService.followUser(profileService.findProfile(usernameToFollow), profileService.findProfile(profileBody.getUsername())))
@@ -136,9 +171,10 @@ public class ProfileController
 
     @PUT
     @Path("/unfollow/{usernameToUnFollow}")
+    @RequestMapping("/unfollow/{usernameToUnFollow}")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response unfollowProfile(@PathParam("usernameToUnFollow") String usernameToFollow, UnFollowProfileBody profileBody)
+    public Response unfollowProfile(@PathVariable("usernameToUnFollow") @PathParam("usernameToUnFollow") String usernameToFollow, UnFollowProfileBody profileBody)
     {
         try{
             if(profileService.unfollowUser(profileService.findProfile(usernameToFollow), profileService.findProfile(profileBody.getUsername())))
@@ -171,8 +207,9 @@ public class ProfileController
 
     @GET
     @Path("/ownkweets/{username}")
+    @RequestMapping("/ownkweets/{username}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getProfileLatestKweets(@PathParam("username") String username)
+    public Response getProfileLatestKweets(@PathVariable("username") @PathParam("username") String username)
     {
         try{
             return Response.ok(profileService.getLatest(username)).build();
@@ -185,8 +222,9 @@ public class ProfileController
 
     @GET
     @Path("/mostrecent/{username}")
+    @RequestMapping("/mostrecent/{username}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getProfileLatestKweet(@PathParam("username") String username)
+    public Response getProfileLatestKweet(@PathVariable("username") @PathParam("username") String username)
     {
         try{
             Kweet kweet = profileService.getLatestKweet(username);
@@ -200,8 +238,9 @@ public class ProfileController
 
     @GET
     @Path("/followers/{username}")
+    @RequestMapping("/followers/{username}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getProfileFollowers(@PathParam("username") String username)
+    public Response getProfileFollowers(@PathVariable("username") @PathParam("username") String username)
     {
         try{
             return Response.ok(profileService.getFollower(username)).build();
@@ -214,8 +253,9 @@ public class ProfileController
 
     @GET
     @Path("/following/{username}")
+    @RequestMapping("/following/{username}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getProfileFollowing(@PathParam("username") String username)
+    public Response getProfileFollowing(@PathVariable("username") @PathParam("username") String username)
     {
         try{
             return Response.ok(profileService.getFollowing(username)).build();
@@ -228,8 +268,9 @@ public class ProfileController
 
     @GET
     @Path("/timeline/{username}")
+    @RequestMapping("/timeline/{username}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getTimeLine(@PathParam("username") String username)
+    public Response getTimeLine(@PathVariable("username") @PathParam("username") String username)
     {
         try{
             return Response.ok(profileService.getTimeline(username)).build();

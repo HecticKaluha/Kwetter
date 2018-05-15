@@ -26,7 +26,7 @@ public class Kweet extends ResourceSupport implements Serializable
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
     //look into this
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="PROFILE_OWNER", nullable = false)
     //@JsonBackReference
     private Profile owner;

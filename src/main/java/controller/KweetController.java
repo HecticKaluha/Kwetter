@@ -98,7 +98,7 @@ public class KweetController
     {
         try{
             Kweet kweet = kweetService.find(id);
-            kweet.add(linkTo(methodOn(KweetController.class).findKweet(id)).withSelfRel().withType("POST"));
+            kweet.add(linkTo(methodOn(KweetController.class).findKweet(id)).withSelfRel().withType("GET"));
             kweet.add(linkTo(methodOn(KweetController.class).deleteKweet(id)).withRel("Delete kweet").withType("DELETE"));
             return Response.ok(kweet).build();
         }

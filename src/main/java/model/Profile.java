@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import exceptions.CouldNotGetLatestKweets;
 import exceptions.CouldNotGetListException;
+import org.eclipse.persistence.annotations.PrivateOwned;
+import org.springframework.hateoas.ResourceSupport;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -20,11 +22,12 @@ import java.util.List;
 @XmlAccessorType(XmlAccessType.FIELD)
 @Entity(name = "Profile")
 @Table(name = "profile")
-public class Profile implements Serializable
+public class Profile extends ResourceSupport implements Serializable
 {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
+
 
     private String username;
 
@@ -58,7 +61,8 @@ public class Profile implements Serializable
 
     @XmlTransient
     @JsonIgnore
-    @OneToMany(mappedBy = "ownkweets", fetch=FetchType.LAZY, cascade = CascadeType.PERSIST)
+    @OneToMany(mappedBy = "ownKweets", fetch=FetchType.LAZY, cascade = CascadeType.ALL)
+    @PrivateOwned
     //@JsonManagedReference
     private transient List<Kweet> ownKweets;
 
@@ -286,7 +290,7 @@ public class Profile implements Serializable
     }
 
 
-    public Long getId() {
+    public Long getProfileId() {
         return id;
     }
 
