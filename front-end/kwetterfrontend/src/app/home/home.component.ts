@@ -25,10 +25,9 @@ export class HomeComponent implements OnInit {
   constructor(protected kweetService: KweetService,protected profileService: ProfileService, private route : ActivatedRoute,  private router: Router) { }
 
   ngOnInit() {
-    console.log("loggedinuser ", this.loggedInUser)
     this.route$ = this.route.params.subscribe(
       (params : Params) => {
-        this.loggedInUser = params["username"];
+        this.loggedInUser = this.profileService.getLoggedInUser();
       }
     );
 
