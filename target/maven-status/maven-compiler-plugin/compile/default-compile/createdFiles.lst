@@ -1,4 +1,5 @@
 exceptions\ParametersWereEmptyException.class
+websocket\WebSocket.class
 exceptions\AddingToCollectionFailedException.class
 exceptions\AddigToDatabaseFailedException.class
 controller\JsonBodyClasses\CreateProfileBody.class
@@ -28,6 +29,7 @@ model\Comment.class
 controller\JaxApi.class
 controller\KweetController.class
 util\DateUtil.class
+websocket\SessionHandler.class
 model\Kweet.class
 controller\AccesControlResponseFilter.class
 controller\JsonBodyClasses\KweetBody.class

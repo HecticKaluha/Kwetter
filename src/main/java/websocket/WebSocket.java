@@ -44,19 +44,19 @@ public class WebSocket {
 
     @OnMessage
     public void handleMessage(String message, Session session) {
-        try (JsonReader reader = Json.createReader(new StringReader(message))) {
+        try {
+            System.out.println("aangekomen op de server");
+            JsonReader reader = Json.createReader(new StringReader(message));
             JsonObject jsonMessage = reader.readObject();
-
-            try {
-                Kweet kweet = kweetService.post("Hallo", "Peter");
-                sessionHandler.sendToAllConnectedSessions(sessionHandler.createAddMessage(kweet));
-            } catch (CouldNotCreateKweetException e) {
-                e.printStackTrace();
-            } catch (CouldNotFindProfileException e) {
-                e.printStackTrace();
-            } catch (CouldNotRoleBackException e) {
-                e.printStackTrace();
-            }
+            System.out.println("Message: " + jsonMessage.getString("message") + " Sender: " + jsonMessage.getString("profilename"));
+            Kweet kweet = kweetService.post(jsonMessage.getString("message"), jsonMessage.getString("profilename"));
+            sessionHandler.sendToAllConnectedSessions(sessionHandler.createAddMessage(kweet));
+        } catch (CouldNotCreateKweetException e) {
+            e.printStackTrace();
+        } catch (CouldNotFindProfileException e) {
+            e.printStackTrace();
+        } catch (CouldNotRoleBackException e) {
+            e.printStackTrace();
         }
     }
 }

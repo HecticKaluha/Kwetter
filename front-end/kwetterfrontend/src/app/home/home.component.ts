@@ -3,6 +3,7 @@ import {KweetService} from "../kweet.service";
 import {ProfileService} from "../profile.service";
 import {ActivatedRoute, Params, Router} from "@angular/router";
 import {Subscription} from "rxjs/Subscription";
+import {WebsocketService} from "../websocket.service";
 
 
 @Component({
@@ -22,7 +23,7 @@ export class HomeComponent implements OnInit {
 
   mostRecentKweet:any = {};
   private status: boolean;
-  constructor(protected kweetService: KweetService,protected profileService: ProfileService, private route : ActivatedRoute,  private router: Router) { }
+  constructor(protected kweetService: KweetService,protected profileService: ProfileService,private websocketservice: WebsocketService, private route : ActivatedRoute,  private router: Router) { }
 
   ngOnInit() {
     this.route$ = this.route.params.subscribe(
@@ -44,6 +45,7 @@ export class HomeComponent implements OnInit {
   }
 
   postKweet(){
+    this.websocketservice.sendMessage(this.value, this.profileService.getLoggedInUser());
     this.kweetService.postKweet(this.value, this.loggedInUser).subscribe(res=> {
       this.statusmessage = "Kweet succesfully posted";
         this.getMostRecentKweet(this.loggedInUser);

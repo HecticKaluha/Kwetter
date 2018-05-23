@@ -21,6 +21,7 @@ import { TimelineComponent } from './timeline/timeline.component';
 import { LoginComponent } from './login/login.component';
 import { ProfilesComponent } from './profiles/profiles.component';
 import {TokenInterceptor} from "./auth/token.interceptor";
+import {WebsocketService} from "./websocket.service";
 
 
 
@@ -54,6 +55,7 @@ import {TokenInterceptor} from "./auth/token.interceptor";
       useClass: TokenInterceptor,
       multi: true
     },
+    WebsocketService,
     ProfileService,
     KweetService
   ],

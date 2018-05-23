@@ -16,6 +16,7 @@ C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\dao\ProfileDaoJP
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\dao\KweetDaoImp.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\exceptions\CouldNotFindProfileException.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\util\KeyGenerator.java
+C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\websocket\WebSocket.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\filter\JWTTokenNeededFilter.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\controller\ProfileController.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\exceptions\RoleNotFoundException.java
@@ -31,6 +32,7 @@ C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\exceptions\Could
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\util\PasswordUtils.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\util\SimpleKeyGenerator.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\controller\JsonBodyClasses\LoginProfileBody.java
+C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\websocket\SessionHandler.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\controller\JsonBodyClasses\UpdateProfileBody.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\dao\KweetDao.java
 C:\Users\stefa\OneDrive\Documenten\GitHub\Kwetter\src\main\java\model\Kweet.java

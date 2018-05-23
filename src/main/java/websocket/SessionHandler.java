@@ -26,14 +26,14 @@ public class SessionHandler {
 
     public void addSession(Session session) {
         sessions.add(session);
-        try {
+        /*try {
             for (Kweet kweet : kweetService.findAll()) {
                 String addMessage = createAddMessage(kweet);
                 sendToSession(session, addMessage);
             }
         } catch (CouldNotGetListException e) {
             e.printStackTrace();
-        }
+        }*/
     }
 
     public void removeSession(Session session) {
@@ -74,6 +74,17 @@ public class SessionHandler {
             sessions.remove(session);
             System.out.println("error" + ex);
         }
+    }
+
+    private void updateKweets(){
+        Gson gson = new Gson();
+        try {
+            String kweetsAsJson = gson.toJson(kweetService.findAll());
+            sendToAllConnectedSessions(kweetsAsJson);
+        } catch (CouldNotGetListException e) {
+            e.printStackTrace();
+        }
+
     }
 
 }
