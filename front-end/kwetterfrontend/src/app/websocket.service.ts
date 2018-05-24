@@ -1,4 +1,6 @@
 import {Injectable} from '@angular/core';
+import {HomeComponent} from "./home/home.component";
+import {Subject} from "rxjs/Subject";
 
 @Injectable()
 export class WebsocketService {
@@ -6,19 +8,17 @@ export class WebsocketService {
   WS_URL = 'ws://localhost:8080/kwetter/kweetsws';
   ws: any;
   obj: any;
-  observable: any;
 
   constructor() {
     this.ws = new WebSocket(this.WS_URL);
-
     this.ws.onmessage = function (kweet) {
       //add kweet to timeline
       console.log('from connection', kweet.data);
     };
   }
 
-  receiveMessage() {
-
+  public receiveMessage(kweet:any) {
+    console.log("distributing");
   }
 
   public sendMessage(message: string, loggedInUser: string) {

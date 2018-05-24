@@ -18,61 +18,66 @@ export class HomeComponent implements OnInit {
   private statusmessage: string;
   private loggedInUser;
 
-  private route$ : Subscription;
+  private route$: Subscription;
+
   @Input() username;
 
-  mostRecentKweet:any = {};
+  mostRecentKweet: any = {};
   private status: boolean;
-  constructor(protected kweetService: KweetService,protected profileService: ProfileService,private websocketservice: WebsocketService, private route : ActivatedRoute,  private router: Router) { }
+
+  constructor(protected kweetService: KweetService, protected profileService: ProfileService, private websocketservice: WebsocketService, private route: ActivatedRoute, private router: Router) {
+
+  }
 
   ngOnInit() {
     this.route$ = this.route.params.subscribe(
-      (params : Params) => {
+      (params: Params) => {
         this.loggedInUser = this.profileService.getLoggedInUser();
       }
     );
 
-    if(this.loggedInUser != null)
+
+    if (this.loggedInUser != null)
       this.getMostRecentKweet(this.loggedInUser);
   }
+
   ngOnChanges() {
-    if(this.loggedInUser != null)
+    if (this.loggedInUser != null)
       this.getMostRecentKweet(this.loggedInUser);
   }
 
-  public opentab(tab: string){
+  public opentab(tab: string) {
 
   }
 
-  postKweet(){
+  postKweet() {
     this.websocketservice.sendMessage(this.value, this.profileService.getLoggedInUser());
-    this.kweetService.postKweet(this.value, this.loggedInUser).subscribe(res=> {
-      this.statusmessage = "Kweet succesfully posted";
+    this.kweetService.postKweet(this.value, this.loggedInUser).subscribe(res => {
+        this.statusmessage = "Kweet succesfully posted";
         this.getMostRecentKweet(this.loggedInUser);
       },
-        (error) => this.statusmessage = "Something went wrong when posting your Kweet... Try again later."
+      (error) => this.statusmessage = "Something went wrong when posting your Kweet... Try again later."
     );
   }
 
-  getMostRecentKweet(loggedInUser:string){
+  getMostRecentKweet(loggedInUser: string) {
     this.profileService.getMostRecentKweet(loggedInUser).subscribe(kweet => {
-      this.mostRecentKweet = kweet;
-      this.status = true;
+        this.mostRecentKweet = kweet;
+        this.status = true;
       },
-      (error) =>
-      {
+      (error) => {
         this.statusmessage = "Something went wrong when retrieving the most recent kweet... Try again later.";
         this.status = false;
       });
   }
-  public onChange(value){
-    if(value == "Logout")
-    {
+
+  public onChange(value) {
+    if (value == "Logout") {
       console.log("uitgelogd");
     }
-    else{
+    else {
 
-      this.router.navigateByUrl('/profile/'+ value);
+      this.router.navigateByUrl('/profile/' + value);
       console.log("route naar profile");
     }
   }

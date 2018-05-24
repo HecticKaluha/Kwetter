@@ -24,10 +24,10 @@ public class Initialize {
     @Inject
     private KweetService kweetService;
 
-    public Initialize()
-    {
+        public Initialize()
+        {
 
-    }
+        }
 
     @PostConstruct
     public void initData(){
