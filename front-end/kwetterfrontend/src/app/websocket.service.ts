@@ -1,27 +1,45 @@
 import {Injectable} from '@angular/core';
-import {HomeComponent} from "./home/home.component";
-import {Subject} from "rxjs/Subject";
+import * as Rx from 'rxjs/Rx';
 
 @Injectable()
 export class WebsocketService {
 
-  WS_URL = 'ws://localhost:8080/kwetter/kweetsws';
-  ws: any;
-  obj: any;
+  ws:WebSocket;
+  obj:any;
 
-  constructor() {
-    this.ws = new WebSocket(this.WS_URL);
-    this.ws.onmessage = function (kweet) {
-      //add kweet to timeline
-      console.log('from connection', kweet.data);
+  constructor() { }
+
+  private subject: Rx.Subject<MessageEvent>;
+
+  public connect(url): Rx.Subject<MessageEvent> {
+    if (!this.subject) {
+      this.subject = this.create(url);
+      console.log("Successfully connected: " + url);
+    }
+    return this.subject;
+  }
+
+  private create(url): Rx.Subject<MessageEvent> {
+    this.ws = new WebSocket(url);
+
+    let observable = Rx.Observable.create(
+      (obs: Rx.Observer<MessageEvent>) => {
+        this.ws.onmessage = obs.next.bind(obs);
+        this.ws.onerror = obs.error.bind(obs);
+        this.ws.onclose = obs.complete.bind(obs);
+        return this.ws.close.bind(this.ws);
+      });
+    let observer = {
+      next: (data: Object) => {
+        if (this.ws.readyState === WebSocket.OPEN) {
+          this.ws.send(JSON.stringify(data));
+        }
+      }
     };
+    return Rx.Subject.create(observer, observable);
   }
 
-  public receiveMessage(kweet:any) {
-    console.log("distributing");
-  }
-
-  public sendMessage(message: string, loggedInUser: string) {
+  /*public sendMessage(message: string, loggedInUser: string) {
     console.log("aangekomen in sendmessage");
     if (this.ws.readyState === WebSocket.OPEN) {
       console.log("websocket is open.");
@@ -34,5 +52,5 @@ export class WebsocketService {
       this.ws.send(this.obj);
       console.log("sent message");
     }
-  }
+  }*/
 }

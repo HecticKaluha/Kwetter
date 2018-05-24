@@ -4,12 +4,14 @@ import {ProfileService} from "../profile.service";
 import {ActivatedRoute, Params, Router} from "@angular/router";
 import {Subscription} from "rxjs/Subscription";
 import {WebsocketService} from "../websocket.service";
+import {KweetwsService} from "../kweetws.service";
 
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  providers: [ WebsocketService, KweetwsService ]
 })
 export class HomeComponent implements OnInit {
 
@@ -20,13 +22,29 @@ export class HomeComponent implements OnInit {
 
   private route$: Subscription;
 
+  private message:any;
+  private receivedmessage:any;
+
+  private allkweets;
+
   @Input() username;
 
   mostRecentKweet: any = {};
   private status: boolean;
 
-  constructor(protected kweetService: KweetService, protected profileService: ProfileService, private websocketservice: WebsocketService, private route: ActivatedRoute, private router: Router) {
-
+  constructor(protected kweetService: KweetService, protected profileService: ProfileService, /*private websocketservice: WebsocketService, */ private kweetwsService: KweetwsService , private route: ActivatedRoute, private router: Router) {
+    this.allkweets = [];
+    kweetwsService.messages.subscribe(msg =>{
+      //console.log("response from websocket: " + msg);
+      //this.allkweets.push(msg);
+      this.allkweets.push(
+        {
+          profilename: msg.profilename,
+          message: msg.message,
+          postdate: msg.postdate
+        }
+      );
+    });
   }
 
   ngOnInit() {
@@ -51,7 +69,12 @@ export class HomeComponent implements OnInit {
   }
 
   postKweet() {
-    this.websocketservice.sendMessage(this.value, this.profileService.getLoggedInUser());
+    this.message = {
+      profilename: this.profileService.getLoggedInUser(),
+      message: this.value
+    };
+    //console.log("username from message = " + this.message.profilename);
+    this.kweetwsService.messages.next(this.message);
     this.kweetService.postKweet(this.value, this.loggedInUser).subscribe(res => {
         this.statusmessage = "Kweet succesfully posted";
         this.getMostRecentKweet(this.loggedInUser);

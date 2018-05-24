@@ -28,7 +28,27 @@
               <li class="nav-item active"><a class="nav-link">Timeline</a></li>
               <li class="nav-item"><a class="nav-link">Mentions</a></li>
             </ul>
-            <app-timeline class="border" [username]="loggedInUser"></app-timeline>
+
+            <!--see if this works-->
+            <div id="kweets" class="inner">
+              <h3 id="kweettitle" class="title">Your timeline</h3>
+              <p *ngIf="allkweets.length == 0">You and your friends didn't kweet anything yet!. When tehy do they show up here :-)</p>
+              <div *ngIf="allkweets.length >= 0">
+                <ng-container *ngFor="let kweet of allkweets" >
+                  <div class="kweet flexbox kweet-border wrap column">
+                    <a [routerLink]="['/profile/', kweet.profilename]"><p class="kweet-profile-name">{{kweet.profilename}}</p></a>
+                    <p class="kweet-message">{{kweet.message}}</p>
+                    <p class="kweet-postdate-text self_end">postdate: <span id="kweet-postdate">{{kweet.postdate}}</span></p>
+                  </div>
+                </ng-container>
+              </div>
+            </div>
+
+            <!--uncomment for timeline-->
+            <!--<app-timeline class="border" [username]="loggedInUser"></app-timeline>-->
+
+
+
             <!--<app-ownkweets class="border"></app-ownkweets>-->
           </div>
         </div>
