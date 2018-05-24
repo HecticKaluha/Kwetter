@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="kwetterdb@localhost" uuid="716c111c-9729-41e5-9898-759586641a12">
+    <data-source name="kwetterdb@localhost" uuid="e8055a0a-d851-4ce4-a338-338032b7589c">
       <database-info product="MySQL" version="5.5.5-10.1.31-MariaDB" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.46 ( Revision: 9cc87a48e75c2d2e87c1a293b2862ce651cb256e )">
         <extra-name-characters>#@</extra-name-characters>
         <identifier-quote-string>`</identifier-quote-string>
       </database-info>
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
       <secret-storage>master_key</secret-storage>
-      <user-name>rootuser</user-name>
+      <user-name>root</user-name>
       <introspection-schemas>*:kwetterdb</introspection-schemas>
     </data-source>
   </component>
